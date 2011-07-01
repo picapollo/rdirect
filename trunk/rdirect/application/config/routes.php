@@ -40,7 +40,9 @@
 
 $route['default_controller'] = "welcome";
 $route['404_override'] = '';
+$route['rooms/new'] = "rooms/new_room";
 $route['rooms/(:num)'] = "rooms/show/$1";
+$route['rooms/(:num)/edit'] = "rooms/edit/$1";
 $route['login'] = 'users/login';
 $route['signin_login'] = 'users/login';
  

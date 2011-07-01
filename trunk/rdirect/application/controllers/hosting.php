@@ -2,15 +2,16 @@
 /**
  *
  */
-class Groups extends CI_Controller
+class Hosting extends CI_Controller
 {
 
 	public function __construct()
 	{
 		parent::__construct();
 		// Your own constructor code
-	}	
+	}
+	
 
 }
 
-/* End of file groups.php */
+/* End of file hosting.php */
