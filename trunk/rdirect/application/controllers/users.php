@@ -11,7 +11,7 @@ class Users extends CI_Controller
 		// Your own constructor code
 	}
 	
-
+	
 }
 
 /* End of file users.php */

@@ -12,6 +12,13 @@ class Rooms extends CI_Controller
 		parent::__construct();
 		// Your own constructor code
 	}
+	
+	/**
+	 * Show list of rooms
+	 */
+	public function index(){
+		
+	}
 
 	/**
 	 * Register new room
