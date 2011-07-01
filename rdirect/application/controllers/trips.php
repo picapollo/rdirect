@@ -11,21 +11,26 @@ class Trips extends CI_Controller
 	{
 		parent::__construct();
 		// Your own constructor code
+		echo "Trips -> ";
+	}
+	
+	public function index(){
+		$this->current();
 	}
 
 	public function current()
 	{
-		
+		echo "current";
 	}
 
 	public function upcoming()
 	{
-
+		echo "upcoming";
 	}
 
 	public function previous()
 	{
-
+		echo "previous";
 	}
 
 }
