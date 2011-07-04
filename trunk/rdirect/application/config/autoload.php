@@ -52,7 +52,7 @@ $autoload['packages'] = array(APPPATH.'third_party');
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('session', 'common');
+$autoload['libraries'] = array('tank_auth', 'session', 'database', 'facebook');
 
 
 /*
@@ -64,7 +64,7 @@ $autoload['libraries'] = array('session', 'common');
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url', 'file', 'form');
+$autoload['helper'] = array('url');
 
 
 /*

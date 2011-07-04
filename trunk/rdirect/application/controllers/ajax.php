@@ -9,6 +9,8 @@ class Ajax extends CI_Controller
 	{
 		parent::__construct();
 		// Your own constructor code
+		
+		
 	}
 
 }

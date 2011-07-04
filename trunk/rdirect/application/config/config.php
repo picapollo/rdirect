@@ -224,7 +224,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'andsifadofajdsf';
 
 /*
 |--------------------------------------------------------------------------
@@ -357,6 +357,38 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 
+/*
+|--------------------------------------------------------------------------
+| Facebook App ID
+|
+| If you want to integrate with Facebook Connect authentication, put your
+| Facebook App ID below.
+|--------------------------------------------------------------------------
+*/
+$config['facebook_app_id'] = '112020305557299';
+$config['facebook_app_key'] = '782043e4a61e8727897b71bf5bd8a9ee';
+$config['facebook_app_secret'] = '8e13637a436451283959414110572a25';
+
+/*
+|--------------------------------------------------------------------------
+| Twitter App ID
+|
+| If you want to integrate with Twitter oAuth authentication, put your
+| Twitter app details below.
+|--------------------------------------------------------------------------
+*/
+$config['tweet_consumer_key'] = '';
+$config['tweet_consumer_secret'] = '';
+
+/*
+|--------------------------------------------------------------------------
+| Google Friend Connect App ID
+|
+| If you want to integrate with Twitter oAuth authentication, put your
+| Twitter app details below.
+|--------------------------------------------------------------------------
+*/
+$config['google_app_id'] = '';
 
 /* End of file config.php */
 /* Location: ./application/config/config.php */
