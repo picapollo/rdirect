@@ -26,6 +26,55 @@
  */
 class CI_Model {
 
+	 /**
+	  * @var CI_Config
+	  */
+	 private $config;
+	 /**
+	  * @var CI_DB_active_record
+	  */
+	 private $db;
+	 /**
+	  * @var CI_Email
+	  */
+	 private $email;
+	 /**
+	  * @var CI_Form_validation
+	  */
+	 private $form_validation;
+	 /**
+	  * @var CI_Input
+	  */
+	 private $input;
+	 /**
+	  * @var CI_Loader
+	  */
+	 private $load;
+	 /**
+	  * @var CI_Router
+	  */
+	 private $router;
+	 /**
+	  * @var CI_Session
+	  */
+	 private $session;
+	 /**
+	  * @var CI_Table
+	  */
+	 private $table;
+	 /**
+	  * @var CI_Unit_test
+	  */
+	 private $unit;
+	 /**
+	  * @var CI_URI
+	  */
+	 private $uri;
+	 /**
+	  * @var CI_Pagination
+	  */
+	 private $pagination;
+
 	/**
 	 * Constructor
 	 *
