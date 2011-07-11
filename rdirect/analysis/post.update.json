@@ -1,0 +1,41 @@
+// User profile update
+
+[URI]
+738217
+
+[Request Payload]
+Content-Disposition: form-data; name="user[first_name]"
+Jisoo
+
+Content-Disposition: form-data; name="user[last_name]"
+Park
+
+Content-Disposition: form-data; name="user[email]"
+xxxyel@naver.com
+
+Content-Disposition: form-data; name="user_profile_info[university]"
+í•œêµ­ë””ì§€í„¸ë¯¸ë””ì–´ê³ ë“±í•™êµ, ì—°ì„¸ëŒ€í•™êµ (Yonsei University)
+
+Content-Disposition: form-data; name="user_profile_info[current_city]"
+
+
+Content-Disposition: form-data; name="user_profile_info[employer]"
+asfd
+
+Content-Disposition: form-data; name="user[phone]"
+
+
+Content-Disposition: form-data; name="user[phone_country]"
+
+
+Content-Disposition: form-data; name="user[phone2]"
+
+
+Content-Disposition: form-data; name="user[phone2_country]"
+
+
+Content-Disposition: form-data; name="user_profile_info[about]"
+asdf
+
+Content-Disposition: form-data; name="commit"
+Save Changes

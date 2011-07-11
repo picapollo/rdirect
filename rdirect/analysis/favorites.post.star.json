@@ -1,0 +1,9 @@
+[URI]
+/favorites/16457/star
+
+[Contents]
+{
+	"is_star_group": true,
+	"hosting_id": 16457,
+	"result": "created"
+}

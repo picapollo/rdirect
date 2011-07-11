@@ -1,0 +1,18 @@
+[Request Payload]
+Content-Disposition: form-data; name="hosting_id"
+157375
+
+Content-Disposition: form-data; name="new_photo[image]"; filename="WIndows_7_Orb_icon.png"
+Content-Type: image/png
+
+
+[content]
+upload_complete()
+Element.update("current_photo", "<img alt=\"Small\" height=\"242\" src=\"http://i1.muscache.com/pictures/1064140/small.jpg\" width=\"340\" />\n<a href=\"#\" onclick=\"new Ajax.Request('/rooms/ajax_delete_photo?hosting_id=157375&amp;picture_id=1064140', {asynchronous:true, evalScripts:true}); return false;\">Delete this Photo</a>\n");
+Element.insert("sortable_photos", { bottom: "<li class=\"photo\" id=\"photo_1064140\">\n    <img alt=\"Mini_square\" height=\"40\" src=\"http://i0.muscache.com/pictures/1064140/mini_square.jpg\" width=\"40\" />\n    <br />\n      <a href=\"#\" onclick=\"select_picture_thumbnail('1064140'); new Ajax.Updater('current_photo', '/rooms/ajax_update_current_photo?hosting_id=157375&amp;picture_id=1064140', {asynchronous:true, evalScripts:true}); return false;\">Edit</a>\n</li>\n<script type=\"text/javascript\">\n    select_picture_thumbnail('1064140');\n</script>\n" });
+wait_for_upload();
+new Ajax.Updater('current_photo', '/rooms/ajax_update_current_photo?hosting_id=157375&picture_id=1064140', {asynchronous:true, evalScripts:true, onComplete:function(request){upload_complete();}});
+                
+Sortable.create('sortable_photos', {constraint:false, onUpdate:function(){new Ajax.Request('/rooms/ajax_update_image_order?hosting_id=157375', {asynchronous:true, evalScripts:true, parameters:Sortable.serialize('sortable_photos')})}, overlap:'horizontal', scroll:false})
+fetch_progress_bar_data(157375);
+Element.update("upload_feedback", "<p class=\"good\">Success! Why not upload another?</p>");

@@ -1,0 +1,319 @@
+[POST]
+data_start_date:6/12/2011
+confirmation:
+starting_date_original:7/19/2011
+stopping_date_original:7/21/2011
+grouping_uid:
+currency:USD
+starting_date:7/19/2011
+stopping_date:7/21/2011
+hosting_id:157375
+visible_row:0
+availability:Booked
+daily_price_native:89
+booking_service:VRBO
+booking_service_other:
+value_native:22
+notes:123
+
+[Content]
+update_calendar_data(0, 157375, [[{
+	cl: "av",
+	sty: "both",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1,
+	daily_price: 89,
+	id: 22104904,
+	st: 0
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1,
+	daily_price: 89,
+	id: 22104905,
+	st: 0
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1,
+	daily_price: 89,
+	id: 22104906,
+	st: 0
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1,
+	daily_price: 89,
+	id: 22104907,
+	st: 0
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1,
+	daily_price: 89,
+	id: 22104908,
+	st: 0
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1,
+	daily_price: 89,
+	id: 22104909,
+	st: 0
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1,
+	daily_price: 89,
+	id: 22104910,
+	st: 0
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1,
+	daily_price: 89,
+	id: 22104911,
+	st: 0
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1,
+	daily_price: 89,
+	id: 22104912,
+	st: 0
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1,
+	daily_price: 89,
+	id: 22136431,
+	st: 0
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1,
+	daily_price: 89,
+	id: 22136432,
+	st: 0
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1,
+	daily_price: 89,
+	id: 22136433,
+	st: 0
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1,
+	daily_price: 89,
+	id: 22136434,
+	st: 0
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1,
+	daily_price: 89,
+	id: 22136435,
+	st: 0
+},{
+	cl: "av",
+	sty: "right",
+	isa: 1,
+	daily_price: 89,
+	id: 22136436,
+	st: 0
+},{
+	cl: "tp",
+	sty: "left",
+	isa: 0,
+	id: 24036108,
+	notes: "123",
+	st: 4,
+	sst: "VRBO",
+	gid: 102193776,
+	reservation_value: 22
+},{
+	cl: "tp",
+	sty: "both",
+	isa: 0,
+	id: 24036109,
+	st: 4,
+	sst: "VRBO",
+	gid: 102193776,
+	reservation_value: 22
+},{
+	cl: "tp",
+	sty: "right",
+	isa: 0,
+	id: 24036110,
+	st: 4,
+	sst: "VRBO",
+	gid: 102193776,
+	reservation_value: 22
+},{
+	cl: "av",
+	sty: "left",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1,
+	daily_price: 89,
+	id: 22104914,
+	st: 0
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1,
+	daily_price: 89,
+	id: 22104915,
+	st: 0
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1,
+	daily_price: 89,
+	id: 22104916,
+	st: 0
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1
+},{
+	cl: "av",
+	sty: "both",
+	isa: 1
+}]]);
+after_submit();

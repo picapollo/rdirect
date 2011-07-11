@@ -1,0 +1,38 @@
+[GET]
+new_search:true
+search_view:1
+min_bedrooms:0
+min_bathrooms:0
+min_beds:0
+page:1
+location:paris
+checkin:yy/mm/dd
+checkout:yy/mm/dd
+guests:1
+sort:0
+per_page:21
+
+[content]
+{
+	"search": {
+		"name": null,
+		"created_at": "2011-07-11T10:11:42Z",
+		"code": "RJqqaL",
+		"updated_at": "2011-07-11T10:11:42Z",
+		"params_json": "{\"location\":\"paris\",\"min_bathrooms\":\"0\",\"min_bedrooms\":\"0\",\"checkin\":\"yy/mm/dd\",\"guests\":\"1\",\"search_view\":\"1\",\"checkout\":\"yy/mm/dd\",\"sort\":\"0\",\"per_page\":\"21\",\"min_beds\":\"0\"}",
+		"id": 26666,
+		"user_id": null
+	}
+}
+
+{
+	"search": {
+		"name": "My saved search",
+		"created_at": "2011-07-11T10:15:35Z",
+		"code": "bQKicB",
+		"updated_at": "2011-07-11T10:15:35Z",
+		"params_json": "{\"location\":\"fjfj\",\"min_bathrooms\":\"0\",\"min_bedrooms\":\"0\",\"checkin\":\"mm/dd/yy\",\"guests\":\"1\",\"search_view\":\"1\",\"checkout\":\"mm/dd/yy\",\"sort\":\"0\",\"per_page\":\"21\",\"min_beds\":\"0\"}",
+		"id": 26667,
+		"user_id": 738217
+	}
+}

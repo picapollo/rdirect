@@ -1,0 +1,40 @@
+[GET]
+hosting_id:157375
+
+[Content]
+{
+	"available": false,
+	"old_progress": {
+		"criteria": {
+			"has_name": true,
+			"has_room_type": true,
+			"has_bedrooms": true,
+			"description_at_least_200_chars": false,
+			"has_nightly_price": true,
+			"has_photos": true,
+			"has_person_capacity": true
+		},
+		"score": 0.85
+	},
+	"prompt": "Your listing is 85% of the way to being active.",
+	"next_steps": {
+		"description_at_least_200_chars": {
+			"url": "/rooms/157375/edit?fragment=multilingual_description_container",
+			"description": "Write a description at least 200 letters long",
+			"weight": 0.15
+		}
+	},
+	"progress": {
+		"criteria": {
+			"has_name": true,
+			"has_room_type": true,
+			"has_bedrooms": true,
+			"description_at_least_200_chars": false,
+			"has_nightly_price": true,
+			"has_photos": true,
+			"has_person_capacity": true
+		},
+		"score": 0.85
+	},
+	"result": "success"
+}
