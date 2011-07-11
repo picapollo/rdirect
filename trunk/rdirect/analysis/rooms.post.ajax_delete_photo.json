@@ -1,0 +1,12 @@
+[GET]
+hosting_id:157375
+picture_id:1064140
+
+[content]
+jQuery('#photo_1064140').fadeOut(2000);
+setTimeout(function(){Element.remove('photo_1064140')}, 1000)
+wait_for_upload();
+select_picture_thumbnail('1009441');
+new Ajax.Updater('current_photo', '/rooms/ajax_update_current_photo?hosting_id=157375&picture_id=1009441', {asynchronous:true, evalScripts:true, onComplete:function(request){upload_complete();}});
+jQuery('#sortable_photos_status_message').hide().html('<span class="good">Photo was deleted successfully!</span>').fadeIn(2000); setTimeout(function(){ jQuery('#sortable_photos_status_message').fadeOut(2000) }, 8000)
+fetch_progress_bar_data(157375);
