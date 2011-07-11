@@ -1,0 +1,14 @@
+[Request Payload]
+------WebKitFormBoundarymT4FxKJyMSN4RAXY
+Content-Disposition: form-data; name="user[profile_pic]"; filename="WIndows_7_Orb_icon.png"
+Content-Type: image/png
+
+
+------WebKitFormBoundarymT4FxKJyMSN4RAXY--
+
+
+[content]
+<html><script>var NREUMQ=[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);(function(){var d=document;var e=d.createElement("script");e.type="text/javascript";e.async=true;e.src="https://d1ros97qkrwjf5.cloudfront.net/14/eum/rum.js  ";var s=d.getElementsByTagName("script")[0];s.parentNode.insertBefore(e,s);})()</script><body><script type='text/javascript' charset='utf-8'>
+        var loc = document.location;
+        with(window.parent) { setTimeout(function() { window.eval('$(\'ajax_upload_container\').fade({duration:2.0});\nElement.update(\"user_pic\", \"<div id=\\\"edit_image_hover\\\" style=\\\"display:none;\\\" onclick=\\\"show_ajax_image_box();\\\"><p>Change your Photo</p></div>\\n<img alt=\\\"Jisoo P\\\" height=\\\"209\\\" src=\\\"http://i2.muscache.com/users/738217/profile_pic/1310372871/square_225.jpg\\\" title=\\\"Jisoo P\\\" width=\\\"209\\\" />\\n\");\nElement.update(\"upload_feedback\", \"<p class=\\\"good\\\">Success!</p>\");\nupload_complete();'); /* loc.replace('about:blank'); */ }, 1) } 
+      </script><script type="text/javascript" charset="utf-8">NREUMQ.push(["nrf2","beacon-1.newrelic.com","fc09a36731",2237,"dlwMQktaWAgBEB1HQFBBERlYX1UcOwtfU1RQbBdGVVpVAA==",0,1798])</script></body></html>
