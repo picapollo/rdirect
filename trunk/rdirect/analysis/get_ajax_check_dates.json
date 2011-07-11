@@ -1,0 +1,23 @@
+// Path: /rooms/
+
+[Request]
+{
+	"checkin": "2011/07/20",
+	"checkout": "2011/07/29",
+	"number_of_guests": 2
+}
+
+[Contents]
+{
+	"extra": null,
+	"status": "is_not_available_too_many_guests"
+}
+
+{
+	"extra": 24.5714285714286,
+	"status": "is_available"
+}
+
+{
+	"status": "is_not_max_stay"
+}

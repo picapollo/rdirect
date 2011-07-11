@@ -1,0 +1,24 @@
+// Path: /rooms/
+
+[Request]
+hosting_id:157375
+checkin:2011/07/20
+checkout:2011/07/29
+number_of_guests:2
+
+[Contents]
+{
+	"available": false,
+	"total_price": null,
+	"reason_message": "최대 게스트 수는 1명입니다."
+}
+
+{
+	"available": true,
+	"can_instant_book": false,
+	"price_per_night": "$25",
+	"service_fee": "$22",
+	"nights": 9,
+	"total_price": "$221",
+	"reason_message": ""
+}

@@ -1,0 +1,29 @@
+// Path: users/ask_question/157375?number_of_guests=2
+
+[Request]
+(get) number_of_guests:2
+
+(post) {
+	'intended_action': 'message',
+	'simplified_finish_page': 'false',
+	'signup_flow': 'page_3_message',
+	'message_checkin': '2011/07/11',
+	'message_checkout': '2011/07/12',
+	'message_number_of_guests': '1',
+	'question': '자러간다',
+	'first_name': '',
+	'last_name': '',
+	'email': '',
+	'password': '',
+	'login_email': '',
+	'login_password': ''
+} 
+
+[content]
+
+{
+	"show_standby": false,
+	"message": "",
+	"similar_properties_content": "\n\t<div class=\"similar_listings\">\n\t\t\n\t\t\t<div style=\"text-align:center;font-size:14px;background-color:#fffca8;border:#e5dd00 thin solid;\">\ucd94\ucc9c \uc219\uc18c</div>\n\t\t\t\t<div class=\"listing\">\n\t\t\t\t\t<a href=\"http://www.airbnb.com/rooms/119523\" onclick=\"window.open(this.href);return false;\"><img alt=\"Private room in the heart of Seoul \" height=\"76\" src=\"http://i1.muscache.com/pictures/924596/small.jpg\" title=\"Private room in the heart of Seoul \" width=\"112\" /></a>\n\t\t\t\t\t<div class=\"title\"><a href=\"http://www.airbnb.com/rooms/119523\" onclick=\"window.open(this.href);return false;\">Private room in the heart of Seoul </a></div>\n\t\t\t\t\t<div class=\"subtitle\">Bed in private room for $80 / night</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"listing\">\n\t\t\t\t\t<a href=\"http://www.airbnb.com/rooms/110026\" onclick=\"window.open(this.href);return false;\"><img alt=\"Private room in center of Seoul \" height=\"76\" src=\"http://i3.muscache.com/pictures/727962/small.jpg\" title=\"Private room in center of Seoul \" width=\"112\" /></a>\n\t\t\t\t\t<div class=\"title\"><a href=\"http://www.airbnb.com/rooms/110026\" onclick=\"window.open(this.href);return false;\">Private room in center of Seoul </a></div>\n\t\t\t\t\t<div class=\"subtitle\">Bed in private room for $80 / night</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"listing\">\n\t\t\t\t\t<a href=\"http://www.airbnb.com/rooms/57032\" onclick=\"window.open(this.href);return false;\"><img alt=\"nice hostel in myeongdong\" height=\"76\" src=\"http://i1.muscache.com/pictures/340480/small.jpg\" title=\"nice hostel in myeongdong\" width=\"112\" /></a>\n\t\t\t\t\t<div class=\"title\"><a href=\"http://www.airbnb.com/rooms/57032\" onclick=\"window.open(this.href);return false;\">nice hostel in myeongdong</a></div>\n\t\t\t\t\t<div class=\"subtitle\">Bed in private room for $55 / night</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"listing\">\n\t\t\t\t\t<a href=\"http://www.airbnb.com/rooms/83600\" onclick=\"window.open(this.href);return false;\"><img alt=\"Ock\u2019s Homestay House\" height=\"76\" src=\"http://i0.muscache.com/pictures/571417/small.jpg\" title=\"Ock\u2019s Homestay House\" width=\"112\" /></a>\n\t\t\t\t\t<div class=\"title\"><a href=\"http://www.airbnb.com/rooms/83600\" onclick=\"window.open(this.href);return false;\">Ock\u2019s Homestay House</a></div>\n\t\t\t\t\t<div class=\"subtitle\">Bed in private room for $50 / night</div>\n\t\t\t\t</div>\n\t\t\t<div class=\"clear\"></div>\n\t</div>\n",
+	"is_logged_in": true
+}
