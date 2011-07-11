@@ -22,3 +22,9 @@ number_of_guests:2
 	"total_price": "$221",
 	"reason_message": ""
 }
+
+{
+	"available": false,
+	"total_price": 1790,
+	"reason_message": "선택하신 날짜는 불가능 합니다."
+}

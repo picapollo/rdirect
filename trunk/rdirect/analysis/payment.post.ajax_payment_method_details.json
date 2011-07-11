@@ -1,0 +1,14 @@
+[GET]
+code:XMZEAJ
+
+[POST]
+country:KR
+
+[content]
+Element.insert("book_it", { bottom: "\n\n<div class=\"payment_method_content payment_method_hidden\" id=\"payment_method_paypal\">\n    <input id=\"payment_method_paypal_currency\" name=\"payment_method_paypal_currency\" type=\"hidden\" value=\"USD\" />\n    <h2>PayPal</h2>\n\n    <div class=\"currency_alert\">This payment transacts in\n      $USD.\n      \ucd1d \uccad\uad6c\uae08\uc561 :\n      $962.\n    </div>\n\n    <p class=\"payment_method_explanation paypal_explanation\">\n        <span style=\"font-weight:bold;\">\uc124\uba85:</span>\n        <br />\n        \"\uc608\uc57d\ud558\uae30\"\ub97c \ub204\ub974\uba74 \ud398\uc774\ud314\ub85c \uc5f0\uacb0\ub418\uc5b4 \uacb0\uc81c \ud560 \uc218 \uc788\uc2b5\ub2c8\ub2e4. \n        <span style=\"font-weight:bold;\">\n          \uc774 \ub2e8\uacc4\ub97c \ub9c8\uccd0\uc57c \uac70\ub798\ub97c \ud560 \uc218 \uc788\uc2b5\ub2c8\ub2e4.\n        </span>\n    </p>\n\n    <div class=\"clear\"></div>\n</div>\n" });
+addTab('PayPal', 'payment_method_paypal', 'paypal');
+$("ajax_method_spinner").hide();
+$('payment_method_cc_currency').value = 'USD';
+$('payment_method_cc_currency_label').innerHTML = '$USD';
+$('payment_method_cc_currency_amount').innerHTML = '$962';
+$('payment_country').value = 'KR';
