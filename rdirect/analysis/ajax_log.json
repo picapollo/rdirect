@@ -1,0 +1,22 @@
+// Path: /
+
+[Request]
+namespace:signup_funnel
+name:signup_login.change_input#signin_email
+fields%5Bvalue%5D:kimchoimyun@gmail.com
+
+[content]
+{
+	"success": true
+}
+
+
+[Request]
+namespace:signup_funnel
+name:signup_login.change_input#signin_password
+fields:
+
+[content]
+{
+	"success": true
+}

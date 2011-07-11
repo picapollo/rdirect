@@ -36,6 +36,26 @@ define('FOPEN_READ_WRITE_CREATE',				'a+b');
 define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
+$base_url	= "http://".$_SERVER['HTTP_HOST'];
+$base_url .= str_replace(basename($_SERVER['SCRIPT_NAME']), "", $_SERVER['SCRIPT_NAME']);
+
+define('IMG_DIR', $base_url.'images');
+define('CSS_DIR', $base_url.'include/css');
+define('JS_DIR', $base_url.'include/js');
+define('INCLUDE_DIR', $base_url.'include');
+define('APP_DIR', $base_url.'application');
+define('VIEW_DIR', $base_url.'application/views');
+define('HOST_DIR', $_SERVER['HTTP_HOST']);
+define('BASEURL', $base_url);
+
+// 추후 수정
+define('DOC_ROOT', dirname(FCPATH));
+//define('DATA_ROOT', dirname(FCPATH).'/data');
+define('INCLUDE_ROOT', dirname(FCPATH).'/include');
+define('JS_ROOT', dirname(FCPATH).'/include/js');
+define('CSS_ROOT', dirname(FCPATH).'/include/css');
+define('VIEW_ROOT', dirname(FCPATH).'/'.APPPATH.'/views');
+
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

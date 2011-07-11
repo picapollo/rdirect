@@ -13,8 +13,13 @@ class Test extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->library('facebook');
+		/*$this->load->library('facebook');
 		print_r($this->facebook->get_facebook_cookie());
+		
+		echo '<br><br>';
+		echo CSS_ROOT . ' ' . JS_ROOT . ' ' . site_url('test/index');*/
+		
+		$this->load->view('test');
 	}
 
 }

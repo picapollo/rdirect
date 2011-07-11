@@ -1,0 +1,27 @@
+// Path=/messaging/qt_reply_v2/1777205
+
+[Request]
+{
+	'inquiry_post_id': '6039604',
+	'template': '',
+	'message': 'aaa',
+	'hosting_id': '157375',
+	'start_date': '2011/07/25',
+	'nights': '2',
+	'number_of_guests': '15',
+	'price_native': '89'
+}
+
+{
+	'inquiry_post_id': '6039604',
+	'template': '2',
+	'message': '13241324',
+	'hosting_id': '157375',
+	'start_date': '2011/07/11',
+	'nights': '12',
+	'number_of_guests': '6',
+	'price_native': '891'
+}
+
+[Return]
+302 found, redirect
