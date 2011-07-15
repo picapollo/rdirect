@@ -1,0 +1,8 @@
+[GET]
+user_id:755884
+
+[POST]
+payout_info['info_type']:PayPal
+payout_info['paypal_email']:kimchoimyun@gmail.com
+payout_info['target_currency']:USD
+commit:Save

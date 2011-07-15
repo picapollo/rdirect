@@ -1,0 +1,12 @@
+[GET]
+country:KR
+user_id:755884
+
+[POST]
+payout_info_type:PayPal
+commit:Next
+
+[Content]
+$("payout_new_select").hide();
+Element.update("payout_edit", "\n\n<style>\n  #paypal_payout table td { padding:3px; }\n</style>\n\n<div id=\"paypal_payout\">\n\n    <h3>PayPal Information</h3>\n\n<form action=\"https://www.airbnb.com/users/payout_update?user_id=755884\" method=\"post\">        <input id=\"payout_info_info_type\" name=\"payout_info[info_type]\" type=\"hidden\" value=\"PayPal\" />\n\n        <table>\n          <tr>\n            <td>To what e-mail should we send the money?</td>\n            <td>\n              <input id=\"payout_info_paypal_email\" name=\"payout_info[paypal_email]\" size=\"30\" type=\"text\" value=\"kimchoimyun@gmail.com\" /><br/>\n              <span style='font-size:0.85em;color:#8b8b8b;'>This email address must be associated with a valid Paypal account.</span><br/>\n              <a href='https://www.paypal.com/cgi-bin/webscr?cmd=_registration-run' style='font-size:0.85em;' target='_blank'>Don't have a paypal account?</a>\n            </td>\n          </tr>\n          <tr>\n            <td>In what currency would you like to be paid?</td>\n            <td><select id=\"payout_info_target_currency\" name=\"payout_info[target_currency]\"><option value=\"USD\" selected=\"selected\">USD</option></select></td>\n            </tr>\n        </table>\n\n        <br />\n        <input name=\"commit\" onclick=\"return verify_entry_function();\" type=\"submit\" value=\"Save\" />\n        or <a href=\"#\" onclick=\"$('payout_edit').hide();$('payout_new_initial').show();return false;\">Cancel</a>\n</form>\n</div>\n\n\n<script>\n  verify_entry_function = function () {\n      if ($('payout_info_paypal_email').value==\"\") {\n          alert(\"Paypal email cannot be blank.\");\n          return false;\n      }\n      return true;\n  }\n</script>");
+$("payout_edit").show();

@@ -1,0 +1,10 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/" xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+<ShortName>Airbnb</ShortName>
+<Description>
+Vacation rentals, private rooms, sublets by the night - Accommodations on Airbnb
+</Description>
+<InputEncoding>UTF-8</InputEncoding>
+<Image height="16" width="16" type="image/x-icon">http://www.airbnb.com/airbnb_favicon.ico</Image>
+<Url type="text/html" method="get" template="http://www.airbnb.com/search?location={searchTerms}"/>
+<moz:SearchForm>http://www.airbnb.com/search</moz:SearchForm>
+</OpenSearchDescription>

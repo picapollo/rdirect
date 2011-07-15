@@ -1,0 +1,8 @@
+[URI]
+1777205
+
+[Content]
+<a href="#" onclick="new Ajax.Updater('thread_1777205_starred', '/messaging/toggle_starred_thread/1777205', {asynchronous:true, evalScripts:true}); return false;"><img alt="Star_fill" src="http://s1.muscache.com/1300304855/images/command_center/star_fill.png" /></a>
+<script type="text/javascript">
+    jQuery("div#thread_1777205_starred").css('display', 'block').addClass('permashow');
+</script>

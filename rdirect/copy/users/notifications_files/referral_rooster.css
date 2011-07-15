@@ -1,0 +1,46 @@
+/* global colors */
+/* global colors */
+body {
+  padding-top: 80px; }
+
+.rooster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #e6e6e6;
+  background: -webkit-gradient(linear, center top, center bottom, from(white), to(#e6e6e6));
+  background: -moz-linear-gradient(top, white, #e6e6e6);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6');
+  border-bottom: 1px solid #c2c2c2;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  font-size: 1.7em;
+  font-weight: bold;
+  line-height: 58px;
+  color: #393c3d;
+  text-shadow: 0 1px 1px white; }
+  .rooster span.close-button {
+    width: 14px;
+    height: 15px;
+    background: url("/images/roosters/rooster-close.png") no-repeat top left;
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    margin-top: -7px;
+    cursor: pointer; }
+
+.rooster.referral img.friend {
+  margin-bottom: -20px;
+  vertical-align: bottom;
+  position: relative; }
+.rooster.referral span.money-value {
+  color: #00a650; }
+.rooster.referral sup {
+  padding: 0;
+  vertical-align: baseline; }
+.rooster .button-glossy {
+  font-size: 1.0em;
+  margin-left: 15px;
+  display: inline-block; }
