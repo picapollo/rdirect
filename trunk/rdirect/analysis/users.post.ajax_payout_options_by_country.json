@@ -1,0 +1,11 @@
+[GET]
+user_id:755884
+
+[POST]
+country:KR
+commit:Next
+
+[Content]
+$("payout_country_select").hide();
+$("payout_new_select").show();
+Element.update("payout_new_select", "\n\n<div>We can send money to users in <b>South Korea</b> as follows:</div><br />\n\n<table id=\"payout_method_descriptions\">\n\n      <tr>\n        <th style=\"width:150px;\">Method</th>\n        <th style=\"width:125px;\">Arrives On*</th>\n        <th style=\"width:100px;\">Fees</th>\n        <th style=\"width:100px;\">Currency</th>\n        <th style=\"width:275px;\">Notes</th>\n      </tr>\n\n\n\n          <tr>\n            <td class=\"type\">PayPal</td>\n            <td>Instant</td>\n            <td>None</td>\n            <td>USD</td>\n            <td>\n                &nbsp;\n            </td>\n          </tr>\n\n\n\n              <tr>\n                    <td class=\"type\">International Wire</td>\n                <td>3-5 business days</td>\n                <td>None</td>\n                <td>USD</td>\n                <td>\n                    Your bank will likely charge a fee to receive the wire.\n                </td>\n              </tr>\n\n\n\n</table>\n<div style=\"font-size:10px;\">* Money is always released the day after check in but may take longer to arrive to you.</div>\n<br />\n<form action=\"https://www.airbnb.com/users/ajax_payout_edit?country=KR&amp;user_id=755884\" method=\"post\" onsubmit=\"new Ajax.Request('https://www.airbnb.com/users/ajax_payout_edit?country=KR&amp;user_id=755884', {asynchronous:true, evalScripts:true, parameters:Form.serialize(this)}); return false;\">    What method would you prefer? <select id=\"payout_info_type\" name=\"payout_info_type\"><option value=\"PayPal\">PayPal</option>\n<option value=\"Bank Transfer\">Bank Transfer</option></select>\n    <input name=\"commit\" type=\"submit\" value=\"Next\" />\n    or\n    <a href=\"#\" onclick=\"$('payout_new_select').hide();$('payout_new_initial').show();return false;\">Cancel</a>\n</form>");

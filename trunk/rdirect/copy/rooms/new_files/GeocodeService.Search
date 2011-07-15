@@ -1,0 +1,54 @@
+_xdc_._odw9v6 && _xdc_._odw9v6( {
+   "results" : [
+      {
+         "address_components" : [
+            {
+               "long_name" : "수원시",
+               "short_name" : "수원시",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "경기도",
+               "short_name" : "경기도",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "대한민국",
+               "short_name" : "KR",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "대한민국 경기도 수원시",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 37.31780,
+                  "lng" : 127.08870
+               },
+               "southwest" : {
+                  "lat" : 37.23980,
+                  "lng" : 126.9630
+               }
+            },
+            "location" : {
+               "lat" : 37.26357270,
+               "lng" : 127.02860090
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 37.31780,
+                  "lng" : 127.08870
+               },
+               "southwest" : {
+                  "lat" : 37.23980,
+                  "lng" : 126.9630
+               }
+            }
+         },
+         "types" : [ "locality", "political" ]
+      }
+   ],
+   "status" : "OK"
+}
+ )

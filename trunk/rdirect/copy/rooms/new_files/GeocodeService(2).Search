@@ -1,0 +1,430 @@
+_xdc_._w04j2u && _xdc_._w04j2u( {
+   "results" : [
+      {
+         "address_components" : [
+            {
+               "long_name" : "1043-6",
+               "short_name" : "1043-6",
+               "types" : [ "street_address" ]
+            },
+            {
+               "long_name" : "인계동",
+               "short_name" : "인계동",
+               "types" : [ "sublocality", "political" ]
+            },
+            {
+               "long_name" : "팔달구",
+               "short_name" : "팔달구",
+               "types" : [ "sublocality", "political" ]
+            },
+            {
+               "long_name" : "수원시",
+               "short_name" : "수원시",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "경기도",
+               "short_name" : "경기도",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "대한민국",
+               "short_name" : "KR",
+               "types" : [ "country", "political" ]
+            },
+            {
+               "long_name" : "442-834",
+               "short_name" : "442-834",
+               "types" : [ "postal_code" ]
+            }
+         ],
+         "formatted_address" : "대한민국 경기도 수원시 팔달구 인계동 1043-6",
+         "geometry" : {
+            "location" : {
+               "lat" : 37.26386930,
+               "lng" : 127.03042990
+            },
+            "location_type" : "ROOFTOP",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 37.26701692068017,
+                  "lng" : 127.0335775206802
+               },
+               "southwest" : {
+                  "lat" : 37.26072167931983,
+                  "lng" : 127.0272822793198
+               }
+            }
+         },
+         "types" : [ "street_address" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "442-834",
+               "short_name" : "442-834",
+               "types" : [ "postal_code" ]
+            },
+            {
+               "long_name" : "인계동",
+               "short_name" : "인계동",
+               "types" : [ "sublocality", "political" ]
+            },
+            {
+               "long_name" : "팔달구",
+               "short_name" : "팔달구",
+               "types" : [ "sublocality", "political" ]
+            },
+            {
+               "long_name" : "수원시",
+               "short_name" : "수원시",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "경기도",
+               "short_name" : "경기도",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "대한민국",
+               "short_name" : "KR",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "대한민국 경기도 수원시 팔달구 인계동",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 37.27734350,
+                  "lng" : 127.03332450
+               },
+               "southwest" : {
+                  "lat" : 37.26131640000001,
+                  "lng" : 127.02527240
+               }
+            },
+            "location" : {
+               "lat" : 37.269330,
+               "lng" : 127.02929840
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 37.27734350,
+                  "lng" : 127.03332450
+               },
+               "southwest" : {
+                  "lat" : 37.26131640000001,
+                  "lng" : 127.02527240
+               }
+            }
+         },
+         "types" : [ "postal_code" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "인계동",
+               "short_name" : "인계동",
+               "types" : [ "sublocality", "political" ]
+            },
+            {
+               "long_name" : "팔달구",
+               "short_name" : "팔달구",
+               "types" : [ "sublocality", "political" ]
+            },
+            {
+               "long_name" : "수원시",
+               "short_name" : "수원시",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "경기도",
+               "short_name" : "경기도",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "대한민국",
+               "short_name" : "KR",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "대한민국 경기도 수원시 팔달구 인계동",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 37.27823540,
+                  "lng" : 127.04094370
+               },
+               "southwest" : {
+                  "lat" : 37.25733270,
+                  "lng" : 127.01830060
+               }
+            },
+            "location" : {
+               "lat" : 37.27010,
+               "lng" : 127.02127930
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 37.27823540,
+                  "lng" : 127.04094370
+               },
+               "southwest" : {
+                  "lat" : 37.25733270,
+                  "lng" : 127.01830060
+               }
+            }
+         },
+         "types" : [ "sublocality", "political" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "442-070",
+               "short_name" : "442-070",
+               "types" : [ "postal_code" ]
+            },
+            {
+               "long_name" : "인계동",
+               "short_name" : "인계동",
+               "types" : [ "sublocality", "political" ]
+            },
+            {
+               "long_name" : "팔달구",
+               "short_name" : "팔달구",
+               "types" : [ "sublocality", "political" ]
+            },
+            {
+               "long_name" : "수원시",
+               "short_name" : "수원시",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "경기도",
+               "short_name" : "경기도",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "대한민국",
+               "short_name" : "KR",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "대한민국 경기도 수원시 팔달구 인계동",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 37.27823540,
+                  "lng" : 127.04094370
+               },
+               "southwest" : {
+                  "lat" : 37.25733270,
+                  "lng" : 127.01830060
+               }
+            },
+            "location" : {
+               "lat" : 37.26905710,
+               "lng" : 127.02661450
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 37.27823540,
+                  "lng" : 127.04094370
+               },
+               "southwest" : {
+                  "lat" : 37.25733270,
+                  "lng" : 127.01830060
+               }
+            }
+         },
+         "types" : [ "postal_code" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "팔달구",
+               "short_name" : "팔달구",
+               "types" : [ "sublocality", "political" ]
+            },
+            {
+               "long_name" : "수원시",
+               "short_name" : "수원시",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "경기도",
+               "short_name" : "경기도",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "대한민국",
+               "short_name" : "KR",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "대한민국 경기도 수원시 팔달구",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 37.29408750,
+                  "lng" : 127.04653290
+               },
+               "southwest" : {
+                  "lat" : 37.25733270,
+                  "lng" : 126.97771340
+               }
+            },
+            "location" : {
+               "lat" : 37.28609830,
+               "lng" : 127.03499950
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 37.29408750,
+                  "lng" : 127.04653290
+               },
+               "southwest" : {
+                  "lat" : 37.25733270,
+                  "lng" : 126.97771340
+               }
+            }
+         },
+         "types" : [ "sublocality", "political" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "수원시",
+               "short_name" : "수원시",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "경기도",
+               "short_name" : "경기도",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "대한민국",
+               "short_name" : "KR",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "대한민국 경기도 수원시",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 37.31780,
+                  "lng" : 127.08870
+               },
+               "southwest" : {
+                  "lat" : 37.23980,
+                  "lng" : 126.9630
+               }
+            },
+            "location" : {
+               "lat" : 37.26357270,
+               "lng" : 127.02860090
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 37.31780,
+                  "lng" : 127.08870
+               },
+               "southwest" : {
+                  "lat" : 37.23980,
+                  "lng" : 126.9630
+               }
+            }
+         },
+         "types" : [ "locality", "political" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "경기도",
+               "short_name" : "경기도",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "대한민국",
+               "short_name" : "KR",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "대한민국 경기도",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 38.30267110,
+                  "lng" : 127.85622030
+               },
+               "southwest" : {
+                  "lat" : 36.89397620,
+                  "lng" : 126.39795550
+               }
+            },
+            "location" : {
+               "lat" : 37.41379999999999,
+               "lng" : 127.51830
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 38.30267110,
+                  "lng" : 127.85622030
+               },
+               "southwest" : {
+                  "lat" : 36.89397620,
+                  "lng" : 126.39795550
+               }
+            }
+         },
+         "types" : [ "administrative_area_level_1", "political" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "대한민국",
+               "short_name" : "KR",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "대한민국",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 38.63400000000001,
+                  "lng" : 131.16030
+               },
+               "southwest" : {
+                  "lat" : 33.00410,
+                  "lng" : 124.58630
+               }
+            },
+            "location" : {
+               "lat" : 35.9077570,
+               "lng" : 127.7669220
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 38.63400000000001,
+                  "lng" : 131.16030
+               },
+               "southwest" : {
+                  "lat" : 33.00410,
+                  "lng" : 124.58630
+               }
+            }
+         },
+         "types" : [ "country", "political" ]
+      }
+   ],
+   "status" : "OK"
+}
+ )

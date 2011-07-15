@@ -19,7 +19,9 @@ class Test extends CI_Controller {
 		echo '<br><br>';
 		echo CSS_ROOT . ' ' . JS_ROOT . ' ' . site_url('test/index');*/
 		
-		$this->load->view('test');
+		$this->load->view('header/page1');
+		$this->load->view('top_menu');
+		$this->load->view('footer');
 	}
 
 }
