@@ -2,12 +2,12 @@
 
 class Welcome extends CI_Controller
 {
-	function __construct()
+	public function __construct()
 	{
 		parent::__construct();
 	}
 
-	function index()
+	public function index()
 	{
 		/*if ( ! $this->tank_auth->is_logged_in()) {
 			//redirect('/auth/login/');

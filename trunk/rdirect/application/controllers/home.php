@@ -11,6 +11,8 @@ class Home extends CI_Controller
 	{
 		parent::__construct();
 		// Your own constructor code
+		$this->load->library('tank_auth');
+		$this -> load -> model('user_model');
 	}
 
 	public function index()
@@ -22,7 +24,18 @@ class Home extends CI_Controller
 	 * 대쉬보드
 	 */
 	public function dashboard(){
-		
+		if( ! $this->tank_auth->is_logged_in() )
+		{
+			$this->session->set_flashdata('message', 'Please Login.');
+			redirect('/');
+		}
+		$user_id = $this->tank_auth->get_user_id();
+		$data['header'] = array(
+			'title' 		=> 'RDirect',
+			'lang' 			=> 'ko'
+		);
+		$data['user'] = $this->user_model->get_user($user_id);
+		$this->load->view('home/dashboard', $data);
 	}
 	
 	/**

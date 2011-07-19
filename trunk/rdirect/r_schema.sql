@@ -1,6 +1,4 @@
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 
 -- -----------------------------------------------------
@@ -13,7 +11,7 @@ CREATE  TABLE IF NOT EXISTS `rd_ci_sessions` (
   `last_activity` INT(10) UNSIGNED NOT NULL DEFAULT '0' ,
   `user_data` TEXT CHARACTER SET 'utf8' COLLATE 'utf8_bin' NOT NULL ,
   PRIMARY KEY (`session_id`) )
-ENGINE = InnoDB
+ENGINE = MyISAM
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_bin;
 
@@ -27,40 +25,7 @@ CREATE  TABLE IF NOT EXISTS `rd_login_attempts` (
   `login` VARCHAR(50) CHARACTER SET 'utf8' COLLATE 'utf8_bin' NOT NULL ,
   `time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP ,
   PRIMARY KEY (`id`) )
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_bin;
-
-
--- -----------------------------------------------------
--- Table `rd_user_autologin`
--- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `rd_user_autologin` (
-  `key_id` CHAR(32) CHARACTER SET 'utf8' COLLATE 'utf8_bin' NOT NULL ,
-  `user_id` INT(11) NOT NULL DEFAULT '0' ,
-  `user_agent` VARCHAR(150) CHARACTER SET 'utf8' COLLATE 'utf8_bin' NOT NULL ,
-  `last_ip` VARCHAR(40) CHARACTER SET 'utf8' COLLATE 'utf8_bin' NOT NULL ,
-  `last_login` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP ,
-  PRIMARY KEY (`key_id`, `user_id`) )
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_bin;
-
-
--- -----------------------------------------------------
--- Table `rd_user_profiles`
--- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `rd_user_profiles` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT ,
-  `user_id` INT(11) NOT NULL ,
-  `facebook_id` VARCHAR(255) CHARACTER SET 'utf8' COLLATE 'utf8_bin' NULL DEFAULT NULL ,
-  `school` VARCHAR(255) NULL DEFAULT NULL ,
-  `city` VARCHAR(45) NULL DEFAULT NULL ,
-  `job` VARCHAR(45) NULL DEFAULT NULL ,
-  `home_phone` VARCHAR(45) NULL DEFAULT NULL ,
-  `cell_phone` VARCHAR(45) NULL DEFAULT NULL ,
-  PRIMARY KEY (`id`) )
-ENGINE = InnoDB
+ENGINE = MyISAM
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_bin;
 
@@ -85,18 +50,54 @@ CREATE  TABLE IF NOT EXISTS `rd_users` (
   `created` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00' ,
   `modified` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP ,
   PRIMARY KEY (`id`) ,
-  UNIQUE INDEX `email_UNIQUE` (`email` ASC) ,
-  CONSTRAINT `fk_rd_users_rd_user_profiles`
-    FOREIGN KEY (`id` )
-    REFERENCES `rd_user_profiles` (`user_id` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_rd_users_rd_user_autologin1`
-    FOREIGN KEY (`id` )
-    REFERENCES `rd_user_autologin` (`user_id` )
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC) )
+ENGINE = MyISAM
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_bin;
+
+
+-- -----------------------------------------------------
+-- Table `rd_user_autologin`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `rd_user_autologin` (
+  `key_id` CHAR(32) CHARACTER SET 'utf8' COLLATE 'utf8_bin' NOT NULL ,
+  `user_id` INT(11) NOT NULL DEFAULT '0' ,
+  `user_agent` VARCHAR(150) CHARACTER SET 'utf8' COLLATE 'utf8_bin' NOT NULL ,
+  `last_ip` VARCHAR(40) CHARACTER SET 'utf8' COLLATE 'utf8_bin' NOT NULL ,
+  `last_login` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP ,
+  PRIMARY KEY (`key_id`, `user_id`) ,
+  INDEX `fk_rd_user_autologin_rd_users1` (`user_id` ASC) ,
+  CONSTRAINT `fk_rd_user_autologin_rd_users1`
+    FOREIGN KEY (`user_id` )
+    REFERENCES `rd_users` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB
+ENGINE = MyISAM
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_bin;
+
+
+-- -----------------------------------------------------
+-- Table `rd_user_profiles`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `rd_user_profiles` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT ,
+  `user_id` INT(11) NOT NULL ,
+  `facebook_id` VARCHAR(255) CHARACTER SET 'utf8' COLLATE 'utf8_bin' NULL DEFAULT NULL ,
+  `school` VARCHAR(255) NULL DEFAULT NULL ,
+  `city` VARCHAR(45) NULL DEFAULT NULL ,
+  `job` VARCHAR(45) NULL DEFAULT NULL ,
+  `home_phone` VARCHAR(45) NULL DEFAULT NULL ,
+  `cell_phone` VARCHAR(45) NULL DEFAULT NULL ,
+  `profile_picture` VARCHAR(45) NULL DEFAULT NULL ,
+  PRIMARY KEY (`id`, `user_id`) ,
+  INDEX `fk_rd_user_profiles_rd_users1` (`user_id` ASC) ,
+  CONSTRAINT `fk_rd_user_profiles_rd_users1`
+    FOREIGN KEY (`user_id` )
+    REFERENCES `rd_users` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = MyISAM
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_bin;
 
@@ -106,50 +107,197 @@ COLLATE = utf8_bin;
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `rd_rooms` (
   `id` INT NOT NULL AUTO_INCREMENT ,
-  `user_id` INT(11) NOT NULL ,
-  PRIMARY KEY (`id`, `user_id`) ,
-  INDEX `fk_rd_rooms_rd_users1` (`user_id` ASC) ,
+  `owner_id` INT(11) NOT NULL ,
+  `activated` TINYINT(1) NULL DEFAULT 0 ,
+  `title` VARCHAR(255) NOT NULL ,
+  `address` VARCHAR(255) NOT NULL ,
+  PRIMARY KEY (`id`) ,
+  INDEX `fk_rd_rooms_rd_users1` (`owner_id` ASC) ,
   CONSTRAINT `fk_rd_rooms_rd_users1`
-    FOREIGN KEY (`user_id` )
+    FOREIGN KEY (`owner_id` )
     REFERENCES `rd_users` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+ENGINE = MyISAM;
 
 
 -- -----------------------------------------------------
 -- Table `rd_groups`
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `rd_groups` (
-)
-ENGINE = InnoDB;
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `title` VARCHAR(45) NULL DEFAULT NULL ,
+  `description` VARCHAR(45) NULL DEFAULT NULL ,
+  PRIMARY KEY (`id`) )
+ENGINE = MyISAM;
 
 
 -- -----------------------------------------------------
 -- Table `rd_cities`
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `rd_cities` (
-)
-ENGINE = InnoDB;
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  PRIMARY KEY (`id`) )
+ENGINE = MyISAM
+DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
 -- Table `rd_calanders`
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `rd_calanders` (
-)
-ENGINE = InnoDB;
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `room_id` VARCHAR(45) NOT NULL ,
+  PRIMARY KEY (`id`, `room_id`) ,
+  INDEX `fk_rd_calanders_rd_rooms1` (`room_id` ASC) ,
+  CONSTRAINT `fk_rd_calanders_rd_rooms1`
+    FOREIGN KEY (`room_id` )
+    REFERENCES `rd_rooms` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = MyISAM;
 
 
 -- -----------------------------------------------------
--- Table `table5`
+-- Table `rd_room_photos`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `table5` (
-)
-ENGINE = InnoDB;
+CREATE  TABLE IF NOT EXISTS `rd_room_photos` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `room_id` INT(11) NOT NULL ,
+  `order` INT NOT NULL ,
+  PRIMARY KEY (`id`) ,
+  INDEX `fk_rd_room_photos_rd_rooms1` (`room_id` ASC) ,
+  CONSTRAINT `fk_rd_room_photos_rd_rooms1`
+    FOREIGN KEY (`room_id` )
+    REFERENCES `rd_rooms` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = MyISAM
+DEFAULT CHARACTER SET = utf8;
 
 
+-- -----------------------------------------------------
+-- Table `rd_users_has_groups`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `rd_users_has_groups` (
+  `user_id` INT(11) NOT NULL ,
+  `group_id` INT NOT NULL ,
+  PRIMARY KEY (`user_id`, `group_id`) ,
+  INDEX `fk_rd_users_has_rd_groups_rd_groups1` (`group_id` ASC) ,
+  INDEX `fk_rd_users_has_rd_groups_rd_users1` (`user_id` ASC) ,
+  CONSTRAINT `fk_rd_users_has_rd_groups_rd_users1`
+    FOREIGN KEY (`user_id` )
+    REFERENCES `rd_users` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_rd_users_has_rd_groups_rd_groups1`
+    FOREIGN KEY (`group_id` )
+    REFERENCES `rd_groups` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = MyISAM
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_bin;
 
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+-- -----------------------------------------------------
+-- Table `rd_groups_has_users`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `rd_groups_has_users` (
+  `group_id` INT NOT NULL ,
+  `user_id` INT(11) NOT NULL ,
+  PRIMARY KEY (`group_id`, `user_id`) ,
+  INDEX `fk_rd_groups_has_rd_users_rd_users1` (`user_id` ASC) ,
+  INDEX `fk_rd_groups_has_rd_users_rd_groups1` (`group_id` ASC) ,
+  CONSTRAINT `fk_rd_groups_has_rd_users_rd_groups1`
+    FOREIGN KEY (`group_id` )
+    REFERENCES `rd_groups` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_rd_groups_has_rd_users_rd_users1`
+    FOREIGN KEY (`user_id` )
+    REFERENCES `rd_users` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = MyISAM;
+
+
+-- -----------------------------------------------------
+-- Table `rd_groups_has_rooms`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `rd_groups_has_rooms` (
+  `group_id` INT NOT NULL ,
+  `room_id` INT NOT NULL ,
+  PRIMARY KEY (`group_id`, `room_id`) ,
+  INDEX `fk_rd_groups_has_rd_rooms_rd_rooms1` (`room_id` ASC) ,
+  INDEX `fk_rd_groups_has_rd_rooms_rd_groups1` (`group_id` ASC) ,
+  CONSTRAINT `fk_rd_groups_has_rd_rooms_rd_groups1`
+    FOREIGN KEY (`group_id` )
+    REFERENCES `rd_groups` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_rd_groups_has_rd_rooms_rd_rooms1`
+    FOREIGN KEY (`room_id` )
+    REFERENCES `rd_rooms` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = MyISAM;
+
+
+-- -----------------------------------------------------
+-- Table `rd_messages`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `rd_messages` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `status` VARCHAR(45) NULL DEFAULT NULL ,
+  `from_user_id` INT(11) NOT NULL ,
+  `to_user_id` INT(11) NOT NULL ,
+  `date_start` VARCHAR(45) NULL DEFAULT NULL ,
+  `date_end` VARCHAR(45) NULL DEFAULT NULL ,
+  `guests` VARCHAR(45) NULL DEFAULT NULL ,
+  PRIMARY KEY (`id`) )
+ENGINE = MyISAM;
+
+
+-- -----------------------------------------------------
+-- Table `rd_rooms_starred`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `rd_rooms_starred` (
+  `user_id` INT(11) NOT NULL ,
+  `room_id` INT NOT NULL ,
+  PRIMARY KEY (`user_id`) ,
+  INDEX `fk_rd_users_has_rd_rooms_rd_rooms1` (`room_id` ASC) ,
+  INDEX `fk_rd_users_has_rd_rooms_rd_users1` (`user_id` ASC) ,
+  CONSTRAINT `fk_rd_users_has_rd_rooms_rd_users1`
+    FOREIGN KEY (`user_id` )
+    REFERENCES `rd_users` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_rd_users_has_rd_rooms_rd_rooms1`
+    FOREIGN KEY (`room_id` )
+    REFERENCES `rd_rooms` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = MyISAM
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `rd_message_lists`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `rd_message_lists` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `rd_message_listscol` VARCHAR(45) NULL DEFAULT NULL ,
+  PRIMARY KEY (`id`) )
+ENGINE = MyISAM;
+
+
+-- -----------------------------------------------------
+-- Table `rd_payout_methods`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `rd_payout_methods` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  PRIMARY KEY (`id`) )
+ENGINE = MyISAM
+DEFAULT CHARACTER SET = utf8;
+
