@@ -253,7 +253,7 @@ input::-moz-focus-inner {
 	font-size:18px;
 	cursor:pointer;
 	padding:5px 28px;
-	background:transparent url(../../images/uiwidgets/v3_button_bgs_001.png?1300304855) repeat-x 0 0;
+	background:transparent url(../../images/uiwidgets/v3_button_bgs_001.png)gc repeat-x 0 0;
 	border:1px solid #85aa40;
 	font-weight:bold;
 	text-align:center;
@@ -523,7 +523,7 @@ a.v3_fixed_width {
 	cursor:pointer
 }
 #cboxOverlay {
-	background:black url(../../images/colorbox/default_overlay.png?1300304855) repeat 0 0
+	background:black url(../../images/colorbox/default_overlay.png)gc repeat 0 0
 }
 #cboxTopLeft {
 	width:21px;
@@ -645,7 +645,7 @@ a.v3_fixed_width {
 #colorbox #cboxClose {
 	top:-11px;
 	left:-10px;
-	background:transparent url(../../images/colorbox/fancy_colorbox_close.png?1307147770);
+	background:transparent url(../../images/colorbox/fancy_colorbox_close.png)gc;
 	width:26px;
 	height:27px
 }
@@ -653,7 +653,7 @@ a.v3_fixed_width {
 	visibility:hidden
 }
 #colorbox .loading {
-	background:url(../../images/uiwidgets/loading_959595.gif?1300304855) no-repeat center center;
+	background:url(../../images/uiwidgets/loading_959595.gif)gc no-repeat center center;
 	width:100%;
 	height:100%
 }
@@ -789,7 +789,7 @@ body {
 	height:1%
 }
 #breadcrumb_container {
-	background:url(../../images/breadcrumbs/breadcrumbs_bg.png?1300304855) no-repeat 0 0;
+	background:url(../../images/breadcrumbs/breadcrumbs_bg.png)gc no-repeat 0 0;
 	width:980px;
 	height:27px;
 	margin-top:15px;
@@ -803,7 +803,7 @@ body {
 	text-align:left
 }
 .crumb_separator {
-	background:url(../../images/breadcrumbs/breadcrumbs_separator.png?1300304855) no-repeat 0 0;
+	background:url(../../images/breadcrumbs/breadcrumbs_separator.png)gc no-repeat 0 0;
 	float:left;
 	margin:0 18px 0 16px;
 	width:9px;
@@ -940,7 +940,7 @@ body.development #header a#logo {
 	padding-left:23px
 }
 #header #utilities .notification_bar li a.starred {
-	background-image:url(/images/favorites/star.png?1300304855);
+	background-image:url(../../images/favorites/star.png)gc;
 	background-position:-20px 0;
 	background-repeat:no-repeat
 }
@@ -1022,13 +1022,13 @@ div.nav-link {
 	width:308px;
 	height:200px;
 	padding:10px;
-	background:url(../images/modules/bubble.png?1300304855) no-repeat 0 0
+	background:url(../../images/modules/bubble.png)gc no-repeat 0 0
 }
 #home #bubble {
 	width:433px;
 	height:251px;
 	padding:10px;
-	background:url(../images/modules/bubble_with_shadow.png?1300304855) no-repeat 0 0
+	background:url(../../images/modules/bubble_with_shadow.png)gc no-repeat 0 0
 }
 #bubble .profile {
 	float:left
@@ -1044,7 +1044,7 @@ div.nav-link {
 	height:44px;
 	padding:6px 8px;
 	margin-bottom:5px;
-	background:url(../images/modules/detail.png?1300304855) no-repeat 0 0;
+	background:url(../../images/modules/detail.png)gc no-repeat 0 0;
 	text-align:center;
 	font-size:.8333em;
 	color:#333
@@ -1132,7 +1132,7 @@ div.lwlb_lightbox2 div.header .h1 h1 {
 	width:520px;
 	padding:50px 60px;
 	height:319px;
-	background:transparent url(/images/lightboxes/lightbox_frame.png?1300304855) no-repeat scroll 0 0
+	background:transparent url(../../images/lightboxes/lightbox_frame.png)gc no-repeat scroll 0 0
 }
 #lwlb_needs_to_message p {
 	font-size:16px
@@ -1141,7 +1141,7 @@ div.lwlb_lightbox2 div.header .h1 h1 {
 	width:520px;
 	padding:50px 60px;
 	height:319px;
-	background:transparent url(/images/lightboxes/lightbox_frame.png?1300304855) no-repeat scroll 0 0
+	background:transparent url(../../images/lightboxes/lightbox_frame.png)gc no-repeat scroll 0 0
 }
 #lwlb_contact p {
 	margin-top:15px
@@ -1173,33 +1173,33 @@ div.lwlb_lightbox2 div.header .h1 h1 {
 	width:520px;
 	padding:50px 60px;
 	height:319px;
-	background:transparent url(/images/lightboxes/lightbox_frame.png?1300304855) no-repeat scroll 0 0
+	background:transparent url(../../images/lightboxes/lightbox_frame.png)gc no-repeat scroll 0 0
 }
 #lwlb_groups {
 	left:160px;
 	width:520px;
 	padding:50px 60px;
 	height:319px;
-	background:transparent url(/images/lightboxes/lightbox_frame.png?1300304855) no-repeat scroll 0 0
+	background:transparent url(../../images/lightboxes/lightbox_frame.png)gc no-repeat scroll 0 0
 }
 #lwlb_languages {
 	left:160px;
 	width:520px;
 	padding:50px 60px;
 	height:319px;
-	background:transparent url(/images/lightboxes/lightbox_frame.png?1300304855) no-repeat scroll 0 0
+	background:transparent url(../../images/lightboxes/lightbox_frame.png)gc no-repeat scroll 0 0
 }
 #lwlb_calendar {
 	left:160px;
 	width:200px;
 	padding:10px 15px;
 	height:177px;
-	background:transparent url(/images/scheduling/lightbox_popup.png?1300304855) no-repeat scroll 0 0
+	background:transparent url(../../images/scheduling/lightbox_popup.png)gc no-repeat scroll 0 0
 }
 #lwlb_calendar2 .container {
 	padding:10px 15px 40px 15px;
 	margin-bottom:-30px;
-	background:url(/images/scheduling2/tail.png?1300304855) no-repeat bottom center
+	background:url(../../images/scheduling2/tail.png)gc no-repeat bottom center
 }
 #lwlb_calendar2 .container .inner {
 	width:300px
@@ -1264,14 +1264,14 @@ div.similar_listings div.subtitle {
 #reviews .banner {
 	width:570px;
 	padding-bottom:10px;
-	background:url(/images/modules/gray-570.png?1300304855) no-repeat left bottom
+	background:url(../../images/modules/gray-570.png)gc no-repeat left bottom
 }
 #reviews .banner .inner {
 	font-size:1.6133em;
 	font-weight:bold;
 	width:550px;
 	padding:10px 10px 0 10px;
-	background:url(/images/modules/gray-570.png?1300304855) no-repeat 0 0
+	background:url(../../images/modules/gray-570.png)gc no-repeat 0 0
 }
 #reviews .separator {
 	width:570px;
@@ -1288,26 +1288,26 @@ div.similar_listings div.subtitle {
 #reviews .bubble_left {
 	width:500px;
 	padding-bottom:10px;
-	background:url(/images/modules/review_bubble_left.png?1300304855) no-repeat left bottom
+	background:url(../../images/modules/review_bubble_left.png)gc no-repeat left bottom
 }
 #reviews .bubble_left .inner {
 	width:450px;
 	padding-top:10px;
 	padding-left:40px;
 	padding-right:10px;
-	background:url(/images/modules/review_bubble_left.png?1300304855) no-repeat 0 0
+	background:url(../../images/modules/review_bubble_left.png)gc no-repeat 0 0
 }
 #reviews .bubble_right {
 	width:500px;
 	padding-bottom:10px;
-	background:url(/images/modules/review_bubble_right.png?1300304855) no-repeat left bottom
+	background:url(../../images/modules/review_bubble_right.png)gc no-repeat left bottom
 }
 #reviews .bubble_right .inner {
 	width:450px;
 	padding-top:10px;
 	padding-right:40px;
 	padding-left:10px;
-	background:url(/images/modules/review_bubble_right.png?1300304855) no-repeat 0 0
+	background:url(../../images/modules/review_bubble_right.png)gc no-repeat 0 0
 }
 #calendar2 table td {
 	border-color:#fff #CCCCCc #ccc #FFFFFF;
@@ -1376,7 +1376,7 @@ div.similar_listings div.subtitle {
 	margin-top:5px
 }
 .star-rating, .star-rating a:hover, .star-rating a:active, .star-rating a:focus, .star-rating li.current-rating {
-	background:transparent url(/images/ratings/star.gif?1300304855) repeat-x scroll left -1000px
+	background:transparent url(../../images/ratings/star.gif)gc repeat-x scroll left -1000px
 }
 .star-rating {
 	background-position:left top;
@@ -1436,7 +1436,7 @@ div.similar_listings div.subtitle {
 	z-index:2
 }
 .star-rating li.current-rating {
-	background-image:url(/images/ratings/star.gif?1300304855)!important;
+	background-image:url(../../images/ratings/star.gif)gc!important;
 	background-position:left center!important;
 	z-index:1
 }
@@ -1451,7 +1451,7 @@ a.star_icon_container {
 a.star_icon_container div.star_icon {
 	width:20px;
 	height:20px;
-	background:transparent url(/images/favorites/star.png?1300304855) no-repeat 0 0
+	background:transparent url(../../images/favorites/star.png)gc no-repeat 0 0
 }
 a.star_icon_container div.star_icon.starred {
 	background-position:-20px 0
@@ -1571,7 +1571,7 @@ a.star_icon_container div.star_icon.starred {
 	width:905px;
 	display:block;
 	height:39px;
-	background:url(/images/page1/press_banner2.jpg?1309394089) left top no-repeat
+	background:url(../../images/page1/press_banner2.jpg)gc left top no-repeat
 }
 #results .pagination {
 	width:665px;
@@ -1604,7 +1604,7 @@ a.star_icon_container div.star_icon.starred {
 	width:938px;
 	height:110px;
 	margin-top:5px;
-	background:url(/images/page2/filter_background.gif?1300304855) bottom right
+	background:url(../../images/page2/filter_background.gif)gc bottom right
 }
 #search_bar #filters .inner {
 	padding:8px 15px 8px 15px
@@ -1753,11 +1753,11 @@ ul#search_results_list .reputation {
 	color:#7e7979
 }
 ul#search_results_list .reputation .reviews {
-	background:url(../images/icons/review.png?1300304855) no-repeat 0 0;
+	background:url(../../images/icons/review.png)gc no-repeat 0 0;
 	padding-left:24px
 }
 ul#search_results_list .reputation .recommendations {
-	background:url(../images/icons/recommendation.png?1300304855) no-repeat 4px 0;
+	background:url(../../images/icons/recommendation.png)gc no-repeat 4px 0;
 	padding-left:24px
 }
 ul#search_results_list .price {
@@ -1770,7 +1770,7 @@ ul#search_results_list .price {
 	padding-top:8px
 }
 *html ul#search_results_list .reputation .recommendations {
-	background:url(../images/icons/recommendation.png?1300304855) no-repeat 0 0
+	background:url(../../images/icons/recommendation.png)gc no-repeat 0 0
 }
 #hostings {
 	float:left;
@@ -1819,7 +1819,7 @@ ul#search_results_list .price {
 	height:36px;
 	line-height:36px;
 	text-align:center;
-	background:url(../images/modules/price.png?1300304855) no-repeat 0 0;
+	background:url(../../images/modules/price.png)gc no-repeat 0 0;
 	font-weight:bold;
 	color:#fff
 }
@@ -1888,10 +1888,10 @@ ul#search_results_list .price {
 }
 #profile2 .page_link_selected {
 	font-weight:bold;
-	background:url(../../images/page3/link_selected_arrow.gif?1300304855) no-repeat right 7px
+	background:url(../../images/page3/link_selected_arrow.gif)gc no-repeat right 7px
 }
 #profile2 #header_box {
-	background:url(/images/page3/header_box.gif?1300304855) no-repeat;
+	background:url(../../images/page3/header_box.gif)gc no-repeat;
 	height:75px;
 	width:960px
 }
@@ -1946,13 +1946,13 @@ ul#search_results_list .price {
 }
 #profile2 .about_bubble {
 	padding-bottom:18px;
-	background:url(/images/page3/about_bubble.gif?1300304855) no-repeat left bottom
+	background:url(../../images/page3/about_bubble.gif)gc no-repeat left bottom
 }
 #profile2 .about_bubble .inner {
 	padding-top:18px;
 	padding-left:40px;
 	padding-right:20px;
-	background:url(/images/page3/about_bubble.gif?1300304855) no-repeat 0 0
+	background:url(../../images/page3/about_bubble.gif)gc no-repeat 0 0
 }
 #profile2 .about_bubble .content {
 	color:#3e3e3e;
@@ -1960,11 +1960,11 @@ ul#search_results_list .price {
 }
 #profile2 #reviews .bubble {
 	padding-bottom:10px;
-	background:url(/images/page3/review_bubble_profile.gif?1300304855) no-repeat left bottom
+	background:url(../../images/page3/review_bubble_profile.gif)gc no-repeat left bottom
 }
 #profile2 #reviews .bubble .inner {
 	padding:14px 30px 0 30px;
-	background:url(/images/page3/review_bubble_profile.gif?1300304855) no-repeat 0 0
+	background:url(../../images/page3/review_bubble_profile.gif)gc no-repeat 0 0
 }
 #profile2 #right_side .white_box {
 	margin-top:15px;
@@ -1995,22 +1995,22 @@ ul#search_results_list .price {
 	margin-top:15px;
 	width:717px;
 	padding-bottom:8px;
-	background:url(/images/page3/white-wide.gif?1300304855) no-repeat left bottom
+	background:url(../../images/page3/white-wide.gif)gc no-repeat left bottom
 }
 #profile2 #right_side .box .inner {
 	padding-top:10px;
 	margin-bottom:5px;
 	padding-left:10px;
 	padding-right:15px;
-	background:url(/images/page3/white-wide.gif?1300304855) no-repeat 0 0
+	background:url(../../images/page3/white-wide.gif)gc no-repeat 0 0
 }
 #profile2 #recommendations .bubble {
 	padding-bottom:10px;
-	background:url(/images/page3/recommendation_bubble.gif?1300304855) no-repeat left bottom
+	background:url(../../images/page3/recommendation_bubble.gif)gc no-repeat left bottom
 }
 #profile2 #recommendations .bubble .inner {
 	padding:14px 20px 0 40px;
-	background:url(/images/page3/recommendation_bubble.gif?1300304855) no-repeat 0 0
+	background:url(../../images/page3/recommendation_bubble.gif)gc no-repeat 0 0
 }
 #profile2 #recommendations .bubble .content {
 	color:#3e3e3e
@@ -2164,20 +2164,20 @@ ul#search_results_list .price {
 	margin-top:15px;
 	width:717px;
 	padding-bottom:8px;
-	background:url(/images/page3/white-wide.gif?1300304855) no-repeat left bottom
+	background:url(../../images/page3/white-wide.gif)gc no-repeat left bottom
 }
 #listing2 #right_side .box .inner {
 	padding-top:10px;
 	margin-bottom:5px;
 	padding-left:10px;
 	padding-right:15px;
-	background:url(/images/page3/white-wide.gif?1300304855) no-repeat 0 0
+	background:url(../../images/page3/white-wide.gif)gc no-repeat 0 0
 }
 #listing2 #right_side div.description p {
 	margin:5px 0
 }
 #listing2 #header_box {
-	background:url(/images/page3/header_box.gif?1300304855) no-repeat;
+	background:url(../../images/page3/header_box.gif)gc no-repeat;
 	height:75px;
 	width:960px
 }
@@ -2262,14 +2262,14 @@ ul#search_results_list .price {
 #listing2 #user {
 	margin-bottom:10px;
 	padding-bottom:8px;
-	background:url(/images/page3/white-narrow.gif?1300304855) no-repeat left bottom
+	background:url(../../images/page3/white-narrow.gif)gc no-repeat left bottom
 }
 #listing2 #user .inner {
 	padding-top:10px;
 	margin-bottom:5px;
 	padding-left:10px;
 	padding-right:15px;
-	background:url(/images/page3/white-narrow.gif?1300304855) no-repeat 0 0
+	background:url(../../images/page3/white-narrow.gif)gc no-repeat 0 0
 }
 #listing2 #user .property {
 	font-weight:bold
@@ -2295,18 +2295,18 @@ ul#search_results_list .price {
 	text-decoration:none
 }
 #listing2 #tabs .tab {
-	background:transparent url(/images/page3/tab_unselected.gif?1300304855) no-repeat scroll right top
+	background:transparent url(../../images/page3/tab_unselected.gif)gc no-repeat scroll right top
 }
 #listing2 #tabs .tab .inner {
-	background:url(/images/page3/tab_unselected.gif?1300304855) no-repeat 0 0;
+	background:url(../../images/page3/tab_unselected.gif)gc no-repeat 0 0;
 	margin-right:5px;
 	padding:6px 10px 6px 10px
 }
 #listing2 #tabs .selected {
-	background:transparent url(/images/page3/tab_selected.gif?1300304855) no-repeat scroll right top
+	background:transparent url(../../images/page3/tab_selected.gif)gc no-repeat scroll right top
 }
 #listing2 #tabs .selected .inner {
-	background:url(/images/page3/tab_selected.gif?1300304855) no-repeat 0 0;
+	background:url(../../images/page3/tab_selected.gif)gc no-repeat 0 0;
 	margin-right:5px;
 	padding:6px 10px 6px 10px
 }
@@ -2318,14 +2318,14 @@ ul#search_results_list .price {
 #listing2 #tab_outer_box {
 	width:717px;
 	padding-bottom:8px;
-	background:url(/images/page3/white-wide-with-corner.gif?1300304855) no-repeat left bottom
+	background:url(../../images/page3/white-wide-with-corner.gif)gc no-repeat left bottom
 }
 #listing2 #tab_outer_box .inner {
 	padding-top:10px;
 	margin-bottom:5px;
 	padding-left:10px;
 	padding-right:15px;
-	background:url(/images/page3/white-wide-with-corner.gif?1300304855) no-repeat 0 0
+	background:url(../../images/page3/white-wide-with-corner.gif)gc no-repeat 0 0
 }
 #listing2 #tab_outer_box #tab_content_container {
 	height:370px
@@ -2399,26 +2399,26 @@ ul#search_results_list .price {
 }
 #listing2 #reviews .bubble {
 	padding-bottom:10px;
-	background:url(/images/page3/review_bubble.gif?1300304855) no-repeat left bottom
+	background:url(../../images/page3/review_bubble.gif)gc no-repeat left bottom
 }
 #listing2 #reviews .bubble .inner {
 	padding-top:18px;
 	padding-left:40px;
 	padding-right:40px;
-	background:url(/images/page3/review_bubble.gif?1300304855) no-repeat 0 0
+	background:url(../../images/page3/review_bubble.gif)gc no-repeat 0 0
 }
 #listing2 #reviews .bubble .content {
 	color:white
 }
 #listing2 #recommendations .bubble {
 	padding-bottom:10px;
-	background:url(/images/page3/recommendation_bubble.gif?1300304855) no-repeat left bottom
+	background:url(../../images/page3/recommendation_bubble.gif)gc no-repeat left bottom
 }
 #listing2 #recommendations .bubble .inner {
 	padding-top:18px;
 	padding-left:40px;
 	padding-right:20px;
-	background:url(/images/page3/recommendation_bubble.gif?1300304855) no-repeat 0 0
+	background:url(../../images/page3/recommendation_bubble.gif)gc no-repeat 0 0
 }
 #listing2 #recommendations .bubble .content {
 	color:#3e3e3e
@@ -2466,13 +2466,13 @@ ul#search_results_list .price {
 	float:left;
 	width:250px;
 	padding-bottom:10px;
-	background:url(../images/modules/gray-250.png?1300304855) no-repeat left bottom
+	background:url(../../images/modules/gray-250.png)gc no-repeat left bottom
 }
 #listing .info .inner {
 	float:left;
 	width:230px;
 	padding:10px 10px 0 10px;
-	background:url(../images/modules/gray-250.png?1300304855) no-repeat 0 0
+	background:url(../../images/modules/gray-250.png)gc no-repeat 0 0
 }
 #listing h1 {
 	margin-bottom:12px;
@@ -2873,7 +2873,7 @@ div.notification_section h4 {
 #question_thread2 #profiles div.participant {
 	width:310px;
 	padding-bottom:10px;
-	background:url(/images/modules/messaging-white-gray-310.png?1300304855) no-repeat left bottom
+	background:url(../../images/modules/messaging-white-gray-310.png)gc no-repeat left bottom
 }
 #question_thread2 #profiles div.participant .inner {
 	width:280px;
@@ -2881,7 +2881,7 @@ div.notification_section h4 {
 	margin-bottom:5px;
 	padding-left:10px;
 	padding-right:15px;
-	background:url(/images/modules/messaging-white-gray-310.png?1300304855) no-repeat 0 0
+	background:url(../../images/modules/messaging-white-gray-310.png)gc no-repeat 0 0
 }
 #question_thread2 #profiles div.participant {
 	float:left;
@@ -3131,35 +3131,35 @@ div.notification_section h4 {
 #question_thread2 .message_left {
 	width:515px;
 	padding-bottom:8px;
-	background:url(/images/modules/messaging_bubble_left.png?1300304855) no-repeat left bottom
+	background:url(../../images/modules/messaging_bubble_left.png)gc no-repeat left bottom
 }
 #question_thread2 .message_left .inner {
 	width:415px;
 	padding:15px 45px 0 45px;
 	margin-bottom:3px;
-	background:url(/images/modules/messaging_bubble_left.png?1300304855) no-repeat 0 0
+	background:url(../../images/modules/messaging_bubble_left.png)gc no-repeat 0 0
 }
 #question_thread2 .message_right {
 	width:515px;
 	padding-bottom:8px;
-	background:url(/images/modules/messaging_bubble_right.png?1300304855) no-repeat left bottom
+	background:url(../../images/modules/messaging_bubble_right.png)gc no-repeat left bottom
 }
 #question_thread2 .message_right .inner {
 	width:415px;
 	padding:15px 45px 0 45px;
 	margin-bottom:3px;
-	background:url(/images/modules/messaging_bubble_right.png?1300304855) no-repeat 0 0
+	background:url(../../images/modules/messaging_bubble_right.png)gc no-repeat 0 0
 }
 div.right_side .box_border {
 	width:250px;
 	padding:10px;
 	margin-bottom:10px;
-	background:url(/images/modules/messaging_tile_gray.png?1300304855) repeat
+	background:url(../../images/modules/messaging_tile_gray.png)gc repeat
 }
 div.right_side .box {
 	width:250px;
 	padding-bottom:10px;
-	background:url(/images/modules/messaging-white-gray-250.png?1300304855) no-repeat left bottom
+	background:url(../../images/modules/messaging-white-gray-250.png)gc no-repeat left bottom
 }
 div.right_side .box .inner {
 	width:220px;
@@ -3167,7 +3167,7 @@ div.right_side .box .inner {
 	margin-bottom:5px;
 	padding-left:10px;
 	padding-right:15px;
-	background:url(/images/modules/messaging-white-gray-250.png?1300304855) no-repeat 0 0
+	background:url(../../images/modules/messaging-white-gray-250.png)gc no-repeat 0 0
 }
 div.right_side .box .question {
 	margin-bottom:3px
@@ -3303,35 +3303,35 @@ div.right_side .box .answer {
 	width:640px;
 	padding:10px;
 	margin-bottom:30px;
-	background:url(/images/modules/messaging_tile_gray.png?1300304855) repeat
+	background:url(../../images/modules/messaging_tile_gray.png)gc repeat
 }
 #bookit #middle .half_box {
 	float:left;
 	width:314px;
 	height:100%;
 	padding-bottom:15px;
-	background:url(/images/modules/page4-white-314.png?1300304855) no-repeat left bottom
+	background:url(../../images/modules/page4-white-314.png)gc no-repeat left bottom
 }
 #bookit #middle .half_box .inner {
 	padding-top:15px;
 	margin-bottom:5px;
 	padding-left:10px;
 	padding-right:15px;
-	background:url(/images/modules/page4-white-314.png?1300304855) no-repeat 0 0
+	background:url(../../images/modules/page4-white-314.png)gc no-repeat 0 0
 }
 #bookit #middle .half_box_yellow {
 	float:left;
 	width:314px;
 	height:100%;
 	padding-bottom:15px;
-	background:url(/images/modules/page4-yellow-314.png?1300304855) no-repeat left bottom
+	background:url(../../images/modules/page4-yellow-314.png)gc no-repeat left bottom
 }
 #bookit #middle .half_box_yellow .inner {
 	padding-top:15px;
 	margin-bottom:5px;
 	padding-left:10px;
 	padding-right:15px;
-	background:url(/images/modules/page4-yellow-314.png?1300304855) no-repeat 0 0
+	background:url(../../images/modules/page4-yellow-314.png)gc no-repeat 0 0
 }
 #bookit #middle .half_box_sep {
 	float:left;
@@ -3339,14 +3339,14 @@ div.right_side .box .answer {
 }
 #bookit #middle .wide_box {
 	padding-bottom:8px;
-	background:url(/images/modules/page4-white-638.png?1300304855) no-repeat left bottom
+	background:url(../../images/modules/page4-white-638.png)gc no-repeat left bottom
 }
 #bookit #middle .wide_box .inner {
 	padding-top:10px;
 	margin-bottom:5px;
 	padding-left:10px;
 	padding-right:15px;
-	background:url(/images/modules/page4-white-638.png?1300304855) no-repeat 0 0
+	background:url(../../images/modules/page4-white-638.png)gc no-repeat 0 0
 }
 #bookit #middle table.fields {
 	width:100%
@@ -3499,7 +3499,7 @@ div.right_side .box .answer {
 #home_static #left_panel ul {
 	width:180px;
 	padding:10px 0 20px 10px;
-	background:url(../images/modules/gray-180.png?1300304855) no-repeat left bottom
+	background:url(../../images/modules/gray-180.png)gc no-repeat left bottom
 }
 #home_static #left_panel ul li {
 	padding:2px;
@@ -3685,18 +3685,18 @@ div.right_side .box .answer {
 	margin-left:80px
 }
 .box_layout #main .top {
-	background:transparent url(../images/boxes/693_top_bg.png?1300304855) no-repeat 0 0;
+	background:transparent url(../../images/boxes/693_top_bg.png)gc no-repeat 0 0;
 	width:693px;
 	min-height:23px
 }
 .box_layout #main .middle {
-	background:transparent url(../images/boxes/693_middle_bg.png?1300304855) repeat-y 0 0;
+	background:transparent url(../../images/boxes/693_middle_bg.png)gc repeat-y 0 0;
 	width:631px;
 	padding:0 30px;
 	min-height:40px
 }
 .box_layout #main .bottom {
-	background:transparent url(../images/boxes/693_bottom_bg.png?1300304855) no-repeat 0 0;
+	background:transparent url(../../images/boxes/693_bottom_bg.png)gc no-repeat 0 0;
 	width:693px;
 	min-height:33px
 }
@@ -3719,18 +3719,18 @@ div.right_side .box .answer {
 	margin-left:1px
 }
 .box_layout #side .box .top {
-	background:transparent url(../images/boxes/269_top_bg.png?1300304855) no-repeat 0 0;
+	background:transparent url(../../images/boxes/269_top_bg.png)gc no-repeat 0 0;
 	width:269px;
 	height:23px
 }
 .box_layout #side .box .middle {
-	background:transparent url(../images/boxes/269_middle_bg.png?1300304855) repeat-y 0 0;
+	background:transparent url(../../images/boxes/269_middle_bg.png)gc repeat-y 0 0;
 	width:247px;
 	padding:16px 14px 0 8px;
 	min-height:40px
 }
 .box_layout #side .box .bottom {
-	background:transparent url(../images/boxes/269_bottom_bg.png?1300304855) no-repeat 0 0;
+	background:transparent url(../../images/boxes/269_bottom_bg.png)gc no-repeat 0 0;
 	width:269px;
 	height:23px
 }
@@ -3975,7 +3975,7 @@ div.right_side .box .answer {
 	position:absolute;
 	height:18px;
 	width:16px;
-	background-image:url(/images/i18n/flags4.png?1300304855);
+	background-image:url(../../images/i18n/flags4.png)gc;
 	background-repeat:no-repeat
 }
 #header #language_currency_selector li.option:hover {
@@ -4131,7 +4131,7 @@ div.right_side .box .answer {
 	float:left;
 	height:20px;
 	width:20px;
-	background:url(/images/uiwidgets/calendar_prev_month.gif?1300304855) no-repeat 3px 3px!important;
+	background:url(../../images/uiwidgets/calendar_prev_month.gif)gc no-repeat 3px 3px!important;
 	cursor:pointer
 }
 .ui-datepicker-next {
@@ -4139,17 +4139,17 @@ div.right_side .box .answer {
 	float:right;
 	height:20px;
 	width:20px;
-	background:url(/images/uiwidgets/calendar_next_month.gif?1300304855) no-repeat 3px 3px!important;
+	background:url(../../images/uiwidgets/calendar_next_month.gif)gc no-repeat 3px 3px!important;
 	cursor:pointer
 }
 .ui-datepicker-prev:hover {
 	border:none!important;
-	background:url(/images/uiwidgets/calendar_prev_month.gif?1300304855) no-repeat 3px 3px!important;
+	background:url(../../images/uiwidgets/calendar_prev_month.gif)gc no-repeat 3px 3px!important;
 	cursor:pointer
 }
 .ui-datepicker-next:hover {
 	border:none!important;
-	background:url(/images/uiwidgets/calendar_next_month.gif?1300304855) no-repeat 3px 3px!important;
+	background:url(../../images/uiwidgets/calendar_next_month.gif)gc no-repeat 3px 3px!important;
 	cursor:pointer
 }
 #back_to_search {
@@ -4356,7 +4356,7 @@ div.right_side .box .answer {
 	display:block
 }
 #slideshow #slideshow_controls {
-	background:transparent url(/images/uiwidgets/transparent_fff_40_pc.png?1300304855) repeat 0 0;
+	background:transparent url(../../images/uiwidgets/transparent_fff_40_pc.png)gc repeat 0 0;
 	height:34px;
 	position:absolute;
 	right:20px;
@@ -4365,7 +4365,7 @@ div.right_side .box .answer {
 	z-index:999999
 }
 .ss_button_icon {
-	background:transparent url(/images/page1/homepage_ss_controls.png?1300304855) no-repeat 0 0;
+	background:transparent url(../../images/page1/homepage_ss_controls.png)gc no-repeat 0 0;
 	height:18px;
 	width:20px;
 	display:block;
@@ -4511,7 +4511,7 @@ div.right_side .box .answer {
 	color:#696969
 }
 #user_offer_after_review {
-	background-image:url(/images/uiwidgets/guest_to_host_offer_bg.jpg?1300304855);
+	background-image:url(../../images/uiwidgets/guest_to_host_offer_bg.jpg)gc;
 	background-repeat:no-repeat;
 	border:none;
 	height:147px;
@@ -4549,7 +4549,7 @@ div.right_side .box .answer {
 	border:1px solid #e1e1e1;
 	color:#0088d1;
 	text-shadow:1px 1px 1px #fff;
-	background:#969696 url(/embed/images/page2/v3/pagination_links_bgs.png?1300304855) repeat-x 0 0;
+	background:#969696 url(../../images/page2/v3/pagination_links_bgs.png)gc repeat-x 0 0;
 	height:17px;
 	margin-right:5px;
 	font-weight:normal;
@@ -4622,7 +4622,7 @@ div.right_side .box .answer {
 	margin-top:5px
 }
 .private_lock {
-	background:white url(/images/uiwidgets/private_lock_yellow.png?1300304855) no-repeat 99% center!important
+	background:white url(../../images/uiwidgets/private_lock_yellow.png)gc no-repeat 99% center!important
 }
 #home #homepage_nights_counter {
 	width:968px;
@@ -4639,7 +4639,7 @@ div.right_side .box .answer {
 }
 #home #counter_inner_wrapper {
 	padding:7px;
-	background-image:url(/images/uiwidgets/homepage_counter_bg.png?1300304855);
+	background-image:url(../../images/uiwidgets/homepage_counter_bg.png)gc;
 	background-repeat:repeat-x;
 	background-color:#d4d4cb;
 	border-top:1px solid #f6f6f2;
@@ -4669,7 +4669,7 @@ div.right_side .box .answer {
 	width:137px;
 	height:48px;
 	position:absolute;
-	background-image:url(/images/uiwidgets/homepage_counter_ribbon.png?1300304855);
+	background-image:url(../../images/uiwidgets/homepage_counter_ribbon.png)gc;
 	background-repeat:no-repeat;
 	display:block;
 	top:53px;
@@ -4734,7 +4734,7 @@ div.right_side .box .answer {
 	text-decoration:none
 }
 .fb-button.loading {
-	background:url(/images/fb/loading.gif?1300304855) 50% top no-repeat
+	background:url(../../images/fb/loading.gif)gc 50% top no-repeat
 }
 .loading {
 	cursor:default
@@ -4761,7 +4761,7 @@ div.right_side .box .answer {
 .fb-button-right, .fb-button-center, .fb-button-left {
 	float:left;
 	height:40px;
-	background:url(../images/uiwidgets/fb-button-sprite.png?1307134457) left top no-repeat
+	background:url(../../images/uiwidgets/fb-button-sprite.png)gc left top no-repeat
 }
 .fb-button-left {
 	width:40px
@@ -4789,7 +4789,7 @@ div.right_side .box .answer {
 	background-position:100% -200px
 }
 .fb-or-separator {
-	background:url(/images/fb/fb-hr.png?1300304855) 50% 50% no-repeat;
+	background:url(../../images/fb/fb-hr.png)gc 50% 50% no-repeat;
 	color:#959595;
 	font-size:23px;
 	text-align:center!important;
@@ -4816,14 +4816,14 @@ div.flag-container span.expand {
 	height:21px;
 	display:block;
 	float:left;
-	background:url(/images/edit_room/action-button-icons.png?1301960678) no-repeat -3px -66px;
+	background:url(../../images/edit_room/action-button-icons.png)gc no-repeat -3px -66px;
 	border-right:1px solid transparent
 }
 div.flag-container h3 {
 	text-indent:-9999px;
 	width:16px;
 	height:16px;
-	background:url(/images/widget/flagging.png?1307119878) no-repeat 0 0;
+	background:url(../../images/widget/flagging.png)gc no-repeat 0 0;
 	display:block;
 	float:left;
 	margin:4px 5px 0 3px
@@ -4843,7 +4843,7 @@ div.flag-container.spinner h3 {
 	text-indent:-9999px;
 	width:16px;
 	height:16px;
-	background:url(/images/spinner.gif?1300304855) no-repeat 0 0;
+	background:url(../../images/spinner.gif)gc no-repeat 0 0;
 	display:block;
 	float:left;
 	margin:4px 5px 0 3px
@@ -4866,7 +4866,7 @@ div.flag-container.expanded {
 	z-index:200
 }
 div.flag-container.expanded span.expand {
-	background:url(/images/edit_room/action-button-icons.png?1301960678) no-repeat -3px -66px
+	background:url(../../images/edit_room/action-button-icons.png)gc no-repeat -3px -66px
 }
 div.flag-container.expanded div.click-target {
 	border-bottom:0;
@@ -4986,7 +4986,7 @@ label.labelBlur {
 	left:0;
 	width:100%;
 	height:9px;
-	background-image:url(/embed/images/tooltip_yellow_arrow.png?1308529318);
+	background-image:url(../../images/tooltip_yellow_arrow.png)gc;
 	background-repeat:no-repeat
 }
 .tooltip_yellow .tooltip_arrow.center {

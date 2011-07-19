@@ -7,7 +7,7 @@
 | These details are used in emails sent by authentication library.
 |--------------------------------------------------------------------------
 */
-$config['website_name'] = 'Your project';
+$config['website_name'] = 'Rdirect';
 $config['webmaster_email'] = 'webmaster@your-site.com';
 
 /*
@@ -40,11 +40,11 @@ $config['phpass_hash_strength'] = 8;
 |--------------------------------------------------------------------------
 */
 $config['allow_registration'] = TRUE;
-$config['captcha_registration'] = TRUE;
+$config['captcha_registration'] = FALSE;
 $config['email_activation'] = FALSE;
 $config['email_activation_expire'] = 60*60*24*2;
 $config['email_account_details'] = FALSE;
-$config['use_username'] = TRUE;
+$config['use_username'] = FALSE;
 
 $config['username_min_length'] = 4;
 $config['username_max_length'] = 20;
@@ -68,7 +68,7 @@ $config['password_max_length'] = 20;
 | 'login_attempt_expire' = Time to live for every attempt to login. Default is 24 hours (60*60*24).
 |--------------------------------------------------------------------------
 */
-$config['login_by_username'] = TRUE;
+$config['login_by_username'] = FALSE;
 $config['login_by_email'] = TRUE;
 $config['login_record_ip'] = TRUE;
 $config['login_record_time'] = TRUE;
@@ -138,7 +138,7 @@ $config['recaptcha_private_key'] = '';
 | (except 'ci_sessions' table).
 |--------------------------------------------------------------------------
 */
-$config['db_table_prefix'] = '';
+$config['db_table_prefix'] = 'rd_';
 
 /* End of file tank_auth.php */
 /* Location: ./application/config/tank_auth.php */
