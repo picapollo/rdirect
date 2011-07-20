@@ -9,8 +9,8 @@
 .calendar_date_select select { font-size:11px;}
 .calendar_date_select .cds_header a:hover { color: pink; }
 .calendar_date_select .cds_header a { text-decoration: none; font-size:14px; height:18px; width:18px; color:#333333 !important; }
-.calendar_date_select .cds_header a.prev { background-image:url("/images/uiwidgets/calendar_prev_month.gif"); background-repeat:no-repeat; background-position:3px 3px; float:left; }
-.calendar_date_select .cds_header a.next { float:right; background-image:url("/images/uiwidgets/calendar_next_month.gif"); background-repeat:no-repeat; background-position:3px 3px; }
+.calendar_date_select .cds_header a.prev { background-image:url("../../images/uiwidgets/calendar_prev_month.gif"); background-repeat:no-repeat; background-position:3px 3px; float:left; }
+.calendar_date_select .cds_header a.next { float:right; background-image:url("../../images/uiwidgets/calendar_next_month.gif"); background-repeat:no-repeat; background-position:3px 3px; }
 .calendar_date_select .cds_header a.close { float:right; display:none; }
 .calendar_date_select .cds_header select.month { width:90px; }
 .calendar_date_select .cds_header select.year { width:61px; }

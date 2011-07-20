@@ -34,7 +34,8 @@ class Home extends CI_Controller
 			'title' 		=> 'RDirect',
 			'lang' 			=> 'ko'
 		);
-		$data['user'] = $this->user_model->get_user($user_id);
+		$user_arr = $this->user_model->get_user($user_id);
+		$data['user'] = $user_arr[0];
 		$this->load->view('home/dashboard', $data);
 	}
 	

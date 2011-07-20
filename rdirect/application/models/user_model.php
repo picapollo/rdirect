@@ -31,6 +31,11 @@ class User_model extends CI_Model
 		$this->db->where('user_id', $user_id);
 		$this->db->update('user_profiles', $data); 
 	}
+	
+	function set_user_has_picture($user_id, $value)
+	{
+		$this->db->update('users', array('users.has_picture' => $value));
+	}
 
 	// return the user given the id
 	function get_user($user_id)

@@ -35,12 +35,14 @@
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
 		
+		<script type="text/javascript">var base_url = "<?=base_url()?>";</script>
+		
 		<?php if($lang != 'en'): ?>
 		<script src="<?=JS_DIR?>/jquery.ui.datepicker-<?=$lang?>.min.js" type="text/javascript"></script>
 		<?php endif; ?>
 
 		<script src="<?=JS_DIR?>/common.js" type="text/javascript"></script>
-		  <script src="<?=JS_DIR?>/page1.js" type="text/javascript"></script>
+		<script src="<?=JS_DIR?>/page1.js" type="text/javascript"></script>
 
 		<link rel="shortcut icon" href="<?=BASEURL?>/airbnb_favicon.ico">
 	<script src="<?=JS_DIR?>/jquery.autocomplete_custom.pack.js" class="lazyload" charset="utf-8"></script><script src="<?=JS_DIR?>/<?=$lang?>_autocomplete_data.js" class="lazyload" charset="utf-8"></script>

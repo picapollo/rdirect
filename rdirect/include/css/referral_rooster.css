@@ -23,7 +23,7 @@ body {
   .rooster span.close-button {
     width: 14px;
     height: 15px;
-    background: url("/images/roosters/rooster-close.png") no-repeat top left;
+    background: url("../../images/roosters/rooster-close.png") no-repeat top left;
     display: block;
     position: absolute;
     right: 15px;

@@ -204,23 +204,23 @@ form div.form-submit {
       padding-left: 6px; }
     .action_button .icon.active {
       color: #49a010;
-      background: url("../images/edit_room/action-button-icons.png") no-repeat 0 -1px; }
+      background: url("../../images/edit_room/action-button-icons.png") no-repeat 0 -1px; }
     .action_button .icon.inactive {
       color: #ff0000;
-      background: url("../images/edit_room/action-button-icons.png") no-repeat 0 -23px; }
+      background: url("../../images/edit_room/action-button-icons.png") no-repeat 0 -23px; }
     .action_button .icon.view {
-      background: url("../images/edit_room/action-button-icons.png") no-repeat 0 -45px; }
+      background: url("../../images/edit_room/action-button-icons.png") no-repeat 0 -45px; }
     .action_button .icon.edit {
-      background: url("../images/edit_room/action-button-icons.png") no-repeat 0 -89px; }
+      background: url("../../images/edit_room/action-button-icons.png") no-repeat 0 -89px; }
     .action_button .icon.calendar {
-      background: url("../images/edit_room/action-button-icons.png") no-repeat 0 -110px; }
+      background: url("../../images/edit_room/action-button-icons.png") no-repeat 0 -110px; }
     .action_button .icon.widget-spinner {
       padding-left: 24px !important;
       color: #848484 !important;
-      background: url("/images/spinner.gif") no-repeat 4px 2px !important; }
+      background: url("../../images/spinner.gif") no-repeat 4px 2px !important; }
     .action_button .icon.complete {
       color: #848484;
-      background: url("/images/spinner.gif") no-repeat 4px 100px !important; }
+      background: url("../../images/spinner.gif") no-repeat 4px 100px !important; }
     .action_button .icon span.expand {
       display: block;
       float: right;
@@ -228,7 +228,7 @@ form div.form-submit {
       height: 23px;
       width: 13px;
       margin: -5px 0 -9px 5px;
-      background: url("../images/edit_room/action-button-icons.png") no-repeat -2px -67px;
+      background: url("../../images/edit_room/action-button-icons.png") no-repeat -2px -67px;
       border-left: 1px solid transparent; }
     .action_button .icon span.label {
       display: block;
@@ -271,7 +271,7 @@ form div.form-submit {
   .bubble-container span.bubble-tail {
     width: 11px;
     height: 19px;
-    background: transparent url("/images/bubble-tail.png") no-repeat 0 0;
+    background: transparent url("../../images/bubble-tail.png") no-repeat 0 0;
     display: block;
     position: relative;
     left: -21px;
@@ -452,7 +452,7 @@ form div.form-submit {
     #guidebook-edit #map div.ui-resizable-s {
       width: 17px;
       height: 9px;
-      background-image: url("/images/draggable.png");
+      background-image: url("../../images/draggable.png");
       position: relative;
       left: 50%;
       top: 100%;
@@ -606,7 +606,7 @@ span.spinner {
   float: left;
   width: 16px;
   height: 16px;
-  background: transparent url("/images/spinner.gif") no-repeat 0 0; }
+  background: transparent url("../../images/spinner.gif") no-repeat 0 0; }
 
 #dashboard_v2 {
   overflow: hidden;
@@ -640,7 +640,7 @@ span.spinner {
     #dashboard_v2 .box h2 span.edit_room_icon {
       width: 25px;
       height: 25px;
-      background: transparent url("../images/post_a_room/new_edit_room_icons.png") no-repeat 0 0;
+      background: transparent url("../../images/post_a_room/new_edit_room_icons.png") no-repeat 0 0;
       display: block;
       margin: -4px 10px 0 0;
       float: left; }
@@ -704,7 +704,7 @@ span.spinner {
     margin-left: -1px; }
     #dashboard_v2 #instructions p {
       display: block;
-      background: transparent url("../images/post_a_room/main_photo_arrow.png") no-repeat 0 10px;
+      background: transparent url("../../images/post_a_room/main_photo_arrow.png") no-repeat 0 10px;
       margin: 10px 0 -10px 15px;
       padding-left: 35px;
       font-weight: bold; }
@@ -813,7 +813,7 @@ span.spinner {
     color: #979797;
     text-shadow: 0 1px 0px #fff;
     padding: 8px 15px;
-    background: #e9e9e9 url("../images/edit_room/arrow.png") no-repeat 14px 17px;
+    background: #e9e9e9 url("../../images/edit_room/arrow.png") no-repeat 14px 17px;
     color: #393c3d;
     padding: 15px 15px 15px 40px;
     margin-bottom: 15px;
@@ -1063,7 +1063,7 @@ span.spinner {
         width: 200px;
         float: right;
         margin: 14px 10px 0 0;
-        background: url("../images/edit_room/close-panel-buttons.png") no-repeat 208px 0;
+        background: url("../../images/edit_room/close-panel-buttons.png") no-repeat 208px 0;
         cursor: pointer;
         color: #ECD89B;
         text-align: right;
@@ -1099,7 +1099,7 @@ span.spinner {
         width: 15px;
         float: right;
         margin: 14px 10px 0 0;
-        background: url("../images/edit_room/close-panel-buttons.png") no-repeat 0 0;
+        background: url("../../images/edit_room/close-panel-buttons.png") no-repeat 0 0;
         cursor: pointer; }
       #dashboard_v2 div.col.content #notification-area div.info {
         background: #fff3cf;
@@ -1145,7 +1145,7 @@ span.spinner {
       width: 16px;
       display: inline-block;
       margin: -2px 10px -2px 0;
-      background: url("/images/edit_room/map-icons.png") no-repeat 0 0;
+      background: url("../../images/edit_room/map-icons.png") no-repeat 0 0;
       vertical-align: top; }
     #dashboard_v2 div.map-view h3 .protip {
       font-style: italic;
@@ -1237,7 +1237,7 @@ span.spinner {
     border: 0;
     height: 200px;
     position: relative;
-    background-image: url("/images/edit_room/uploadarea-background.png");
+    background-image: url("../../images/edit_room/uploadarea-background.png");
     background-repeat: no-repeat;
     background-position: center 75px;
     -moz-transition-property: box-shadow, -moz-box-shadow;
@@ -1361,7 +1361,7 @@ div.progress-bar {
       margin: 20px;
       width: 196px;
       height: 155px;
-      background: url("/images/edit_room/photo-badges.jpg") no-repeat left bottom; }
+      background: url("../../images/edit_room/photo-badges.jpg") no-repeat left bottom; }
       .uploadphoto-buckets .bucket h4.iphone {
         background-position: -196px bottom; }
       .uploadphoto-buckets .bucket h4.prophotography {
@@ -1590,7 +1590,7 @@ span.button-action-group {
   display: inline-block;
   height: 16px;
   width: 16px;
-  background: url("/embed/images/edit_room/photo-tool-icons.png");
+  background: url("../../images/edit_room/photo-tool-icons.png");
   margin: 0 0 -3px 10px; }
 
 li.description_language_section_container {
@@ -1670,7 +1670,7 @@ body.webkit input[type="radio"] {
   -moz-border-radius: 0.9em;
   -webkit-border-radius: 0.9em; }
   body.webkit input[type="radio"]:checked {
-    background: url("../images/radio-background.png") no-repeat center center;
+    background: url("../../images/radio-background.png") no-repeat center center;
     -webkit-background-size: 11px 11px; }
 body.webkit input[type="checkbox"] {
   -webkit-appearance: none;
@@ -1682,13 +1682,13 @@ body.webkit input[type="checkbox"] {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px; }
   body.webkit input[type="checkbox"]:checked {
-    background: url("../images/checkbox-background.png") no-repeat center center;
+    background: url("../../images/checkbox-background.png") no-repeat center center;
     -webkit-background-size: 16px 16px; }
 body.webkit select {
   -webkit-appearance: none;
   -webkit-background-size: 800px 24px;
   padding-right: 20px !important;
-  background: white url("../images/select-background.png") no-repeat right center !important; }
+  background: white url("../../images/select-background.png") no-repeat right center !important; }
 
 * + html span.expand {
   width: 20px !important;
@@ -1701,7 +1701,7 @@ body.webkit select {
   width: 981px; }
 
 #dashboard_v2 div.col.nav ul li a span.icon {
-  background: url("../images/edit_room/new-edit-room-icons.png") no-repeat 0 0;
+  background: url("../../images/edit_room/new-edit-room-icons.png") no-repeat 0 0;
   display: block;
   float: right;
   height: 22px;
@@ -1709,7 +1709,7 @@ body.webkit select {
   margin: -3px 0; }
 
 #dashboard_v2 div.col.nav ul li a span.icon.spinner {
-  background-image: url("/images/spinner.gif");
+  background-image: url("../../images/spinner.gif");
   background-position: 3px 3px !important; }
 
 #dashboard_v2 div.col.nav ul li a.details span.icon {

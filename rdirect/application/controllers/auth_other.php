@@ -80,7 +80,6 @@ class auth_other extends CI_Controller {
 		{
 			$username = mysql_real_escape_string($fb_user['name']);
 			$email = mysql_real_escape_string($fb_user['email']);
-
 			/*
 			 * We now must create a new user in tank auth with a random password in order
 			 * to insert this user and also into user profile table with tank auth id
@@ -92,6 +91,11 @@ class auth_other extends CI_Controller {
 			if($this -> session -> userdata('facebook_id'))
 			{
 				$this -> user_model -> update_user_profile($user_id, array('facebook_id' => $this -> session -> userdata('facebook_id')));
+				$this->load->model('pictures_model');
+				if($this->pictures_model->create_user_images_from_fb($user_id, $this -> session -> userdata('facebook_id')) == TRUE)
+				{
+					$this->user_model->set_user_has_picture($user_id, 1);
+				}
 			}
 			// let the user login via tank auth
 			$this -> tank_auth -> login($email, $password, false, false, true);
