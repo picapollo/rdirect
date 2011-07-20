@@ -205,7 +205,7 @@
 
 			Airbnb.SignInUp.setLocalizedMessages({
 				"signup" : {
-					"first_name" : {
+					"username" : {
 						"required" : "\uc774\ub984\uc744 \uc785\ub825\ud558\uc138\uc694."
 					},
 					"password" : {
@@ -220,9 +220,6 @@
 						"equalTo" : "\ube44\ubc00\ubc88\ud638\uac00 \uc77c\uce58\ud558\uc9c0 \uc54a\uc2b5\ub2c8\ub2e4. ",
 						"required" : "\ube44\ubc00\ubc88\ud638\ub97c \ud655\uc778\ud558\uc138\uc694.",
 						"minlength" : "\ucd5c\uc18c 5 \uae00\uc790\uac00 \ud544\uc694\ud569\ub2c8\ub2e4."
-					},
-					"last_name" : {
-						"required" : "\uc131\uc744 \uc785\ub825\ud558\uc138\uc694."
 					}
 				},
 				"signin" : {

@@ -9,7 +9,7 @@ if($fb):
 		<div id="fb-button-container">
 			<a class="fb-button" href="javascript:void(0);"> <span class="fb-button-left"></span> <span class="fb-button-center"><strong>페이스북 커넥트</strong></span> <span class="fb-button-right"></span> </a>
 		</div>
-		<iframe src="https://www.facebook.com/plugins/facepile.php?app_id=<?=$this->config->item('facebook_app_id');?>&amp;max_rows=2"
+		<iframe src="https://www.facebook.com/plugins/facepile.php?app_id=<?=$this->config->item('facebook_app_id');?>&max_rows=2"
 		scrolling="no" frameborder="0" allowTransparency="true"
 		style="border:none;overflow:hidden; width:282px; height:120px;"></iframe>
 	</div>

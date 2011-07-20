@@ -7,7 +7,7 @@
 <script type="text/javascript"> 
     function wait_for_upload() {
         jQuery('#upload_image_submit_button').attr('disabled', 'disabled');
-        jQuery('#upload_feedback').html("<img src='/images/blue_spinner.gif' />");
+        jQuery('#upload_feedback').html("<img src='<?=IMG_DIR?>/blue_spinner.gif' />");
         jQuery('#user_pic').css({'opacity': 0.4, 'filter': 'alpha(opacity=40)'});
     }
     
@@ -51,7 +51,7 @@
                     </p> 
  
  					<?=form_open('users/ajax_image_upload', array('target' => 'upload_frame', 'id' => 'ajax_upload_form', 'name' => 'ajax_upload_form', 'enctype' => 'multipart/form-data'));?>
-                        <input id="user_profile_pic" name="user[profile_pic]" size="20" type="file" /><br /> 
+                        <input id="user_profile_pic" name="userfile" size="20" type="file" /><br /> 
                         <!-- <input type="file" name="uploaded_file" /><br /> --> 
  
                         <br /> 
@@ -63,12 +63,11 @@
                     <iframe id="upload_frame" name="upload_frame" style="display:none;"></iframe> 
                 </div> 
  
-                <div class="top">&nbsp;</div> 
+                <div class="top"></div> 
                 <div class="middle"> 
- 
                     <div id="user_pic" onclick="show_ajax_image_box();"> 
                         <div id="edit_image_hover" style="display:none;" onclick="show_ajax_image_box();"><p>Change your Photo</p></div> 
-                            <img alt="Jisoo P" height="209" src="http://i0.muscache.com/users/832778/profile_pic/1310968654/square_225.jpg" title="Jisoo P" width="209" /> 
+                            <img alt="<?=$user->username?>" height="209" src="<?php echo ($user->has_picture == 1) ? UPLOADS_DIR.'/users/'.$user->id.'/square_255.jpg' : IMG_DIR.'/user_pic-225x225.png';?>" title="<?=$user->username?>" width="209" /> 
  
                     </div> 
                     <h1>Jisoo P<br /><span style="font-size:.55em; font-weight:bold; margin-left:2px;"><a href="/users/edit">Edit Profile</a></span></h1> 

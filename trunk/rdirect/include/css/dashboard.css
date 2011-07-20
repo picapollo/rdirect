@@ -128,7 +128,7 @@
 
 #command_center ul.subnav li.starred {
   margin-left: 8px;
-  background: transparent url("../images/favorites/star.png") no-repeat -18px 0;
+  background: transparent url("../../images/favorites/star.png") no-repeat -18px 0;
   padding-left: 25px; }
 
 #command_center .top, #command_center .bottom {
@@ -245,7 +245,7 @@
   right: 0;
   height: 16px;
   width: 18px;
-  background: transparent url("../images/command_center/user_edit_notepad.png") no-repeat 0 0; }
+  background: transparent url("../../images/command_center/user_edit_notepad.png") no-repeat 0 0; }
 
 #user_box ul li {
   height: 21px;
@@ -276,7 +276,7 @@
   top: 12px;
   padding: 20px 44px 30px 30px;
   z-index: 200;
-  background: transparent url("../images/uiwidgets/user_ajax_image_bg_medium.png") no-repeat 0 0; }
+  background: transparent url("../../images/uiwidgets/user_ajax_image_bg_medium.png") no-repeat 0 0; }
 
 #ajax_upload_container input#user_image {
   width: 150px; }
@@ -360,7 +360,7 @@
   overflow: visible; }
 
 #command_center #dashboard #left #quick_links ul li.starred {
-  background: transparent url("../images/favorites/star.png") no-repeat -21px 0;
+  background: transparent url("../../images/favorites/star.png") no-repeat -21px 0;
   padding-left: 23px;
   width: 175px; }
 
@@ -388,7 +388,7 @@
   background: #ffffff; }
 
 #command_center #dashboard #main #alerts ul li.reservation_request {
-  background-image: url("../images/command_center/alert_reservation_request.png");
+  background-image: url("../../images/command_center/alert_reservation_request.png");
   background-repeat: no-repeat;
   background-position: 5px 10px;
   position: relative; }
@@ -399,32 +399,32 @@
   top: 0; }
 
 #command_center #dashboard #main #alerts ul li.default {
-  background-image: url("../images/command_center/alert_exclamation_point.png");
+  background-image: url("../../images/command_center/alert_exclamation_point.png");
   background-repeat: no-repeat;
   background-position: 5px 10px; }
 
 #command_center #dashboard #main #alerts ul li.airplane {
-  background-image: url("../images/command_center/alert_airplane.png");
+  background-image: url("../../images/command_center/alert_airplane.png");
   background-repeat: no-repeat;
   background-position: 5px 10px; }
 
 #command_center #dashboard #main #alerts ul li.camera {
-  background-image: url("../images/command_center/alert_right_arrow.png");
+  background-image: url("../../images/command_center/alert_right_arrow.png");
   background-repeat: no-repeat;
   background-position: 5px 10px; }
 
 #command_center #dashboard #main #alerts ul li.rocket {
-  background-image: url("../images/command_center/alert_aircrew.png");
+  background-image: url("../../images/command_center/alert_aircrew.png");
   background-repeat: no-repeat;
   background-position: 5px 10px; }
 
 #command_center #dashboard #main #alerts ul li.cell_phone {
-  background-image: url("../images/command_center/alert_cell_phone.png");
+  background-image: url("../../images/command_center/alert_cell_phone.png");
   background-repeat: no-repeat;
   background-position: 5px 10px; }
 
 #command_center #dashboard #main #alerts ul li.recommend_review {
-  background-image: url("../images/command_center/alert_recommend_review_on.png");
+  background-image: url("../../images/command_center/alert_recommend_review_on.png");
   background-repeat: no-repeat;
   background-position: 6px 11px;
   padding-left: 30px; }
@@ -512,7 +512,7 @@
   background: #DEEDBF; }
 
 #command_center .box_button a {
-  background: url("../images/command_center/box_bottom_right_button_bg_green.png") left bottom no-repeat;
+  background: url("../../images/command_center/box_bottom_right_button_bg_green.png") left bottom no-repeat;
   width: 128px;
   display: block;
   text-align: center;
@@ -1166,298 +1166,298 @@
 
 /* --- AV --- */
 #command_center #calendar .av_left {
-  background: url("/images/scheduling2/av_left.gif") no-repeat 0 0;
+  background: url("../../images/scheduling2/av_left.gif") no-repeat 0 0;
   color: #434d51;
   font-weight: bold; }
 
 #command_center #calendar .av_right {
-  background: url("/images/scheduling2/av_right.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/av_right.gif") no-repeat 0 0; }
 
 #command_center #calendar .av_both {
-  background: url("/images/scheduling2/av_both.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/av_both.gif") no-repeat 0 0; }
 
 #command_center #calendar .av_single {
-  background: url("/images/scheduling2/av_single.gif") no-repeat 0 0;
+  background: url("../../images/scheduling2/av_single.gif") no-repeat 0 0;
   color: #434d51;
   font-weight: bold; }
 
 #command_center #calendar .av_left_past {
-  background: url("/images/scheduling2/av_left_past.gif") no-repeat 0 0;
+  background: url("../../images/scheduling2/av_left_past.gif") no-repeat 0 0;
   color: #434d51;
   font-weight: bold; }
 
 #command_center #calendar .av_right_past {
-  background: url("/images/scheduling2/av_right_past.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/av_right_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .av_both_past {
-  background: url("/images/scheduling2/av_both_past.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/av_both_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .av_single_past {
-  background: url("/images/scheduling2/av_single_past.gif") no-repeat 0 0;
+  background: url("../../images/scheduling2/av_single_past.gif") no-repeat 0 0;
   color: #434d51;
   font-weight: bold; }
 
 #command_center #calendar .x-grid3-row-over .av_left {
-  background: url("/images/scheduling2/av_left_roll.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/av_left_roll.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .av_right {
-  background: url("/images/scheduling2/av_right_roll.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/av_right_roll.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .av_both {
-  background: url("/images/scheduling2/av_both_roll.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/av_both_roll.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .av_single {
-  background: url("/images/scheduling2/av_single_roll.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/av_single_roll.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .av_left_past {
-  background: url("/images/scheduling2/av_left_roll_past.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/av_left_roll_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .av_right_past {
-  background: url("/images/scheduling2/av_right_roll_past.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/av_right_roll_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .av_both_past {
-  background: url("/images/scheduling2/av_both_roll_past.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/av_both_roll_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .av_single_past {
-  background: url("/images/scheduling2/av_single_roll_past.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/av_single_roll_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .av_left_click {
-  background: url("/images/scheduling2/av_left_click.gif") no-repeat 0 0;
+  background: url("../../images/scheduling2/av_left_click.gif") no-repeat 0 0;
   color: #434d51;
   font-weight: bold; }
 
 #command_center #calendar .av_right_click {
-  background: url("/images/scheduling2/av_right_click.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/av_right_click.gif") no-repeat 0 0; }
 
 #command_center #calendar .av_both_click {
-  background: url("/images/scheduling2/av_both_click.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/av_both_click.gif") no-repeat 0 0; }
 
 #command_center #calendar .av_single_click {
-  background: url("/images/scheduling2/av_single_click.gif") no-repeat 0 0;
+  background: url("../../images/scheduling2/av_single_click.gif") no-repeat 0 0;
   color: #434d51;
   font-weight: bold; }
 
 #command_center #calendar .av_left_past_click {
-  background: url("/images/scheduling2/av_left_click_past.gif") no-repeat 0 0;
+  background: url("../../images/scheduling2/av_left_click_past.gif") no-repeat 0 0;
   color: #434d51;
   font-weight: bold; }
 
 #command_center #calendar .av_right_past_click {
-  background: url("/images/scheduling2/av_right_click_past.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/av_right_click_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .av_both_past_click {
-  background: url("/images/scheduling2/av_both_click_past.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/av_both_click_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .av_single_past_click {
-  background: url("/images/scheduling2/av_single_click_past.gif") no-repeat 0 0;
+  background: url("../../images/scheduling2/av_single_click_past.gif") no-repeat 0 0;
   color: #434d51;
   font-weight: bold; }
 
 /* --- RS --- */
 #command_center #calendar .rs_left {
-  background: url("/images/scheduling2/rs_left.gif") no-repeat 0 0;
+  background: url("../../images/scheduling2/rs_left.gif") no-repeat 0 0;
   color: white;
   font-weight: bold; }
 
 #command_center #calendar .rs_right {
-  background: url("/images/scheduling2/rs_right.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/rs_right.gif") no-repeat 0 0; }
 
 #command_center #calendar .rs_both {
-  background: url("/images/scheduling2/rs_both.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/rs_both.gif") no-repeat 0 0; }
 
 #command_center #calendar .rs_single {
-  background: url("/images/scheduling2/rs_single.gif") no-repeat 0 0;
+  background: url("../../images/scheduling2/rs_single.gif") no-repeat 0 0;
   color: white;
   font-weight: bold; }
 
 #command_center #calendar .rs_left_past {
-  background: url("/images/scheduling2/rs_left_past.gif") no-repeat 0 0;
+  background: url("../../images/scheduling2/rs_left_past.gif") no-repeat 0 0;
   color: white;
   font-weight: bold; }
 
 #command_center #calendar .rs_right_past {
-  background: url("/images/scheduling2/rs_right_past.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/rs_right_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .rs_both_past {
-  background: url("/images/scheduling2/rs_both_past.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/rs_both_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .rs_single_past {
-  background: url("/images/scheduling2/rs_single_past.gif") no-repeat 0 0;
+  background: url("../../images/scheduling2/rs_single_past.gif") no-repeat 0 0;
   color: white;
   font-weight: bold; }
 
 #command_center #calendar .x-grid3-row-over .rs_left {
-  background: url("/images/scheduling2/rs_left_roll.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/rs_left_roll.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .rs_right {
-  background: url("/images/scheduling2/rs_right_roll.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/rs_right_roll.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .rs_both {
-  background: url("/images/scheduling2/rs_both_roll.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/rs_both_roll.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .rs_single {
-  background: url("/images/scheduling2/rs_single_roll.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/rs_single_roll.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .rs_left_past {
-  background: url("/images/scheduling2/rs_left_roll_past.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/rs_left_roll_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .rs_right_past {
-  background: url("/images/scheduling2/rs_right_roll_past.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/rs_right_roll_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .rs_both_past {
-  background: url("/images/scheduling2/rs_both_roll_past.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/rs_both_roll_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .rs_single_past {
-  background: url("/images/scheduling2/rs_single_roll_past.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/rs_single_roll_past.gif") no-repeat 0 0; }
 
 /* --- TP --- */
 #command_center #calendar .tp_left {
-  background: url("/images/scheduling2/rs_left.gif") no-repeat 0 0;
+  background: url("../../images/scheduling2/rs_left.gif") no-repeat 0 0;
   color: white;
   font-weight: bold; }
 
 #command_center #calendar .tp_right {
-  background: url("/images/scheduling2/rs_right.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/rs_right.gif") no-repeat 0 0; }
 
 #command_center #calendar .tp_both {
-  background: url("/images/scheduling2/rs_both.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/rs_both.gif") no-repeat 0 0; }
 
 #command_center #calendar .tp_single {
-  background: url("/images/scheduling2/rs_single.gif") no-repeat 0 0;
+  background: url("../../images/scheduling2/rs_single.gif") no-repeat 0 0;
   color: white;
   font-weight: bold; }
 
 #command_center #calendar .tp_left_past {
-  background: url("/images/scheduling2/rs_left_past.gif") no-repeat 0 0;
+  background: url("../../images/scheduling2/rs_left_past.gif") no-repeat 0 0;
   color: white;
   font-weight: bold; }
 
 #command_center #calendar .tp_right_past {
-  background: url("/images/scheduling2/rs_right_past.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/rs_right_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .tp_both_past {
-  background: url("/images/scheduling2/rs_both_past.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/rs_both_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .tp_single_past {
-  background: url("/images/scheduling2/rs_single_past.gif") no-repeat 0 0;
+  background: url("../../images/scheduling2/rs_single_past.gif") no-repeat 0 0;
   color: white;
   font-weight: bold; }
 
 #command_center #calendar .x-grid3-row-over .tp_left {
-  background: url("/images/scheduling2/rs_left_roll.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/rs_left_roll.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .tp_right {
-  background: url("/images/scheduling2/rs_right_roll.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/rs_right_roll.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .tp_both {
-  background: url("/images/scheduling2/rs_both_roll.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/rs_both_roll.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .tp_single {
-  background: url("/images/scheduling2/rs_single_roll.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/rs_single_roll.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .tp_left_past {
-  background: url("/images/scheduling2/rs_left_roll_past.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/rs_left_roll_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .tp_right_past {
-  background: url("/images/scheduling2/rs_right_roll_past.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/rs_right_roll_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .tp_both_past {
-  background: url("/images/scheduling2/rs_both_roll_past.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/rs_both_roll_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .tp_single_past {
-  background: url("/images/scheduling2/rs_single_roll_past.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/rs_single_roll_past.gif") no-repeat 0 0; }
 
 /* --- BS --- */
 #command_center #calendar .bs_left {
-  background: url("/images/scheduling2/bs_left.gif") no-repeat 0 0;
+  background: url("../../images/scheduling2/bs_left.gif") no-repeat 0 0;
   color: white;
   font-weight: bold; }
 
 #command_center #calendar .bs_right {
-  background: url("/images/scheduling2/bs_right.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/bs_right.gif") no-repeat 0 0; }
 
 #command_center #calendar .bs_both {
-  background: url("/images/scheduling2/bs_both.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/bs_both.gif") no-repeat 0 0; }
 
 #command_center #calendar .bs_single {
-  background: url("/images/scheduling2/bs_single.gif") no-repeat 0 0;
+  background: url("../../images/scheduling2/bs_single.gif") no-repeat 0 0;
   color: white;
   font-weight: bold; }
 
 #command_center #calendar .bs_left_past {
-  background: url("/images/scheduling2/bs_left_past.gif") no-repeat 0 0;
+  background: url("../../images/scheduling2/bs_left_past.gif") no-repeat 0 0;
   color: white;
   font-weight: bold; }
 
 #command_center #calendar .bs_right_past {
-  background: url("/images/scheduling2/bs_right_past.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/bs_right_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .bs_both_past {
-  background: url("/images/scheduling2/bs_both_past.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/bs_both_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .bs_single_past {
-  background: url("/images/scheduling2/bs_single_past.gif") no-repeat 0 0;
+  background: url("../../images/scheduling2/bs_single_past.gif") no-repeat 0 0;
   color: white;
   font-weight: bold; }
 
 #command_center #calendar .x-grid3-row-over .bs_left {
-  background: url("/images/scheduling2/bs_left_roll.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/bs_left_roll.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .bs_right {
-  background: url("/images/scheduling2/bs_right_roll.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/bs_right_roll.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .bs_both {
-  background: url("/images/scheduling2/bs_both_roll.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/bs_both_roll.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .bs_single {
-  background: url("/images/scheduling2/bs_single_roll.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/bs_single_roll.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .bs_left_past {
-  background: url("/images/scheduling2/bs_left_roll_past.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/bs_left_roll_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .bs_right_past {
-  background: url("/images/scheduling2/bs_right_roll_past.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/bs_right_roll_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .bs_both_past {
-  background: url("/images/scheduling2/bs_both_roll_past.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/bs_both_roll_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .x-grid3-row-over .bs_single_past {
-  background: url("/images/scheduling2/bs_single_roll_past.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/bs_single_roll_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .bs_left_click {
-  background: url("/images/scheduling2/bs_left_click.gif") no-repeat 0 0;
+  background: url("../../images/scheduling2/bs_left_click.gif") no-repeat 0 0;
   color: white;
   font-weight: bold; }
 
 #command_center #calendar .bs_right_click {
-  background: url("/images/scheduling2/bs_right_click.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/bs_right_click.gif") no-repeat 0 0; }
 
 #command_center #calendar .bs_both_click {
-  background: url("/images/scheduling2/bs_both_click.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/bs_both_click.gif") no-repeat 0 0; }
 
 #command_center #calendar .bs_single_click {
-  background: url("/images/scheduling2/bs_single_click.gif") no-repeat 0 0;
+  background: url("../../images/scheduling2/bs_single_click.gif") no-repeat 0 0;
   color: white;
   font-weight: bold; }
 
 #command_center #calendar .bs_left_past_click {
-  background: url("/images/scheduling2/bs_left_click_past.gif") no-repeat 0 0;
+  background: url("../../images/scheduling2/bs_left_click_past.gif") no-repeat 0 0;
   color: white;
   font-weight: bold; }
 
 #command_center #calendar .bs_right_past_click {
-  background: url("/images/scheduling2/bs_right_click_past.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/bs_right_click_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .bs_both_past_click {
-  background: url("/images/scheduling2/bs_both_click_past.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/bs_both_click_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .bs_single_past_click {
-  background: url("/images/scheduling2/bs_single_click_past.gif") no-repeat 0 0;
+  background: url("../../images/scheduling2/bs_single_click_past.gif") no-repeat 0 0;
   color: white;
   font-weight: bold; }
 
 #command_center #calendar .address_bar_past {
-  background: url("/images/scheduling2/address_bar_past.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling2/address_bar_past.gif") no-repeat 0 0; }
 
 #command_center #calendar .address_bar_past .x-grid3-cell-inner {
   cursor: auto; }
@@ -1487,17 +1487,17 @@
   font-weight: bold; }
 
 #command_center #calendar .x-grid3-hd-inner .today {
-  background: url("/images/scheduling2/date_box_today.gif") no-repeat 0 0;
+  background: url("../../images/scheduling2/date_box_today.gif") no-repeat 0 0;
   height: 100%;
   padding-top: 12px; }
 
 #command_center #calendar .x-grid3-hd-inner .past {
-  background: url("/images/scheduling2/date_box_past.gif") no-repeat 0 0;
+  background: url("../../images/scheduling2/date_box_past.gif") no-repeat 0 0;
   height: 100%;
   padding-top: 12px; }
 
 #command_center #calendar .x-grid3-hd-inner .future {
-  background: url("/images/scheduling2/date_box_default.gif") no-repeat 0 0;
+  background: url("../../images/scheduling2/date_box_default.gif") no-repeat 0 0;
   height: 100%;
   padding-top: 12px; }
 
@@ -1534,7 +1534,7 @@ ul.ext-menu-list {
   height: 120px; }
 
 #command_center #calendar .x-grid3-row-over .hosting .x-grid3-cell-inner {
-  background: #dcf2fe url("/images/scheduling2/arrow_blue.png") no-repeat 236px 4px; }
+  background: #dcf2fe url("../../images/scheduling2/arrow_blue.png") no-repeat 236px 4px; }
 
 #command_center #calendar .x-grid3-hd-row td {
   height: 51px;
@@ -1582,7 +1582,7 @@ ul.ext-menu-list {
 
 /****** Single Calendar ******/
 #command_center #calendar2 #backdrop {
-  background: url("/images/modules/messaging_tile_gray.png") repeat;
+  background: url("../../images/modules/messaging_tile_gray.png") repeat;
   padding: 10px 10px 10px 12px;
   width: 763px;
   margin: 0 0 0 57px; }
@@ -1592,12 +1592,12 @@ ul.ext-menu-list {
 
 #command_center #calendar2 .full_bubble {
   padding-bottom: 10px;
-  background: url("/images/scheduling/bkg_wide_bubble.gif") no-repeat left bottom; }
+  background: url("../../images/scheduling/bkg_wide_bubble.gif") no-repeat left bottom; }
 
 #command_center #calendar2 .full_bubble .inner {
   padding-left: 10px;
   padding-right: 10px;
-  background: url("/images/scheduling/bkg_wide_bubble.gif") no-repeat 0 0; }
+  background: url("../../images/scheduling/bkg_wide_bubble.gif") no-repeat 0 0; }
 
 * #command_center #calendar2 .full_bubble .inner {
   padding-left: 10px;
@@ -1614,20 +1614,20 @@ ul.ext-menu-list {
   float: left;
   width: 106px;
   height: 80px;
-  background: url("/images/scheduling/tile_selected.gif") no-repeat;
+  background: url("../../images/scheduling/tile_selected.gif") no-repeat;
   cursor: pointer; }
 
 #command_center #calendar2 .tile_disabled {
   float: left;
   width: 106px;
   height: 80px;
-  background: url("/images/scheduling/tile_disabled.gif") no-repeat; }
+  background: url("../../images/scheduling/tile_disabled.gif") no-repeat; }
 
 #command_center #calendar2 .tile {
   float: left;
   width: 106px;
   height: 80px;
-  background: url("/images/scheduling/tile_normal.gif") no-repeat;
+  background: url("../../images/scheduling/tile_normal.gif") no-repeat;
   cursor: pointer; }
 
 #command_center #calendar2 .day {

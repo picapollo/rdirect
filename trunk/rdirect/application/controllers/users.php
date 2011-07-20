@@ -12,10 +12,9 @@ class Users extends CI_Controller {
 		if ( ! $this->tank_auth->is_logged_in()) {
 			//redirect('/auth/login/');
 		} else {
-			$data['user_id']	= $this->tank_auth->get_user_id();
+			/*$data['user_id']	= $this->tank_auth->get_user_id();
 			$data['username']	= $this->tank_auth->get_username();
-			$data['tmp']		= $this->facebook->getUser();
-			$this->load->view('welcome', $data);
+			$data['tmp']		= $this->facebook->getUser();*/
 		}
 	}
 
@@ -50,7 +49,54 @@ class Users extends CI_Controller {
 	}
 	
 	public function ajax_image_upload(){
-		echo 'ajax_image_upload';
+		$data = array(
+			'feedback_type' => 'upload_feedback',
+			'callback_function' => 'upload_complete'
+		);
+
+		if( ! $user_id = $this->tank_auth->get_user_id())	// 로그인하지 않은 경우
+		{
+			$data['message_type'] = 'bad small';
+			$data['message_content'] = 'You are not logged in.';
+		}
+		else
+		{
+			$config['upload_path'] = UPLOADS_ROOT.'/users/';
+			$config['allowed_types'] = 'gif|jpg|png';
+			$config['max_size']	= '100';
+			$config['max_width']  = '1024';
+			$config['max_height']  = '768';
+			$config['file_name'] = 'tmp';	
+			
+			$this->load->library('upload', $config);
+			if ( ! $this->upload->do_upload())
+			{
+				$data['message_type'] = 'bad small';
+				$data['message_content'] = $this->upload->display_errors('','');
+			}
+			else
+			{
+				$result = $this->upload->data();
+				$data['message_type'] = 'good small';
+				//$data['message_content'] = $result['client_name'];
+				
+				$this->load->model('pictures_model');
+				if( ! $this->pictures_model->create_user_images($user_id, $result['full_path']))
+				{
+					$data['message_content'] = 'Resize failed';
+				}		
+				else
+				{
+					$data['message_content'] = 'Successfully changed!';
+					$data['username'] = $this->tank_auth->get_username();
+					$data['user_profile_image'] = base_url() . 'uploads/users/' . $user_id . '/square_255.jpg?' . time();
+				}	
+				
+				unlink($result['full_path']);
+			}
+		}		
+		
+		$this->load->view('ajax_response', $data);
 	}
 }
 

@@ -164,22 +164,24 @@ class Auth extends CI_Controller
 			}
 
 			// Facebook connect 대신 이메일 주소로 가입		
-			if($this->input->get('rf') == true)
+			if(($hf = $this->input->get('hf')) !== null)
 			{
-				$this->session->set_userdata(array('rf' => '1'));
-				$data['fb'] = 0;
+				$this->session->set_userdata(array('hf' => $hf));
 			}
-			else if($this->session->userdata('rf') == 1)
+			else
 			{
-				$data['fb'] = 0;
-			}
-			else{
-				$data['fb'] = 1;
+				$hf = $this->session->userdata('hf');
 			}
 				
+			$data['fb'] = ! $hf;
+							
 			$data['header'] = array(
 				'title' => 'Sign In / Sign Up'
 			);
+			
+			$cookie = $this->facebook->get_facebook_cookie();
+			if(isset($cookie['uid']))
+				$data['facebook_id'] = $cookie['uid']; 
 			
 			$this->load->view('signup_login', $data);
 		}
