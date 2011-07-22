@@ -1,0 +1,88 @@
+[22-Jul-2011 13:43:58] PHP Fatal error:  Cannot redeclare class Facebook in /home/guersam/www/rdirect/application/libraries/facebook/facebook.php on line 25
+[22-Jul-2011 14:03:05] OAuthException: Error validating access token: Session has expired at unix time 1311310800. The current unix time is 1311310985.
+[22-Jul-2011 14:42:11] PHP Fatal error:  Call to undefined function length() in /home/guersam/www/rdirect/application/views/top_menu.php on line 169
+[22-Jul-2011 14:43:13] PHP Parse error:  syntax error, unexpected '}' in /home/guersam/www/rdirect/application/views/top_menu.php on line 177
+[22-Jul-2011 14:58:19] PHP Fatal error:  Class 'MY_Controller' not found in /home/guersam/www/rdirect/application/controllers/auth.php on line 4
+[22-Jul-2011 16:39:10] PHP Fatal error:  Class 'Set_language' not found in /home/guersam/www/rdirect/system/core/Hooks.php on line 211
+[22-Jul-2011 16:39:45] PHP Fatal error:  Class 'Set_language' not found in /home/guersam/www/rdirect/system/core/Hooks.php on line 211
+[22-Jul-2011 16:41:35] PHP Fatal error:  Call to undefined method Set_language::set_language() in /home/guersam/www/rdirect/system/core/Hooks.php on line 212
+[22-Jul-2011 16:49:35] PHP Fatal error:  require_once(): Failed opening required '../config/language.php' (include_path='.:/usr/share/pear') in /home/guersam/www/rdirect/application/hooks/set_language.php on line 4
+[22-Jul-2011 17:11:56] PHP Parse error:  syntax error, unexpected $end in /home/guersam/www/rdirect/application/language/korean/common_lang.php on line 1
+[22-Jul-2011 17:13:27] PHP Parse error:  syntax error, unexpected $end in /home/guersam/www/rdirect/application/language/korean/common_lang.php on line 1
+[22-Jul-2011 17:13:28] PHP Parse error:  syntax error, unexpected $end in /home/guersam/www/rdirect/application/language/korean/common_lang.php on line 1
+[22-Jul-2011 18:07:13] PHP Fatal error:  Uncaught CurlException: 28: connect() timed out!
+  thrown in /home/guersam/www/rdirect/application/libraries/facebook/base_facebook.php on line 774
+[22-Jul-2011 18:07:48] PHP Fatal error:  Uncaught CurlException: 28: connect() timed out!
+  thrown in /home/guersam/www/rdirect/application/libraries/facebook/base_facebook.php on line 774
+[22-Jul-2011 18:12:34] PHP Fatal error:  Uncaught CurlException: 28: SSL connection timeout
+  thrown in /home/guersam/www/rdirect/application/libraries/facebook/base_facebook.php on line 774
+[22-Jul-2011 18:19:35] PHP Fatal error:  Call to undefined method facebook::get_facebook_cookie() in /home/guersam/www/rdirect/application/controllers/test.php on line 18
+[22-Jul-2011 18:24:53] PHP Fatal error:  Call to a member function create_user_images_from_fb() on a non-object in /home/guersam/www/rdirect/application/controllers/test.php on line 22
+[22-Jul-2011 18:33:15] PHP Parse error:  syntax error, unexpected '}' in /home/guersam/www/rdirect/application/controllers/test.php on line 13
+[22-Jul-2011 18:50:58] <p>You must specify a source image in your preferences.</p>
+[22-Jul-2011 18:50:58] <p>You must specify a source image in your preferences.</p>
+[22-Jul-2011 18:50:58] <p>You must specify a source image in your preferences.</p>
+[22-Jul-2011 18:51:38] PHP Fatal error:  Call to undefined method CI_Image_lib::display_error() in /home/guersam/www/rdirect/application/models/pictures_model.php on line 75
+[22-Jul-2011 18:51:48] <p>You must specify a source image in your preferences.</p>
+[22-Jul-2011 18:51:48] <p>You must specify a source image in your preferences.</p>
+[22-Jul-2011 18:51:48] <p>You must specify a source image in your preferences.</p>
+[22-Jul-2011 19:01:00] PHP Fatal error:  Uncaught OAuthException: Error validating access token: Session has expired at unix time 1311328800. The current unix time is 1311328859.
+  thrown in /home/guersam/www/rdirect/application/libraries/facebook/base_facebook.php on line 988
+[22-Jul-2011 21:07:07] PHP Fatal error:  Call to undefined function form_open() in /home/guersam/www/rdirect/application/views/auth/signup2.php on line 9
+[22-Jul-2011 21:07:57] PHP Fatal error:  Call to undefined function form_open() in /home/guersam/www/rdirect/application/views/auth/signup2.php on line 9
+[22-Jul-2011 21:07:59] PHP Fatal error:  Call to undefined function form_open() in /home/guersam/www/rdirect/application/views/auth/signup2.php on line 9
+[22-Jul-2011 21:08:17] PHP Fatal error:  Call to undefined function form_open() in /home/guersam/www/rdirect/application/views/auth/signup2.php on line 9
+[22-Jul-2011 21:08:57] PHP Fatal error:  Call to undefined function form_open() in /home/guersam/www/rdirect/application/views/auth/signup2.php on line 9
+[22-Jul-2011 21:10:24] PHP Fatal error:  Call to undefined function form_open() in /home/guersam/www/rdirect/application/views/auth/signup2.php on line 9
+[22-Jul-2011 21:10:30] PHP Fatal error:  Call to undefined function form_open() in /home/guersam/www/rdirect/application/views/auth/signup2.php on line 9
+[22-Jul-2011 21:10:36] PHP Fatal error:  Call to undefined function form_open() in /home/guersam/www/rdirect/application/views/auth/signup2.php on line 9
+[22-Jul-2011 21:15:13] PHP Fatal error:  Uncaught CurlException: 28: connect() timed out!
+  thrown in /home/guersam/www/rdirect/application/libraries/facebook/base_facebook.php on line 774
+[22-Jul-2011 21:52:27] PHP Fatal error:  Call to undefined method Tank_auth::is_loggin_in() in /home/guersam/www/rdirect/application/controllers/users.php on line 106
+[22-Jul-2011 21:52:30] PHP Fatal error:  Call to undefined method Tank_auth::is_loggin_in() in /home/guersam/www/rdirect/application/controllers/users.php on line 106
+[22-Jul-2011 21:53:44] PHP Fatal error:  Call to undefined method Tank_auth::is_loggin_in() in /home/guersam/www/rdirect/application/controllers/users.php on line 106
+[22-Jul-2011 21:54:33] PHP Fatal error:  Call to undefined method Tank_auth::is_loggin_in() in /home/guersam/www/rdirect/application/controllers/users.php on line 106
+[22-Jul-2011 21:54:54] PHP Fatal error:  Call to undefined method Tank_auth::is_loggin_in() in /home/guersam/www/rdirect/application/controllers/users.php on line 106
+[22-Jul-2011 21:56:07] PHP Fatal error:  Call to undefined method Tank_auth::is_loggin_in() in /home/guersam/www/rdirect/application/controllers/users.php on line 106
+[22-Jul-2011 21:56:21] PHP Fatal error:  Call to undefined method Tank_auth::is_loggin_in() in /home/guersam/www/rdirect/application/controllers/users.php on line 106
+[22-Jul-2011 21:56:27] PHP Fatal error:  Call to undefined method Tank_auth::is_loggin_in() in /home/guersam/www/rdirect/application/controllers/users.php on line 106
+[22-Jul-2011 21:57:20] PHP Fatal error:  Call to undefined method Tank_auth::is_loggin_in() in /home/guersam/www/rdirect/application/controllers/users.php on line 107
+[22-Jul-2011 21:57:23] PHP Fatal error:  Call to undefined method Tank_auth::is_loggin_in() in /home/guersam/www/rdirect/application/controllers/users.php on line 107
+[22-Jul-2011 21:58:14] PHP Fatal error:  Call to undefined method Tank_auth::is_loggin_in() in /home/guersam/www/rdirect/application/controllers/users.php on line 107
+[22-Jul-2011 22:00:38] PHP Fatal error:  Call to undefined method Tank_auth::is_loggin_in() in /home/guersam/www/rdirect/application/controllers/users.php on line 107
+[22-Jul-2011 22:00:42] PHP Fatal error:  Call to undefined method Tank_auth::is_loggin_in() in /home/guersam/www/rdirect/application/controllers/users.php on line 107
+[22-Jul-2011 22:01:52] PHP Fatal error:  Call to undefined method Users_model::set_user_locale() in /home/guersam/www/rdirect/application/controllers/users.php on line 109
+[22-Jul-2011 22:01:56] PHP Fatal error:  Call to undefined method Users_model::set_user_locale() in /home/guersam/www/rdirect/application/controllers/users.php on line 109
+[22-Jul-2011 22:02:37] PHP Fatal error:  Call to undefined method Users_model::set_user_locale() in /home/guersam/www/rdirect/application/controllers/users.php on line 109
+[22-Jul-2011 22:02:45] PHP Fatal error:  Call to undefined method Users_model::set_user_locale() in /home/guersam/www/rdirect/application/controllers/users.php on line 109
+[22-Jul-2011 22:02:53] PHP Fatal error:  Call to undefined method Users_model::set_user_locale() in /home/guersam/www/rdirect/application/controllers/users.php on line 109
+[22-Jul-2011 23:21:09] PHP Notice:  Constant BASEPATH already defined in /home/guersam/www/rdirect/application/config/constants.php on line 52
+[22-Jul-2011 23:21:09] PHP Notice:  Use of undefined constant BASE_PATH - assumed 'BASE_PATH' in /home/guersam/www/rdirect/application/config/constants.php on line 53
+[22-Jul-2011 23:21:10] PHP Notice:  Constant BASEPATH already defined in /home/guersam/www/rdirect/application/config/constants.php on line 52
+[22-Jul-2011 23:21:10] PHP Notice:  Use of undefined constant BASE_PATH - assumed 'BASE_PATH' in /home/guersam/www/rdirect/application/config/constants.php on line 53
+[22-Jul-2011 23:21:10] PHP Notice:  Constant BASEPATH already defined in /home/guersam/www/rdirect/application/config/constants.php on line 52
+[22-Jul-2011 23:21:10] PHP Notice:  Use of undefined constant BASE_PATH - assumed 'BASE_PATH' in /home/guersam/www/rdirect/application/config/constants.php on line 53
+[22-Jul-2011 23:21:10] PHP Notice:  Constant BASEPATH already defined in /home/guersam/www/rdirect/application/config/constants.php on line 52
+[22-Jul-2011 23:21:10] PHP Notice:  Use of undefined constant BASE_PATH - assumed 'BASE_PATH' in /home/guersam/www/rdirect/application/config/constants.php on line 53
+[22-Jul-2011 23:21:10] PHP Notice:  Constant BASEPATH already defined in /home/guersam/www/rdirect/application/config/constants.php on line 52
+[22-Jul-2011 23:21:10] PHP Notice:  Use of undefined constant BASE_PATH - assumed 'BASE_PATH' in /home/guersam/www/rdirect/application/config/constants.php on line 53
+[22-Jul-2011 23:21:10] PHP Notice:  Constant BASEPATH already defined in /home/guersam/www/rdirect/application/config/constants.php on line 52
+[22-Jul-2011 23:21:10] PHP Notice:  Use of undefined constant BASE_PATH - assumed 'BASE_PATH' in /home/guersam/www/rdirect/application/config/constants.php on line 53
+[22-Jul-2011 23:21:10] PHP Notice:  Constant BASEPATH already defined in /home/guersam/www/rdirect/application/config/constants.php on line 52
+[22-Jul-2011 23:21:10] PHP Notice:  Use of undefined constant BASE_PATH - assumed 'BASE_PATH' in /home/guersam/www/rdirect/application/config/constants.php on line 53
+[22-Jul-2011 23:21:10] PHP Notice:  Constant BASEPATH already defined in /home/guersam/www/rdirect/application/config/constants.php on line 52
+[22-Jul-2011 23:21:10] PHP Notice:  Use of undefined constant BASE_PATH - assumed 'BASE_PATH' in /home/guersam/www/rdirect/application/config/constants.php on line 53
+[22-Jul-2011 23:21:59] PHP Notice:  Constant BASEPATH already defined in /home/guersam/www/rdirect/application/config/constants.php on line 52
+[22-Jul-2011 23:22:00] PHP Notice:  Constant BASEPATH already defined in /home/guersam/www/rdirect/application/config/constants.php on line 52
+[22-Jul-2011 23:39:19] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/guersam/www/rdirect/application/controllers/home.php on line 42
+[22-Jul-2011 23:49:37] PHP Fatal error:  Can't use method return value in write context in /home/guersam/www/rdirect/application/core/MY_Controller.php on line 15
+[22-Jul-2011 23:52:02] PHP Fatal error:  Call to a member function userdata() on a non-object in /home/guersam/www/rdirect/application/core/MY_Controller.php on line 11
+[22-Jul-2011 23:53:06] PHP Fatal error:  Call to a member function userdata() on a non-object in /home/guersam/www/rdirect/application/core/MY_Controller.php on line 13
+[22-Jul-2011 23:53:51] PHP Fatal error:  Call to a member function userdata() on a non-object in /home/guersam/www/rdirect/application/core/MY_Controller.php on line 11
+[22-Jul-2011 23:54:20] PHP Fatal error:  Call to a member function userdata() on a non-object in /home/guersam/www/rdirect/application/core/MY_Controller.php on line 11
+[22-Jul-2011 23:55:15] PHP Fatal error:  Call to a member function userdata() on a non-object in /home/guersam/www/rdirect/application/core/MY_Controller.php on line 11
+[23-Jul-2011 00:01:28] PHP Fatal error:  Call to a member function userdata() on a non-object in /home/guersam/www/rdirect/application/core/MY_Controller.php on line 13
+[23-Jul-2011 00:01:49] PHP Fatal error:  Call to a member function userdata() on a non-object in /home/guersam/www/rdirect/application/core/MY_Controller.php on line 13
+[23-Jul-2011 00:01:50] PHP Fatal error:  Call to a member function userdata() on a non-object in /home/guersam/www/rdirect/application/core/MY_Controller.php on line 13
+[23-Jul-2011 00:01:50] PHP Fatal error:  Call to a member function userdata() on a non-object in /home/guersam/www/rdirect/application/core/MY_Controller.php on line 13
+[23-Jul-2011 00:05:21] PHP Fatal error:  Call to a member function item() on a non-object in /home/guersam/www/rdirect/application/core/MY_Controller.php on line 12
