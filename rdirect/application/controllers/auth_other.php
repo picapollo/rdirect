@@ -1,14 +1,11 @@
 <?php
 
-class auth_other extends CI_Controller {
+class auth_other extends MY_Controller {
 	function __construct()
 	{
 		parent::__construct();
-		$this -> load -> model('user_model');
+		$this -> load -> model('users_model');
 		$this -> load -> model('tank_auth/users_tank_auth');
-
-		// for google open id
-		parse_str($_SERVER['QUERY_STRING'], $_GET);
 	}
 
 	// handle when users log in using facebook account
@@ -18,16 +15,24 @@ class auth_other extends CI_Controller {
 		//$this->load->library('facebook'); // this has been loaded in autoload.php
 
 		// get the facebook user and save in the session
-		$fb_user = $this -> facebook -> getUser();
-		if(isset($fb_user))
+		$fb_id = $this->facebook->getUser();
+		
+		if($fb_id)
+			$fb_user = $this->facebook->api('/me');
+		else
+			$fb_user = null;
+		
+		print_r($fb_user);
+		
+		if($fb_user)
 		{
-			$this -> session -> set_userdata('facebook_id', $fb_user['id']);
+			$this->session->set_userdata('facebook_id', $fb_user['id']);
 			$fb_user['id'] = mysql_real_escape_string($fb_user['id']);
 			$fb_user['email'] = mysql_real_escape_string($fb_user['email']);
-			$user = $this -> user_model -> get_user_by_sm(array('facebook_id' => $fb_user['id']), 'facebook_id');
+			$user = $this -> users_model -> get_user_by_sm(array('facebook_id' => $fb_user['id']), 'facebook_id');
 			if(sizeof($user) == 0)
 			{
-				$user = $this -> user_model -> get_user_by_email($fb_user['email']);
+				$user = $this -> users_model -> get_user_by_email($fb_user['email']);
 				if(sizeof($user) == 0)
 				{
 					redirect('auth_other/fill_user_info', 'refresh');
@@ -37,7 +42,7 @@ class auth_other extends CI_Controller {
 					// TODO: 기존 계정과 연결시킬지 물어봄
 					if( true )
 					{
-						$this -> user_model -> update_user_profile($user[0] -> id, array('facebook_id' => $fb_user['facebook_id']));
+						$this -> users_model -> update_user_profile($user[0] -> id, array('facebook_id' => $fb_user['facebook_id']));
 						redirect('home/dashboard');
 					}
 					else
@@ -58,7 +63,8 @@ class auth_other extends CI_Controller {
 		}
 		else
 		{
-			echo 'cannot find the Facebook user';
+			$this->_add_notice('Cannot find facebook user.');
+			echo '<script type="text/javascript">history.back()</script>';
 		}
 	}
 
@@ -68,7 +74,9 @@ class auth_other extends CI_Controller {
 		// load validation library and rules
 		$this -> load -> config('tank_auth', TRUE);
 
-		$fb_user = $this -> facebook -> getUser();
+		$fb_id=$this->facebook->getUser();
+		if($fb_id)
+			$fb_user = $this->facebook->api('/me');
 
 		// Run the validation
 		if( ! $this -> session -> userdata('facebook_id'))
@@ -86,15 +94,17 @@ class auth_other extends CI_Controller {
 			 */
 			$password = $this -> generate_password(9, 8);
 			$this -> tank_auth -> create_user($username, $email, $password, false);
-			$new_user = $this -> user_model -> get_user_by_email($email);
+			$new_user = $this -> users_model -> get_user_by_email($email);
 			$user_id = $new_user[0] -> id;
 			if($this -> session -> userdata('facebook_id'))
 			{
-				$this -> user_model -> update_user_profile($user_id, array('facebook_id' => $this -> session -> userdata('facebook_id')));
+				$this -> users_model -> update_user_profile($user_id, array(
+						'facebook_id' => $this -> session -> userdata('facebook_id')
+					));
 				$this->load->model('pictures_model');
 				if($this->pictures_model->create_user_images_from_fb($user_id, $this -> session -> userdata('facebook_id')) == TRUE)
 				{
-					$this->user_model->set_user_has_picture($user_id, 1);
+					$this->users_model->set_user_has_picture($user_id, 1);
 				}
 			}
 			// let the user login via tank auth
@@ -127,7 +137,7 @@ class auth_other extends CI_Controller {
 	// function to validate the email input field
 	function email_check($email)
 	{
-		$user = $this -> user_model -> get_user_by_email($email);
+		$user = $this -> users_model -> get_user_by_email($email);
 		if(sizeof($user) > 0)
 		{
 			$this -> form_validation -> set_message('email_check', 'This %s is already registered.');
@@ -178,7 +188,7 @@ class auth_other extends CI_Controller {
 		}
 		return $password;
 	}
-
+	
 }
 
 /* End of file main.php */

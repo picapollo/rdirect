@@ -11,10 +11,12 @@ class Pictures_model extends CI_Model {
 		$this->image_config['image_library'] = 'gd2';
 		$this->image_config['maintain_ratio'] = FALSE;
 		$this->image_config['overwrite'] = TRUE;
-		$this->load->library('image_lib', $this->image_config);
+		$this->image_config['allowed_types'] = 'jpg|jpeg|gif|png';
+		$this->load->library('image_lib');
 	}
 	
 	function create_user_images($user_id, $source_image){
+		
 		$new_path = UPLOADS_ROOT . '/users/' . $user_id;
 		$this->_mkdir($new_path);
 		
@@ -26,11 +28,31 @@ class Pictures_model extends CI_Model {
 	}
 	
 	function create_user_images_from_fb($user_id, $facebook_id){
-		$image_path = UPLOADS_ROOT . '/users/' . $facebook_id . '.jpg';
-		if( ! copy('http://graph.facebook.com/'. $facebook_id . '/picture?type=large', $image_path))
-			return FALSE;
-		return $this->create_user_images($user_id, $image_path);
-		unlink($image_path);
+		try{
+			$save_to = './uploads/users/' . $facebook_id . '.jpg';
+			
+			$ch = curl_init('http://graph.facebook.com/'. $facebook_id . '/picture?type=large');
+	        $fp = fopen($save_to, "wb");
+	
+	        // set URL and other appropriate options
+	        $options = array(CURLOPT_FILE => $fp,
+	                         CURLOPT_HEADER => 0,
+	                         CURLOPT_FOLLOWLOCATION => 1,
+	                         CURLOPT_TIMEOUT => 60); // 1 minute timeout (should be enough)
+	
+	        curl_setopt_array($ch, $options);
+			//Get the result of the request and write it into the file
+		    $res=curl_exec($ch);
+		    curl_close($ch);
+		    fwrite($fp,$res);
+		    fclose($fp);
+			$created = $this->create_user_images($user_id, $save_to);
+			//unlink($save_to);
+			return $created;
+		} catch (Exception $e) {
+			error_log($e);
+			return null;
+		}
 	}
 	
 	function _mkdir($path){

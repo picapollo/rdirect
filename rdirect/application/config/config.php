@@ -180,7 +180,7 @@ $config['directory_trigger']	= 'd'; // experimental not currently in use
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 0;
+$config['log_threshold'] = 2;
 
 /*
 |--------------------------------------------------------------------------
@@ -356,39 +356,3 @@ $config['rewrite_short_tags'] = FALSE;
 |
 */
 $config['proxy_ips'] = '';
-
-/*
-|--------------------------------------------------------------------------
-| Facebook App ID
-|
-| If you want to integrate with Facebook Connect authentication, put your
-| Facebook App ID below.
-|--------------------------------------------------------------------------
-*/
-$config['facebook_app_id'] = '112020305557299';
-$config['facebook_app_key'] = '112020305557299';
-$config['facebook_app_secret'] = 'b4c64a80470893e7cfa2f633bce78f43';
-
-/*
-|--------------------------------------------------------------------------
-| Twitter App ID
-|
-| If you want to integrate with Twitter oAuth authentication, put your
-| Twitter app details below.
-|--------------------------------------------------------------------------
-*/
-$config['tweet_consumer_key'] = '';
-$config['tweet_consumer_secret'] = '';
-
-/*
-|--------------------------------------------------------------------------
-| Google Friend Connect App ID
-|
-| If you want to integrate with Twitter oAuth authentication, put your
-| Twitter app details below.
-|--------------------------------------------------------------------------
-*/
-$config['google_app_id'] = '';
-
-/* End of file config.php */
-/* Location: ./application/config/config.php */

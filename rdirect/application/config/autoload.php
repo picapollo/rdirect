@@ -64,7 +64,7 @@ $autoload['libraries'] = array('tank_auth', 'session', 'database', 'facebook');
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url');
+$autoload['helper'] = array('url', 'language');
 
 
 /*
@@ -80,7 +80,7 @@ $autoload['helper'] = array('url');
 |
 */
 
-$autoload['config'] = array();
+$autoload['config'] = array('facebook');
 
 
 /*

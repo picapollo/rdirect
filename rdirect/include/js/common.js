@@ -723,7 +723,7 @@ var Airbnb= {
 				try {var a=i18n.phonenumbers.PhoneNumberUtil.getInstance()
 				} catch(b) {
 					log("validator not loaded...");
-					LazyLoad.js([base_url + base_url+"/include/js/libphonenumber.compiled.js",base_url + base_url+"/include/js/jquery.validatedphone.js"], function() {
+					LazyLoad.js([base_url+"/include/js/libphonenumber.compiled.js",base_url+"/include/js/jquery.validatedphone.js"], function() {
 						Airbnb.Utils.formatPhoneNumbers()
 					});
 					return false
@@ -880,7 +880,7 @@ var Airbnb= {
 	function a5(b,d) {
 		b=b?' id="'+a2+b+'"':"";
 		d=d?' style="'+d+'"':"";
-		return a9("<div"+b+d+base_url+"/>")
+		return a9("<div"+b+d+"/>")
 	}
 
 	function aV(d,c) {
@@ -1292,7 +1292,7 @@ var Airbnb= {
 						g.allowtransparency="true"
 					}
 					a9(g).appendTo(a0).one(am, function() {
-						g.src=base_url+"//about:blank"
+						g.src="//about:blank"
 					})
 				});
 				d(" ")

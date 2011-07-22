@@ -3,52 +3,51 @@
 /**
  *
  */
-class Users extends CI_Controller {
+class Users extends MY_Controller {
 
-	public function __construct()
+	function __construct()
 	{
 		parent::__construct();
 		// Your own constructor code
-		if ( ! $this->tank_auth->is_logged_in()) {
-			//redirect('/auth/login/');
-		} else {
-			/*$data['user_id']	= $this->tank_auth->get_user_id();
-			$data['username']	= $this->tank_auth->get_username();
-			$data['tmp']		= $this->facebook->getUser();*/
-		}
 	}
 
-	public function index()
+	function index()
 	{
 		echo "users";
 	}
 	
-	public function login(){
+	function login(){
 		if($this->tank_auth->is_logged_in())
-			//TODO: Redirect to dashboard
-			;
-			
-		$data = array(
-			'title' 		=> 'RDirect',
-			//'description' 	=> 'Description',
-			'facebook_id' 	=> $this->config->item('facebook_app_id'),
-			'lang' 			=> 'ko',
-			//'user_id'		=> $this->tank_auth->get_user_id()
-		);
+			redirect('home/dashboard');
 		
-		$this->load->view('header/signup_login', $data);
-		$this->load->view('top_menu');
-		$this->load->view('login');
+		$this->data['fb'] = FALSE;
+		$this->data['signup_flag'] = FALSE;
+				
+		$this->load->view('signup_login', $this->data);
 	}
 
-	public function signup_login(){
+	function signup_login(){
 		if($this->tank_auth->is_logged_in())
-			//TODO: Redirect do dashboard
-		$this->load->view('signup_login');
-		echo "signup_login";
+			redirect('home/dashboard');
+		
+		// Facebook connect 대신 이메일 주소로 가입		
+		if(($hf = $this->input->get('hf')) !== null)
+		{
+			$this->session->set_userdata(array('hf' => $hf));
+		}
+		else
+		{
+			$hf = $this->session->userdata('hf');
+		}
+			
+		$this->data['fb'] = ! $hf;
+		$this->data['header']['title'] = 'Sign In / Sign Up';
+		$this->data['signup_flag'] = TRUE;
+		
+		$this->load->view('signup_login', $this->data);
 	}
 	
-	public function ajax_image_upload(){
+	function ajax_image_upload(){
 		$data = array(
 			'feedback_type' => 'upload_feedback',
 			'callback_function' => 'upload_complete'
@@ -97,6 +96,21 @@ class Users extends CI_Controller {
 		}		
 		
 		$this->load->view('ajax_response', $data);
+	}
+
+	function change_locale(){
+		$this->load->config('language');
+		//var_dump($_POST);
+		$lang = $this->input->post('new_locale');
+		echo $lang;
+		if(in_array($lang, array_keys($this->config->item('supported_languages'))))
+		{
+			if($this->tank_auth->is_logged_in()){
+				$this->load->model('users_model');
+				$this->users_model->set_user_locale($this->tank_auth->get_user_id(), $lang);
+			}
+			$this->session->set_userdata('locale', $lang);
+		}
 	}
 }
 

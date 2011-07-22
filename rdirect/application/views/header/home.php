@@ -12,12 +12,12 @@
     <link rel="image_src" href="<?=IMG_DIR?>/airbnb_logo.png" /> 
     <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Airbnb" /> 
     <!--[if (!IE)|(gte IE 8)]><!--> 
-<link href="<?=CSS_DIR?>/common-datauri.css" media="screen" rel="stylesheet" type="text/css" /> 
+<link href="<?=CSS_PATH?>/common-datauri.css" media="screen" rel="stylesheet" type="text/css" /> 
 <!--<![endif]--> 
 <!--[if lte IE 7]>
-<link href="<?=CSS_DIR?>/common.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="<?=CSS_PATH?>/common.css" media="screen" rel="stylesheet" type="text/css" />
 <![endif]--> 
-    <link href="<?=CSS_DIR?>/dashboard.css" media="screen" rel="stylesheet" type="text/css" /> 
+    <link href="<?=CSS_PATH?>/dashboard.css" media="screen" rel="stylesheet" type="text/css" /> 
  
  
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script> 
@@ -30,14 +30,11 @@
  
 			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js"></script> 
 			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.2/scriptaculous.js"></script> 
-		<script src="<?=JS_DIR?>/calendar_date_select/calendar_date_select.js" type="text/javascript"></script> 
-<script src="<?=JS_DIR?>/calendar_date_select/format_american.js" type="text/javascript"></script> 
-<link href="<?=CSS_DIR?>/calendar_date_select/silver.css" media="screen" rel="stylesheet" type="text/css" /> 
+		<script src="<?=JS_PATH?>/calendar_date_select/calendar_date_select.js" type="text/javascript"></script> 
+<script src="<?=JS_PATH?>/calendar_date_select/format_american.js" type="text/javascript"></script> 
+<link href="<?=CSS_PATH?>/calendar_date_select/silver.css" media="screen" rel="stylesheet" type="text/css" /> 
  
- 		<script type="text/javascript">var base_url = "<?=base_url();?>"</script>
-		<script src="<?=JS_DIR?>/common.js" type="text/javascript"></script> 
+ 		<script type="text/javascript">var base_url = "<?=BASE_PATH?>"</script>
+		<script src="<?=JS_PATH?>/common.js" type="text/javascript"></script> 
 		
 		<link rel="shortcut icon" href="<?=IMG_DIR?>/airbnb_favicon.ico" /> 
-	</head> 
- 
-  <body> 
