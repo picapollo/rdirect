@@ -4,7 +4,7 @@ if(!defined('BASEPATH'))
 /**
  *
  */
-class Home extends CI_Controller
+class Home extends MY_Controller
 {
 
 	public function __construct()
@@ -12,12 +12,18 @@ class Home extends CI_Controller
 		parent::__construct();
 		// Your own constructor code
 		$this->load->library('tank_auth');
-		$this -> load -> model('user_model');
+		$this -> load -> model('users_model');
+		echo $this->config->item('language');
 	}
 
 	public function index()
 	{
-
+		$this->data['header']['facebook_id'] = $this->config->item('facebook_app_id');
+		$this->data['header']['locale'] = CURRENT_LANGUAGE;
+		
+		$this->load->view('header/page1', $this->data['header']);
+		$this->load->view('top_menu', $this->data['notices']);
+		$this->load->view('footer');
 	}
 
 	/*
@@ -26,17 +32,16 @@ class Home extends CI_Controller
 	public function dashboard(){
 		if( ! $this->tank_auth->is_logged_in() )
 		{
-			$this->session->set_flashdata('message', 'Please Login.');
-			redirect('/');
+			$this->_add_notice(lang('message_please_login'));
+			redirect('');
 		}
 		$user_id = $this->tank_auth->get_user_id();
-		$data['header'] = array(
-			'title' 		=> 'RDirect',
-			'lang' 			=> 'ko'
+		$this->data['header'] = array(
+			'title' 		=> $_SESSION['locale']
 		);
-		$user_arr = $this->user_model->get_user($user_id);
-		$data['user'] = $user_arr[0];
-		$this->load->view('home/dashboard', $data);
+		$user_arr = $this->users_model->get_user($user_id);
+		$this->data['user'] = $user_arr[0];
+		$this->load->view('home/dashboard', $this->data);
 	}
 	
 	/**

@@ -49,6 +49,11 @@ define('UPLOADS_DIR', $base_url.'uploads');
 define('HOST_DIR', $_SERVER['HTTP_HOST']);
 define('BASEURL', $base_url);
 
+define('BASE_PATH', '/rdirect');
+define('INCLUDE_PATH', BASE_PATH.'/include');
+define('JS_PATH', INCLUDE_PATH.'/js');
+define('CSS_PATH', INCLUDE_PATH.'/css');
+
 // 추후 수정
 define('DOC_ROOT', dirname(FCPATH).'/rdirect');
 //define('DATA_ROOT', dirname(FCPATH).'/data');

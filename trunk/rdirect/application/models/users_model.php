@@ -1,6 +1,6 @@
 <?php
 
-class User_model extends CI_Model 
+class Users_model extends CI_Model 
 {
 	// get user by their social media id
 	function get_user_by_sm($data, $sm_id)
@@ -48,6 +48,11 @@ class User_model extends CI_Model
 		//$query = $this->db->query("SELECT users.*, user_profiles.* FROM users, user_profiles WHERE " .
 		//						  "users.id='$user_id' AND user_profiles.user_id='$user_id'");
 		return $query->result();
+	}
+	
+	function set_user_locale($user_id, $lang){
+		$this->db->where('users.id', $user_id);
+		$this->db->update('users', array('users.locale' => $lang));
 	}
 }
 ?>

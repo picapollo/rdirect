@@ -1,119 +1,69 @@
 <?php
-$this -> load -> view('header/signup_login', $header);
-$this -> load -> view('top_menu');
-if($fb):
+
+$this->load->helper('form'); 
+
+$this -> load -> view('header/signup_login', $header) ; 
+echo '</head><body>';
+$this -> load -> view('top_menu', $notices);
+
+echo form_open('auth_other/fb_signin', array('id'=>'facebook_form'));
+echo form_close();
+
+if($fb)
+{
+	$this->load->view('auth/signup');	
+}
+else
+{
+	$this->load->view('auth/signup2', array('signup_flag', $signup_flag));
+}
+
+$this->load->view('footer');
+
+
 ?>
-<div id="signup">
-	<h1>회원가입</h1>
-	<div id="fb-plugin">
-		<div id="fb-button-container">
-			<a class="fb-button" href="javascript:void(0);"> <span class="fb-button-left"></span> <span class="fb-button-center"><strong>페이스북 커넥트</strong></span> <span class="fb-button-right"></span> </a>
-		</div>
-		<iframe src="https://www.facebook.com/plugins/facepile.php?app_id=<?=$this->config->item('facebook_app_id');?>&max_rows=2"
-		scrolling="no" frameborder="0" allowTransparency="true"
-		style="border:none;overflow:hidden; width:282px; height:120px;"></iframe>
-	</div>
-	<div class="or-separator signpainter"></div>
-	<p id="account-message">
-		<a href="?hf=true">이메일 주소로 계정을 만들 수 있습니다.</a>
-	</p>
-	<div style="padding-top:10px;color:#5D5D5D;">
-		"페이스북 커넥트"를 클릭하면 다음에 동의하는 것으로 간주됩니다. <a href="http://www.airbnb.com/terms" onclick="window.open(this.href);return false;">서비스 약관</a>.
-	</div>
-</div>
-<?php else: ?>
-<div id="signup2">
-	<div id="content">
-		<div id="section_signup" style="">
-			<h1>에어비앤비 회원가입하기</h1>
-			<div id="signUpBox">
-				<h2>페이스북으로 회원가입</h2>
-				<a class="fb-button" href="javascript:void(0);"> <span class="fb-button-left"></span> <span class="fb-button-center"><strong>페이스북 커넥트</strong></span> <span class="fb-button-right"></span> </a>
-				<h3 class="or-separator signpainter"></h3>
-				<?=form_open('auth/signup_login');?>
-					<div class="textInput" id="inputFirst">
-						<label for="user_first_name" class="labelBlur">
-							이름
-						</label>
-						<input id="user_first_name" name="username" size="30" type="text" />
-					</div>
-					<div class="textInput" id="inputEmail">
-						<label for="user_email" class="labelBlur">
-							이메일 주소
-						</label>
-						<input id="user_email" name="email" size="30" type="text" />
-					</div>
-					<div class="textInput" id="inputPassword">
-						<label for="user_password" class="labelBlur">
-							비밀번호
-						</label>
-						<input id="user_password" name="password" size="30" type="password" />
-					</div>
-					<div class="textInput" id="inputConfirmPassword">
-						<div class="hidden">
-							<label for="user_password_confirmation" class="labelBlur">
-								비밀번호 확인
-							</label>
-							<input id="user_password_confirmation" name="confirm_password" size="30" type="password" />
-						</div>
-					</div>
-					<div class="formActions">
-						<div class="pad">
-							<input type="submit" tabindex="4" id="bCreateAccount" class="button-glossy green" value="계정 만들기" />
-							<label for="remember_me1">
-								<input id="remember_me1" name="remember_me" tabindex="3" type="checkbox" value="true" />
-								<span>다음 로그인할 때 기억해 주세요</span>
-							</label>
-							<p>
-								"페이스북 커넥트"를 클릭하면 다음에 동의하는 것으로 간주됩니다. <a href="http://www.airbnb.com/terms" onclick="window.open(this.href);return false;">서비스 약관</a>.
-							</p>
-						</div>
-					</div>
-				<?=form_close();?>
-			</div>
-			<div class="smallBox">
-				<div class="pad">
-					<h2>이미 에어비앤비 멤버인가요? <a rel="toggle-sign-up" href="https://www.airbnb.com/login">로그인 하세요..</a></h2>
-				</div>
-			</div>
-		</div>
-		<div id="section_signin" style="display:none;">
-			<h1>에어비앤비 계정으로 로그인 하세요.</h1>
-			<div id="signInBox">
-				<h2>페이스북으로 로그인하기</h2>
-				<a class="fb-button" href="javascript:void(0);"> <span class="fb-button-left"></span> <span class="fb-button-center"><strong>페이스북</strong>으로 <strong>로그인</strong></span> <span class="fb-button-right"></span> </a>
-				<h3 class="or-separator signpainter"></h3>
-				<?=form_open('auth/login');?>
-					<div class="textInput" id="inputEmail">
-						<label for="signin_email" class="labelBlur">
-							이메일 주소
-						</label>
-						<input type="text" name="email" tabindex="1" id="signin_email" value="" />
-					</div>
-					<div class="textInput" id="inputPassword">
-						<label for="signin_password" class="labelBlur">
-							비밀번호
-						</label>
-						<input type="password" name="password" id="signin_password" tabindex="2" />
-						<a href="https://www.airbnb.com/forgot_password" class="forgotPassword" tabindex="5">비밀번호를 잃어버렸나요?</a>
-					</div>
-					<div class="formActions">
-						<input type="submit" id="bSignIn" class="button-glossy" value="로그인" tabindex="4" />
-						<label for="remember_me2">
-							<input type="checkbox" name="remember_me" id="remember_me2" value="true" tabindex="3" />
-							<span>다음 로그인할 때 기억해 주세요</span>
-						</label>
-					</div>
-				<?=form_close();?>
-			</div>
-			<div class="smallBox">
-				<div class="pad">
-					<h2>새로운 계정이 필요하세요? <a rel="toggle-sign-up" href="<?site_url('/auth/signup_login?rf=true');?>">지금 회원가입 하세요.</a></h2>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<?php endif; ?>
-<form action="<?=site_url('auth_other/fb_signin');?>" id="facebook_form" method="post"></form>
-<?php $this->load->view('footer'); ?>
+	<div id="fb-root"></div>
+	<script type="text/javascript">
+
+		window.fbAsyncInit = function() {
+			FB.init({
+				appId  : '<?=$this->config->item('facebook_app_id');?>',
+				status : true, // check login status
+				cookie : true, // enable cookies to allow the server to access the session
+				xfbml  : true  // parse XFBML
+			});
+		};
+
+		(function() {
+			var e = document.createElement('script');
+			e.src = document.location.protocol + '//connect.facebook.net/ko_KR/all.js';
+			e.async = true;
+			document.getElementById('fb-root').appendChild(e);
+		}());
+
+		Airbnb.SignInUp.setLocalizedMessages({"signin":{"password":{"required":"\ube44\ubc00\ubc88\ud638\ub97c \uc785\ub825\ud558\uc138\uc694.","minlength":"\ucd5c\uc18c 5 \uae00\uc790\uac00 \ud544\uc694\ud569\ub2c8\ub2e4."},"email":{"email":"\uc774\uba54\uc77c\uc744 \uc785\ub825\ud558\uc138\uc694.","required":"\uc774\uba54\uc77c\uc774 \ud544\uc694\ud569\ub2c8\ub2e4."}},"signup":{"password_confirmation":{"required":"\ube44\ubc00\ubc88\ud638\ub97c \ud655\uc778\ud558\uc138\uc694.","minlength":"\ucd5c\uc18c 5 \uae00\uc790\uac00 \ud544\uc694\ud569\ub2c8\ub2e4.","equalTo":"\ube44\ubc00\ubc88\ud638\uac00 \uc77c\uce58\ud558\uc9c0 \uc54a\uc2b5\ub2c8\ub2e4. "},"password":{"required":"\ube44\ubc00\ubc88\ud638\ub97c \uc785\ub825\ud558\uc138\uc694.","minlength":"\ucd5c\uc18c 5 \uae00\uc790\uac00 \ud544\uc694\ud569\ub2c8\ub2e4."},"email":{"email":"\uc774\uba54\uc77c\uc744 \uc785\ub825\ud558\uc138\uc694.","required":"\uc774\uba54\uc77c\uc774 \ud544\uc694\ud569\ub2c8\ub2e4."},"first_name":{"required":"\uc774\ub984\uc744 \uc785\ub825\ud558\uc138\uc694."},"last_name":{"required":"\uc131\uc744 \uc785\ub825\ud558\uc138\uc694."}}});
+	
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-2725447-1']);
+		_gaq.push(['_setDomainName', '.airbnb.com']);
+	
+		(function() {
+			var m = /affiliate=([^;]*)/.exec(document.cookie);
+			if (m) {_gaq.push(["_setCustomVar", 1, "affiliate", m[1]]);}
+		})();
+	
+			_gaq.push(['_trackPageview']);
+	
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	
+		jQuery(document).ready(function() {
+			Airbnb.init({userLoggedIn: false});
+		});
+	
+		Airbnb.FACEBOOK_PERMS = '<?=$this->config->item('facebook_scope')?>';
+	</script>
+</body></html>

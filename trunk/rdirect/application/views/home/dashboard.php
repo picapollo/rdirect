@@ -1,7 +1,9 @@
 <?php 
-	$this->load->view('header/home', $header); 
-	$this->load->view('top_menu', $user);
 	$this->load->helper('form');
+	
+	$this->load->view('header/home', $header);
+	echo '</head></body>';
+	$this->load->view('top_menu', $notices);
 ?>
 
 <script type="text/javascript"> 
@@ -181,3 +183,5 @@ jQuery("#user_pic").hover(
 </script>
 
 <?php $this->load->view('footer'); ?> 
+
+</head></html>

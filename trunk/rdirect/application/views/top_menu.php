@@ -2,28 +2,25 @@
 	<a id="logo" href="<?=base_url();?>" title="Airbnb.com Home">
 	<img alt="Airbnb - Travel like a human." border="0" height="45" src="http://s2.muscache.com/1309460642/images/logos/109x45.png" width="109">
 	</a>
-	<a href="<?=site_url('room/new');?>" class="rounded hide_when_printing" id="list-your-space">List your space</a>
+	<a href="<?=site_url('room/new');?>" class="rounded hide_when_printing" id="list-your-space"><?=lang('top_menu_new_room');?></a>
 	<ul id="utilities">
 <?php if($this->tank_auth->is_logged_in()): ?>
 		<li class="first-child">
-			<?=anchor('home/dashboard', 'Dashboard');?>
+			<?=anchor('home/dashboard', lang('top_menu_dashboard'));?>
 		</li>
 		<li>
-			<?=anchor('auth/logout', 'Log Out');?>
+			<?=anchor('auth/logout', lang('top_menu_logout'));?>
 		</li>
 <?php else: ?>
 		<li class="first-child">
-			<?=anchor('signup_login', 'Sign Up');?>
+			<?=anchor('signup_login', lang('top_menu_sign_up'));?>
 		</li>
 		<li>
-			<?=anchor('login', 'Sign In');?>
+			<?=anchor('login', lang('top_menu_sign_in'));?>
 		</li>
 <?php endif; ?>
-		<li>
-			<?=anchor('jobs', 'We\'re Hiring!');?>
-		</li>
 		<li style="border-right:1px solid #DDD;">
-			<?=anchor('#', 'How it works');?>
+			<?=anchor('#', lang('top_menu_how_it_works'));?>
 		</li>
 		<li style="border-left:none;" class="last-child">
 			<div id="language_currency">
@@ -164,3 +161,19 @@
 		</li>
 	</ul><!-- UTILITIES -->
 </div><!-- HEADER -->
+
+<?php
+	$notice = $this->session->userdata('notice');
+	if($notice){
+		echo '<div id="notice">' . $notice . '</div>';
+	}
+	$this->session->unset_userdata('notice');
+
+	/*if( count($notice) > 0 ){
+		echo '<div id="notice">';
+		foreach($notice as $i){
+			echo $i.'<br>';
+		}
+		echo '</div>';
+	}*/
+?>
