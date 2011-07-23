@@ -1,5 +1,7 @@
 <?php
 
+// JAPANESE: Translation required
+
 $lang['top_menu_sign_up'] = 'Sign Up';
 $lang['top_menu_sign_in'] = 'Sign In';
 $lang['top_menu_dashboard'] = 'Dashboard';
@@ -18,4 +20,4 @@ $lang['command_center_account'] = 'Account';
 $lang['message_please_login'] = 'Please login.';
 
 // End of common_lang.php
-// Location: application/language/english
+// Location: application/language/japanese

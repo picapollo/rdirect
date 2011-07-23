@@ -15,14 +15,10 @@ class auth_other extends MY_Controller {
 		//$this->load->library('facebook'); // this has been loaded in autoload.php
 
 		// get the facebook user and save in the session
-		$fb_id = $this->facebook->getUser();
 		
-		if($fb_id)
-			$fb_user = $this->facebook->api('/me');
-		else
-			$fb_user = null;
+		$this->facebook->setAccessToken($this->input->post('fb_access_token'));
 		
-		print_r($fb_user);
+		$fb_user = $this->facebook->api('/me');
 		
 		if($fb_user)
 		{

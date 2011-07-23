@@ -1,8 +1,6 @@
 <?php 
 	$this->load->helper('form');
-	
 	$this->load->view('header/home', $header);
-	echo '</head></body>';
 	$this->load->view('top_menu', $notices);
 ?>
 
@@ -33,11 +31,11 @@
  
  
 <ul id="nav"> 
-	<li class="active"><?=anchor('dashboard', 'Dashboard');?></li> 
-	<li ><?=anchor('inbox', 'Inbox');?></li> 
-	<li ><?=anchor('rooms', 'Hosting');?></li> 
-	<li ><?=anchor('trips', 'Traveling');?></li> 
-	<li ><?=anchor('account', 'Account');?></li> 
+	<li class="active"><?=anchor('dashboard', lang('command_center_dashboard'));?></li> 
+	<li ><?=anchor('inbox', lang('command_center_inbox'));?></li> 
+	<li ><?=anchor('rooms', lang('command_center_hosting'));?></li> 
+	<li ><?=anchor('trips', lang('command_center_traveling'));?></li> 
+	<li ><?=anchor('account', lang('command_center_account'));?></li> 
 </ul> 
  
    
@@ -69,10 +67,10 @@
                 <div class="middle"> 
                     <div id="user_pic" onclick="show_ajax_image_box();"> 
                         <div id="edit_image_hover" style="display:none;" onclick="show_ajax_image_box();"><p>Change your Photo</p></div> 
-                            <img alt="<?=$user->username?>" height="209" src="<?php echo ($user->has_picture == 1) ? UPLOADS_DIR.'/users/'.$user->id.'/square_255.jpg' : IMG_DIR.'/user_pic-225x225.png';?>" title="<?=$user->username?>" width="209" /> 
+                            <img alt="<?=$user->username?>" height="209" src="<?=$user->picture_path.'/large.png?'.time()?>" title="<?=$user->username?>" width="209" /> 
  
                     </div> 
-                    <h1>Jisoo P<br /><span style="font-size:.55em; font-weight:bold; margin-left:2px;"><a href="/users/edit">Edit Profile</a></span></h1> 
+                    <h1>Jisoo P<br /><span style="font-size:.55em; font-weight:bold; margin-left:2px;"><?=anchor('users/edit_profile', 'Edit Profile')?></span></h1> 
              
                 </div><!-- middle --> 
                 <div class="bottom">&nbsp;</div> 
@@ -154,6 +152,13 @@
                                             <img src="<?=IMG_DIR?>/command_center/alert_right_arrow.png" /> 
                                         </a> 
                                 </li> 
+								<li class=" alt">
+										<div style="height:20px;">
+											<fb:login-button id="fb_login2" size="large" onlogin="jQuery('#fb_login2').hide();jQuery('#login_spinner2').show();location.href='<?=site_url('users/populate_from_facebook')?>';" perms="<?=$this->config->item('facebook_scope')?>"></fb:login-button><span id="login_spinner2" style="padding-top:2px;padding-left:5px;display:none;">
+												<img src="<?=IMG_DIR?>/spinner.gif"/>
+											</span><span>Connecting to Facebook completes your profile and makes it easy to log in.</span>
+										</div>
+                                </li>                                
                     </ul> 
                 </div> 
                 <div class="bottom">&nbsp;</div> 
@@ -178,10 +183,45 @@
 jQuery("#user_pic").hover(
     function(){jQuery('#edit_image_hover').fadeIn(100);},
     function(){jQuery('#edit_image_hover').fadeOut(100);}
-);
- 
+); 
 </script>
 
-<?php $this->load->view('footer'); ?> 
+<?php //TODO: if(facebook connect required):  ?>
+<div id="fb-root"></div>
+<script type="text/javascript">
 
-</head></html>
+	window.fbAsyncInit = function() {
+			FB.init({
+				appId  : '<?=$this->config->item('facebook_app_id');?>',
+				status : true, // check login status
+				cookie : true, // enable cookies to allow the server to access the session
+				xfbml  : true  // parse XFBML
+			});
+
+			FB.getLoginStatus(function(response) {
+				if (response && (response.status !== "unknown")) {
+					jQuery.cookie("fbs", response.status);
+				} else {
+					jQuery.cookie("fbs", null);
+				}
+			});
+		};
+
+		(function() {
+			var e = document.createElement('script');
+			e.src = document.location.protocol + '//connect.facebook.net/ko_KR/all.js';
+			e.async = true;
+			document.getElementById('fb-root').appendChild(e);
+		}());
+
+	Airbnb.SignInUp.setLocalizedMessages({"signin":{"password":{"required":"\ube44\ubc00\ubc88\ud638\ub97c \uc785\ub825\ud558\uc138\uc694.","minlength":"\ucd5c\uc18c 5 \uae00\uc790\uac00 \ud544\uc694\ud569\ub2c8\ub2e4."},"email":{"email":"\uc774\uba54\uc77c\uc744 \uc785\ub825\ud558\uc138\uc694.","required":"\uc774\uba54\uc77c\uc774 \ud544\uc694\ud569\ub2c8\ub2e4."}},"signup":{"password_confirmation":{"required":"\ube44\ubc00\ubc88\ud638\ub97c \ud655\uc778\ud558\uc138\uc694.","minlength":"\ucd5c\uc18c 5 \uae00\uc790\uac00 \ud544\uc694\ud569\ub2c8\ub2e4.","equalTo":"\ube44\ubc00\ubc88\ud638\uac00 \uc77c\uce58\ud558\uc9c0 \uc54a\uc2b5\ub2c8\ub2e4. "},"password":{"required":"\ube44\ubc00\ubc88\ud638\ub97c \uc785\ub825\ud558\uc138\uc694.","minlength":"\ucd5c\uc18c 5 \uae00\uc790\uac00 \ud544\uc694\ud569\ub2c8\ub2e4."},"email":{"email":"\uc774\uba54\uc77c\uc744 \uc785\ub825\ud558\uc138\uc694.","required":"\uc774\uba54\uc77c\uc774 \ud544\uc694\ud569\ub2c8\ub2e4."},"first_name":{"required":"\uc774\ub984\uc744 \uc785\ub825\ud558\uc138\uc694."},"last_name":{"required":"\uc131\uc744 \uc785\ub825\ud558\uc138\uc694."}}});
+
+	jQuery(document).ready(function() {
+		Airbnb.init({userLoggedIn: <?=$this->tank_auth->is_logged_in()?'true':'false'?>});
+	});
+
+	Airbnb.FACEBOOK_PERMS = '<?=$this->config->item('facebook_scope')?>';
+</script>
+<?php //endif; ?>
+
+<?php $this->load->view('footer'); ?> 
