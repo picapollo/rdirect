@@ -20,9 +20,9 @@ class Pictures_model extends CI_Model {
 		$new_path = UPLOADS_ROOT . '/users/' . $user_id;
 		$this->_mkdir($new_path);
 		
-		if( ! $this->_resize($source_image, 'square_255.jpg', $new_path, 255, 255) || 
-			! $this->_resize($source_image, 'medium.jpg', $new_path, 68, 68) ||
-			! $this->_resize($source_image, 'small.jpg', $new_path, 50, 50) )	return FALSE;
+		if( ! $this->_resize($source_image, 'large.png', $new_path, 255, 255) || 
+			! $this->_resize($source_image, 'medium.png', $new_path, 68, 68) ||
+			! $this->_resize($source_image, 'small.png', $new_path, 50, 50) )	return FALSE;
 		
 		return TRUE;
 	}
@@ -47,7 +47,7 @@ class Pictures_model extends CI_Model {
 		    fwrite($fp,$res);
 		    fclose($fp);
 			$created = $this->create_user_images($user_id, $save_to);
-			//unlink($save_to);
+			unlink($save_to);
 			return $created;
 		} catch (Exception $e) {
 			error_log($e);

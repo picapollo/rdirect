@@ -86,3 +86,33 @@
 [23-Jul-2011 00:01:50] PHP Fatal error:  Call to a member function userdata() on a non-object in /home/guersam/www/rdirect/application/core/MY_Controller.php on line 13
 [23-Jul-2011 00:01:50] PHP Fatal error:  Call to a member function userdata() on a non-object in /home/guersam/www/rdirect/application/core/MY_Controller.php on line 13
 [23-Jul-2011 00:05:21] PHP Fatal error:  Call to a member function item() on a non-object in /home/guersam/www/rdirect/application/core/MY_Controller.php on line 12
+[23-Jul-2011 00:43:03] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/guersam/www/rdirect/application/language/korean/common_lang.php on line 14
+[23-Jul-2011 00:43:03] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/guersam/www/rdirect/application/language/korean/common_lang.php on line 14
+[23-Jul-2011 01:00:20] PHP Parse error:  syntax error, unexpected '}', expecting T_STRING or T_VARIABLE or '{' or '$' in /home/guersam/www/rdirect/application/controllers/users.php on line 56
+[23-Jul-2011 01:07:06] PHP Fatal error:  Unsupported operand types in /home/guersam/www/rdirect/application/controllers/test.php on line 19
+[23-Jul-2011 01:24:33] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
+[23-Jul-2011 01:24:37] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
+[23-Jul-2011 01:24:39] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
+[23-Jul-2011 01:31:09] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
+[23-Jul-2011 01:31:11] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
+[23-Jul-2011 01:31:12] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
+[23-Jul-2011 01:31:13] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
+[23-Jul-2011 01:31:13] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
+[23-Jul-2011 01:31:14] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
+[23-Jul-2011 01:31:14] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
+[23-Jul-2011 01:31:15] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
+[23-Jul-2011 01:31:15] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
+[23-Jul-2011 01:31:16] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
+[23-Jul-2011 01:31:17] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
+[23-Jul-2011 01:31:17] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
+[23-Jul-2011 01:31:18] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
+[23-Jul-2011 01:31:49] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
+[23-Jul-2011 01:31:50] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
+[23-Jul-2011 01:31:50] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
+[23-Jul-2011 01:32:21] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/controllers/home.php on line 37
+[23-Jul-2011 01:32:23] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/controllers/home.php on line 37
+[23-Jul-2011 01:32:25] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/controllers/home.php on line 37
+[24-Jul-2011 02:10:05] PHP Parse error:  syntax error, unexpected ')' in /home/guersam/www/rdirect/application/controllers/auth_other.php on line 22
+[24-Jul-2011 02:10:22] PHP Fatal error:  Call to protected method BaseFacebook::getUserFromAccessToken() from context 'auth_other' in /home/guersam/www/rdirect/application/controllers/auth_other.php on line 22
+[24-Jul-2011 02:11:28] PHP Fatal error:  Uncaught OAuthException: Invalid OAuth access token.
+  thrown in /home/guersam/www/rdirect/application/libraries/facebook/base_facebook.php on line 988

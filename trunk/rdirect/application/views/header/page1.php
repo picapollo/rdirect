@@ -46,3 +46,5 @@
 
 		<link rel="shortcut icon" href="<?=IMG_DIR?>/airbnb_favicon.ico" /> 
 	<script src="<?=JS_DIR?>/jquery.autocomplete_custom.pack.js" class="lazyload" charset="utf-8"></script><script src="<?=JS_DIR?>/<?=$locale?>_autocomplete_data.js" class="lazyload" charset="utf-8"></script>
+</head>
+<body>

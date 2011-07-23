@@ -1,3 +1,4 @@
+<body>
 <div id="header" class="clearfix">
 	<a id="logo" href="<?=base_url();?>" title="Airbnb.com Home">
 	<img alt="Airbnb - Travel like a human." border="0" height="45" src="http://s2.muscache.com/1309460642/images/logos/109x45.png" width="109">
@@ -25,7 +26,7 @@
 		<li style="border-left:none;" class="last-child">
 			<div id="language_currency">
 				<div id="language_currency_display" class="rounded_top">
-					<div id="language_currency_display_language" class="flag sprite-en">
+					<div id="language_currency_display_language" class="flag sprite-<?=$locale?>">
 						&nbsp;
 					</div>
 					<div id="language_currency_display_currency">
@@ -35,77 +36,24 @@
 				<div id="language_currency_selector_container" class="rounded" style="display:none;">
 					<ul id="language_currency_selector">
 						<li class="instruction">
-							Choose language...
+							<?=lang('top_menu_choose_language')?>
 						</li>
-						<li class="language option" id="language_selector_de" name="de">
-							<div class="flag sprite-de">
+						<?php foreach($this->config->item('supported_languages') as $lang_code => $item):?>
+						<?php if($lang_code == $locale) continue; ?>
+						<li class="language option" id="language_selector_<?=$lang_code?>" name="<?=$lang_code?>">
+							<div class="flag sprite-<?=$lang_code?>">
 								&nbsp;
 							</div>
 							<div style="display:inline;padding-left:24px;">
-								Deutsch
+								<?=$item['name']?>
 							</div>
 						</li>
-						<li class="language option" id="language_selector_es" name="es">
-							<div class="flag sprite-es">
-								&nbsp;
-							</div>
-							<div style="display:inline;padding-left:24px;">
-								Español
-							</div>
-						</li>
-						<li class="language option" id="language_selector_fr" name="fr">
-							<div class="flag sprite-fr">
-								&nbsp;
-							</div>
-							<div style="display:inline;padding-left:24px;">
-								Français
-							</div>
-						</li>
-						<li class="language option" id="language_selector_it" name="it">
-							<div class="flag sprite-it">
-								&nbsp;
-							</div>
-							<div style="display:inline;padding-left:24px;">
-								Italiano
-							</div>
-						</li>
-						<li class="language option" id="language_selector_pt" name="pt">
-							<div class="flag sprite-pt">
-								&nbsp;
-							</div>
-							<div style="display:inline;padding-left:24px;">
-								Português
-							</div>
-						</li>
-						<li class="language option" id="language_selector_ru" name="ru">
-							<div class="flag sprite-ru">
-								&nbsp;
-							</div>
-							<div style="display:inline;padding-left:24px;">
-								Русский
-							</div>
-						</li>
-						<li class="language option" id="language_selector_zh" name="zh">
-							<div class="flag sprite-zh">
-								&nbsp;
-							</div>
-							<div style="display:inline;padding-left:24px;">
-								中文(简体)
-							</div>
-						</li>
-						<li class="language option" id="language_selector_ko" name="ko">
-							<div class="flag sprite-ko">
-								&nbsp;
-							</div>
-							<div style="display:inline;padding-left:24px;">
-								한국어
-							</div>
-						</li>
+						<?php endforeach; ?>
 						<li class="dash">
 							&nbsp;
 						</li>
 						<li class="instruction">
-							Choose currency...
+							<?=lang('top_menu_choose_currency')?>
 						</li>
 						<li class="currency option" id="currency_selector_AUD" name="AUD">
 							$ AUD

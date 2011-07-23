@@ -44,15 +44,24 @@ class Users_model extends CI_Model
 		$this->db->from("users AS u");
 		$this->db->join("user_profiles AS up", "u.id=up.user_id");
 		$this->db->where(array('u.id' => $user_id, 'up.user_id' => $user_id));
-		$query = $this->db->get();		
-		//$query = $this->db->query("SELECT users.*, user_profiles.* FROM users, user_profiles WHERE " .
-		//						  "users.id='$user_id' AND user_profiles.user_id='$user_id'");
-		return $query->result();
+		$res = $this->db->get()->result();		
+		if(empty($res)) return null;
+		$res[0]->picture_path = $res[0]->has_picture ? UPLOADS_DIR.'/users/'.$user_id : IMG_DIR.'/default_profile'; 
+		return $res[0];
 	}
 	
 	function set_user_locale($user_id, $lang){
 		$this->db->where('users.id', $user_id);
 		$this->db->update('users', array('users.locale' => $lang));
+	}
+	
+	function get_user_locale($user_id){
+		$this->db->select('locale');
+		$this->db->from('users AS u');
+		$this->db->where('id', $user_id);
+		$query = $this->db->get()->result();
+		if(empty($res)) return null;
+		return $res[0];
 	}
 }
 ?>

@@ -14,7 +14,8 @@ class Test extends MY_Controller {
 
 	public function index()
 	{
-		$this->load->view('v_test');
+		$this->load->library('facebook');
+		echo $this->facebook->get_facebook_cookie();
 	}
 
 	public function ajax()

@@ -1,6 +1,4 @@
-<?php
-if(!defined('BASEPATH'))
-	exit('No direct script access allowed');
+<?php if(!defined('BASEPATH')) 	exit('No direct script access allowed');
 /**
  *
  */
@@ -13,7 +11,6 @@ class Home extends MY_Controller
 		// Your own constructor code
 		$this->load->library('tank_auth');
 		$this -> load -> model('users_model');
-		echo $this->config->item('language');
 	}
 
 	public function index()
@@ -36,11 +33,7 @@ class Home extends MY_Controller
 			redirect('');
 		}
 		$user_id = $this->tank_auth->get_user_id();
-		$this->data['header'] = array(
-			'title' 		=> $_SESSION['locale']
-		);
-		$user_arr = $this->users_model->get_user($user_id);
-		$this->data['user'] = $user_arr[0];
+		$this->data['user'] = $this->users_model->get_user($user_id);
 		$this->load->view('home/dashboard', $this->data);
 	}
 	

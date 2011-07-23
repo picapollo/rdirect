@@ -15,8 +15,8 @@
 $config['supported_languages'] = array(
     'en'=> array('name' => 'English', 'folder' => 'english'),
     'ko'=> array('name' => '한국어', 'folder' => 'korean'),
-    'jp'=> array('name' => 'Japanese', 'folder' => 'japanese'),
-    'zh'=> array('name' => 'Chinese', 'folder' => 'chinese')
+    'ja'=> array('name' => '日本語', 'folder' => 'japanese'),
+    'zh'=> array('name' => '中文(简体)', 'folder' => 'chinese')
 );
 
 /*

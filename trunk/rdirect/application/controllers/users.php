@@ -9,11 +9,12 @@ class Users extends MY_Controller {
 	{
 		parent::__construct();
 		// Your own constructor code
+		$this->load->model('users_model');
 	}
 
 	function index()
 	{
-		echo "users";
+		redirect('');
 	}
 	
 	function login(){
@@ -47,6 +48,28 @@ class Users extends MY_Controller {
 		$this->load->view('signup_login', $this->data);
 	}
 	
+	function edit_profile(){
+		if( ! $this->tank_auth->is_logged_in())
+			redirect('home/dashboard');
+			
+		$this->data['user'] = $this->user_model->get_user($this->tank_auth->get_user_id());
+		$this->load->view('users/edit_profile', $this->data);
+	}
+	
+	function change_locale(){
+		$this->load->config('language');
+		//var_dump($_POST);
+		$lang = $this->input->post('new_locale');
+		echo $lang;
+		if(in_array($lang, array_keys($this->config->item('supported_languages'))))
+		{
+			if($this->tank_auth->is_logged_in()){
+				$this->users_model->set_user_locale($this->tank_auth->get_user_id(), $lang);
+			}
+			$this->session->set_userdata('locale', $lang);
+		}
+	}
+	
 	function ajax_image_upload(){
 		$data = array(
 			'feedback_type' => 'upload_feedback',
@@ -62,7 +85,7 @@ class Users extends MY_Controller {
 		{
 			$config['upload_path'] = UPLOADS_ROOT.'/users/';
 			$config['allowed_types'] = 'gif|jpg|png';
-			$config['max_size']	= '100';
+			$config['max_size']	= '1000';
 			$config['max_width']  = '1024';
 			$config['max_height']  = '768';
 			$config['file_name'] = 'tmp';	
@@ -88,7 +111,7 @@ class Users extends MY_Controller {
 				{
 					$data['message_content'] = 'Successfully changed!';
 					$data['username'] = $this->tank_auth->get_username();
-					$data['user_profile_image'] = base_url() . 'uploads/users/' . $user_id . '/square_255.jpg?' . time();
+					$data['user_profile_image'] = UPLOADS_DIR.'/users/'.$user_id.'/large.png?' . time();
 				}	
 				
 				unlink($result['full_path']);
@@ -96,22 +119,7 @@ class Users extends MY_Controller {
 		}		
 		
 		$this->load->view('ajax_response', $data);
-	}
-
-	function change_locale(){
-		$this->load->config('language');
-		//var_dump($_POST);
-		$lang = $this->input->post('new_locale');
-		echo $lang;
-		if(in_array($lang, array_keys($this->config->item('supported_languages'))))
-		{
-			if($this->tank_auth->is_logged_in()){
-				$this->load->model('users_model');
-				$this->users_model->set_user_locale($this->tank_auth->get_user_id(), $lang);
-			}
-			$this->session->set_userdata('locale', $lang);
-		}
-	}
+	}	
 }
 
 /* End of file users.php */
