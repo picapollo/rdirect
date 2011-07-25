@@ -3,6 +3,7 @@
 $lang['top_menu_sign_up'] = '회원가입';
 $lang['top_menu_sign_in'] = '로그인';
 $lang['top_menu_dashboard'] = '마이 대쉬보드';
+$lang['top_menu_starred_items'] = 'View your starred items';
 $lang['top_menu_logout'] = '로그아웃';
 $lang['top_menu_how_it_works'] = '이용방법';
 $lang['top_menu_new_room'] = '객실 등록하기';

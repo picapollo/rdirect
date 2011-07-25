@@ -1,12 +1,29 @@
 <div id="signup2">
 	<div id="content">
+		<?php if(!empty($redirect_params) && $redirect_params['prompt']):?>
+		<div id="prompt">
+			<?php 
+			if($redirect_params['prompt'] == 'new_listing')
+			{ echo '"'.$redirect_params['name'].'"의 예약요청을 받으려면 회원가입이 필요합니다.'; }
+			?>
+		</div>
+		<?php endif;?>
 		<div id="section_signup" style="<?php if( ! $signup_flag) echo 'display:none;'; ?>">
 			<h1>에어비앤비 회원가입하기</h1>
 			<div id="signUpBox">
 				<h2>페이스북으로 회원가입</h2>
 				<a class="fb-button" href="<?=$this->facebook->getLoginUrl(array('redirect_uri' => site_url('auth_other/fb_signin'), 'scope' => $this->config->item('facebook_scope')))?>"> <span class="fb-button-left"></span> <span class="fb-button-center"><strong>페이스북 커넥트</strong></span> <span class="fb-button-right"></span> </a>
 				<h3 class="or-separator signpainter"></h3>
-				<?=form_open('signup_login');?>
+				<?=form_open('auth/signup_login');?>
+				<?php if(!empty($redirect_params)): ?>
+				<input id="redirect_params_name" name="redirect_params[name]" type="hidden" value="<?=$redirect_params['name']?>" /> 
+				<input id="redirect_params_action" name="redirect_params[action]" type="hidden" value="<?=$redirect_params['action']?>" /> 
+				<input id="redirect_params_new_hosting" name="redirect_params[new_hosting]" type="hidden" value="<?=$redirect_params['new_hosting']?>" /> 
+				<input id="redirect_params_id" name="redirect_params[id]" type="hidden" value="<?=$redirect_params['id']?>" /> 
+				<input id="redirect_params_sig" name="redirect_params[sig]" type="hidden" value="<?=$redirect_params['sig']?>" /> 
+				<input id="redirect_params_prompt" name="redirect_params[prompt]" type="hidden" value="<?=$redirect_params['prompt']?>" /> 
+				<input id="redirect_params_controller" name="redirect_params[controller]" type="hidden" value="<?=$redirect_params['controller']?>" />
+				<?php endif; ?> 
 					<div class="textInput" id="inputFirst">
 						<label for="user_first_name" class="labelBlur">
 							이름
@@ -17,7 +34,7 @@
 						<label for="user_email" class="labelBlur">
 							이메일 주소
 						</label>
-						<input id="user_email" name="email" size="30" type="text" />
+						<input id="user_email" name="email" size="30" type="text" value="<?=$this->input->get('email')?>" />
 					</div>
 					<div class="textInput" id="inputPassword">
 						<label for="user_password" class="labelBlur">
@@ -59,12 +76,21 @@
 				<h2>페이스북으로 로그인하기</h2>
 				<a class="fb-button" href="<?=$this->facebook->getLoginUrl(array('redirect_uri' => site_url('auth_other/fb_signin')))?>"> <span class="fb-button-left"></span> <span class="fb-button-center"><strong>페이스북</strong>으로 <strong>로그인</strong></span> <span class="fb-button-right"></span> </a>
 				<h3 class="or-separator signpainter"></h3>
-				<?=form_open('login');?>
+				<?=form_open('auth/login');?>
+				<?php if(!empty($redirect_params)): ?>
+				<input id="redirect_params_name" name="redirect_params[name]" type="hidden" value="<?=$redirect_params['name']?>" /> 
+				<input id="redirect_params_action" name="redirect_params[action]" type="hidden" value="<?=$redirect_params['action']?>" /> 
+				<input id="redirect_params_new_hosting" name="redirect_params[new_hosting]" type="hidden" value="<?=$redirect_params['new_hosting']?>" /> 
+				<input id="redirect_params_id" name="redirect_params[id]" type="hidden" value="<?=$redirect_params['id']?>" /> 
+				<input id="redirect_params_sig" name="redirect_params[sig]" type="hidden" value="<?=$redirect_params['sig']?>" /> 
+				<input id="redirect_params_prompt" name="redirect_params[prompt]" type="hidden" value="<?=$redirect_params['prompt']?>" /> 
+				<input id="redirect_params_controller" name="redirect_params[controller]" type="hidden" value="<?=$redirect_params['controller']?>" />
+				<?php endif; ?> 
 					<div class="textInput" id="inputEmail">
 						<label for="signin_email" class="labelBlur">
 							이메일 주소
 						</label>
-						<input type="text" name="email" tabindex="1" id="signin_email" value="" />
+						<input type="text" name="email" tabindex="1" id="signin_email" value="<?=$this->input->get('email')?>" />
 					</div>
 					<div class="textInput" id="inputPassword">
 						<label for="signin_password" class="labelBlur">

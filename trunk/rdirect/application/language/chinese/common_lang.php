@@ -3,6 +3,7 @@
 $lang['top_menu_sign_up'] = '注册';
 $lang['top_menu_sign_in'] = '登录';
 $lang['top_menu_dashboard'] = '控制面板';
+$lang['top_menu_starred_items'] = 'View your starred items';
 $lang['top_menu_logout'] = '退出系统';
 $lang['top_menu_how_it_works'] = '怎样运作？';
 $lang['top_menu_new_room'] = '发布空间';

@@ -14,8 +14,8 @@ class Test extends MY_Controller {
 
 	public function index()
 	{
-		$this->load->library('facebook');
-		echo $this->facebook->get_facebook_cookie();
+		$this->load->library('geocoder');
+		print_r($this->geocoder->geocode_by_latlng('37.57268,126.9336'));
 	}
 
 	public function ajax()

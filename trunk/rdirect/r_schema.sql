@@ -1,10 +1,15 @@
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
+CREATE SCHEMA IF NOT EXISTS `bdirect` ;
+USE `bdirect` ;
 
 -- -----------------------------------------------------
--- Table `rd_ci_sessions`
+-- Table `bdirect`.`rd_ci_sessions`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `rd_ci_sessions` (
+CREATE  TABLE IF NOT EXISTS `bdirect`.`rd_ci_sessions` (
   `session_id` VARCHAR(40) CHARACTER SET 'utf8' COLLATE 'utf8_bin' NOT NULL DEFAULT '0' ,
   `ip_address` VARCHAR(16) CHARACTER SET 'utf8' COLLATE 'utf8_bin' NOT NULL DEFAULT '0' ,
   `user_agent` VARCHAR(150) CHARACTER SET 'utf8' COLLATE 'utf8_bin' NOT NULL ,
@@ -17,9 +22,9 @@ COLLATE = utf8_bin;
 
 
 -- -----------------------------------------------------
--- Table `rd_login_attempts`
+-- Table `bdirect`.`rd_login_attempts`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `rd_login_attempts` (
+CREATE  TABLE IF NOT EXISTS `bdirect`.`rd_login_attempts` (
   `id` INT(11) NOT NULL AUTO_INCREMENT ,
   `ip_address` VARCHAR(40) CHARACTER SET 'utf8' COLLATE 'utf8_bin' NOT NULL ,
   `login` VARCHAR(50) CHARACTER SET 'utf8' COLLATE 'utf8_bin' NOT NULL ,
@@ -31,13 +36,15 @@ COLLATE = utf8_bin;
 
 
 -- -----------------------------------------------------
--- Table `rd_users`
+-- Table `bdirect`.`rd_users`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `rd_users` (
+CREATE  TABLE IF NOT EXISTS `bdirect`.`rd_users` (
   `id` INT(11) NOT NULL AUTO_INCREMENT ,
   `username` VARCHAR(50) CHARACTER SET 'utf8' COLLATE 'utf8_bin' NOT NULL ,
   `password` VARCHAR(255) CHARACTER SET 'utf8' COLLATE 'utf8_bin' NOT NULL ,
   `email` VARCHAR(100) CHARACTER SET 'utf8' COLLATE 'utf8_bin' NOT NULL ,
+  `has_picture` VARCHAR(45) NULL DEFAULT 0 ,
+  `locale` CHAR(2) NULL DEFAULT 'en' ,
   `activated` TINYINT(1) NOT NULL DEFAULT '1' ,
   `banned` TINYINT(1) NOT NULL DEFAULT '0' ,
   `ban_reason` VARCHAR(255) CHARACTER SET 'utf8' COLLATE 'utf8_bin' NULL DEFAULT NULL ,
@@ -57,9 +64,9 @@ COLLATE = utf8_bin;
 
 
 -- -----------------------------------------------------
--- Table `rd_user_autologin`
+-- Table `bdirect`.`rd_user_autologin`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `rd_user_autologin` (
+CREATE  TABLE IF NOT EXISTS `bdirect`.`rd_user_autologin` (
   `key_id` CHAR(32) CHARACTER SET 'utf8' COLLATE 'utf8_bin' NOT NULL ,
   `user_id` INT(11) NOT NULL DEFAULT '0' ,
   `user_agent` VARCHAR(150) CHARACTER SET 'utf8' COLLATE 'utf8_bin' NOT NULL ,
@@ -69,7 +76,7 @@ CREATE  TABLE IF NOT EXISTS `rd_user_autologin` (
   INDEX `fk_rd_user_autologin_rd_users1` (`user_id` ASC) ,
   CONSTRAINT `fk_rd_user_autologin_rd_users1`
     FOREIGN KEY (`user_id` )
-    REFERENCES `rd_users` (`id` )
+    REFERENCES `bdirect`.`rd_users` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = MyISAM
@@ -78,23 +85,27 @@ COLLATE = utf8_bin;
 
 
 -- -----------------------------------------------------
--- Table `rd_user_profiles`
+-- Table `bdirect`.`rd_user_profiles`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `rd_user_profiles` (
+CREATE  TABLE IF NOT EXISTS `bdirect`.`rd_user_profiles` (
   `id` INT(11) NOT NULL AUTO_INCREMENT ,
   `user_id` INT(11) NOT NULL ,
   `facebook_id` VARCHAR(255) CHARACTER SET 'utf8' COLLATE 'utf8_bin' NULL DEFAULT NULL ,
-  `school` VARCHAR(255) NULL DEFAULT NULL ,
-  `city` VARCHAR(45) NULL DEFAULT NULL ,
-  `job` VARCHAR(45) NULL DEFAULT NULL ,
+  `university` VARCHAR(255) NULL DEFAULT NULL ,
+  `current_city` VARCHAR(45) NULL DEFAULT NULL ,
+  `employer` VARCHAR(45) NULL DEFAULT NULL ,
   `home_phone` VARCHAR(45) NULL DEFAULT NULL ,
+  `about` TEXT NULL ,
+  `phone` VARCHAR(20) NULL ,
+  `phone_country` CHAR(2) NULL ,
+  `phone2` VARCHAR(20) NULL ,
+  `phone2_country` CHAR(2) NULL ,
   `cell_phone` VARCHAR(45) NULL DEFAULT NULL ,
-  `profile_picture` VARCHAR(45) NULL DEFAULT NULL ,
   PRIMARY KEY (`id`, `user_id`) ,
   INDEX `fk_rd_user_profiles_rd_users1` (`user_id` ASC) ,
   CONSTRAINT `fk_rd_user_profiles_rd_users1`
     FOREIGN KEY (`user_id` )
-    REFERENCES `rd_users` (`id` )
+    REFERENCES `bdirect`.`rd_users` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = MyISAM
@@ -103,9 +114,9 @@ COLLATE = utf8_bin;
 
 
 -- -----------------------------------------------------
--- Table `rd_rooms`
+-- Table `bdirect`.`rd_rooms`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `rd_rooms` (
+CREATE  TABLE IF NOT EXISTS `bdirect`.`rd_rooms` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `owner_id` INT(11) NOT NULL ,
   `activated` TINYINT(1) NULL DEFAULT 0 ,
@@ -115,16 +126,16 @@ CREATE  TABLE IF NOT EXISTS `rd_rooms` (
   INDEX `fk_rd_rooms_rd_users1` (`owner_id` ASC) ,
   CONSTRAINT `fk_rd_rooms_rd_users1`
     FOREIGN KEY (`owner_id` )
-    REFERENCES `rd_users` (`id` )
+    REFERENCES `bdirect`.`rd_users` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = MyISAM;
 
 
 -- -----------------------------------------------------
--- Table `rd_groups`
+-- Table `bdirect`.`rd_groups`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `rd_groups` (
+CREATE  TABLE IF NOT EXISTS `bdirect`.`rd_groups` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `title` VARCHAR(45) NULL DEFAULT NULL ,
   `description` VARCHAR(45) NULL DEFAULT NULL ,
@@ -133,9 +144,9 @@ ENGINE = MyISAM;
 
 
 -- -----------------------------------------------------
--- Table `rd_cities`
+-- Table `bdirect`.`rd_cities`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `rd_cities` (
+CREATE  TABLE IF NOT EXISTS `bdirect`.`rd_cities` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   PRIMARY KEY (`id`) )
 ENGINE = MyISAM
@@ -143,25 +154,25 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `rd_calanders`
+-- Table `bdirect`.`rd_calanders`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `rd_calanders` (
+CREATE  TABLE IF NOT EXISTS `bdirect`.`rd_calanders` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `room_id` VARCHAR(45) NOT NULL ,
   PRIMARY KEY (`id`, `room_id`) ,
   INDEX `fk_rd_calanders_rd_rooms1` (`room_id` ASC) ,
   CONSTRAINT `fk_rd_calanders_rd_rooms1`
     FOREIGN KEY (`room_id` )
-    REFERENCES `rd_rooms` (`id` )
+    REFERENCES `bdirect`.`rd_rooms` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = MyISAM;
 
 
 -- -----------------------------------------------------
--- Table `rd_room_photos`
+-- Table `bdirect`.`rd_room_photos`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `rd_room_photos` (
+CREATE  TABLE IF NOT EXISTS `bdirect`.`rd_room_photos` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `room_id` INT(11) NOT NULL ,
   `order` INT NOT NULL ,
@@ -169,7 +180,7 @@ CREATE  TABLE IF NOT EXISTS `rd_room_photos` (
   INDEX `fk_rd_room_photos_rd_rooms1` (`room_id` ASC) ,
   CONSTRAINT `fk_rd_room_photos_rd_rooms1`
     FOREIGN KEY (`room_id` )
-    REFERENCES `rd_rooms` (`id` )
+    REFERENCES `bdirect`.`rd_rooms` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = MyISAM
@@ -177,9 +188,9 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `rd_users_has_groups`
+-- Table `bdirect`.`rd_users_has_groups`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `rd_users_has_groups` (
+CREATE  TABLE IF NOT EXISTS `bdirect`.`rd_users_has_groups` (
   `user_id` INT(11) NOT NULL ,
   `group_id` INT NOT NULL ,
   PRIMARY KEY (`user_id`, `group_id`) ,
@@ -187,12 +198,12 @@ CREATE  TABLE IF NOT EXISTS `rd_users_has_groups` (
   INDEX `fk_rd_users_has_rd_groups_rd_users1` (`user_id` ASC) ,
   CONSTRAINT `fk_rd_users_has_rd_groups_rd_users1`
     FOREIGN KEY (`user_id` )
-    REFERENCES `rd_users` (`id` )
+    REFERENCES `bdirect`.`rd_users` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_rd_users_has_rd_groups_rd_groups1`
     FOREIGN KEY (`group_id` )
-    REFERENCES `rd_groups` (`id` )
+    REFERENCES `bdirect`.`rd_groups` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = MyISAM
@@ -201,9 +212,9 @@ COLLATE = utf8_bin;
 
 
 -- -----------------------------------------------------
--- Table `rd_groups_has_users`
+-- Table `bdirect`.`rd_groups_has_users`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `rd_groups_has_users` (
+CREATE  TABLE IF NOT EXISTS `bdirect`.`rd_groups_has_users` (
   `group_id` INT NOT NULL ,
   `user_id` INT(11) NOT NULL ,
   PRIMARY KEY (`group_id`, `user_id`) ,
@@ -211,21 +222,21 @@ CREATE  TABLE IF NOT EXISTS `rd_groups_has_users` (
   INDEX `fk_rd_groups_has_rd_users_rd_groups1` (`group_id` ASC) ,
   CONSTRAINT `fk_rd_groups_has_rd_users_rd_groups1`
     FOREIGN KEY (`group_id` )
-    REFERENCES `rd_groups` (`id` )
+    REFERENCES `bdirect`.`rd_groups` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_rd_groups_has_rd_users_rd_users1`
     FOREIGN KEY (`user_id` )
-    REFERENCES `rd_users` (`id` )
+    REFERENCES `bdirect`.`rd_users` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = MyISAM;
 
 
 -- -----------------------------------------------------
--- Table `rd_groups_has_rooms`
+-- Table `bdirect`.`rd_groups_has_rooms`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `rd_groups_has_rooms` (
+CREATE  TABLE IF NOT EXISTS `bdirect`.`rd_groups_has_rooms` (
   `group_id` INT NOT NULL ,
   `room_id` INT NOT NULL ,
   PRIMARY KEY (`group_id`, `room_id`) ,
@@ -233,21 +244,21 @@ CREATE  TABLE IF NOT EXISTS `rd_groups_has_rooms` (
   INDEX `fk_rd_groups_has_rd_rooms_rd_groups1` (`group_id` ASC) ,
   CONSTRAINT `fk_rd_groups_has_rd_rooms_rd_groups1`
     FOREIGN KEY (`group_id` )
-    REFERENCES `rd_groups` (`id` )
+    REFERENCES `bdirect`.`rd_groups` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_rd_groups_has_rd_rooms_rd_rooms1`
     FOREIGN KEY (`room_id` )
-    REFERENCES `rd_rooms` (`id` )
+    REFERENCES `bdirect`.`rd_rooms` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = MyISAM;
 
 
 -- -----------------------------------------------------
--- Table `rd_messages`
+-- Table `bdirect`.`rd_messages`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `rd_messages` (
+CREATE  TABLE IF NOT EXISTS `bdirect`.`rd_messages` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `status` VARCHAR(45) NULL DEFAULT NULL ,
   `from_user_id` INT(11) NOT NULL ,
@@ -260,9 +271,9 @@ ENGINE = MyISAM;
 
 
 -- -----------------------------------------------------
--- Table `rd_rooms_starred`
+-- Table `bdirect`.`rd_rooms_starred`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `rd_rooms_starred` (
+CREATE  TABLE IF NOT EXISTS `bdirect`.`rd_rooms_starred` (
   `user_id` INT(11) NOT NULL ,
   `room_id` INT NOT NULL ,
   PRIMARY KEY (`user_id`) ,
@@ -270,12 +281,12 @@ CREATE  TABLE IF NOT EXISTS `rd_rooms_starred` (
   INDEX `fk_rd_users_has_rd_rooms_rd_users1` (`user_id` ASC) ,
   CONSTRAINT `fk_rd_users_has_rd_rooms_rd_users1`
     FOREIGN KEY (`user_id` )
-    REFERENCES `rd_users` (`id` )
+    REFERENCES `bdirect`.`rd_users` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_rd_users_has_rd_rooms_rd_rooms1`
     FOREIGN KEY (`room_id` )
-    REFERENCES `rd_rooms` (`id` )
+    REFERENCES `bdirect`.`rd_rooms` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = MyISAM
@@ -283,9 +294,9 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `rd_message_lists`
+-- Table `bdirect`.`rd_message_lists`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `rd_message_lists` (
+CREATE  TABLE IF NOT EXISTS `bdirect`.`rd_message_lists` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `rd_message_listscol` VARCHAR(45) NULL DEFAULT NULL ,
   PRIMARY KEY (`id`) )
@@ -293,11 +304,16 @@ ENGINE = MyISAM;
 
 
 -- -----------------------------------------------------
--- Table `rd_payout_methods`
+-- Table `bdirect`.`rd_payout_methods`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `rd_payout_methods` (
+CREATE  TABLE IF NOT EXISTS `bdirect`.`rd_payout_methods` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   PRIMARY KEY (`id`) )
 ENGINE = MyISAM
 DEFAULT CHARACTER SET = utf8;
 
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

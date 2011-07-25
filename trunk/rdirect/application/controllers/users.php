@@ -23,7 +23,7 @@ class Users extends MY_Controller {
 		
 		$this->data['fb'] = FALSE;
 		$this->data['signup_flag'] = FALSE;
-				
+		$this->data['redirect_params'] = $this->input->get('redirect_params');		
 		$this->load->view('signup_login', $this->data);
 	}
 
@@ -31,29 +31,57 @@ class Users extends MY_Controller {
 		if($this->tank_auth->is_logged_in())
 			redirect('home/dashboard');
 		
+		$this->data['redirect_params'] = $this->input->get('redirect_params');
+		
 		// Facebook connect 대신 이메일 주소로 가입		
-		if(($hf = $this->input->get('hf')) !== null)
+		if(($hf = $this->input->get('hf')) )
 		{
 			$this->session->set_userdata(array('hf' => $hf));
+		}
+		else if(!empty($this->data['redirect_params']))	// room/new에서 redirect된 경우
+		{
+			$hf = true;
 		}
 		else
 		{
 			$hf = $this->session->userdata('hf');
 		}
-			
+
 		$this->data['fb'] = ! $hf;
-		$this->data['header']['title'] = 'Sign In / Sign Up';
+		//$this->data['header']['title'] = 'Sign In / Sign Up';
+		
 		$this->data['signup_flag'] = TRUE;
 		
 		$this->load->view('signup_login', $this->data);
+	}
+	
+	function show($user_id = null){
+		if(!$user_id) show_404('');	
+		
+		$this->data['user'] = $this->users_model->get_user($user_id);
+		if(!$this->data['user']) show_404('');
+		
+		$this->load->view('users/show', $this->data);
 	}
 	
 	function edit_profile(){
 		if( ! $this->tank_auth->is_logged_in())
 			redirect('home/dashboard');
 			
-		$this->data['user'] = $this->user_model->get_user($this->tank_auth->get_user_id());
+		$this->data['user'] = $this->users_model->get_user($this->tank_auth->get_user_id());
 		$this->load->view('users/edit_profile', $this->data);
+	}
+	
+	function update_profile($user_id)
+	{
+		if($this->tank_auth->get_user_id() != $user_id || $this->input->post('user_profile_info') == false){
+			$this->_add_notice('Invalid access');
+			echo '<script type="text/javascript">history.back()</script>';
+		}
+		
+		$this->users_model->update_user_profile($user_id, $this->input->post('user_profile_info'));
+		$this->_add_notice('<span class="good" style="font-size:18px;">Profile Updated Successfully</span><br>'.anchor('users/edit_profile', 'Edit Profile Again').' | '.anchor('dashboard', 'Go to Dashboard'));
+		redirect('users/show/'.$user_id);
 	}
 	
 	function change_locale(){

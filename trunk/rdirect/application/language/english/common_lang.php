@@ -3,6 +3,7 @@
 $lang['top_menu_sign_up'] = 'Sign Up';
 $lang['top_menu_sign_in'] = 'Sign In';
 $lang['top_menu_dashboard'] = 'Dashboard';
+$lang['top_menu_starred_items'] = 'View your starred items';
 $lang['top_menu_logout'] = 'Log Out';
 $lang['top_menu_how_it_works'] = 'How it works';
 $lang['top_menu_new_room'] = 'List your space';

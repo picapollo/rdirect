@@ -31,6 +31,7 @@ class auth_other extends MY_Controller {
 				$user = $this -> users_model -> get_user_by_email($fb_user['email']);
 				if(sizeof($user) == 0)
 				{
+					$this->session->set_flashdata('fb_access_token', $this->input->post('fb_access_token'));
 					redirect('auth_other/fill_user_info', 'refresh');
 				}
 				else	// Email로 가입했지만 Facebook connect하지 않은 경우
@@ -43,7 +44,7 @@ class auth_other extends MY_Controller {
 					}
 					else
 					{
-						$this->session->set_flashdata('message', 'Cancelled. Login with email!');
+						$this->_add_notice('message', 'Cancelled. Login with email!');
 						redirect('login');
 					}					
 				}
@@ -68,17 +69,24 @@ class auth_other extends MY_Controller {
 	function fill_user_info()
 	{
 		// load validation library and rules
-		$this -> load -> config('tank_auth', TRUE);
-
-		$fb_id=$this->facebook->getUser();
-		if($fb_id)
-			$fb_user = $this->facebook->api('/me');
-
-		// Run the validation
-		if( ! $this -> session -> userdata('facebook_id'))
+		$this->load->config('tank_auth', TRUE);
+		
+		$fb_token = $this->session->flashdata('fb_access_token');
+		
+		if(!$fb_token)
 		{
-			// TODO: Handle facebook auth failure
-			$this -> load -> view('auth_other/fill_user_info');
+			$this->_add_notice('Facebook connect failed');
+			echo '<script type="text/javascript">history.back()</script>';
+		}
+		
+		$this->facebook->setAccessToken($fb_token);
+		$fb_user = $this->facebook->api('/me');
+	
+		// Run the validation
+		if( ! $fb_user)
+		{
+			$this->_add_notice('Facebook connect failed');
+			echo '<script type="text/javascript">history.back()</script>';
 		}
 		else
 		{
@@ -92,16 +100,23 @@ class auth_other extends MY_Controller {
 			$this -> tank_auth -> create_user($username, $email, $password, false);
 			$new_user = $this -> users_model -> get_user_by_email($email);
 			$user_id = $new_user[0] -> id;
-			if($this -> session -> userdata('facebook_id'))
+			
+			$university = array();
+			foreach($fb_user['education'] as $i)
 			{
-				$this -> users_model -> update_user_profile($user_id, array(
-						'facebook_id' => $this -> session -> userdata('facebook_id')
-					));
-				$this->load->model('pictures_model');
-				if($this->pictures_model->create_user_images_from_fb($user_id, $this -> session -> userdata('facebook_id')) == TRUE)
-				{
-					$this->users_model->set_user_has_picture($user_id, 1);
-				}
+				$university[] = $i['school']['name'];
+				//TODO: 그룹 자동가입 url_title($i['school']['name'], 'dash', TRUE);
+			}
+			
+			$this -> users_model -> update_user_profile($user_id, array(
+					'facebook_id' => $fb_user['id'],
+					'university' => implode(', ', $university),
+					'fb_locale' => $fb_user['locale']
+				));
+			$this->load->model('pictures_model');
+			if($this->pictures_model->create_user_images_from_fb($user_id, $this -> session -> userdata('facebook_id')) == TRUE)
+			{
+				$this->users_model->set_user_has_picture($user_id, 1);
 			}
 			// let the user login via tank auth
 			$this -> tank_auth -> login($email, $password, false, false, true);

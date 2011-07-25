@@ -116,3 +116,32 @@
 [24-Jul-2011 02:10:22] PHP Fatal error:  Call to protected method BaseFacebook::getUserFromAccessToken() from context 'auth_other' in /home/guersam/www/rdirect/application/controllers/auth_other.php on line 22
 [24-Jul-2011 02:11:28] PHP Fatal error:  Uncaught OAuthException: Invalid OAuth access token.
   thrown in /home/guersam/www/rdirect/application/libraries/facebook/base_facebook.php on line 988
+[24-Jul-2011 13:53:27] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/views/users/edit_profile.php on line 70
+[24-Jul-2011 13:53:55] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/views/users/edit_profile.php on line 70
+[24-Jul-2011 13:55:16] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/views/users/edit_profile.php on line 158
+[24-Jul-2011 13:55:27] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/views/users/edit_profile.php on line 70
+[24-Jul-2011 13:57:45] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/views/users/edit_profile.php on line 70
+[24-Jul-2011 13:58:38] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/views/users/edit_profile.php on line 70
+[24-Jul-2011 14:01:37] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/views/users/edit_profile.php on line 70
+[24-Jul-2011 14:03:43] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/views/users/edit_profile.php on line 69
+[24-Jul-2011 14:04:02] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/views/users/edit_profile.php on line 69
+[24-Jul-2011 14:04:18] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/views/users/edit_profile.php on line 77
+[24-Jul-2011 14:04:31] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/views/users/edit_profile.php on line 77
+[24-Jul-2011 14:04:33] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/views/users/edit_profile.php on line 77
+[24-Jul-2011 14:04:39] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/views/users/edit_profile.php on line 77
+[24-Jul-2011 14:04:52] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/views/users/edit_profile.php on line 69
+[24-Jul-2011 14:05:12] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/views/users/edit_profile.php on line 68
+[24-Jul-2011 16:41:54] PHP Fatal error:  Uncaught OAuthException: An active access token must be used to query information about the current user.
+  thrown in /home/guersam/www/rdirect/application/libraries/facebook/base_facebook.php on line 988
+[24-Jul-2011 16:43:04] PHP Fatal error:  Uncaught OAuthException: An active access token must be used to query information about the current user.
+  thrown in /home/guersam/www/rdirect/application/libraries/facebook/base_facebook.php on line 988
+[24-Jul-2011 16:45:46] PHP Fatal error:  Uncaught OAuthException: Invalid OAuth access token.
+  thrown in /home/guersam/www/rdirect/application/libraries/facebook/base_facebook.php on line 988
+[24-Jul-2011 16:46:47] PHP Fatal error:  Uncaught OAuthException: Invalid OAuth access token.
+  thrown in /home/guersam/www/rdirect/application/libraries/facebook/base_facebook.php on line 988
+[24-Jul-2011 16:47:09] PHP Fatal error:  Uncaught OAuthException: Invalid OAuth access token.
+  thrown in /home/guersam/www/rdirect/application/libraries/facebook/base_facebook.php on line 988
+[24-Jul-2011 16:54:29] PHP Fatal error:  Call to a member function get_user() on a non-object in /home/guersam/www/rdirect/application/controllers/users.php on line 54
+[24-Jul-2011 17:31:31] PHP Parse error:  syntax error, unexpected '<' in /home/guersam/www/rdirect/application/views/users/show.php on line 36
+[24-Jul-2011 18:03:08] PHP Parse error:  syntax error, unexpected '}' in /home/guersam/www/rdirect/application/controllers/auth.php on line 119
+[24-Jul-2011 23:44:40] PHP Parse error:  syntax error, unexpected '}' in /home/guersam/www/rdirect/application/controllers/test.php on line 18

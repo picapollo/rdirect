@@ -323,7 +323,7 @@ form div.form-submit {
   text-align: right; }
 
 .ui-autocomplete .ui-state-hover {
-  background: #0096d0 url(/images/guidebook/autocomplete_gradient.png) left top repeat-x !important;
+  background: #0096d0 url(../../images/guidebook/autocomplete_gradient.png) left top repeat-x !important;
   text-decoration: none;
   color: #FFFFFF; }
 
@@ -348,7 +348,7 @@ form div.form-submit {
   #guidebook-edit .reason {
     margin-top: 10px; }
   #guidebook-edit .spinner {
-    background: url(/images/spinner.gif) left top no-repeat;
+    background: url(../../images/spinner.gif) left top no-repeat;
     width: 16px;
     height: 16px; }
   #guidebook-edit .expand-arrow {
@@ -356,7 +356,7 @@ form div.form-submit {
     width: 10px;
     margin-top: 5px;
     margin-left: 10px;
-    background: url(/images/guidebook/expand-arrows.png) left -10px no-repeat;
+    background: url(../../images/guidebook/expand-arrows.png) left -10px no-repeat;
     display: block;
     float: right; }
   #guidebook-edit .mini-pin-container {
@@ -365,7 +365,7 @@ form div.form-submit {
     margin: -4px 14px 0 5px;
     display: block;
     float: left;
-    background: url(/images/guidebook/mini-guidebook-pins.png) left top no-repeat; }
+    background: url(../../images/guidebook/mini-guidebook-pins.png) left top no-repeat; }
   #guidebook-edit .mini-pin-bar {
     background-position: left -26px; }
   #guidebook-edit .mini-pin-restaurant {
@@ -409,25 +409,25 @@ form div.form-submit {
   #guidebook-edit .done-container {
     margin-top: 10px; }
   #guidebook-edit .place-art {
-    background-image: url(/images/guidebook/pin_art.png); }
+    background-image: url(../../images/guidebook/pin_art.png); }
   #guidebook-edit .place-bar {
-    background-image: url(/images/guidebook/pin_bar.png); }
+    background-image: url(../../images/guidebook/pin_bar.png); }
   #guidebook-edit .place-cafe {
-    background-image: url(../images/guidebook/pin_cafe.png); }
+    background-image: url(../../images/guidebook/pin_cafe.png); }
   #guidebook-edit .place-groceries {
-    background-image: url(/images/guidebook/pin_groceries.png); }
+    background-image: url(../../images/guidebook/pin_groceries.png); }
   #guidebook-edit .place-kid {
-    background-image: url(/images/guidebook/pin_kid.png); }
+    background-image: url(../../images/guidebook/pin_kid.png); }
   #guidebook-edit .place-other {
-    background-image: url(/images/guidebook/pin_other.png); }
+    background-image: url(../../images/guidebook/pin_other.png); }
   #guidebook-edit .place-restaurant {
-    background-image: url(/images/guidebook/pin_restaurant.png); }
+    background-image: url(../../images/guidebook/pin_restaurant.png); }
   #guidebook-edit .place-store {
-    background-image: url(/images/guidebook/pin_store.png); }
+    background-image: url(../../images/guidebook/pin_store.png); }
   #guidebook-edit .place-tourism {
-    background-image: url(/images/guidebook/pin_tourism.png); }
+    background-image: url(../../images/guidebook/pin_tourism.png); }
   #guidebook-edit .place-wifi {
-    background-image: url(/images/guidebook/pin_wifi.png); }
+    background-image: url(../../images/guidebook/pin_wifi.png); }
   #guidebook-edit .recommendation-links {
     float: right;
     box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.3);
@@ -521,7 +521,7 @@ form div.form-submit {
         margin: -6px 12px 0 4px;
         display: block;
         float: left;
-        background: url(/images/guidebook/mini-guidebook-pins-selected.png) left top no-repeat; }
+        background: url(../../images/guidebook/mini-guidebook-pins-selected.png) left top no-repeat; }
       #guidebook-edit #recommendations-wrapper .selected .mini-pin-bar {
         background-position: left -30px; }
       #guidebook-edit #recommendations-wrapper .selected .mini-pin-restaurant {

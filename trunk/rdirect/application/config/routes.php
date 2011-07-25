@@ -41,9 +41,9 @@
 $route['default_controller'] = "home";
 $route['404_override'] = '';
 $route['rooms'] = "hosting/rooms";
-$route['rooms/new'] = "rooms/new_room";
+$route['rooms/new'] = "rooms/post_room";
 $route['rooms/(:num)'] = "rooms/show/$1";
-$route['rooms/(:num)/edit'] = "rooms/edit/$1";
+$route['rooms/(:num)/([a-z_]+)'] = "rooms/$2/$1";
 $route['login'] = 'users/login';
 $route['signup_login'] = 'users/signup_login';
 $route['dashboard'] = 'home/dashboard';

@@ -14,7 +14,7 @@ if($fb)
 }
 else
 {
-	$this->load->view('auth/signup2', array('signup_flag', $signup_flag));
+	$this->load->view('auth/signup2', array('signup_flag' => $signup_flag, 'redirect_params', $redirect_params));
 }
 
 ?>

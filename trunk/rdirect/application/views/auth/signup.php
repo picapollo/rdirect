@@ -1,9 +1,9 @@
-<?$this->facebook->getLoginUrl(array('redirect_uri' => site_url('auth_other/fb_signin'), 'scope' => $this->config->item('facebook_scope')))?>
+<??>
 <div id="signup">
 	<h1>회원가입</h1>
 	<div id="fb-plugin">
 		<div id="fb-button-container">
-			<a class="fb-button" href="#"> <span class="fb-button-left"></span> <span class="fb-button-center"><strong>페이스북 커넥트</strong></span> <span class="fb-button-right"></span> </a>
+			<a class="fb-button" href="<?=$this->facebook->getLoginUrl(array('redirect_uri' => site_url('auth_other/fb_signin'), 'scope' => $this->config->item('facebook_scope')))?>"> <span class="fb-button-left"></span> <span class="fb-button-center"><strong>페이스북 커넥트</strong></span> <span class="fb-button-right"></span> </a>
 		</div>
 		<iframe src="https://www.facebook.com/plugins/facepile.php?app_id=<?=$this->config->item('facebook_app_id');?>&max_rows=2"
 		scrolling="no" frameborder="0" allowTransparency="true"
