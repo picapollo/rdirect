@@ -38,7 +38,7 @@
 		<script type="text/javascript">var base_url = "<?=base_url()?>";</script>
 		
 		<?php if($locale != 'en'): ?>
-		<script src="<?=JS_DIR?>/jquery.ui.datepicker-<?=$locale?>.min.js" type="text/javascript"></script>
+		<script src="<?=JS_DIR?>/jquery.ui.datepicker/jquery.ui.datepicker-<?=$locale?>.min.js" type="text/javascript"></script>
 		<?php endif; ?>
 
 		<script src="<?=JS_DIR?>/common.js" type="text/javascript"></script>

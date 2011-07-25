@@ -22,7 +22,8 @@ class Pictures_model extends CI_Model {
 		
 		if( ! $this->_resize($source_image, 'large.png', $new_path, 255, 255) || 
 			! $this->_resize($source_image, 'medium.png', $new_path, 68, 68) ||
-			! $this->_resize($source_image, 'small.png', $new_path, 50, 50) )	return FALSE;
+			! $this->_resize($source_image, 'small.png', $new_path, 50, 50) ||
+			! $this->_resize($source_image, 'tiny.png', $new_path, 36, 36))	return FALSE;
 		
 		return TRUE;
 	}

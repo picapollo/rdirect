@@ -1,143 +1,15 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
-    <head><script>var NREUMQ=[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);(function(){var d=document;var e=d.createElement("script");e.type="text/javascript";e.async=true;e.src="https://d1ros97qkrwjf5.cloudfront.net/14/eum/rum.js	";var s=d.getElementsByTagName("script")[0];s.parentNode.insertBefore(e,s);})()</script>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <title>Vacation rentals, private rooms, sublets by the night - Accommodations on Airbnb</title>
-
-        <meta name="title" content="Vacation rentals, private rooms, sublets by the night - Accommodations on Airbnb" />
-
-
-    <link rel="image_src" href="/images/airbnb_logo.png" />
-    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Airbnb" />
-    --[if (!IE)|(gte IE 8)]><!-->
-<link href="http://s1.muscache.com/1311308856/assets/common-datauri.css" media="screen" rel="stylesheet" type="text/css" />
-<!--<![endif]-->
-<!--[if lte IE 7]>
-<link href="http://s1.muscache.com/1311308854/assets/common.css" media="screen" rel="stylesheet" type="text/css" />
-<![endif]-->
-    <link href="http://s1.muscache.com/1311094803/stylesheets/dashboard.css" media="screen" rel="stylesheet" type="text/css" />
-
-
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
-
-
-		<script type="text/javascript">
-			jQuery.noConflict();
-		</script>
-
-			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js"></script>
-			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.2/scriptaculous.js"></script>
-		<script src="http://s2.muscache.com/1300304855/javascripts/calendar_date_select/calendar_date_select.js" type="text/javascript"></script>
-<script src="http://s3.muscache.com/1300304855/javascripts/calendar_date_select/format_american.js" type="text/javascript"></script>
-<link href="http://s1.muscache.com/1300304856/stylesheets/calendar_date_select/silver.css" media="screen" rel="stylesheet" type="text/css" />
-
-
-		<script src="http://s0.muscache.com/1311319588/assets/common.js" type="text/javascript"></script>
-		
-		<link rel="shortcut icon" href="/airbnb_favicon.ico" />
-	</head>
-
-  <body>
-
-  
-
-        <div id="header" class="clearfix">
-			<a id="logo" href="http://www.airbnb.com" title="Airbnb.com Home">
-				<img alt="Airbnb - Travel like a human." border="0" height="45" src="http://s1.muscache.com/1309460641/images/logos/109x45.png" width="109" />
-			</a>
-					<a href="http://www.airbnb.com/rooms/new" class="rounded hide_when_printing" id="list-your-space">List your space</a>
-          <ul id="utilities">
-							<li class="first-child">
-								Hi, Jisoo P!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.airbnb.com/home/dashboard">Dashboard</a>
-							</li>
-              <li style="border:none;">
-              	<ul class="notification_bar">
-<li id="star-indicator"><a href="http://www.airbnb.com/search?starred=true" class="notification_icon starred" title="View your starred items">                                <span style="width: 1px; margin-right: -5px;">&nbsp;</span>
-																<span id="star_count" class="alert_count">1</span>
-</a></li>               	</ul>
-              </li>
-              <li><a href="http://www.airbnb.com/users/logout" onclick="var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;f.submit();return false;">Log Out</a></li>
-            <li><a href="/jobs">We're Hiring!</a></li>
-          	<li style="border-right:1px solid #DDD;"><a href="/info/how_it_works">How it works</a></li>
-						<li style="border-left:none;" class="last-child">
-							<div id="language_currency">
-								<div id="language_currency_display" class="rounded_top">
-                   <div id="language_currency_display_language" class="flag sprite-en">&nbsp;</div>
-                   <div id="language_currency_display_currency">$ USD</div>
-                </div>
-                <div id="language_currency_selector_container" class="rounded" style="display:none;">
-          				<ul id="language_currency_selector">
-										<li class='instruction'>Choose language...</li>
-												<li class="language option" id="language_selector_de" name="de">
-													<div class="flag sprite-de">&nbsp;</div>
-													<div style="display:inline;padding-left:24px;">Deutsch</div>
-												</li>
-												<li class="language option" id="language_selector_es" name="es">
-													<div class="flag sprite-es">&nbsp;</div>
-													<div style="display:inline;padding-left:24px;">Español</div>
-												</li>
-												<li class="language option" id="language_selector_fr" name="fr">
-													<div class="flag sprite-fr">&nbsp;</div>
-													<div style="display:inline;padding-left:24px;">Français</div>
-												</li>
-												<li class="language option" id="language_selector_it" name="it">
-													<div class="flag sprite-it">&nbsp;</div>
-													<div style="display:inline;padding-left:24px;">Italiano</div>
-												</li>
-												<li class="language option" id="language_selector_pt" name="pt">
-													<div class="flag sprite-pt">&nbsp;</div>
-													<div style="display:inline;padding-left:24px;">Português</div>
-												</li>
-												<li class="language option" id="language_selector_ru" name="ru">
-													<div class="flag sprite-ru">&nbsp;</div>
-													<div style="display:inline;padding-left:24px;">Русский</div>
-												</li>
-												<li class="language option" id="language_selector_zh" name="zh">
-													<div class="flag sprite-zh">&nbsp;</div>
-													<div style="display:inline;padding-left:24px;">中文(简体)</div>
-												</li>
-												<li class="language option" id="language_selector_ko" name="ko">
-													<div class="flag sprite-ko">&nbsp;</div>
-													<div style="display:inline;padding-left:24px;">한국어</div>
-												</li>
-            				<li class='dash'>&nbsp;</li>
-              			<li class='instruction'>Choose currency...</li>
-												<li class="currency option" id="currency_selector_AUD" name="AUD"> $ AUD </li>
-												<li class="currency option" id="currency_selector_BRL" name="BRL"> R$ BRL </li>
-												<li class="currency option" id="currency_selector_CAD" name="CAD"> $ CAD </li>
-												<li class="currency option" id="currency_selector_CHF" name="CHF"> CHF CHF </li>
-												<li class="currency option" id="currency_selector_CZK" name="CZK"> &#75;&#269; CZK </li>
-												<li class="currency option" id="currency_selector_DKK" name="DKK"> kr DKK </li>
-												<li class="currency option" id="currency_selector_EUR" name="EUR"> &euro; EUR </li>
-												<li class="currency option" id="currency_selector_GBP" name="GBP"> &pound; GBP </li>
-												<li class="currency option" id="currency_selector_HKD" name="HKD"> $ HKD </li>
-												<li class="currency option" id="currency_selector_HUF" name="HUF"> Ft HUF </li>
-												<li class="currency option" id="currency_selector_ILS" name="ILS"> &#8362; ILS </li>
-												<li class="currency option" id="currency_selector_JPY" name="JPY"> &yen; JPY </li>
-												<li class="currency option" id="currency_selector_NOK" name="NOK"> kr NOK </li>
-												<li class="currency option" id="currency_selector_RUB" name="RUB"> &#1088;&#1091;&#1073; RUB </li>
-												<li class="currency option" id="currency_selector_SEK" name="SEK"> kr SEK </li>
-												<li class="currency option" id="currency_selector_ZAR" name="ZAR"> R ZAR </li>
-              		</ul><!-- LANGUAGE_CURRENCY_SELECTOR -->
-            		</div><!-- LANGUAGE_CURRENCY_SELECTOR_CONTAINER -->
-              </div><!-- LANGUAGE_CURRENCY -->
-            </li>
-					</ul><!-- UTILITIES -->
-        </div> <!-- HEADER -->
-
+<?php
+	$this->load->view('header/home', $header);
+	$this->load->view('top_menu');
+?>
        
-		
-<script src="http://s0.muscache.com/1300304855/javascripts/libphonenumber.compiled.js" type="text/javascript"></script>
-<script src="http://s2.muscache.com/1307060988/javascripts/jquery.validatedphone.js" type="text/javascript"></script>
+<script src="<?=JS_DIR?>/libphonenumber.compiled.js" type="text/javascript"></script>
+<script src="<?=JS_DIR?>/jquery.validatedphone.js" type="text/javascript"></script>
 
 <script type="text/javascript">
     function wait_for_upload() {
         $('upload_image_submit_button').disabled = true; 
-        $('upload_feedback').innerHTML = "<img src='/images/blue_spinner.gif' />";
+        $('upload_feedback').innerHTML = "<img src='<?=IMG_DIR?>/blue_spinner.gif' />";
         $('user_pic').style.opacity = '.4';
         $('user_pic').style.filter = 'alpha(opacity=40)';
     }
@@ -173,112 +45,20 @@
         font-size:14px;
         line-height:19px;
     }
+    input:disabled {
+    	background-color:white;
+    }
 </style>
 
-<div id="lwlb_overlay"></div>
-
-<script>
-	function lwlb_languages_save() {
-		var list = [];
-		var language = 0
-		$$('#lwlb_languages input[type=checkbox]').each ( function(c){
-			if (c.checked) {
-				c.name.scan(/\[(.+?)\]/, function(match){ list.push(match[1])});
-				language = language | parseInt(c.value);
-			}
-		});
-
-		$('language_list').innerHTML = list.join(', ');
-		$('user_languages').value = language;
-		lwlb_hide('lwlb_languages');
-	}
-	
-</script>
-
-
-<div id="lwlb_languages" class="lwlb_lightbox2">
-	<div class="header">
-		<div class="h1"><h1>Spoken Languages</h1></div>
-		<div class="close"><a href="#" onclick="lwlb_hide('lwlb_languages');return false;"><img src="/images/lightboxes/close_button.gif" /></a></div>
-		<div class="clear"></div>
-	</div>
-			
-	<p>
-		What languages can you speak fluently? We have many international travelers who appreciate hosts
-
-		who can speak their language.
-	</p>
-	<br /><br />
-	
-		<table>
-			<tr>
-				<td>
-						<input id="language_256" name="language[Arabic]" type="checkbox" value="256" />
-						Arabic<br />
-						<input id="language_32768" name="language[Bengali]" type="checkbox" value="32768" />
-						Bengali<br />
-						<input id="language_4" name="language[Deutsch]" type="checkbox" value="4" />
-						Deutsch<br />
-						<input id="language_1" name="language[English]" type="checkbox" value="1" />
-						English<br />
-						<input id="language_64" name="language[Español]" type="checkbox" value="64" />
-						Español<br />
-						<input id="language_2" name="language[Français]" type="checkbox" value="2" />
-						Français<br />
-						<input id="language_4096" name="language[Indonesian]" type="checkbox" value="4096" />
-						Indonesian<br />
-						<input id="language_16" name="language[Italiano]" type="checkbox" value="16" />
-						Italiano<br />
-						<input id="language_8192" name="language[Nederlands]" type="checkbox" value="8192" />
-						Nederlands<br />
-						<input id="language_1024" name="language[Português]" type="checkbox" value="1024" />
-						Português<br />
-				</td>
-				<td>
-						<input id="language_524288" name="language[Sign Language]" type="checkbox" value="524288" />
-						Sign Language<br />
-						<input id="language_2048" name="language[Türkçe]" type="checkbox" value="2048" />
-						Türkçe<br />
-						<input id="language_262144" name="language[Ελληνικά]" type="checkbox" value="262144" />
-						Ελληνικά<br />
-						<input id="language_32" name="language[Русский]" type="checkbox" value="32" />
-						Русский<br />
-						<input id="language_1048576" name="language[עברית]" type="checkbox" value="1048576" />
-						עברית<br />
-						<input id="language_512" name="language[हिन्दी]" type="checkbox" value="512" />
-						हिन्दी<br />
-						<input id="language_131072" name="language[ਪੰਜਾਬੀ]" type="checkbox" value="131072" />
-						ਪੰਜਾਬੀ<br />
-						<input id="language_65536" name="language[ภาษาไทย]" type="checkbox" value="65536" />
-						ภาษาไทย<br />
-						<input id="language_128" name="language[中文(简体)]" type="checkbox" value="128" />
-						中文(简体)<br />
-				</td>
-			</tr>
-		</table>
-		<br /><br />
-	
-		<input type="button" value="Save" onclick="lwlb_languages_save();" />
-		or <a href="#" onclick="lwlb_hide('lwlb_languages');return false;">cancel</a>
-
-
-</div>
-
-
 <div id="edit_profile">
-
 	<div id="content" style='position:relative;'>
-		
-		
-
-		
         <div id="ajax_upload_container" style="display:none; top:100px; left:210px;">
             <h3>Upload a Photo</h3>
             <p class="about_photos">
                 Uploading a photo of yourself is a great way to earn trust on Airbnb. You may upload new images as often as you like.
             </p>
 
-            <form target="upload_frame" action="/users/ajax_image_upload" id="ajax_upload_form" name="ajax_upload_form" method="post" enctype="multipart/form-data">
+            <form target="upload_frame" action="<?=site_url('users/ajax_image_upload')?>" id="ajax_upload_form" name="ajax_upload_form" method="post" enctype="multipart/form-data">
                 <input id="user_profile_pic" name="user[profile_pic]" size="20" type="file" /><br />
                 <input id="upload_image_submit_button" type="submit" value="Upload Photo" onclick="$('ajax_upload_form').submit(); wait_for_upload();" />
             </form>
@@ -288,8 +68,7 @@
 
             <iframe id="upload_frame" name="upload_frame" style="display:none;"></iframe>
         </div>
-
-<form action="https://www.airbnb.com/update/738217" enctype="multipart/form-data" method="post">		
+		<form action="<?=site_url('users/update_profile/'.$user->id)?>" enctype="multipart/form-data" method="post">		
             <h1>About You</h1>
             <div class="section" id="person_section">
                 <div style="float:left;width:250px; position:relative;">
@@ -297,7 +76,7 @@
 
                         <div id="user_pic" onclick="$('ajax_upload_container').toggle();" style="margin:0 0 10px 0;">
                             <div id="edit_image_hover" style="display:none;" onclick="show_ajax_image_box();"><p>Upload a Photo</p></div>
-                                <img border="0" width="209" height="209" src="/images/command_center/default_dashboard_user_pic_209.jpg" alt="Upload a Photo of Yourself"/>
+                                <img border="0" width="209" height="209" src="<?=$user->picture_path?>/large.png" alt="Upload a Photo of Yourself"/>
                         </div>
 
 
@@ -311,13 +90,13 @@
                 <div style="float:left;width:450px;">
 
                     <table>
-                        <tr><td class="label">Name:</td><td><input class="name_input" id="user_first_name" name="user[first_name]" size="30" type="text" value="Jisoo" /><input class="name_input" id="user_last_name" name="user[last_name]" size="30" type="text" value="Park" /></td></tr>
-                        <tr><td class="label">Email:</td><td><input class="private_lock" id="user_email" name="user[email]" size="30" type="text" value="xxxyel@naver.com" /></td></tr>
-                        <tr><td class="label">School:</td><td><input id="user_profile_info_university" name="user_profile_info[university]" size="30" type="text" value="한국디지털미디어고등학교, 연세대학교 (Yonsei University)" /></td></tr>
-                        <tr><td class="label">Where You Live:</td><td><input id="user_profile_info_current_city" name="user_profile_info[current_city]" size="30" type="text" value="" /><br /><span style="color:#9c9c9c; text-style:italic; font-size:11px;">e.g. Paris, FR / Brooklyn, NY / Chicago, IL</span><br /></td>
+                        <tr><td class="label">Name:</td><td><input class="name_input" disabled='true' id="username" name="" size="30" type="text" value="<?=$user->username?>" /></td></tr>
+                        <tr><td class="label">Email:</td><td><input class="private_lock" disabled='true' id="user_email" name="" size="30" type="text" value="<?=$user->email?>" /></td></tr>
+                        <tr><td class="label">School:</td><td><input id="user_profile_info_university" name="user_profile_info[university]" size="30" type="text" value="<?=$user->university?>" /></td></tr>
+                        <tr><td class="label">Where You Live:</td><td><input id="user_profile_info_current_city" name="user_profile_info[current_city]" size="30" type="text" value="<?=$user->current_city?>" /><br /><span style="color:#9c9c9c; text-style:italic; font-size:11px;">e.g. Paris, FR / Brooklyn, NY / Chicago, IL</span><br /></td>
                         </tr>
                         <tr>
-                            <td class="label">Work:</td><td><input id="user_profile_info_employer" name="user_profile_info[employer]" size="30" type="text" value="asfd" /></td>
+                            <td class="label">Work:</td><td><input id="user_profile_info_employer" name="user_profile_info[employer]" size="30" type="text" value="<?=$user->employer?>" /></td>
 						</tr>
 						<tr>
 							<td class="label" valign="top">Phone Number:</td>
@@ -560,8 +339,8 @@
 <option value="ZM">Zambia</option>
 <option value="ZW">Zimbabwe</option>
 								</select>
-								<input autocomplete="off" class="private_lock" id="user_phone" name="user[phone]" size="30" type="text" value="" />
-								<input id="user_phone_country" name="user[phone_country]" type="hidden" value="" />
+								<input autocomplete="off" class="private_lock" id="user_phone" name="user_profile_info[phone]" size="30" type="text" value="<?=$user->phone?>" />
+								<input id="user_phone_country" name="user_profile_info[phone_country]" type="hidden" value="<?=$user->phone_country?>" />
 							</td>
 						</tr>
 						<tr>
@@ -805,8 +584,8 @@
 <option value="ZM">Zambia</option>
 <option value="ZW">Zimbabwe</option>
 								</select>
-								<input autocomplete="off" class="private_lock" id="user_phone2" name="user[phone2]" size="30" type="text" value="" />
-								<input id="user_phone2_country" name="user[phone2_country]" type="hidden" value="" />
+								<input autocomplete="off" class="private_lock" id="user_phone2" name="user_profile_info[phone2]" size="30" type="text" value="<?=$user->phone2?>" />
+								<input id="user_phone2_country" name="user_profile_info[phone2_country]" type="hidden" value="<?=$user->phone2_country?>" />
 							</td>
                        	</tr>
                         
@@ -828,7 +607,7 @@
                 
                 <div style="float:left;width:250px;">
                     <div class="label">Describe Yourself</div>
-                    <textarea cols="40" id="user_profile_info_about" name="user_profile_info[about]" rows="20" style="width:250px;height:200px;">asdf</textarea>
+                    <textarea cols="40" id="user_profile_info_about" name="user_profile_info[about]" rows="20" style="width:250px;height:200px;"><?=$user->about?></textarea>
                 </div>
                 
                 <div class="clear"></div>
@@ -838,7 +617,7 @@
                 <input class="v3_button" name="commit" type="submit" value="Save Changes" />
                 <br />
                 <br />
-                or <a href="http://www.airbnb.com/home/dashboard" class="">Cancel</a>&nbsp;&nbsp;&nbsp;
+                or <a href="<?=site_url('home/dashboard')?>" class="">Cancel</a>&nbsp;&nbsp;&nbsp;
             </div><!-- buttons -->
 
 		<!-- fields for user_profile_info -->

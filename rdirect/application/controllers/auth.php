@@ -81,7 +81,8 @@ class Auth extends MY_Controller
 		if ($this->tank_auth->is_logged_in()) {									// logged in
 			redirect('home/dashboard');
 		} elseif (!$this->config->item('allow_registration', 'tank_auth')) {	// registration is off
-			$this->_show_message($this->lang->line('auth_message_registration_disabled'));
+			$this->_add_notice($this->lang->line('auth_message_registration_disabled'));
+			redirect('');
 		} else {
 			$use_username = $this->config->item('use_username', 'tank_auth');
 			$this->form_validation->set_rules('username', 'Username', 'required|xss_clean|min_length['.$this->config->item('username_min_length', 'tank_auth').']|max_length['.$this->config->item('username_max_length', 'tank_auth').']');
@@ -111,7 +112,10 @@ class Auth extends MY_Controller
 					foreach ($errors as $k => $v)	$this->_add_notice($this->lang->line($v));
 				}
 			}
-			redirect('signup_login');
+ 			else {
+				$this->_add_notice('form validation error');
+			}
+			redirect('signup_login?hf=true');
 		}
 	}
 

@@ -169,7 +169,42 @@
                 <div class="top">&nbsp;</div> 
                 <div class="middle"> 
                     <h2>Messages (0 new)</h2> 
-                    <p class="notice inbox_empty">Nothing to show you.</p> 
+					<?php //TODO if(messages exist): ?>
+					<ul>
+                        <li id="thread_1777205">
+                            <div class="user">
+                                <a href="/users/show/755884" onclick="window.open(this.href);return false;"><img alt="Choimyun K" height="50" src="http://i3.muscache.com/users/755884/profile_pic/1311186351/small.jpg" title="Choimyun K" width="50" /></a>
+                                <p>
+                                    <a href="/users/show/755884" class="name" onclick="window.open(this.href);return false;">Choimyun</a>
+                                    <br />
+                                    13 days
+                                </p>
+                            </div>
+                            <div class="message_details">
+                                <p>
+                                    <a href="/z/q/1777205">Choimyun has offered 11 for 12 nights 6 guests star...</a>
+                                    <br />
+                                    <span class=locality>Seoul</span>
+                                        (Jul 11 - 12, 2011)
+                                </p>
+                            </div>
+                            <div class="status">
+                                <div class="offer">
+                                    <p>
+                                        
+                                            <span class="reservation_inquiry rounded_less">Not Possible</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+					<div id="more_messages">
+						<a href="<?=site_url('inbox')?>" class="button-glossy">Go to all messages</a>
+					</div>
+					<div class="clear"></div>	
+					<?php //TODO else: ?>
+                    <p class="notice inbox_empty">Nothing to show you.</p>
+                    <?php //TODO endif; ?> 
                 </div><!-- /middle --> 
                 <div class="bottom">&nbsp;</div> 
             </div><!-- /messages --> 

@@ -4,19 +4,20 @@ if(!defined('BASEPATH'))
 /**
  *	Rooms
  */
-class Rooms extends CI_Controller
+class Rooms extends MY_Controller
 {
 	
-	public function __construct()
+	function __construct()
 	{
 		parent::__construct();
 		// Your own constructor code
+		$this->load->model('rooms_model');
 	}
 	
 	/**
 	 * Show list of rooms
 	 */
-	public function index(){
+	function index(){
 		
 	}
 
@@ -24,9 +25,36 @@ class Rooms extends CI_Controller
 	 * Register new room
 	 * route: /rooms/new
 	 */
-	public function new_room()
+	function post_room()
 	{
+		$this->load->view('rooms/post_room', $this->data);
 
+	}
+	
+	function update()
+	{
+		foreach($_POST as $key => $value) {
+			$value = $this->input->post($key);
+			echo $key.' : ';
+			print_r($value);
+			echo '<br>';
+		}
+		
+		$redirect_params = $this->input->post('redirect_params');
+		$retry_params = $this->input->post('retry_params');
+		$address = $this->input->post('address');
+		$hosting = $this->input->post('hosting');
+		
+		
+		if($redirect_params['new_hosting'])
+		{
+			
+		}
+	}
+	
+	function set_user($rid = null)
+	{
+		
 	}
 
 	/**
@@ -34,9 +62,11 @@ class Rooms extends CI_Controller
 	 * route: /rooms/$id
 	 * @param	int
 	 */
-	public function show($id =0)
+	function show($rid = null)
 	{
-		echo 'show : ' . $id;
+		echo 'show : ' . $rid . '<br>';
+		echo $new_room = $this->input->get('new_hosting');
+		
 	}
 
 	/**
@@ -45,9 +75,9 @@ class Rooms extends CI_Controller
 	 * @param	int
 	 * @get		section: photos, details
 	 */
-	public function edit($id =0)
+	function edit($rid = null)
 	{
-		echo 'edit : ' . $id . '<br>';
+		echo 'edit : ' . $rid . '<br>';
 		echo 'section: ' . $this -> input -> get('section');
 	}
 
@@ -55,9 +85,24 @@ class Rooms extends CI_Controller
 	 * Delete room
 	 * @param	int
 	 */
-	public function delete($id =0)
+	function delete($rid = null)
 	{
 
+	}
+	
+	function sublet_available($rid = null)
+	{
+		
+	}
+	
+	function similar_listings($rid = null)
+	{
+		
+	}
+	
+	function social_connections($rid = null)
+	{
+		
 	}
 
 }
