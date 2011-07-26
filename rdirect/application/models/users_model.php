@@ -32,7 +32,7 @@ class Users_model extends CI_Model
 		$this->db->update('user_profiles', $data); 
 	}
 	
-	function set_user_has_picture($user_id, $value)
+	function set_user_has_picture($user_id, $value = 1)
 	{
 		$this->db->update('users', array('users.has_picture' => $value));
 	}

@@ -34,7 +34,7 @@
 <script src="<?=JS_PATH?>/calendar_date_select/format_american.js" type="text/javascript"></script> 
 <link href="<?=CSS_PATH?>/calendar_date_select/silver.css" media="screen" rel="stylesheet" type="text/css" /> 
  
- 		<script type="text/javascript">var base_url = "<?=BASE_PATH?>"</script>
+ 		<script type="text/javascript">var base_url = "<?=base_url()?>"</script>
 		<script src="<?=JS_PATH?>/common.js" type="text/javascript"></script> 
 		
 		<link rel="shortcut icon" href="<?=IMG_DIR?>/airbnb_favicon.ico" /> 

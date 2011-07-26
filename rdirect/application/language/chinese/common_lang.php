@@ -1,5 +1,7 @@
 <?php
 
+$lang['top_menu_hi'] = '안녕하세요';
+$lang['top_menu_nim'] = '님';
 $lang['top_menu_sign_up'] = '注册';
 $lang['top_menu_sign_in'] = '登录';
 $lang['top_menu_dashboard'] = '控制面板';

@@ -1,5 +1,7 @@
 <?php
 
+$lang['top_menu_hi'] = 'Hi';
+$lang['top_menu_nim'] = '';
 $lang['top_menu_sign_up'] = 'Sign Up';
 $lang['top_menu_sign_in'] = 'Sign In';
 $lang['top_menu_dashboard'] = 'Dashboard';

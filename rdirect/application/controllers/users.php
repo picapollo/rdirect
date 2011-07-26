@@ -114,8 +114,8 @@ class Users extends MY_Controller {
 			$config['upload_path'] = UPLOADS_ROOT.'/users/';
 			$config['allowed_types'] = 'gif|jpg|png';
 			$config['max_size']	= '1000';
-			$config['max_width']  = '1024';
-			$config['max_height']  = '768';
+			$config['max_width']  = '2048';
+			$config['max_height']  = '1024';
 			$config['file_name'] = 'tmp';	
 			
 			$this->load->library('upload', $config);
@@ -140,6 +140,7 @@ class Users extends MY_Controller {
 					$data['message_content'] = 'Successfully changed!';
 					$data['username'] = $this->tank_auth->get_username();
 					$data['user_profile_image'] = UPLOADS_DIR.'/users/'.$user_id.'/large.png?' . time();
+					$this->users_model->set_user_has_picture($user_id, 1);
 				}	
 				
 				unlink($result['full_path']);
@@ -147,7 +148,12 @@ class Users extends MY_Controller {
 		}		
 		
 		$this->load->view('ajax_response', $data);
-	}	
+	}
+
+	function ajax_already_messaged($uid)
+	{
+		
+	}
 }
 
 /* End of file users.php */

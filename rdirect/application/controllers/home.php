@@ -44,7 +44,9 @@ class Home extends MY_Controller
 		
 	}
 	
-	
+	function cancellation_policies(){
+		echo 'cancellation_policies';
+	}
 }
 
 /* End of file home.php */

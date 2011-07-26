@@ -7,14 +7,6 @@
         <meta name="title" content="<?=$title?>">
         <meta name="description" content="<?=$description?>">
 
-		<meta property="fb:app_id" content="<?=$facebook_id?>">
-		<meta property="og:site_name" content="RDirect">
-		<meta property="og:title" content="<?=$title?>">
-		<meta property="og:url" content="<?=BASEURL?>">
-		<meta property="og:type" content="website">
-		<meta property="og:image" content="<?=IMG_DIR?>/airbnb_logo.png">
-		<meta property="og:description" content="<?=$description?>">
-
     <link rel="image_src" href="<?=IMG_DIR?>/airbnb_logo.png">
     <!--<link rel="search" type="application/opensearchdescription+xml" href="http://www.airbnb.com/opensearch.xml" title="Airbnb"> -->
     <!--[if (!IE)|(gte IE 8)]><!-->

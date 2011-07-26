@@ -47,16 +47,18 @@ class Auth extends MY_Controller
 						TRUE)) 	// login by email
 				{	
 					// success
+					$this->load->model('users_model');
 					$user = $this->users_model->get_user_locale($this->tank_auth->get_user_id());
 					$this->session->set_userdata('locale', $user->locale);
-					redirect('home/dashboard');
+					$this->_handle_redirect('login');
 
 				} else {
 					$errors = $this->tank_auth->get_error_message();
 					foreach ($errors as $k => $v)	$this->_add_notice($this->lang->line($v));
 				}
 			}
-			redirect('login');			
+			
+			$this->_history_back();
 		}
 	}
 
@@ -97,25 +99,25 @@ class Auth extends MY_Controller
 						$this->form_validation->set_value('password'),
 						FALSE))) {									// success
 
-					$this->data['site_name'] = $this->config->item('website_name', 'tank_auth');
+					//$this->data['site_name'] = $this->config->item('website_name', 'tank_auth');
 
 					if ($this->config->item('email_account_details', 'tank_auth')) {	// send "welcome" email
 
 						$this->_send_email('welcome', $this->data['email'], $data);
 					}
+					$this -> tank_auth -> login($this->input->post('email'), $this->input->post('password'), false, false, true);
 					unset($this->data['password']); // Clear password (just for any case)
-
-					redirect('home/dashboard');
-
+					$this->_handle_redirect('home/dashboard');
 				} else {
 					$errors = $this->tank_auth->get_error_message();
 					foreach ($errors as $k => $v)	$this->_add_notice($this->lang->line($v));
 				}
 			}
- 			else {
+ 			else 
+ 			{
 				$this->_add_notice('form validation error');
 			}
-			redirect('signup_login?hf=true');
+			$this->_history_back();
 		}
 	}
 
