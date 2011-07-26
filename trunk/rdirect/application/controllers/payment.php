@@ -11,7 +11,10 @@ class Payment extends CI_Controller
 		// Your own constructor code
 	}
 	
-
+	function book()
+	{
+		
+	}
 }
 
 /* End of file payment.php */

@@ -55,7 +55,7 @@ class auth_other extends MY_Controller {
 				$this -> session -> set_userdata(array('user_id' => $user[0] -> id, 'username' => $user[0] -> username, 'status' => ($user[0] -> activated == 1) ? STATUS_ACTIVATED : STATUS_NOT_ACTIVATED));
 				//$this->tank_auth->clear_login_attempts($user[0]->email); can't run this when doing FB
 				$this -> users_tank_auth -> update_login_info($user[0] -> id, $this -> config -> item('login_record_ip', 'tank_auth'), $this -> config -> item('login_record_time', 'tank_auth'));
-				redirect('home/dashboard', 'refresh');
+				$this->_handle_redirect('home/dashboard');
 			}
 		}
 		else
@@ -76,7 +76,7 @@ class auth_other extends MY_Controller {
 		if(!$fb_token)
 		{
 			$this->_add_notice('Facebook connect failed');
-			echo '<script type="text/javascript">history.back()</script>';
+			$this->_history_back();
 		}
 		
 		$this->facebook->setAccessToken($fb_token);
@@ -86,7 +86,7 @@ class auth_other extends MY_Controller {
 		if( ! $fb_user)
 		{
 			$this->_add_notice('Facebook connect failed');
-			echo '<script type="text/javascript">history.back()</script>';
+			$this->_history_back();
 		}
 		else
 		{
@@ -110,8 +110,7 @@ class auth_other extends MY_Controller {
 			
 			$this -> users_model -> update_user_profile($user_id, array(
 					'facebook_id' => $fb_user['id'],
-					'university' => implode(', ', $university),
-					'fb_locale' => $fb_user['locale']
+					'university' => implode(', ', $university)
 				));
 			$this->load->model('pictures_model');
 			if($this->pictures_model->create_user_images_from_fb($user_id, $this -> session -> userdata('facebook_id')) == TRUE)

@@ -74,6 +74,60 @@ class MY_Controller extends CI_Controller {
 		$this -> session -> set_userdata('notice', $old_notice . $message);
 	}
 
+	function _dump_post()
+	{
+		echo '<pre>';
+		foreach($_POST as $key => $value) {
+			$value = $this->input->post($key);
+			echo '<br>'.$key.' : ';
+			print_r($value);
+		}
+		echo '</pre>';
+	}
+	
+	function _dump_get()
+	{
+		echo '<pre>';
+		foreach($_GET as $key => $value) {
+			$value = $this->input->post($key);
+			echo '<br>'.$key.' : ';
+			print_r($value);
+		}
+		echo '</pre>';		
+	}
+
+	function _handle_redirect($redirect_default='', $new_params = array())
+	{
+		$redirect_params = $this->input->post('redirect_params');
+		if( ! $redirect_params || ! isset($redirect_params['action']) || empty($redirect_params['action']))
+			redirect($redirect_default);
+		
+		if( ! isset($redirect_params['controller']) || empty($redirect_params['controller']))
+			$redirect_params['controller'] = strtolower($this->router->fetch_class());
+		
+		$controller = $redirect_params['controller'];
+		$action = $redirect_params['action'];
+		
+		$redirect_params = array_merge($redirect_params, $new_params);
+		
+		if(isset($redirect_params['id'])){
+			$action .= '/'.$redirect_params['id'];
+			unset($redirect_params['id']);
+		}
+		
+		unset($redirect_params['controller']);
+		unset($redirect_params['action']);
+		
+		$trace=debug_backtrace();
+		$caller=array_shift($trace);
+		
+		log_message('debug', 'Redirect: called by'.$caller["function"].' : '.$controller.'/'.$action.'?'.http_build_query($redirect_params));
+		redirect($controller.'/'.$action.'?'.http_build_query($redirect_params));
+	}
+	
+	function _history_back(){
+		echo '<script type="text/javascript">history.back()</script>';
+	}
 }
 
 // End of MY_Controller.php

@@ -101,7 +101,7 @@ function ajax_log(c,b,a) {
 		d.fields=a
 	}
 	jQuery.ajax({
-		url:base_url+"/ajax_log",
+		url:base_url+"ajax_log",
 		type:"post",
 		dataType:"json",
 		data:d
@@ -344,7 +344,7 @@ function popup(e,d,a,c) {
 }
 
 var DEFAULT_COOKIE_OPTIONS= {
-	path:base_url+"/",
+	path:base_url+"",
 	expires:30
 };
 jQuery.cookie= function(b,j,m) {
@@ -479,7 +479,7 @@ jQuery(document).ready( function(b) {
 			times:10
 		},1000);
 		a.css("cursor","progress");
-		b.post(base_url+"/users/change_locale", {
+		b.post(base_url+"users/change_locale", {
 			new_locale:b(this).attr("name")
 		}, function() {
 			window.location.reload(true)
@@ -489,7 +489,7 @@ jQuery(document).ready( function(b) {
 			times:10
 		},1000);
 		a.css("cursor","progress");
-		b.post(base_url+"/users/change_currency", {
+		b.post(base_url+"users/change_currency", {
 			new_currency:b(this).attr("name")
 		}, function() {
 			window.location.reload(true)
@@ -723,7 +723,7 @@ var Airbnb= {
 				try {var a=i18n.phonenumbers.PhoneNumberUtil.getInstance()
 				} catch(b) {
 					log("validator not loaded...");
-					LazyLoad.js([base_url+"/include/js/libphonenumber.compiled.js",base_url+"/include/js/jquery.validatedphone.js"], function() {
+					LazyLoad.js([base_url+"include/js/libphonenumber.compiled.js",base_url+"include/js/jquery.validatedphone.js"], function() {
 						Airbnb.Utils.formatPhoneNumbers()
 					});
 					return false
@@ -1668,7 +1668,7 @@ var Airbnb= {
 			a(this).click( function() {
 				if(!Airbnb.Utils.isUserLoggedIn) {
 					if(confirm("You must create a free account or login to use this feature. Continue?")) {
-						window.location=base_url+"/signup_login"
+						window.location=base_url+"signup_login"
 					}
 					return
 				}
@@ -1700,7 +1700,7 @@ var Airbnb= {
 					})
 				});
 				jQuery.ajax({
-					url:base_url+"/favorites/"+a(this).data("hosting_id")+base_url+"/star",
+					url:base_url+"favorites/"+a(this).data("hosting_id")+base_url+"star",
 					type:f?"DELETE":"POST",
 					dataType:"json",
 					async:true,

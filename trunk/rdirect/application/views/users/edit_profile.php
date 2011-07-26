@@ -52,6 +52,16 @@
 
 <div id="edit_profile">
 	<div id="content" style='position:relative;'>
+		<?php if( ! $user->facebook_id): ?>
+		<div class="notice good" style="margin-top:20px;height:40px;"> 
+			<fb:login-button id="fb_login2" size="large" onlogin="jQuery('#fb_login2').hide();jQuery('#login_spinner2').show();location.href='<?=site_url('users/populate_from_facebook')?>;" perms="<?=$this->config->item('facebook_scope')?>"></fb:login-button> 
+			<span id="login_spinner2" style="padding-top:2px;padding-left:5px;display:none;"> 
+				<img src="<?=IMG_DIR?>/spinner.gif"/> 
+			</span> 
+			<span style="font-size:18px;">페이스북에서 프로필 가져오기</span> 
+		</div>
+		<?php endif; ?>
+		
         <div id="ajax_upload_container" style="display:none; top:100px; left:210px;">
             <h3>Upload a Photo</h3>
             <p class="about_photos">
@@ -59,7 +69,7 @@
             </p>
 
             <form target="upload_frame" action="<?=site_url('users/ajax_image_upload')?>" id="ajax_upload_form" name="ajax_upload_form" method="post" enctype="multipart/form-data">
-                <input id="user_profile_pic" name="user[profile_pic]" size="20" type="file" /><br />
+                <input id="user_profile_pic" name="userfile" size="20" type="file" /><br />
                 <input id="upload_image_submit_button" type="submit" value="Upload Photo" onclick="$('ajax_upload_form').submit(); wait_for_upload();" />
             </form>
             <div id="upload_feedback"></div>
@@ -629,7 +639,40 @@ jQuery("#user_pic").hover(
     function(){$('edit_image_hover').appear({duration: 0.1, from: 0.0, to: 0.7});},
     function(){$('edit_image_hover').fade({duration: 0.1, from: 0.7, to: 0.0});}
 );
-
 </script>
+
+	<div id="fb-root"></div>
+	<script type="text/javascript">
+
+		window.fbAsyncInit = function() {
+				FB.init({
+					appId  : '<?=$this->config->item('facebook_app_id');?>',
+					status : true, // check login status
+					cookie : true, // enable cookies to allow the server to access the session
+					xfbml  : true  // parse XFBML
+				});
+
+				FB.getLoginStatus(function(response) {
+					if (response && (response.status !== "unknown")) {
+						jQuery.cookie("fbs", response.status);
+					} else {
+						jQuery.cookie("fbs", null);
+					}
+				});
+			};
+
+			(function() {
+				var e = document.createElement('script');
+				e.src = document.location.protocol + '//connect.facebook.net/ko_KR/all.js';
+				e.async = true;
+				document.getElementById('fb-root').appendChild(e);
+			}());
+
+		jQuery(document).ready(function() {
+			Airbnb.init({userLoggedIn: <?=$this->tank_auth->is_logged_in()?'true':'false'?>});
+		});
+	
+		Airbnb.FACEBOOK_PERMS = '<?=$this->config->item('facebook_scope')?>';
+	</script>
 		
 <?php $this->load->view('footer'); ?>

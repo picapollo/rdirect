@@ -1,204 +1,73 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
-    <head><script>var NREUMQ=[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);(function(){var d=document;var e=d.createElement("script");e.type="text/javascript";e.async=true;e.src="https://d1ros97qkrwjf5.cloudfront.net/14/eum/rum.js	";var s=d.getElementsByTagName("script")[0];s.parentNode.insertBefore(e,s);})()</script>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <title>123 in Sapporo</title>
-        <link rel="canonical" href="http://www.airbnb.com/rooms/180200" />
-
-        <meta name="title" content="123 in Sapporo" />
-        <meta name="description" content="Real bed for $121. 123" />
-
-		<meta property="fb:app_id" content="138566025676" />
-		<meta property="og:site_name" content="Airbnb" />
-		<meta property="og:region" content="Hokkaido Prefecture" />
-		<meta property="og:url" content="http://www.airbnb.com/rooms/180200" />
-		<meta property="og:type" content="airbnb:apartment" />
-		<meta property="og:title" content="123 in Sapporo" />
-		<meta property="og:country-name" content="Japan" />
-		<meta property="og:description" content="123" />
-		<meta property="og:locality" content="Sapporo" />
-
-    <link rel="image_src" href="/images/airbnb_logo.png" />
-    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Airbnb" />
-    <!--[if (!IE)|(gte IE 8)]><!-->
-<link href="http://s0.muscache.com/1311372720/assets/common-datauri.css" media="screen" rel="stylesheet" type="text/css" />
-<!--<![endif]-->
-<!--[if lte IE 7]>
-<link href="http://s0.muscache.com/1311372717/assets/common.css" media="screen" rel="stylesheet" type="text/css" />
-<![endif]-->
-    <!--[if (!IE)|(gte IE 8)]><!-->
-<link href="http://s2.muscache.com/1311372725/assets/page3-datauri.css" media="screen" rel="stylesheet" type="text/css" />
-<!--<![endif]-->
-<!--[if lte IE 7]>
-<link href="http://s0.muscache.com/1311372724/assets/page3.css" media="screen" rel="stylesheet" type="text/css" />
-<![endif]-->
-
-		<link href="http://s0.muscache.com/1300304856/stylesheets/korean_fonts.css" media="screen" rel="stylesheet" type="text/css" />
-
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
-
-		<script src="http://s3.muscache.com/1310602728/javascripts/jquery.ui.datepicker/jquery.ui.datepicker-ko.min.js" type="text/javascript"></script>
-
-
-		<script src="http://s3.muscache.com/1311568123/assets/common.js" type="text/javascript"></script>
-		  <script src="http://s1.muscache.com/1311568126/assets/page3.js" type="text/javascript"></script>
-
-		<link rel="shortcut icon" href="/airbnb_favicon.ico" />
-	</head>
-
-  <body>
-
-  
-
-        <div id="header" class="clearfix">
-			<a id="logo" href="http://www.airbnb.com" title="Airbnb.com Home">
-				<img alt="Airbnb - Travel like a human." border="0" height="45" src="http://s2.muscache.com/1309460642/images/logos/109x45.png" width="109" />
-			</a>
-					<a href="/rooms/new" class="rounded hide_when_printing" id="list-your-space">객실 등록하기</a>
-          <ul id="utilities">
-							<li class="first-child">
-								안녕하세요, Ff D!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/home/dashboard">마이 대쉬보드</a>
-							</li>
-              <li style="border:none;">
-              	<ul class="notification_bar">
-<li id="star-indicator" style="display: none;"><a href="/search?starred=true" class="notification_icon starred" title="View your starred items">                                <span style="width: 1px; margin-right: -5px;">&nbsp;</span>
-																<span id="star_count" class="alert_count">0</span>
-</a></li>               	</ul>
-              </li>
-              <li><a href="/users/logout" onclick="var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;f.submit();return false;">로그아웃</a></li>
-            <li><a href="/jobs">채용정보</a></li>
-          	<li style="border-right:1px solid #DDD;"><a href="/info/how_it_works">에어비앤비 이용방법</a></li>
-						<li style="border-left:none;" class="last-child">
-							<div id="language_currency">
-								<div id="language_currency_display" class="rounded_top">
-                   <div id="language_currency_display_language" class="flag sprite-ko">&nbsp;</div>
-                   <div id="language_currency_display_currency">$ USD</div>
-                </div>
-                <div id="language_currency_selector_container" class="rounded" style="display:none;">
-          				<ul id="language_currency_selector">
-										<li class='instruction'>언어 선택</li>
-												<li class="language option" id="language_selector_de" name="de">
-													<div class="flag sprite-de">&nbsp;</div>
-													<div style="display:inline;padding-left:24px;">Deutsch</div>
-												</li>
-												<li class="language option" id="language_selector_en" name="en">
-													<div class="flag sprite-en">&nbsp;</div>
-													<div style="display:inline;padding-left:24px;">English</div>
-												</li>
-												<li class="language option" id="language_selector_es" name="es">
-													<div class="flag sprite-es">&nbsp;</div>
-													<div style="display:inline;padding-left:24px;">Español</div>
-												</li>
-												<li class="language option" id="language_selector_fr" name="fr">
-													<div class="flag sprite-fr">&nbsp;</div>
-													<div style="display:inline;padding-left:24px;">Français</div>
-												</li>
-												<li class="language option" id="language_selector_it" name="it">
-													<div class="flag sprite-it">&nbsp;</div>
-													<div style="display:inline;padding-left:24px;">Italiano</div>
-												</li>
-												<li class="language option" id="language_selector_pt" name="pt">
-													<div class="flag sprite-pt">&nbsp;</div>
-													<div style="display:inline;padding-left:24px;">Português</div>
-												</li>
-												<li class="language option" id="language_selector_ru" name="ru">
-													<div class="flag sprite-ru">&nbsp;</div>
-													<div style="display:inline;padding-left:24px;">Русский</div>
-												</li>
-												<li class="language option" id="language_selector_zh" name="zh">
-													<div class="flag sprite-zh">&nbsp;</div>
-													<div style="display:inline;padding-left:24px;">中文(简体)</div>
-												</li>
-            				<li class='dash'>&nbsp;</li>
-              			<li class='instruction'>통화 선택</li>
-												<li class="currency option" id="currency_selector_AUD" name="AUD"> $ AUD </li>
-												<li class="currency option" id="currency_selector_BRL" name="BRL"> R$ BRL </li>
-												<li class="currency option" id="currency_selector_CAD" name="CAD"> $ CAD </li>
-												<li class="currency option" id="currency_selector_CHF" name="CHF"> CHF CHF </li>
-												<li class="currency option" id="currency_selector_CZK" name="CZK"> &#75;&#269; CZK </li>
-												<li class="currency option" id="currency_selector_DKK" name="DKK"> kr DKK </li>
-												<li class="currency option" id="currency_selector_EUR" name="EUR"> &euro; EUR </li>
-												<li class="currency option" id="currency_selector_GBP" name="GBP"> &pound; GBP </li>
-												<li class="currency option" id="currency_selector_HKD" name="HKD"> $ HKD </li>
-												<li class="currency option" id="currency_selector_HUF" name="HUF"> Ft HUF </li>
-												<li class="currency option" id="currency_selector_ILS" name="ILS"> &#8362; ILS </li>
-												<li class="currency option" id="currency_selector_JPY" name="JPY"> &yen; JPY </li>
-												<li class="currency option" id="currency_selector_NOK" name="NOK"> kr NOK </li>
-												<li class="currency option" id="currency_selector_RUB" name="RUB"> &#1088;&#1091;&#1073; RUB </li>
-												<li class="currency option" id="currency_selector_SEK" name="SEK"> kr SEK </li>
-												<li class="currency option" id="currency_selector_ZAR" name="ZAR"> R ZAR </li>
-              		</ul><!-- LANGUAGE_CURRENCY_SELECTOR -->
-            		</div><!-- LANGUAGE_CURRENCY_SELECTOR_CONTAINER -->
-              </div><!-- LANGUAGE_CURRENCY -->
-            </li>
-					</ul><!-- UTILITIES -->
-        </div> <!-- HEADER -->
-
-       
-		
-
+<?php
+	$this->load->view('header/page3', $header);
+	$this->load->view('top_menu');
+?>
 
 <!-- assets -->
 
-
-
     <div id="new_hosting_actions" class="rounded_most">
-                <h2>
-                    <a href="/rooms/180200/edit">객실정보 수정</a> <span class="smaller">사진 올리기, 가격 바꾸기, 상세정보 수정하기</span>
-                </h2>
-                <hr class="toolbar_separator" />
-                <h2>
-                    <a href="/calendar/single/180200">달력</a>
-            <span class="smaller">
-                숙박가능여부 바꾸기 "123"
+			<h2>
+				<?=anchor('rooms/'.$room->id.'/edit', '객실정보 수정');?> <span class="smaller">사진 올리기, 가격 바꾸기, 상세정보 수정하기</span>
+			</h2>
+			<hr class="toolbar_separator" />
+			<h2>
+				<?=anchor('calendar/single/'.$room->id, '달력')?>
+				<span class="smaller">
+                숙박가능여부 바꾸기 "<?=$room->name?>"
                 </span>
-                </h2>
-                <hr class="toolbar_separator" />
-                <h2 style="font-size:24px;">
-                    <img alt="Pink_star_on" src="http://s0.muscache.com/1300304855/images/icons/pink_star_on.png" /> <a href="/users/edit/863305">본인의 프로필 사진을 등록해 주세요</a> <span class="smaller"> 더 많은 예약을 받을 수 있을 것입니다.</span>
-                </h2>
+			</h2>
+			<hr class="toolbar_separator" />
+			<h2 style="font-size:24px;">
+				<img alt="Pink_star_on" src="<?=IMG_DIR?>/icons/pink_star_on.png" /> <?=anchor('users/edit/'.$this->tank_auth->get_user_id(), '본인의 프로필 사진을 등록해 주세요')?> <span class="smaller"> 더 많은 예약을 받을 수 있을 것입니다.</span>
+			</h2>
     </div>
 
-
-
-
-
-
+	<div id="new_hosting_actions" class="rounded_most">
+		<h2>
+		거의 다 되었어요! <?=anchor('rooms/'.$room->id.'/edit', '객실정보 입력 완료하기');?><br><span class="smaller">다음 페이지로 가시면 사진 업로드, 숙박요금 조정, 시설 표시, 객실 설명 수정 등을 하실 수 있습니다.</span>
+		</h2>
+    </div>
     
+	<div id="new_hosting_actions" class="rounded_most">
+		<div style="overflow: hidden; display: block; width: 960px; text-align:center;">
+			<h2>거의 다 되었어요! <?=anchor('rooms/'.$room->id.'/edit?section=photos', '객실 등록하기까지 얼마 안남았습니다.');?></h2>
+			<br />
+			<div style="width: 360px; margin: 0 auto; display:block; overflow:hidden;">
+				<?=anchor('rooms/'.$room->id.'/edit?section=photos', '객실 활성화하기', array('class'=>'v3_button', 'style'=>'width:300px;'))?>
+			</div>
+		</div>
+	</div>
+          
 
     <div id="rooms" class="rounded_top">
         <div id="room">
             <script>
-	function translate(target_lang) {
-		jQuery(".trans").each(function(i, c) {
-			jQuery.getJSON(
-				"https://ajax.googleapis.com/ajax/services/language/translate?key=ABQIAAAAa2Xs-T5zUjU89HwI6ooVuxTkVixRUD-Hiz0ASbLT_MA6wjuv0xROWzG0QuXewGYauEy-p8sBjnSOIw&callback=?&v=1.0&langpair=%7C" +
-					target_lang +
-					"&q=" +
-					c.innerHTML,
-				function(data) {
-					if (data && data.responseData && data.responseData.translatedText) {
-						c.innerHTML = data.responseData.translatedText;
-					}
-				}
-			);
-		});
-	}
-</script>
+			function translate(target_lang) {
+				jQuery(".trans").each(function(i, c) {
+					jQuery.getJSON(
+						"https://ajax.googleapis.com/ajax/services/language/translate?key=ABQIAAAAa2Xs-T5zUjU89HwI6ooVuxTkVixRUD-Hiz0ASbLT_MA6wjuv0xROWzG0QuXewGYauEy-p8sBjnSOIw&callback=?&v=1.0&langpair=%7C" +
+							target_lang +
+							"&q=" +
+							c.innerHTML,
+						function(data) {
+							if (data && data.responseData && data.responseData.translatedText) {
+								c.innerHTML = data.responseData.translatedText;
+							}
+						}
+					);
+				});
+			}
+			</script>
 
 <div id="the_roof">
     <div id="room_snapshot">
-        <h1>123     <a href="#" id="star_180200" title="Add this listing as a 'favorite'" class="star_icon_container"><div class="star_icon"></div></a>
+        <h1>123     <a href="#" id="star_<?=$room->id?>" title="Add this listing as a 'favorite'" class="star_icon_container"><div class="star_icon"></div></a>
 </h1>
         <h3>
-                아파트
-            - 프라이빗룸
+            <?=$room->property_type_id?>
+            - <?=$room->room_type?>
             <span class="middot">&middot;</span>
-            <span id="display_address" class="no_float">Sapporo, Hokkaido Prefecture, Japan</span>
+            <span id="display_address" class="no_float"><?=$room->address?></span>
         </h3>
     </div>
 	<div id="action_buttons">
@@ -208,9 +77,9 @@
               <p>후기</p>
             </li>
           <li id="translate" class="translate">
-            <a class="icon" onclick="translate('ko');return false;" href="javascript:void(0);"><img alt="Ko" src="http://s3.muscache.com/images/icons/language/ko.gif" /> </a>
+            <a class="icon" onclick="translate('<?=CURRENT_LANGUAGE?>');return false;" href="javascript:void(0);"><img alt="<?=ucfirst(CURRENT_LANGUAGE)?>" src="<?php echo IMG_DIR.'/icons/language/'.CURRENT_LANGUAGE.'.gif';?>" /> </a>
             <p>
-              <a onclick="translate('ko');return false;" href="javascript:void(0);">번역</a>
+              <a onclick="translate('<?=CURRENT_LANGUAGE?>');return false;" href="javascript:void(0);">번역</a>
             </p>
           </li>
         </ul>
@@ -231,7 +100,7 @@
 
             <li id="content_flag">
               
-<form action="/user_flags" class="new_user_flag" id="new_user_flag" method="post"><div class="flag-container" style="display: none;">
+<form action="<?=site_url('user_flags')?>" class="new_user_flag" id="new_user_flag" method="post"><div class="flag-container" style="display: none;">
   <div class="click-target clearfix">
     <span class="expand"></span><h3>Report this message privately</h3><span class="status"></span>
   </div>
@@ -242,7 +111,7 @@
       <li><a href="#" data-reason-id="Other">기타</a>
   </ul>
   <input id="user_flag_flaggable_type" name="user_flag[flaggable_type]" type="hidden" value="listing" />
-  <input id="user_flag_flaggable_id" name="user_flag[flaggable_id]" type="hidden" value="180200" />
+  <input id="user_flag_flaggable_id" name="user_flag[flaggable_id]" type="hidden" value="<?=$room->id?>" />
   <input id="user_flag_name" name="user_flag[name]" type="hidden" />
 </div>
 </form>
@@ -255,12 +124,12 @@
 
         <div id="photos_div" class="main_content">
             <div class="galleria_wrapper">
-  <div class="image-placeholder"><img alt="Room_default_no_photos" height="426" src="http://s0.muscache.com/1300304855/images/page3/v3/room_default_no_photos.jpg" width="639" /></div>
+  <div class="image-placeholder"><img alt="Room_default_no_photos" height="426" src="<?=IMG_DIR?>/page3/v3/room_default_no_photos.jpg" width="639" /></div>
   <div id="galleria_container">
-      <img alt="" src="http://s0.muscache.com/1300304855/images/page3/v3/room_default_no_photos.jpg" />
+      <img alt="" src="<?=IMG_DIR?>/page3/v3/room_default_no_photos.jpg" />
   </div>
   <div class="share-button-container">
-    <img src="/images/transparent-pixel.gif" width="639" height="426" />
+    <img src="<?=IMG_DIR?>/transparent-pixel.gif" width="639" height="426" />
     <ul id="share_buttons" style="display: none">
       <li class="rounded_more" onclick="action_facebook();"><div class="facebook"></div>페이스북</li>
       <li class="rounded_more" onclick="action_twitter();"><div class="twitter"></div>트위터</li>
@@ -272,7 +141,7 @@
 
         </div>
         <div id="maps_div" class="main_content" style="display:none;">
-            <div id="map" data-lat="43.0617116717592" data-lng="141.354675179303">
+            <div id="map" data-lat="<?=$room->lat?>" data-lng="<?=$room->lng?>">
 </div>
 <ul id="guidebook-recommendations" style="display: none;">
 </ul>
@@ -285,20 +154,25 @@
         <div id="calendar2">
             <div style="margin-bottom:5px;">
                 <div style="float:left;">
-                    월 선택하기 : <select id="cal_month" name="cal_month" onchange="change_month2();"><option value="7" selected="selected">7월 2011</option>
-<option value="8">8월 2011</option>
-<option value="9">9월 2011</option>
-<option value="10">10월 2011</option>
-<option value="11">11월 2011</option>
-<option value="12">12월 2011</option>
-<option value="1">1월 2012</option>
-<option value="2">2월 2012</option>
-<option value="3">3월 2012</option>
-<option value="4">4월 2012</option>
-<option value="5">5월 2012</option>
-<option value="6">6월 2012</option></select>
+                    월 선택하기 : 
+                    <select id="cal_month" name="cal_month" onchange="change_month2();">
+                    <?php
+                    	$m = date('m');
+                    	$y = date('Y');
+						echo '<option value="'.$m.'" selected="selected">',$m.'월 '.$y.'</option>';
+                    	for($i=0; $i<12; $i++){
+                    		$m++;
+	                    	if($m==12)
+							{
+								$y++;
+								$m=1;
+							}
+							echo '<option value="'.$m.'">'.$m.'월 '.$y.'</option>';
+						}
+					?>
+					</select>
                 </div>
-                <img id="calendar_loading_spinner" style="float:left; margin-left:10px; display:none;" src="../images/spinner.gif" />
+                <img id="calendar_loading_spinner" style="float:left; margin-left:10px; display:none;" src="<?=IMG_DIR?>/spinner.gif" />
 
                 <div class="clear"></div>
             </div>
@@ -364,7 +238,7 @@
                     <span class="property">침실 수:</span><span class="value">1</span>
                   </li>
                   <li class="alt">
-                    <span class="property">환불정책 :</span><span class="value"><a href="/home/cancellation_policies" onclick="window.open(this.href);return false;">매우 유연한 편</a></span>
+                    <span class="property">환불정책 :</span><span class="value"><a href="<?=site_url('home/cancellation_policies')?>" onclick="window.open(this.href);return false;">매우 유연한 편</a></span>
                   </li>
             </ul>
         </div>
@@ -389,11 +263,11 @@
                         </li>
                         <li>
                             <div class="has_not"></div>
-                            <p>인터넷 <a class="tooltip" title="인터넷(유/무선)"><img alt="Questionmark_hover" src="http://s0.muscache.com/1300304855/images/icons/questionmark_hover.png" style="width:12px; height:12px;" /></a></p>
+                            <p>인터넷 <a class="tooltip" title="인터넷(유/무선)"><img alt="Questionmark_hover" src="<?=IMG_DIR?>/icons/questionmark_hover.png" style="width:12px; height:12px;" /></a></p>
                         </li>
                         <li>
                             <div class="has_not"></div>
-                            <p>무선 인터넷 <a class="tooltip" title="24시간 접속가능한 무선인터넷 공유기"><img alt="Questionmark_hover" src="http://s0.muscache.com/1300304855/images/icons/questionmark_hover.png" style="width:12px; height:12px;" /></a></p>
+                            <p>무선 인터넷 <a class="tooltip" title="24시간 접속가능한 무선인터넷 공유기"><img alt="Questionmark_hover" src="<?=IMG_DIR?>/icons/questionmark_hover.png" style="width:12px; height:12px;" /></a></p>
                         </li>
                         <li>
                             <div class="has_not"></div>
@@ -411,15 +285,15 @@
                         </li>
                         <li>
                             <div class="has_not"></div>
-                            <p>장애인 이용 용이 <a class="tooltip" title="휠체어 접근이 용이한 객실입니다. 기타 개인적인 필요사항은 여행객과 주인장이 서로 협의해야 합니다."><img alt="Questionmark_hover" src="http://s0.muscache.com/1300304855/images/icons/questionmark_hover.png" style="width:12px; height:12px;" /></a></p>
+                            <p>장애인 이용 용이 <a class="tooltip" title="휠체어 접근이 용이한 객실입니다. 기타 개인적인 필요사항은 여행객과 주인장이 서로 협의해야 합니다."><img alt="Questionmark_hover" src="<?=IMG_DIR?>/icons/questionmark_hover.png" style="width:12px; height:12px;" /></a></p>
                         </li>
                         <li>
                             <div class="has_not"></div>
-                            <p>수영장 <a class="tooltip" title="전용 수영장"><img alt="Questionmark_hover" src="http://s0.muscache.com/1300304855/images/icons/questionmark_hover.png" style="width:12px; height:12px;" /></a></p>
+                            <p>수영장 <a class="tooltip" title="전용 수영장"><img alt="Questionmark_hover" src="<?=IMG_DIR?>/icons/questionmark_hover.png" style="width:12px; height:12px;" /></a></p>
                         </li>
                         <li>
                             <div class="has_not"></div>
-                            <p>부엌 <a class="tooltip" title="손님 이용 가능한 부엌"><img alt="Questionmark_hover" src="http://s0.muscache.com/1300304855/images/icons/questionmark_hover.png" style="width:12px; height:12px;" /></a></p>
+                            <p>부엌 <a class="tooltip" title="손님 이용 가능한 부엌"><img alt="Questionmark_hover" src="<?=IMG_DIR?>/icons/questionmark_hover.png" style="width:12px; height:12px;" /></a></p>
                         </li>
                         <li>
                             <div class="has_not"></div>
@@ -427,7 +301,7 @@
                         </li>
                         <li>
                             <div class="has_not"></div>
-                            <p>세탁기/건조기 <a class="tooltip" title="건물 내 주차가능(유/무료)"><img alt="Questionmark_hover" src="http://s0.muscache.com/1300304855/images/icons/questionmark_hover.png" style="width:12px; height:12px;" /></a></p>
+                            <p>세탁기/건조기 <a class="tooltip" title="건물 내 주차가능(유/무료)"><img alt="Questionmark_hover" src="<?=IMG_DIR?>/icons/questionmark_hover.png" style="width:12px; height:12px;" /></a></p>
                         </li>
                         <li>
                             <div class="has_not"></div>
@@ -435,7 +309,7 @@
                         </li>
                         <li>
                             <div class="has_not"></div>
-                            <p>무료 헬스장 <a class="tooltip" title="헬스장 무료이용 가능"><img alt="Questionmark_hover" src="http://s0.muscache.com/1300304855/images/icons/questionmark_hover.png" style="width:12px; height:12px;" /></a></p>
+                            <p>무료 헬스장 <a class="tooltip" title="헬스장 무료이용 가능"><img alt="Questionmark_hover" src="<?=IMG_DIR?>/icons/questionmark_hover.png" style="width:12px; height:12px;" /></a></p>
                         </li>
                 </ul>
                 <ul>
@@ -453,15 +327,15 @@
                         </li>
                         <li>
                             <div class="has_not"></div>
-                            <p>아침식사 <a class="tooltip" title="아침식사 제공"><img alt="Questionmark_hover" src="http://s0.muscache.com/1300304855/images/icons/questionmark_hover.png" style="width:12px; height:12px;" /></a></p>
+                            <p>아침식사 <a class="tooltip" title="아침식사 제공"><img alt="Questionmark_hover" src="<?=IMG_DIR?>/icons/questionmark_hover.png" style="width:12px; height:12px;" /></a></p>
                         </li>
                         <li>
                             <div class="has_not"></div>
-                            <p>가족/어린이 숙박가능 <a class="tooltip" title="어린이를 동반한 가족이 숙박하기에 적당합니다."><img alt="Questionmark_hover" src="http://s0.muscache.com/1300304855/images/icons/questionmark_hover.png" style="width:12px; height:12px;" /></a></p>
+                            <p>가족/어린이 숙박가능 <a class="tooltip" title="어린이를 동반한 가족이 숙박하기에 적당합니다."><img alt="Questionmark_hover" src="<?=IMG_DIR?>/icons/questionmark_hover.png" style="width:12px; height:12px;" /></a></p>
                         </li>
                         <li>
                             <div class="has_not"></div>
-                            <p>이벤트행사용으로 적절 <a class="tooltip" title="25명 이상의 그룹을 수용할 수 있습니다."><img alt="Questionmark_hover" src="http://s0.muscache.com/1300304855/images/icons/questionmark_hover.png" style="width:12px; height:12px;" /></a></p>
+                            <p>이벤트행사용으로 적절 <a class="tooltip" title="25명 이상의 그룹을 수용할 수 있습니다."><img alt="Questionmark_hover" src="<?=IMG_DIR?>/icons/questionmark_hover.png" style="width:12px; height:12px;" /></a></p>
                         </li>
                 </ul>
             <div class="clear"></div>
@@ -476,7 +350,7 @@
 </div>
 
                 
-<div id="reputation" class="box" data-review-type="no_reviews" data-hosting-id="180200">
+<div id="reputation" class="box" data-review-type="no_reviews" data-hosting-id="<?=$room->id?>">
     <a name="reputation-mark"></a>
     <div class="top"></div>
     <div id="reputation_middle" class="middle">
@@ -533,7 +407,7 @@
         <div id="book_it_default" class="rounded">
             <div id="pricing" class="book_it_section">
                 <p style="width:253px; float:left;">From</p>
-                <h2 id="price_amount">$121</h2>
+                <h2 id="price_amount"><?=$room->price_native?></h2>
                   <span id="per_month">1개월당</span>
                   <select id="payment_period" name="payment_period" >
                     <option value="per_night">1박당</option>
@@ -545,7 +419,7 @@
             </div>
 
             <div id="dates" class="book_it_section clearfix">
-<form action="https://www.airbnb.com/payments/book?hosting_id=180200" class="info" id="book_it_form" method="post" name="book_it_form">                    <input id="hosting_id" name="hosting_id" type="hidden" value="180200" />
+<form action="<?=site_url('payments/book?hosting_id='.$room->id)?>" class="info" id="book_it_form" method="post" name="book_it_form">                    <input id="hosting_id" name="hosting_id" type="hidden" value="<?=$room->id?>" />
                     <div class="date_section">
                         <label for="checkin">체크인</label>
                         <input class="checkin" id="checkin" name="checkin" type="text" />
@@ -626,7 +500,7 @@
 			    
           
           <div id="user_actions">
-              <b>응답율: <a class="tooltip" title="최근 3개월간 주인장이 메시지에 응답한 확률"><img alt="Questionmark_hover" src="http://s0.muscache.com/1300304855/images/icons/questionmark_hover.png" style="width:12px; height:12px;" /></a></b>
+              <b>응답율: <a class="tooltip" title="최근 3개월간 주인장이 메시지에 응답한 확률"><img alt="Questionmark_hover" src="<?=IMG_DIR?>/icons/questionmark_hover.png" style="width:12px; height:12px;" /></a></b>
               <br />
               &nbsp;N/A
             <input type='submit' id="user_contact_link" class='v3_button v3_blue v3_fixed_width' value="연락하기"/>
@@ -666,7 +540,7 @@
 </div>
 
 
-                <div id="social_connections" class="box" style="display:none">
+<div id="social_connections" class="box" style="display:none">
 	<div class="top">&nbsp;</div>
 	<div class="middle">
 		<div class="connections_info gray_gradient_fade rounded_less">
@@ -695,22 +569,47 @@
 </script>
 
                   
+<div class="related_listings box" id="my_other_listings"> 
+    <div class="top">&nbsp;</div> 
+    <div class="middle"> 
+        <div class="related_listings_content gray_gradient_fade rounded_less clearfix"> 
+                <h3>나의 다른 객실</h3> 
+                    <h4>1 room </h4> 
+ 
+                <ul> 
+ 
+                    <li> 
+                        <div class="related_listing_left"> 
+                        <a href="http://www.airbnb.com/rooms/180203" id="related_listing_photo"><img alt="1231" height="62" src="http://s1.muscache.com/1308680853/images/page3/v3/room_default_no_photos.png" title="1231" width="93" /></a> 
+                        </div> 
+ 
+                        <div class="related_listing_right"> 
+                                <span class="same_address"><a href="/rooms/180203">같은 장소</a></span> 
+ 
+                            <div class="subtitle">$123/night <br />프라이빗룸</div> 
+                        </div> 
+                        <div class="clear"></div> 
+                    </li> 
+                </ul> 
+        </div><!-- /related_listings_content --> 
+    </div><!-- middle --> 
+    <div class="bottom">&nbsp;</div> 
+</div> 
 
-
-                <div id="similar_listings" class="related_listings box">
-    <div class="top">&nbsp;</div>
-    <div class="middle">
-        <div class="related_listings_content gray_gradient_fade rounded_less">
-
-                <h3>비슷한 객실</h3>
-
+<div id="similar_listings" class="related_listings box"> 
+    <div class="top">&nbsp;</div> 
+    <div class="middle"> 
+        <div class="related_listings_content gray_gradient_fade rounded_less"> 
+ 
+                <h3>비슷한 객실</h3> 
+ 
           불러오는 중...
-        </div><!-- /related_listings_content -->
-
-        <div class="clear"></div>
-    </div><!-- middle -->
-    <div class="bottom">&nbsp;</div>
-</div>
+        </div><!-- /related_listings_content --> 
+ 
+        <div class="clear"></div> 
+    </div><!-- middle --> 
+    <div class="bottom">&nbsp;</div> 
+</div> 
 
 
             </div><!-- /right_column -->
@@ -718,9 +617,9 @@
 
         <div id="lwlb_overlay"></div>
         <div id="lwlb_link" class="lwlb_lightbox">
-    <h5>Share 123</h5>
+    <h5>Share <?=$room->name?></h5>
     <p>사랑을 전달하세요! URL 공유하기 :</p>
-    <input name="share_room_url" value="http://www.airbnb.com/rooms/180200" style="width:360px; font-size:13px; padding:2px 1px; background:#eff7fb;" id="share_room_url" onclick="jQuery('#share_room_url').focus(); jQuery('#share_room_url').select();"/>
+    <input name="share_room_url" value="<?=site_url('rooms/'.$room->id)?>" style="width:360px; font-size:13px; padding:2px 1px; background:#eff7fb;" id="share_room_url" onclick="jQuery('#share_room_url').focus(); jQuery('#share_room_url').select();"/>
     <br />
     <br />
     <a href="#" onclick="lwlb_hide('lwlb_link');return false;">close</a>
@@ -731,7 +630,7 @@
         <div id="lwlb_needs_to_message" class="lwlb_lightbox2" style="display:none;">
           <div class="header">
             <div class="h1"><h1>객실사용가능현황을 확인해 주세요</h1></div>
-            <div class="close"><a href="#" onclick="lwlb_hide_and_reset('lwlb_needs_to_message');return false;"><img src="/images/lightboxes/close_button.gif" /></a></div>
+            <div class="close"><a href="#" onclick="lwlb_hide_and_reset('lwlb_needs_to_message');return false;"><img src="<?=IMG_DIR?>/lightboxes/close_button.gif" /></a></div>
             <div class="clear"></div>
           </div>
           <br/>
@@ -748,7 +647,7 @@
 
           <div id="lwlb_email" class="lwlb_lightbox">
     <h1 style="font-size:18px;">객실 공유하기</h1><br />
-<form action="/rooms/lb_share/180200" method="post">        <div>받는 사람: <input id="send_to" name="send_to" type="text" value="" /> (이메일을 입력하세요.)</div>
+<form action="<?=site_url('rooms/lb_share'.$room->id)?>" method="post">        <div>받는 사람: <input id="send_to" name="send_to" type="text" value="" /> (이메일을 입력하세요.)</div>
         <br />
         <div>개인 메시지:</div>
         <div><textarea name="message" style="width:100%;height:50px;">에어비앤비에서 관심을 갖을 만한 곳입니다.</textarea></div>
@@ -757,7 +656,7 @@
         <div>미리보기:</div>
         <div style="font-style:italic;">
             Ff Dd 회원님과 다음의 숙박을 공유하기로 했습니다:
-            "<a href="http://www.airbnb.com/rooms/180200">123</a>".<br /><br />
+            "<?=anchor('rooms/'.$room->id,$room->name)?>".<br /><br />
             
             개인 메시지:<br />
             (메시지는 여기에 쓰세요.)
@@ -791,64 +690,16 @@
 </style>
 <![endif]-->
 
-		
-
-	    <div id="footer">
-	        <ul>
-                <li class="first-child"><a href="/collections">컬렉션</a></li>
-                <li><a href="/iphone">아이폰 앱</a></li>
-                <li><a href="http://tv.airbnb.com">에어비앤비 TV
-</a></li>
-                <li><a href="/about">회사소개</a></li>
-                <li><a href="/jobs">채용</a></li>
-                <li><a href="http://blog.airbnb.com">블로그</a></li>
-                <li><a href="/help">FAQ</a></li>
-                <li><a href="/terms">이용약관</a></li>
-                <li>스페셜:&nbsp;&nbsp;<a href="/new-york-city">뉴욕</a></li>
-                <li><a href="/san-francisco">샌프란시스코</a></li>
-                <li><a href="/paris-france">파리</a></li>
-                <li><a href="/locations">인기도시</a></li>
-          </ul>
-          <ul style="padding-top:4px;">
-              	<li class="first-child">
-									Join us on: <a href="http://www.twitter.com/airbnb" target="new">Twitter</a> &amp; <a href="http://www.facebook.com/airbnb" target="new">Facebook</a>
-								</li>
-          </ul>
-          <div id="copyright">&copy; Airbnb, Inc.</div>
-          <br/>
-			</div><!-- FOOTER -->
+<?php $this->load->view('footer', array('no_closing' => TRUE)); ?>
 
 
-		<div id="fb-root"></div>
-
-  
-  
-
-	<script type="text/javascript">
-		/* <![CDATA[ */
-		var google_conversion_id = 1049231994;
-		var google_conversion_language = "en";
-		var google_conversion_format = "3";
-		var google_conversion_color = "666666";
-		var google_conversion_label = "0W9CCND30wEQ-oSo9AM";
-		var google_conversion_value = 0;
-		/* ]]> */
-	</script>
-	<script type="text/javascript" src="http://www.googleadservices.com/pagead/conversion.js"></script>
-	<noscript>
-		<div style="display:inline;">
-		<img height="1" width="1" style="border-style:none;" alt="" src="http://www.googleadservices.com/pagead/conversion/1049231994/?label=0W9CCND30wEQ-oSo9AM&amp;guid=ON&amp;script=0"/>
-		</div>
-	</noscript>
-
-
-		
+	<div id="fb-root"></div>
 
 	<script type="text/javascript">
 
 			window.fbAsyncInit = function() {
 				FB.init({
-					appId  : '02e3aebb07b4f37b41893ae7713c8fdc',
+					appId  : '<?=$this->config->item('facebook_app_id')?>',
 					status : true, // check login status
 					cookie : true, // enable cookies to allow the server to access the session
 					xfbml  : true  // parse XFBML
@@ -882,21 +733,21 @@
 
 
     AirbnbRooms.init({inIsrael: false, 
-                      hostingId: 180200,
+                      hostingId: <?=$room->id?>,
                       nightlyPrice: "$121",
                       weeklyPrice: "$847",
                       monthlyPrice: "$3388"});
 
   });
-    var ajax_already_messaged_url = "/messaging/ajax_already_messaged/863305";
-    var ajax_lwlb_contact_url = "/rooms/ajax_lwlb_contact/180200";
+    var ajax_already_messaged_url = base_url+"messaging/ajax_already_messaged/863305";
+    var ajax_lwlb_contact_url = base_url+"rooms/ajax_lwlb_contact/<?=$room->id?>";
 
     function action_email() {
             lwlb_show('lwlb_email');
     }
 
     function action_twitter() {
-        popup('http://twitter.com/home/?status=Stay+at+%22123%22%20in%20Sapporo,%20Japan%20-+http://www.airbnb.com%2Frooms%2F180200%20via%20@airbnb%20%23Travel', 'console', 650, 1024);
+        popup('http://twitter.com/home/?status=Stay+at+%22123%22%20in%20Sapporo,%20Japan%20-+http://www.airbnb.com%2Frooms%2F<?=$room->id?>%20via%20@airbnb%20%23Travel', 'console', 650, 1024);
     }
 
     function redo_search(opts) {
@@ -904,7 +755,7 @@
 
         opts.useAddressAsLocation = (opts.useAddressAsLocation === undefined ? true : opts.useAddressAsLocation);
 
-        var urlParts = ["/search?"];
+        var urlParts = [base_url+"search?"];
 
         if(opts.useAddressAsLocation === true){
             //need to make this backwards compatible with cached versions
@@ -950,7 +801,7 @@
           .css('filter', 'alpha(enabled=true)');
         
         // now load the calendar content
-        jQuery('#calendar_tab_variable_content').load("/rooms/calendar_tab_inner2/180200", 
+        jQuery('#calendar_tab_variable_content').load(base_url+"rooms/calendar_tab_inner2/<?=$room->id?>", 
           {cal_month: jQuery('#cal_month').val()},
           function(response) {
             $table.css('opacity', 1.0)
@@ -964,7 +815,7 @@
 	  var $spin;
     if (initial_month_loaded === false) {
       var $spin = jQuery('#calendar_loading_spinner').show();
-      jQuery('#calendar_tab_variable_content').load("/rooms/calendar_tab_inner2/180200",
+      jQuery('#calendar_tab_variable_content').load(base_url+"rooms/calendar_tab_inner2/<?=$room->id?>",
         {cal_month: jQuery('#cal_month').val()},
         function() {
           $spin.hide();
@@ -1011,7 +862,7 @@
 
 
 
-        add_data_to_cookie('viewed_page3_ids', 180200);
+        add_data_to_cookie('viewed_page3_ids', <?=$room->id?>);
         
         
           var originalDescriptionText = jQuery('#description_text_wrapper').html(),
@@ -1034,18 +885,18 @@
           jQuery('#new_translate_button_wrapper').show();
         
         jQuery.ajax({
-            url: 'http://www.airbnb.com/rooms/180200/ajax_increment_impressions',
+            url: base_url+'rooms/<?=$room->id?>/ajax_increment_impressions',
             type: 'post',
             data: {
                 param: ''
             }
         });
 
-        jQuery.get("/rooms/sublet_available/180200?checkin=&checkout=", function(data) {
+        jQuery.get(base_url+"rooms/sublet_available/<?=$room->id?>?checkin=&checkout=", function(data) {
           jQuery("#right_column").prepend(data);
         });
-        jQuery("#similar_listings").load("/rooms/similar_listings/180200?checkin=&checkout=&guests=");
-		jQuery.getJSON("/rooms/social_connections/180200", function(data) {
+        jQuery("#similar_listings").load(base_url+"rooms/similar_listings/<?=$room->id?>?checkin=&checkout=&guests=");
+		jQuery.getJSON(base_url+"rooms/social_connections/<?=$room->id?>", function(data) {
 			var INITIAL_CONNECTIONS = 5;
 			var i, len, list, $moreConnections, $moreCount, template;
 			var relationships = data.relationships;
@@ -1079,29 +930,10 @@
 
     });
 
-
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-2725447-1']);
-		_gaq.push(['_setDomainName', '.airbnb.com']);
-
-		(function() {
-			var m = /affiliate=([^;]*)/.exec(document.cookie);
-			if (m) {_gaq.push(["_setCustomVar", 1, "affiliate", m[1]]);}
-		})();
-
-			_gaq.push(['_trackPageview']);
-
-		(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
-
 		jQuery(document).ready(function() {
-			Airbnb.init({userLoggedIn: true});
+			Airbnb.init({userLoggedIn: <?=$this->tank_auth->is_logged_in()?>});
 		});
 
-		Airbnb.FACEBOOK_PERMS = "email,user_birthday,user_likes,user_education_history,user_hometown,user_interests,user_activities,user_location";
+		Airbnb.FACEBOOK_PERMS = "<?=$this->config->item('facebook_scope')?>";
 	</script>
-	<script type="text/javascript" charset="utf-8">NREUMQ.push(["nrf2","beacon-1.newrelic.com","fc09a36731",2237,"dlwMQktaWAgBEB1AXFpeERlKXVsT",0,455])</script></body>
 </html>

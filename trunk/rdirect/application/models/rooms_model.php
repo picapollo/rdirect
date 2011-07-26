@@ -15,34 +15,91 @@ class Rooms_model extends CI_Model {
 		$data['created'] = date('Y-m-d H:i:s');
 
 		if ($this->db->insert('rooms', $data)) {
-			$room_id = $this->db->insert_id();
-			//if ($activated)	$this->create_profile($user_id);
-			return array('room_id' => $user_id);
+			return  $this->db->insert_id();
 		}
 		return NULL;
+	}
+	
+	function create_room_tmp($rid, $data)
+	{
+		$data['created'] = date('Y-m-d H:i:s');
+
+		$this->db->set('room_id', $rid);
+		return $this->db->insert('room_temp', $data);
+	}
+	
+	function set_user($rid, $uid){
+		$this->db->set('user_id', $uid);
+		$this->db->where('id', $rid);
+		$this->db->update('rooms');
+		return $this->db->affected_rows() > 0;
 	}
 	
 	function activate_room($rid, $activated = 1){
 		$this->db->set('activated', $activated);
 		$this->db->where('id', $rid);
 		$this->db->update('rooms');
+		return $this->db->affected_rows() > 0;
 	}
 		
 	function update_room($rid, $data)
 	{
-		$this->db->where('rooms.id', 1);
+		/*foreach($data as $table)
+		{
+			foreach($table as $field)
+			{
+				$this->db->set
+			}
+		}*/
+		
+		/*
+		
+		$this->db->where('rooms.id', $rid);
 		$this->db->where('rooms.id = rooms_detail.room_id');
-		$this->db->where('rooms.id = rooms_detail.room_id');
+		$this->db->update('rooms', $data);*/
+	}
+
+	function add_address_direction($rid, $direction){
+		$this->db->set('room_id', $rid);
+		$this->db->set('text', $direction);
+		return $this->db->insert('room_directions');
 	}
 	
-	function update_room_profile($rid, $data)
+	function add_description($rid, $data)
 	{
-		
+		foreach($data as $k => $row){
+			$data[$k]['room_id'] = $rid;
+		}
+		return $this->db->insert_batch('room_descriptions', $data);
 	}
 	
-	function update_room($rid, $data)
+	function update_description($rid, $data)
 	{
+		$this->db->where('room_id', $rid);
+		return $this->db->update_batch('room_descriptions', $data);	
+	}
+	
+	function delete_description($rid, $lang)
+	{
+		$this->db->where('room_id', $rid);
+		$this->db->where('language', $lang);
+		$this->db->delete('room_descriptions');
+	}
+	
+	function star_room($uid, $rid, $star = TRUE){
+		$this->db->where('user_id', $uid);
+		$this->db->where('room_id', $rid);
 		
+		if($star)
+		{
+			$this->db->set('room_id', $rid);
+			$this->db->insert('rooms_starred');
+		}
+		else
+		{
+			$this->db->where('room_id', $rid);
+			$this->db->delete('rooms_starred');
+		}
 	}
 	
 	function get_room($rid)
@@ -54,6 +111,12 @@ class Rooms_model extends CI_Model {
 	function get_rooms_by_user($uid)
 	{
 		$query = $this->db->get_where('rooms', array('user_id' => $uid));
+		return $query->result();
+	}
+	
+	function get_room_tmp($rid)
+	{
+		$query = $this->db->get_where('room_temp', array('room_id' => $rid));
 		return $query->result();
 	}
 	

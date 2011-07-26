@@ -50,4 +50,6 @@
 	</div>
 	<br>
 </div><!-- FOOTER -->
+<?php if(!isset($no_closing)): ?>
 </body></html>
+<?php endif;?>

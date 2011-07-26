@@ -229,7 +229,7 @@ var PostRoom = {
 			position: location,
 			map: map,
 			icon: new google.maps.MarkerImage(
-				base_url+"/images/guidebook/pin_home.png",
+				base_url+"images/guidebook/pin_home.png",
 				null,
 				null,
 				new google.maps.Point(14, 32))
@@ -704,7 +704,7 @@ var Drag = {
 			title: Translations.your_listing,
 			map: map,
 			icon: new google.maps.MarkerImage(
-				base_url+"/images/guidebook/pin_home.png",
+				base_url+"images/guidebook/pin_home.png",
 				new google.maps.Size(48, 36),
 				null,
 				new google.maps.Point(14, 32)),

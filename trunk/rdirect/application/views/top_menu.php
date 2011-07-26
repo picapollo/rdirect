@@ -7,6 +7,7 @@
 	<ul id="utilities">
 <?php if($this->tank_auth->is_logged_in()): ?>
 		<li class="first-child">
+			<?=lang('top_menu_hi')?>, <?php echo $this->tank_auth->get_username().lang('top_menu_nim');?>!&nbsp;&nbsp;&nbsp;&nbsp;
 			<?=anchor('home/dashboard', lang('top_menu_dashboard'));?>
 		</li>
 		<?php //TODO if(starred items exist): ?>

@@ -147,18 +147,23 @@
                     <h2>Alerts</h2> 
                     
                     <ul> 
-                                <li class="recommend_review"> 
-                                        <a href="/account">Build instant reputation by having your friends vouch for you. 
-                                            <img src="<?=IMG_DIR?>/command_center/alert_right_arrow.png" /> 
-                                        </a> 
-                                </li> 
-								<li class=" alt">
-										<div style="height:20px;">
-											<fb:login-button id="fb_login2" size="large" onlogin="jQuery('#fb_login2').hide();jQuery('#login_spinner2').show();location.href='<?=site_url('users/populate_from_facebook')?>';" perms="<?=$this->config->item('facebook_scope')?>"></fb:login-button><span id="login_spinner2" style="padding-top:2px;padding-left:5px;display:none;">
-												<img src="<?=IMG_DIR?>/spinner.gif"/>
-											</span><span>Connecting to Facebook completes your profile and makes it easy to log in.</span>
-										</div>
-                                </li>                                
+                    	<li class="default">
+                            <a href="/users/payout_preferences">돈은 어떻게 드릴까요. 
+                                <img src="<?=IMG_DIR?>/command_center/alert_right_arrow.png">
+                            </a>
+            	        </li>
+                        <li class="recommend_review"> 
+                                <a href="/account">Build instant reputation by having your friends vouch for you. 
+                                    <img src="<?=IMG_DIR?>/command_center/alert_right_arrow.png" /> 
+                                </a> 
+						</li> 
+						<li class=" alt">
+								<div style="height:20px;">
+									<fb:login-button id="fb_login2" size="large" onlogin="jQuery('#fb_login2').hide();jQuery('#login_spinner2').show();location.href='<?=site_url('users/populate_from_facebook')?>';" perms="<?=$this->config->item('facebook_scope')?>"></fb:login-button><span id="login_spinner2" style="padding-top:2px;padding-left:5px;display:none;">
+										<img src="<?=IMG_DIR?>/spinner.gif"/>
+									</span><span>Connecting to Facebook completes your profile and makes it easy to log in.</span>
+								</div>
+                        </li>                                
                     </ul> 
                 </div> 
                 <div class="bottom">&nbsp;</div> 

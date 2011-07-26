@@ -58,34 +58,32 @@ function get_ggeocoder_json($address='',$latlng='',$language='en',$sensor ='fals
 
 class simple_ggeocoder_json_parser {
     public $status = 'MOOGEOCODING:NONE';
-	public $address = '';
 	public $header = '';
     public $json = '';
 	public $plaintext = '';
     public $results = array();
     public $obj = null;
+    public $language = 'en';
 
-    function __construct($address='',$latlng='',$language='en',$sensor ='false') {
-    	$this->address = $address;
+    function __construct($language='en',$sensor ='false') {
+		
 		$this->language = $language;
-		$this->status = 'MOOGEOCODING:INIT';
-		$this->load($address,$latlng,$language,$sensor);
-		$this->parse_default();
+		
     }
 	function load($address,$latlng,$language,$sensor){
 		//some sanitization and encoding and empty string detection again
-		$address=moo_req_encode(moo_sanitize_str_paranoid_mode($address));
-		//$latlng=moo_req_encode(moo_sanitize_str_paranoid_mode($latlng));
+		$address=moo_req_encode($address);
+		$latlng=moo_req_encode($latlng);
 		if ( empty($address) && empty($latlng) ) {
 			$this->status = "MOOGEOCODING:UNSUBMITTED,WRONG_ADDRESS"; //something illegal in the string
 			return FALSE;
 		}
 		$server=mooGEOCODING_SERVER;
 		$server_path=mooGEOCODING_SERVER_PATH;
-		//$params='?address='.$address.'&language='.$language.'&sensor='.$sensor;
-		$params='?latlng='.$latlng.'&language='.$language.'&sensor='.$sensor;
-		
-		echo $params.'<br>';
+		if($address=='')
+			$params='?latlng='.$latlng.'&language='.$language.'&sensor='.$sensor;
+		else
+			$params='?address='.$address.'&language='.$language.'&sensor='.$sensor;
 		
 		$server_response = moo_socket_get($server,$server_path,$params);
 		$pos = strpos($server_response, 'OK');
@@ -136,7 +134,6 @@ class simple_ggeocoder_json_parser {
     // clean up memory
     function clear() {
         $this->status = null;
-        $this->address = null;
         $this->header = null;
         $this->json = null;
 		$this->plaintext = null;

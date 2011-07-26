@@ -2,8 +2,10 @@
 
 require 'geocoder/GGeocoderParserLib.v1.php';
 
-class Geocoder{
-	private $language = 'en';
+class Geocoder extends simple_ggeocoder_json_parser{
+	function __construct($language='en',$sensor ='false'){
+		parent::__construct($language, $sensor);
+	}
 	
 	function set_language($new_lang)
 	{
@@ -12,19 +14,35 @@ class Geocoder{
 	
 	function geocode_by_address($address)
 	{
-		$gg = get_ggeocoder_json($address,'',$this->language);
-		return $gg->results;
+		$this->load($address, '', $this->language, 'false');
+
+		if($this->obj->status !=='OK'){
+			return FALSE;
+		}
+		$res = array();
+		foreach($this->obj->results[0]->address_components as $k=>$i){
+			if(in_array('street_address', $i->types) || in_array('postal_code', $i->types) || in_array('zip_code', $i->types))
+				continue;	
+			$res[] = $i->long_name; 
+		}
+		return implode(', ', $res);
 	}
 	
 	function geocode_by_latlng($latlng)
 	{
-		$gg = get_ggeocoder_json('',$latlng,$this->language);
-		return $gg->results;
-	}
-	
-	function geocode($address, $latlng){
-		$gg = get_ggeocoder_json($address,$latlng,$this->language);
-		return $gg->results;
+		$this->load('', $latlng, $this->language, 'false');
+		
+		if($this->obj->status !=='OK'){
+			return FALSE;
+		}
+		
+		$res = array();
+		foreach($this->obj->results[0]->address_components as $k=>$i){
+			if(in_array('street_address', $i->types) || in_array('postal_code', $i->types) || in_array('zip_code', $i->types))
+				continue;	
+			$res[] = $i->long_name; 
+		}
+		return implode(', ', $res);
 	}
 }
 

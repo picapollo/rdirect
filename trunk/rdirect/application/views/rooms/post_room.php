@@ -11,7 +11,7 @@
 <?php $this->load->view('top_menu'); ?>
 
 <div class="narrow_page_bg rounded_most">
-<form action="<?=site_url('rooms/update?sig=b46fd7fa2550ab5fb1192772bd8c15c9')?>" enctype="multipart/form-data" id="new_room_form" method="post">		<input id="redirect_params_sig" name="redirect_params[sig]" type="hidden" />
+<form action="<?=site_url('rooms/update?sig='.$sig)?>" enctype="multipart/form-data" id="new_room_form" method="post">		<input id="redirect_params_sig" name="redirect_params[sig]" type="hidden" />
 <input id="redirect_params_action" name="redirect_params[action]" type="hidden" value="set_user" />
 <input id="redirect_params_new_hosting" name="redirect_params[new_hosting]" type="hidden" value="1" />
 <input id="redirect_params_id" name="redirect_params[id]" type="hidden" />
@@ -99,7 +99,6 @@
 	        <label for="hosting_email"><b class="header-badge protected-badge"><b id=""></b></b>이메일 주소:</label>
 	        <input class="large active" id="hosting_email" name="hosting[email]" size="30" type="text">
       	</div>
-      	<?php endif; ?>
         <div class="contact_info_section_field">
         <label for="hosting_phone"><b class="header-badge protected-badge"><b></b></b>휴대폰번호:
           <a class="tooltip" title="주 연락처 (유선/무선)&lt;br /&gt;
@@ -343,9 +342,11 @@
 <option value="ZM">Zambia</option>
 <option value="ZW">Zimbabwe</option>
         </select>
+        
         <input autocomplete="off" class="medium active" id="hosting_phone" name="hosting[phone]" size="30" type="text" />
         <input id="hosting_phone_country" name="hosting[phone_country]" type="hidden" />
       </div>
+      <?php endif; ?>
     </div>
   </div>
 </div>
