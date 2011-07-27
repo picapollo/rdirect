@@ -1,6 +1,6 @@
 <?php
 	$this->load->view('header/home', $header);
-	$this->load->view('top_menu');
+	$this->load->view('top_menu', array('starred'=>$this->data['starred']));
 ?>
        
 <script src="<?=JS_DIR?>/libphonenumber.compiled.js" type="text/javascript"></script>

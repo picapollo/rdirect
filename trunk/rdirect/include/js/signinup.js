@@ -447,8 +447,7 @@
 				}
 			},
 			signup : {
-				first_name : "required",
-				last_name : "required",
+				username : "required",
 				email : {
 					required : true,
 					email : true
@@ -457,7 +456,7 @@
 					required : true,
 					minlength : 5
 				},
-				password_confirmation : {
+				confirm_password : {
 					required : true,
 					minlength : 5,
 					equalTo : "#user_password"
@@ -504,7 +503,8 @@
 			var e = {};
 			for(var d in f) {
 				if(f.hasOwnProperty(d)) {
-					e["user[" + d + "]"] = f[d]
+					//e["user[" + d + "]"] = f[d]
+					e[d] = f[d]
 				}
 			}
 			return e

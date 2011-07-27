@@ -10,7 +10,7 @@
 <link href="<?=CSS_DIR?>/calendar_date_select/silver.css" media="screen" rel="stylesheet" type="text/css" />
 <link rel="canonical" href="<?=current_url()?>" />
 
-<?php $this->load->view('top_menu'); ?>
+<?php $this->load->view('top_menu', array('starred'=>$this->data['starred'])); ?>
 
 <div id="profile2">
 	<div class="backdrop">

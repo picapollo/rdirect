@@ -47,7 +47,6 @@ class Auth extends MY_Controller
 						TRUE)) 	// login by email
 				{	
 					// success
-					$this->load->model('users_model');
 					$user = $this->users_model->get_user_locale($this->tank_auth->get_user_id());
 					$this->session->set_userdata('locale', $user->locale);
 					$this->_handle_redirect('login');

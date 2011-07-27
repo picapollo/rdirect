@@ -4,8 +4,7 @@ class auth_other extends MY_Controller {
 	function __construct()
 	{
 		parent::__construct();
-		$this -> load -> model('users_model');
-		$this -> load -> model('tank_auth/users_tank_auth');
+		$this->load->model('tank_auth/users_tank_auth');
 	}
 
 	// handle when users log in using facebook account
@@ -115,7 +114,7 @@ class auth_other extends MY_Controller {
 			$this->load->model('pictures_model');
 			if($this->pictures_model->create_user_images_from_fb($user_id, $this -> session -> userdata('facebook_id')) == TRUE)
 			{
-				$this->users_model->set_user_has_picture($user_id, 1);
+				$this->users_model->set_user_has_photo($user_id, 1);
 			}
 			// let the user login via tank auth
 			$this -> tank_auth -> login($email, $password, false, false, true);

@@ -86,20 +86,26 @@ class Rooms_model extends CI_Model {
 		$this->db->delete('room_descriptions');
 	}
 	
-	function star_room($uid, $rid, $star = TRUE){
-		$this->db->where('user_id', $uid);
-		$this->db->where('room_id', $rid);
+	function star_room($rid, $uid, $star = TRUE){
+		$rs = $this->db->dbprefix('rooms_starred');
 		
 		if($star)
 		{
-			$this->db->set('room_id', $rid);
-			$this->db->insert('rooms_starred');
+			$query_str = "INSERT IGNORE INTO `$rs` (user_id, room_id) VALUES ($uid, $rid)";
 		}
 		else
 		{
-			$this->db->where('room_id', $rid);
-			$this->db->delete('rooms_starred');
+			$query_str = "DELETE IGNORE FROM `$rs` WHERE user_id=$uid AND room_id=$rid";
 		}
+
+		return $this->db->query(mysql_real_escape_string($query_str));
+	}
+	
+	function change_availability($rid, $status)
+	{
+		$query_str = $this->db->update_string('rooms', array('activated'=>$status), array('id'=>$rid));
+		$query_str = str_replace('UPDATE', 'UPDATE IGNORE', $query_str);
+		return $this->db->query($query_str);
 	}
 	
 	function get_room($rid)
@@ -108,10 +114,32 @@ class Rooms_model extends CI_Model {
 		return $query->result();
 	}
 	
-	function get_rooms_by_user($uid)
+	function get_rooms($uid)
 	{
 		$query = $this->db->get_where('rooms', array('user_id' => $uid));
 		return $query->result();
+	}
+
+	function get_rooms_lite($uid, $activity=null)
+	{
+		$r = $this->db->dbprefix('rooms');
+		$rp = $this->db->dbprefix('room_photos');
+		
+		/* // TODO: GROUP_CONCAT 다른데서 쓸 데 있음 */
+		//$query_str = 'SELECT r.id name, lat, lng, GROUP_CONCAT(DISTINCT rp.id ORDER BY rp.order) as photos '
+		//$query_str .= 'FROM '.$r.' as r INNER JOIN '.$rp.' as rp ON r.id = rp.room_id ';
+		$query_str = 'SELECT r.id, name, lat, lng, activated, (SELECT rp.id FROM '.$rp.' as rp WHERE r.id = rp.room_id AND rp.order = 1) as photo_id ';
+		$query_str .= 'FROM '.$r.' as r WHERE r.user_id='.$uid.' ';
+		if($activity !== null) $query_str .= "AND r.activated = $activity"; 
+		
+		$query = $this->db->query(mysql_real_escape_string($query_str));
+
+		return $query->result();
+	}
+	
+	function get_all_photos($rid)
+	{
+		
 	}
 	
 	function get_room_tmp($rid)
@@ -137,6 +165,14 @@ class Rooms_model extends CI_Model {
 		$this->db->limit($rows_limit);
 		$query = $this->db->get(); 
 		return $query->result();
+	}
+	
+	function is_owner($rid, $uid)
+	{
+		$this->db->select('user_id');
+		$this->db->where('room_id', $rid);
+		$this->db->get('rooms');
+		return $uid == $rid;
 	}
 }
 

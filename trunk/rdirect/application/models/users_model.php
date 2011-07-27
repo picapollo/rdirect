@@ -32,9 +32,9 @@ class Users_model extends CI_Model
 		$this->db->update('user_profiles', $data); 
 	}
 	
-	function set_user_has_picture($user_id, $value = 1)
+	function set_user_has_photo($user_id, $value = 1)
 	{
-		$this->db->update('users', array('users.has_picture' => $value));
+		$this->db->update('users', array('users.has_photo' => $value));
 	}
 
 	// return the user given the id
@@ -46,7 +46,7 @@ class Users_model extends CI_Model
 		$this->db->where(array('u.id' => $user_id, 'up.user_id' => $user_id));
 		$res = $this->db->get()->result();		
 		if(empty($res)) return null;
-		$res[0]->picture_path = $res[0]->has_picture ? UPLOADS_DIR.'/users/'.$user_id : IMG_DIR.'/default_profile'; 
+		$res[0]->picture_path = $res[0]->has_photo ? UPLOADS_DIR.'/users/'.$user_id : IMG_DIR.'/default_profile'; 
 		return $res[0];
 	}
 	
@@ -62,6 +62,22 @@ class Users_model extends CI_Model
 		$query = $this->db->get()->result();
 		if(empty($res)) return null;
 		return $res[0];
+	}
+	
+	function get_starred_rooms($user_id){
+		if(!$user_id) return null;
+		$this->db->select('room_id');
+		$this->db->where('user_id', $user_id);
+		$this->db->from('rooms_starred');
+		$query = $this->db->get();
+		return $query->result();
+	}
+	
+	function count_starred_rooms($user_id){
+		if(!$user_id) return null;
+		$this->db->where('user_id', $user_id);
+		$this->db->from('rooms_starred');
+		return $this->db->count_all_results();
 	}
 }
 ?>
