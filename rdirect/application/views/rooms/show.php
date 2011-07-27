@@ -1,10 +1,11 @@
 <?php
 	$this->load->view('header/page3', $header);
-	$this->load->view('top_menu');
+	$this->load->view('top_menu', array('starred'=>$this->data['starred']));
 ?>
 
 <!-- assets -->
-
+	
+	<?php if($this->input->get('new_hosting')): ?>
     <div id="new_hosting_actions" class="rounded_most">
 			<h2>
 				<?=anchor('rooms/'.$room->id.'/edit', '객실정보 수정');?> <span class="smaller">사진 올리기, 가격 바꾸기, 상세정보 수정하기</span>
@@ -37,6 +38,7 @@
 			</div>
 		</div>
 	</div>
+	<?php endif; ?>
           
 
     <div id="rooms" class="rounded_top">
@@ -61,7 +63,7 @@
 
 <div id="the_roof">
     <div id="room_snapshot">
-        <h1>123     <a href="#" id="star_<?=$room->id?>" title="Add this listing as a 'favorite'" class="star_icon_container"><div class="star_icon"></div></a>
+        <h1><?=$room->name?> <a href="#" id="star_<?=$room->id?>" title="Add this listing as a 'favorite'" class="star_icon_container"><div class="star_icon"></div></a>
 </h1>
         <h3>
             <?=$room->property_type_id?>
@@ -837,7 +839,13 @@
     /* after pageload */
     jQuery(document).ready(function() {
         // initialize star state
-        Airbnb.Bookmarks.starredIds = [];
+        Airbnb.Bookmarks.starredIds = [<?php
+        if($starred){
+	        echo array_shift($starred)->room_id; 
+	        foreach($starred as $rows)
+	        	echo ','.$rows->rood_id;
+		} 
+        ?>];
         Airbnb.Bookmarks.initializeStarIcons();
 
 
@@ -857,9 +865,16 @@
 
         refresh_subtotal();
 
+<?php //TODO: 이거 php로 생성해야?>
         jQuery('#extra_people_pricing').html("추가요금 없음");
 
+		jQuery('#extra_people_pricing').html("No Charge");
 
+        jQuery('#cleaning_fee_string').html("$60");
+
+        jQuery('#weekly_price_string').html("$950");
+
+        jQuery('#monthly_price_string').html("$3300");
 
 
         add_data_to_cookie('viewed_page3_ids', <?=$room->id?>);

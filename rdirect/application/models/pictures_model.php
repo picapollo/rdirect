@@ -9,7 +9,6 @@ class Pictures_model extends CI_Model {
 		// Call the Model constructor
 		parent::__construct();
 		$this->image_config['image_library'] = 'gd2';
-		$this->image_config['maintain_ratio'] = FALSE;
 		$this->image_config['overwrite'] = TRUE;
 		$this->image_config['allowed_types'] = 'jpg|jpeg|gif|png';
 		$this->load->library('image_lib');
@@ -26,6 +25,26 @@ class Pictures_model extends CI_Model {
 			! $this->_resize($source_image, 'tiny.png', $new_path, 36, 36))	return FALSE;
 		
 		return TRUE;
+	}
+	
+	function create_room_images($rid, $source_image){
+		$rp = $this->db->dbprefix('room_photos');
+		$query_str = "INSERT INTO rd_room_photos (`room_id`, `order`) "
+					."SELECT $rid, IFNULL(MAX(`rp`.`order`)+1, 1) FROM $rp AS rp WHERE rp.room_id=$rid";
+		$this->db->query(mysql_escape_string($query_str));		
+		
+		if( ! $pid = $this->db->insert_id())
+			return FALSE;
+		
+		$new_path = UPLOADS_ROOT . '/rooms/' . $pid;
+		$this->_mkdir($new_path);
+		
+		if( ! $this->_resize($source_image, 'large.jpg', $new_path, 639, 426, TRUE) || 
+			! $this->_resize($source_image, 'mini_square.jpg', $new_path, 68, 68, TRUE) ||
+			! $this->_resize($source_image, 'x_small.jpg', $new_path, 114, 74, TRUE) ||
+			! $this->_resize($source_image, 'small.jpg', $new_path, 216, 144, TRUE))	return FALSE;
+		
+		return $pid;
 	}
 	
 	function create_user_images_from_fb($user_id, $facebook_id){
@@ -65,16 +84,22 @@ class Pictures_model extends CI_Model {
 		}		
 	}
 	
-	function _resize($source_image, $new_image_name, $path,$width, $height)
+	function _resize($source_image, $new_image_name, $path,$width, $height, $maintain_ratio=FALSE)
 	{
 		$this->image_config['source_image'] = $source_image;
 		$this->image_config['new_image'] = $path . '/' . $new_image_name;
 		$this->image_config['width'] = $width;
 		$this->image_config['height'] = $height;
+		$this->image_config['maintain_ratio'] = $maintain_ratio;
 		$this->image_lib->initialize($this->image_config);
 		return $this->image_lib->resize();
 	}
 	
+	function update_caption($pid, $text){
+		$this->db->set('caption', $text);
+		$this->db->where('id', $pid);
+		$this->db->update('room_photos');
+	}
 }
 
 // End of file pictures_model.php

@@ -9,12 +9,32 @@ class Test extends MY_Controller {
 	{
 		parent::__construct();
 		// Your own constructor code
+		$this->load->model('rooms_model');
+		$this->load->model('users_model');
+		$this->load->model('pictures_model');
 		echo '<pre>';
 	}
 
 	public function index()
 	{
-		$this->load->view('v_test', array('hi'=>'he'));
+		$this->load->model('rooms_model');
+		
+		$rid = 1;
+		
+		$rp = $this->db->dbprefix('room_photos');
+		$query_str = "INSERT INTO rd_room_photos (`room_id`, `order`) "
+					. "SELECT $rid, IFNULL(MAX(`rp`.`order`)+1, 1) FROM $rp AS rp WHERE rp.room_id=$rid";
+		$this->db->query(mysql_escape_string($query_str));
+		echo $this->db->insert_id();
+		
+		
+		//var_dump($this->rooms_model->star_room(AND room_id=$ridAND room_id=$rid,1, 0));
+		//echo  '<br>'.$this->db->last_query();
+	}
+	
+	function db($num = 1){
+		
+		
 	}
 	
 	/*

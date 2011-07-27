@@ -9,7 +9,6 @@ class Users extends MY_Controller {
 	{
 		parent::__construct();
 		// Your own constructor code
-		$this->load->model('users_model');
 	}
 
 	function index()
@@ -34,21 +33,16 @@ class Users extends MY_Controller {
 		$this->data['redirect_params'] = $this->input->get('redirect_params');
 		
 		// Facebook connect 대신 이메일 주소로 가입		
-		if(($hf = $this->input->get('hf')) )
+		if($this->input->get('hf') || !empty($this->data['redirect_params']) )
 		{
-			$this->session->set_userdata(array('hf' => $hf));
-		}
-		else if(!empty($this->data['redirect_params']))	// room/new에서 redirect된 경우
-		{
-			$hf = true;
+			$this->data['fb'] = FALSE;
 		}
 		else
 		{
-			$hf = $this->session->userdata('hf');
+			$this->data['fb'] = TRUE;
 		}
 
-		$this->data['fb'] = ! $hf;
-		//$this->data['header']['title'] = 'Sign In / Sign Up';
+		$this->data['header']['title'] = 'Sign In / Sign Up';
 		
 		$this->data['signup_flag'] = TRUE;
 		
@@ -140,14 +134,14 @@ class Users extends MY_Controller {
 					$data['message_content'] = 'Successfully changed!';
 					$data['username'] = $this->tank_auth->get_username();
 					$data['user_profile_image'] = UPLOADS_DIR.'/users/'.$user_id.'/large.png?' . time();
-					$this->users_model->set_user_has_picture($user_id, 1);
+					$this->users_model->set_user_has_photo($user_id, 1);
 				}	
 				
 				unlink($result['full_path']);
 			}
 		}		
 		
-		$this->load->view('ajax_response', $data);
+		$this->load->view('ajax/user_image_upload', $data);
 	}
 
 	function ajax_already_messaged($uid)

@@ -9,8 +9,6 @@ class Home extends MY_Controller
 	{
 		parent::__construct();
 		// Your own constructor code
-		$this->load->library('tank_auth');
-		$this -> load -> model('users_model');
 	}
 
 	public function index()
@@ -18,9 +16,7 @@ class Home extends MY_Controller
 		$this->data['header']['facebook_id'] = $this->config->item('facebook_app_id');
 		$this->data['header']['locale'] = CURRENT_LANGUAGE;
 		
-		$this->load->view('header/page1', $this->data['header']);
-		$this->load->view('top_menu', $this->data['notices']);
-		$this->load->view('footer');
+		$this->load->view('home/front', $this->data);
 	}
 
 	/*

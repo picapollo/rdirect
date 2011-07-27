@@ -18,7 +18,29 @@ class Rooms extends MY_Controller
 	 * Show list of rooms
 	 */
 	function index(){
+		if( ! $this->tank_auth->is_logged_in())
+			redirect ('');
 		
+		// 검색조건: 활성/비활성
+		switch($this->input->get('f'))
+		{
+			case 'active':
+				$activity = '1';
+				break;
+			case 'inactive':
+				$activity = '0';
+				break;
+			default:
+				$activity = null;
+		}
+		
+		$this->data['rooms'] = $this->rooms_model->get_rooms_lite($this->tank_auth->get_user_id(), $activity);
+		
+		// 방 활성화\비활성화 위한 키 생성
+		$this->load->library('encrypt');
+		$this->data['sig'] = $this->encrypt->sha1($this->tank_auth->get_user_id().$this->input->server('REMOTE_ADDR'));
+		
+		$this->load->view('rooms/rooms', $this->data);
 	}
 
 	/**
@@ -157,6 +179,7 @@ class Rooms extends MY_Controller
 		$res = $this->rooms_model->get_room($rid);
 		if(!isset($res[0])) show_404();
 		$this->data['room'] = $res[0];
+		
 		$this->load->view('rooms/show', $this->data);
 	}
 
@@ -168,8 +191,19 @@ class Rooms extends MY_Controller
 	 */
 	function edit($rid = null)
 	{
-		echo 'edit : ' . $rid . '<br>';
-		echo 'section: ' . $this -> input -> get('section');
+		if( ! $rid || ! $this->tank_auth->is_logged_in() || ! is_owner($rid, $this->tank_auth->get_user_id()))
+			redirect('');
+		
+		$this->data['room'] = $this->rooms_model->get_room($rid);
+		if($this->input->get('section') == 'photos')
+		{
+			$this->data['photos'] = $this->rooms_model->get_all_photos($rid);
+			$this->load->view('roos/edit_photos', $this->data);
+		} 
+		else
+		{
+			$this->load->view('roos/edit_photos', $this->data);
+		}
 	}
 
 	/**
@@ -229,6 +263,58 @@ class Rooms extends MY_Controller
 	function ajax_increment_impressions($rid = null)
 	{
 		
+	}
+	
+	function ajax_hosting_image_upload()
+	{
+		$rid = $this->input->post('hosting_id');
+		$new_photo = $this->input->post('new_photo');
+	}
+	
+	function ajax_update_current_photo()
+	{
+		$rid = $this->input->get('hosting_id');
+		$pid = $this->input->get('picture_id');
+	}
+	
+	function ajax_update_image_order()
+	{
+		$rid = $this->input->get('hosting_id');
+		print_r($this->input->post('sortable_photos'));
+	}
+	
+	function change_availability($rid)
+	{
+		$is_available = $this->input->get('is_available');
+		$redirect = ''.$this->input->get('redirect');
+		$this->load->library('encrypt');
+		if( ($is_available !== '1' && $is_available !== '0') ||
+			$this->encrypt->sha1($this->tank_auth->get_user_id().$this->input->server('REMOTE_ADDR')) != $this->input->get('sig') ||
+			! $this->rooms_model->change_availability($rid, $is_available))
+		{ 
+			$res = array(
+				'result' => 'error',
+				'message' => 'something is wrong'
+			);
+		}
+		else
+		{
+			if($is_available)
+			{
+				$res = array(
+					'result' => 'available',
+					'message' => 'Your listing will now appear in public search result.'
+				);
+			}
+			else
+			{
+				$res = array(
+					'result' => 'unavailable',
+					'message' => 'Your listing will be hidden from public search results.'
+				);
+			}	
+		}
+		echo json_encode($res);
 	}
 }
 

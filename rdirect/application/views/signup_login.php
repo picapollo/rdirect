@@ -3,7 +3,7 @@
 $this->load->helper('form'); 
 
 $this -> load -> view('header/signup_login', $header) ; 
-$this -> load -> view('top_menu', $notices);
+$this -> load -> view('top_menu', array('starred' => $starred));
 
 echo form_open('auth_other/fb_signin', array('id'=>'facebook_form'));
 echo form_close();
@@ -45,7 +45,7 @@ else
 				document.getElementById('fb-root').appendChild(e);
 			}());
 
-		Airbnb.SignInUp.setLocalizedMessages({"signin":{"password":{"required":"\ube44\ubc00\ubc88\ud638\ub97c \uc785\ub825\ud558\uc138\uc694.","minlength":"\ucd5c\uc18c 5 \uae00\uc790\uac00 \ud544\uc694\ud569\ub2c8\ub2e4."},"email":{"email":"\uc774\uba54\uc77c\uc744 \uc785\ub825\ud558\uc138\uc694.","required":"\uc774\uba54\uc77c\uc774 \ud544\uc694\ud569\ub2c8\ub2e4."}},"signup":{"password_confirmation":{"required":"\ube44\ubc00\ubc88\ud638\ub97c \ud655\uc778\ud558\uc138\uc694.","minlength":"\ucd5c\uc18c 5 \uae00\uc790\uac00 \ud544\uc694\ud569\ub2c8\ub2e4.","equalTo":"\ube44\ubc00\ubc88\ud638\uac00 \uc77c\uce58\ud558\uc9c0 \uc54a\uc2b5\ub2c8\ub2e4. "},"password":{"required":"\ube44\ubc00\ubc88\ud638\ub97c \uc785\ub825\ud558\uc138\uc694.","minlength":"\ucd5c\uc18c 5 \uae00\uc790\uac00 \ud544\uc694\ud569\ub2c8\ub2e4."},"email":{"email":"\uc774\uba54\uc77c\uc744 \uc785\ub825\ud558\uc138\uc694.","required":"\uc774\uba54\uc77c\uc774 \ud544\uc694\ud569\ub2c8\ub2e4."},"first_name":{"required":"\uc774\ub984\uc744 \uc785\ub825\ud558\uc138\uc694."},"last_name":{"required":"\uc131\uc744 \uc785\ub825\ud558\uc138\uc694."}}});
+		Airbnb.SignInUp.setLocalizedMessages({"signin":{"password":{"required":"\ube44\ubc00\ubc88\ud638\ub97c \uc785\ub825\ud558\uc138\uc694.","minlength":"\ucd5c\uc18c 5 \uae00\uc790\uac00 \ud544\uc694\ud569\ub2c8\ub2e4."},"email":{"email":"\uc774\uba54\uc77c\uc744 \uc785\ub825\ud558\uc138\uc694.","required":"\uc774\uba54\uc77c\uc774 \ud544\uc694\ud569\ub2c8\ub2e4."}},"signup":{"confirm_password":{"required":"\ube44\ubc00\ubc88\ud638\ub97c \ud655\uc778\ud558\uc138\uc694.","minlength":"\ucd5c\uc18c 5 \uae00\uc790\uac00 \ud544\uc694\ud569\ub2c8\ub2e4.","equalTo":"\ube44\ubc00\ubc88\ud638\uac00 \uc77c\uce58\ud558\uc9c0 \uc54a\uc2b5\ub2c8\ub2e4. "},"password":{"required":"\ube44\ubc00\ubc88\ud638\ub97c \uc785\ub825\ud558\uc138\uc694.","minlength":"\ucd5c\uc18c 5 \uae00\uc790\uac00 \ud544\uc694\ud569\ub2c8\ub2e4."},"email":{"email":"\uc774\uba54\uc77c\uc744 \uc785\ub825\ud558\uc138\uc694.","required":"\uc774\uba54\uc77c\uc774 \ud544\uc694\ud569\ub2c8\ub2e4."},"username":{"required":"\uc774\ub984\uc744 \uc785\ub825\ud558\uc138\uc694."},}});
 	
 		jQuery(document).ready(function() {
 			Airbnb.init({userLoggedIn: <?=$this->tank_auth->is_logged_in()?'true':'false'?>});

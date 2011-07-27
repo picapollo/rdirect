@@ -1700,7 +1700,7 @@ var Airbnb= {
 					})
 				});
 				jQuery.ajax({
-					url:base_url+"favorites/"+a(this).data("hosting_id")+base_url+"star",
+					url:base_url+"favorites/"+a(this).data("hosting_id")+"/star",
 					type:f?"DELETE":"POST",
 					dataType:"json",
 					async:true,

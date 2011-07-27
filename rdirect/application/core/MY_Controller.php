@@ -54,11 +54,11 @@ class MY_Controller extends CI_Controller {
 		$this -> data['header'] = array();
 		$this -> data['header']['title'] = 'RDirect';
 		$this -> data['header']['description'] = 'Default description';
-		$this -> data['notices'] = array();
-		$this -> data['notices']['notice'] = array();
 		$this -> data['header']['locale'] = CURRENT_LANGUAGE;
 		
 		$this->load->language('common');
+		
+		$this->data['starred'] = $this->users_model->get_starred_rooms($this->tank_auth->get_user_id());
 	}
 
 	function _add_notice($message)

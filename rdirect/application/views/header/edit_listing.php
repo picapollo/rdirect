@@ -54,7 +54,7 @@
   </div>
   ]]>
   </script> 
-  <script src="http://s0.muscache.com/1311666388/assets/widgets.js" type="text/javascript"></script> 
+  <script src="<?=JS_DIR?>/widgets.js" type="text/javascript"></script> 
  
 <script type="text/x-jqote-template" id="availability_button_template"> 
 <![CDATA[

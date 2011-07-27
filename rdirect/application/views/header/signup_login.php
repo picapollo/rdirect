@@ -28,6 +28,6 @@
 		<link href="<?=CSS_DIR?>/signinup_ie.css" media="screen" rel="stylesheet" type="text/css" />
 		<![endif]-->
 		<script src="<?=JS_DIR?>/jquery.validate.min.js" type="text/javascript"></script>
-		<script src="<?=JS_DIR?>/signinup.js?<?=time()?>" type="text/javascript"></script>
+		<script src="<?=JS_DIR?>/signinup.js" type="text/javascript"></script>
 		<link rel="shortcut icon" href="<?=IMG_DIR?>/airbnb_favicon.ico" />
 	</head>

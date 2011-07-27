@@ -10,15 +10,14 @@
 			<?=lang('top_menu_hi')?>, <?php echo $this->tank_auth->get_username().lang('top_menu_nim');?>!&nbsp;&nbsp;&nbsp;&nbsp;
 			<?=anchor('home/dashboard', lang('top_menu_dashboard'));?>
 		</li>
-		<?php //TODO if(starred items exist): ?>
 		<li style="border:none;">
 			<ul class="notification_bar">
-				<li id="star-indicator">
-					<a href="<?=site_url('search?starred=true')?>" class="notification_icon starred" title="<?=lang('top_menu_starred_items')?>"> <span style="width: 1px; margin-right: -5px;">&nbsp;</span> <span id="star_count" class="alert_count">1</span> </a>
+				<li id="star-indicator" <?php if(!$starred) echo 'style="display: none;"'?>>
+					<a href="<?=site_url('search?starred=true')?>" class="notification_icon starred" title="<?=lang('top_menu_starred_items')?>"> <span style="width: 1px; margin-right: -5px;">&nbsp;</span> <span id="star_count" class="alert_count"><?=count($starred)?></span> </a>
 				</li>
 			</ul>
 		</li>	
-		<?php //endif; ?>
+	
 		<li>
 			<?=anchor('auth/logout', lang('top_menu_logout'));?>
 		</li>
@@ -119,9 +118,9 @@
 		</li>
 	</ul><!-- UTILITIES -->
 </div><!-- HEADER -->
-
 <?php
 	$notice = $this->session->userdata('notice');
+	
 	if($notice){
 		echo '<div id="notice">' . $notice . '</div>';
 	}

@@ -8,7 +8,7 @@
 <script src="<?=JS_DIR?>/post_room.js?<?=time()?>" type="text/javascript"></script>
 <script src="<?=JS_DIR?>/tooltips_good.js" type="text/javascript"></script>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.5&amp;sensor=false"></script>
-<?php $this->load->view('top_menu'); ?>
+<?php $this->load->view('top_menu', array('starred'=>$this->data['starred'])); ?>
 
 <div class="narrow_page_bg rounded_most">
 <form action="<?=site_url('rooms/update?sig='.$sig)?>" enctype="multipart/form-data" id="new_room_form" method="post">		<input id="redirect_params_sig" name="redirect_params[sig]" type="hidden" />
