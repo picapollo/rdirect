@@ -343,3 +343,4 @@ ERROR - 2011-07-27 19:38:58 --> Query error: You have an error in your SQL synta
 ERROR - 2011-07-27 19:38:59 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order) SELECT 1, IFNULL((MAX(rp.order) FROM rd_room_photos as rp WHERE rp.room_i' at line 1
 ERROR - 2011-07-27 19:39:00 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order) SELECT 1, IFNULL((MAX(rp.order) FROM rd_room_photos as rp WHERE rp.room_i' at line 1
 ERROR - 2011-07-27 19:39:17 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM rd_room_photos as rp WHERE rp.room_id = 1), 1)' at line 1
+ERROR - 2011-07-27 23:49:58 --> Query error: Unknown column 'room_id' in 'where clause'

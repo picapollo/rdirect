@@ -15,7 +15,8 @@ class auth_other extends MY_Controller {
 
 		// get the facebook user and save in the session
 		
-		$this->facebook->setAccessToken($this->input->post('fb_access_token'));
+		$fb_cookie = $this->facebook->get_facebook_cookie();
+		$this->facebook->setAccessToken($fb_cookie['access_token']);
 		
 		$fb_user = $this->facebook->api('/me');
 		
@@ -30,22 +31,14 @@ class auth_other extends MY_Controller {
 				$user = $this -> users_model -> get_user_by_email($fb_user['email']);
 				if(sizeof($user) == 0)
 				{
-					$this->session->set_flashdata('fb_access_token', $this->input->post('fb_access_token'));
+					$this->session->set_flashdata('fb_access_token', $fb_cookie['access_token']);
 					redirect('auth_other/fill_user_info', 'refresh');
 				}
 				else	// Email로 가입했지만 Facebook connect하지 않은 경우
 				{
-					// TODO: 기존 계정과 연결시킬지 물어봄
-					if( true )
-					{
-						$this -> users_model -> update_user_profile($user[0] -> id, array('facebook_id' => $fb_user['facebook_id']));
-						redirect('home/dashboard');
-					}
-					else
-					{
-						$this->_add_notice('message', 'Cancelled. Login with email!');
-						redirect('login');
-					}					
+					//$this -> users_model -> update_user_profile($user[0] -> id, array('facebook_id' => $fb_user['facebook_id']));
+					$this->_add_notice('An account with the same email address exists.<br>Please sign in and click on facebook connect.');
+					redirect('login');					
 				}
 			}
 			else

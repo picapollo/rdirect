@@ -14,7 +14,7 @@ class Pictures extends CI_Controller{
 		
 		$this->load->model('rooms_model');
 		
-		if( ! $this->tank_auth->is_logged_in() || ! is_owner($rid, $this->tank_auth->get_user_id()))
+		if( ! $this->tank_auth->is_logged_in() || ! $this->rooms_model->is_owner($rid, $this->tank_auth->get_user_id()))
 			echo '';
 		
 		if($this->input->post('commit') == 'Save')

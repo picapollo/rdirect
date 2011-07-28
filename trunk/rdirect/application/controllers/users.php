@@ -92,6 +92,69 @@ class Users extends MY_Controller {
 		}
 	}
 	
+	function populate_from_facebook()
+	{
+		if( ! $uid = $this->tank_auth->get_user_id() )
+			$this->_history_back();
+		
+		$this->load->library('facebook');
+		$fb_cookie = $this->facebook->get_facebook_cookie();
+		if(empty($fb_cookie['access_token']))
+			$this->_history_back();
+		
+		$this->facebook->setAccessToken($fb_cookie['access_token']);
+		$fb_user = $this->facebook->api('/me');
+		
+		if($fb_user)
+		{
+			$fb_user['id'] = mysql_real_escape_string($fb_user['id']);
+			$another_user = $this -> users_model -> get_user_by_sm(array('facebook_id' => $fb_user['id']), 'facebook_id');
+			if(sizeof($another_user) != 0 && $another_user[0]->id != $uid) 
+			{
+				$this->_add_notice('Another account with the same facebook account exists.');
+				$this->_history_back();
+			}
+			else
+			{
+				$user = $this->users_model->get_user($uid);
+				
+				$update_data = array('facebook_id' => $fb_user['id']);
+
+				if($user->university == '')
+				{				
+					$university = array();
+					foreach($fb_user['education'] as $i)
+					{
+						$university[] = $i['school']['name'];
+					}
+					
+					$update_data['university'] = implode(', ', $university); 
+				}
+
+				if(! $user->has_photo)
+				{
+					$this->load->model('pictures_model');
+					if($this->pictures_model->create_user_images_from_fb($uid, $fb_user['id']))
+					{
+						$this->users_model->set_user_has_photo($uid, 1);
+					}
+				}
+				$this -> users_model -> update_user_profile($uid, $update_data);
+			}
+		}
+		$this->_add_notice('success');
+		$this->_history_back();
+	}
+
+	function delete_profile_picture($uid)
+	{
+		if($this->tank_auth->get_user_id() == $uid)
+		{
+			$this->users_model->set_user_has_photo($uid, 0);
+		}
+		$this->_history_back();
+	}
+	
 	function ajax_image_upload(){
 		$data = array(
 			'feedback_type' => 'upload_feedback',

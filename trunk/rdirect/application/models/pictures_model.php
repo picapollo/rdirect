@@ -16,7 +16,7 @@ class Pictures_model extends CI_Model {
 	
 	function create_user_images($user_id, $source_image){
 		
-		$new_path = UPLOADS_ROOT . '/users/' . $user_id;
+		$new_path = './uploads/users/' . $user_id;
 		$this->_mkdir($new_path);
 		
 		if( ! $this->_resize($source_image, 'large.png', $new_path, 255, 255) || 
@@ -36,7 +36,7 @@ class Pictures_model extends CI_Model {
 		if( ! $pid = $this->db->insert_id())
 			return FALSE;
 		
-		$new_path = UPLOADS_ROOT . '/rooms/' . $pid;
+		$new_path = './uploads/rooms/' . $pid;
 		$this->_mkdir($new_path);
 		
 		if( ! $this->_resize($source_image, 'large.jpg', $new_path, 639, 426, TRUE) || 

@@ -27,8 +27,6 @@
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
 		
-		<script type="text/javascript">var base_url = "<?=base_url()?>";</script>
-		
 		<?php if($locale != 'en'): ?>
 		<script src="<?=JS_DIR?>/jquery.ui.datepicker/jquery.ui.datepicker-<?=$locale?>.min.js" type="text/javascript"></script>
 		<?php endif; ?>

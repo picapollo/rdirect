@@ -134,7 +134,7 @@
  
   jQuery(document).ready(function(){
     jQuery('#post-listing-new').click(function(){
-      document.location = base_url+"rooms/new";
+      document.location = "/rooms/new";
     });
  
     jQuery('#listings-filter').visibilityFilter();
@@ -182,8 +182,17 @@
 <div class="box">
 		<div class="top"></div>
 		<div class="middle">
+			<?php if(isset($no_listing)): ?>
+			<span class="no-listings">
+				<h3>You don't have any listings!</h3> 
+				<p>Listing your space on Airbnb is an easy to way to monetize any extra space you have.</p>
+				<p>You'll also get to meet interesting travelers from around the world!</p>
+				<input type="button" class="button-glossy" value="Post a new listing" id="post-listing-new">
+				<div class="clear"></div>
+		    </span>
+		    <?php else: ?>
 			<div class="sort-header clearfix">
-				<span class="action_button " id="listings-filter">
+				<span class="action_button <?=$search_mode?>" id="listings-filter">
 					<div class="display-filter">
 						<span class="icon none always">보이기:</span>
 						<span class="icon none">등록된 전체 객실<span class="expand"></span></span>
@@ -201,7 +210,7 @@
 							<a href="<?=site_url('rooms?f=inactive')?>" class="icon inactive">숨겨진 객실 보이기</a>
 						</div>
 					</div> </span>
-				<span class="action_button" id="view_cal"><a href="/calendar" class="icon none">예전 달력 보기</a></span>
+				<!--<span class="action_button" id="view_cal"><a href="/calendar" class="icon none">예전 달력 보기</a></span>-->
 			</div>
 			<div id="listings-container">
 				<ul class="listings">
@@ -212,16 +221,17 @@
 							<img alt="Room_default_no_photos" src="<?=insert_room_photo($room->photo_id, 'x_small')?>" />
 							</a>
 						</div>
-						<div class="set-availability action_button" data-has-availability="<?php echo ($room->activated=='1')?'true':'false'?>" data-available-url="<?=site_url('rooms/change_availability/'.$room->id.'?is_available=1&redirect=%2Frooms&sig='.$sig)?>" data-unavailable-url="<?=site_url('rooms/change_availability/'.$room->id.'?is_available=0&redirect=%2Frooms&sig='.$sig)?>"></div>
+						<div class="set-availability action_button" data-has-availability="<?php echo ($room->active=='1')?'true':'false'?>" data-available-url="<?=site_url('rooms/change_availability/'.$room->id.'?is_available=1&redirect=%2Frooms&sig='.$sig)?>" data-unavailable-url="<?=site_url('rooms/change_availability/'.$room->id.'?is_available=0&redirect=%2Frooms&sig='.$sig)?>"></div>
 						<div class="listing-info">
 							<h3><?=anchor('rooms/'.$room->id, $room->name)?></h3>
-							<span class="actions"> <span class="action_button"><a href="/rooms/<?=$room->id?>/edit" class="icon edit">객실정보 수정</a></span> <span class="action_button"><a href="/rooms/<?=$room->id?>" class="icon view">객실정보 보기</a></span> <span class="action_button"><a href="/calendar/single/<?=$room->id?>" class="icon calendar">달력 보기</a></span> </span>
+							<span class="actions"> <span class="action_button"><a href="<?=site_url("rooms/{$room->id}/edit")?>" class="icon edit">객실정보 수정</a></span> <span class="action_button"><a href="<?=site_url('rooms/'.$room->id)?>" class="icon view">객실정보 보기</a></span> <span class="action_button"><a href="<?=site_url('calendar/single/'.$room->id)?>" class="icon calendar">달력 보기</a></span> </span>
 						</div>
 						<div class="clear"></div>
 					</li>
 					<?php endforeach; ?>
 				</ul>
 			</div>
+			<?php endif; ?>
 		</div>
 		<div class="bottom"></div>
 	</div>

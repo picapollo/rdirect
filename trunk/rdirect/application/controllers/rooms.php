@@ -18,28 +18,38 @@ class Rooms extends MY_Controller
 	 * Show list of rooms
 	 */
 	function index(){
-		if( ! $this->tank_auth->is_logged_in())
+		if( ! $uid = $this->tank_auth->get_user_id())
 			redirect ('');
 		
-		// 검색조건: 활성/비활성
-		switch($this->input->get('f'))
-		{
-			case 'active':
-				$activity = '1';
-				break;
-			case 'inactive':
-				$activity = '0';
-				break;
-			default:
-				$activity = null;
+		// 방이 하나라도 있어야
+		if( $this->rooms_model->count_rooms_of_user($uid) )
+		{	
+			// 검색조건: 활성/비활성
+			switch($this->input->get('f'))
+			{
+				case 'active':
+					$activity = '1';
+					$this->data['search_mode'] = 'active';
+					break;
+				case 'inactive':
+					$activity = '0';
+					$this->data['search_mode'] = 'inactive';
+					break;
+				default:
+					$activity = null;
+					$this->data['search_mode'] = 'none';
+			}
+			
+			$this->data['rooms'] = $this->rooms_model->get_rooms_lite($uid, $activity);
+			
+			// 방 활성화\비활성화 위한 키 생성
+			$this->load->library('encrypt');
+			$this->data['sig'] = $this->encrypt->sha1($uid.$this->input->server('REMOTE_ADDR'));
 		}
-		
-		$this->data['rooms'] = $this->rooms_model->get_rooms_lite($this->tank_auth->get_user_id(), $activity);
-		
-		// 방 활성화\비활성화 위한 키 생성
-		$this->load->library('encrypt');
-		$this->data['sig'] = $this->encrypt->sha1($this->tank_auth->get_user_id().$this->input->server('REMOTE_ADDR'));
-		
+		else 	// 방이 하나도 없는 경우
+		{
+			$this->data['no_listing'] = TRUE;
+		}
 		$this->load->view('rooms/rooms', $this->data);
 	}
 
@@ -54,68 +64,82 @@ class Rooms extends MY_Controller
 		$this->load->view('rooms/post_room', $this->data);
 	}
 	
-	function update()
+	function update($rid = null)
 	{
-		$redirect_params = $this->input->post('redirect_params');
-		$retry_params = $this->input->post('retry_params');
-		$address = $this->input->post('address');
-		$hosting = $this->input->post('hosting');
-		
-		$query_data = array();
-		
-		if(isset($redirect_params['new_hosting']) && $redirect_params['new_hosting'] == 1)
+		if( ! $rid)
 		{
-			/**
-			 * 	새로 만드는 경우
-			 */
-			$query_data['address_native'] = $address['formatted_address_native'];
-			$query_data['address_apt'] = $address['apt'];
-			$query_data['lat'] = $address['lat'];
-			$query_data['lng'] = $address['lng'];
+			$redirect_params = $this->input->post('redirect_params');
+			$retry_params = $this->input->post('retry_params');
+			$address = $this->input->post('address');
+			$hosting = $this->input->post('hosting');
 			
-			$this->load->library('geocoder');
-			$query_data['address'] = $this->geocoder->geocode_by_address($this->input->post('location_search'));
+			$query_data = array();
 			
-			/* 임시 데이터 생성 */
-			$this->load->library('encrypt');
-			$sig = hash('md5', $this->input->get('sig'));
-			$data_tmp = array();
-			$data_tmp['sig'] = $sig;
-			$data_tmp['email'] = isset($hosting['email'])?$hosting['email']:'';
-			if(isset($hosting['phone'])){
-				$data_tmp['phone'] = $hosting['phone'];
-				$data_tmp['phone_country'] = CURRENT_LANGUAGE;
-			}
-		
-			$description = $hosting['description'];
-			$directions = $hosting['directions'];
-			unset($hosting['directions']);
-			
-			unset($hosting['phone']);
-			unset($hosting['phone_country']);
-			unset($hosting['email']);
-			unset($hosting['description']);
-			
-			$query_data += $hosting;
-
-			$rid = $this->rooms_model->create_room($query_data);
-			$this->rooms_model->create_room_tmp($rid, $data_tmp);
-			$this->rooms_model->add_description($rid, array(array('language'=>CURRENT_LANGUAGE, 'text'=>$description)) );
-			if(isset($exact_address) && ! $exact_address)
+			if(isset($redirect_params['new_hosting']) && $redirect_params['new_hosting'] == 1)
 			{
-				$this->rooms_model->add_address_direction($rid, $directions);
+				/**
+				 * 	새로 만드는 경우
+				 */
+				$this->load->library('geocoder');
+				$query_data['address'] = $this->geocoder->geocode_by_address($this->input->post('location_search'));
+				
+				/* 임시 데이터 생성 */
+				$this->load->library('encrypt');
+				$sig = hash('md5', $this->input->get('sig'));
+				$data_tmp = array();
+				$data_tmp['sig'] = $sig;
+				$data_tmp['email'] = isset($hosting['email'])?$hosting['email']:'';
+				if(isset($hosting['phone'])){
+					$data_tmp['phone'] = $hosting['phone'];
+					$data_tmp['phone_country'] = CURRENT_LANGUAGE;
+				}
+			
+				$description = array();
+				$description[0] = array(
+					'language' => CURRENT_LANGUAGE,
+					'description' => $hosting['description'],
+					'name' => $hosting['name']
+				);
+				
+				unset($hosting['phone']);
+				unset($hosting['phone_country']);
+				unset($hosting['email']);
+				unset($hosting['name']);
+				unset($hosting['description']);
+				
+				// 집 좌표 직접 노출 방지 위한 인근지점 임의 좌표 생성 (근데 어차피 html소스보기하면 원래좌표 나오니 눈가리고 아웅)
+				
+				$address['lat_fuzzy'] = $address['lat'] + (mt_rand()/mt_getrandmax() - 0.5)*0.01;
+				$address['lng_fuzzy'] = $address['lng'] + (mt_rand()/mt_getrandmax() - 0.5)*0.01;
+				
+				$rid = $this->rooms_model->create_room($hosting);
+				$this->rooms_model->create_address($rid, $address);
+				$this->rooms_model->create_room_tmp($rid, $data_tmp);
+				$this->rooms_model->add_descriptions($rid, $description);
+
+				$this->_handle_redirect('', array(
+					'id'=>$rid, 
+					'sig'=>$sig
+				));
 			}
-			$this->_handle_redirect('', array(
-				'id'=>$rid, 
-				'sig'=>$sig
-			));
+			else
+			{
+				redirect('');
+			}
 		}
-		else
+		else // From /rooms/$rid/edit/
 		{
-			/**
-			 * 	기존 방 업데이트
-			 */
-		
+			if( ! $this->tank_auth->is_logged_in() || ! $this->rooms_model->is_owner($rid, $this->tank_auth->get_user_id()))
+				redirect('');
+			
+			$hosting = $this->input->post('hosting');
+			$hosting_descriptions = $this->input->post('hosting_descriptions');
+			$amenities = $this->input->post('amenities');
+			$pets = $this->input->post('pets');
+			
+			
+			
+			$this->rooms_model->update_room($rid, $hosting);
 		}
 	}
 	
@@ -177,8 +201,10 @@ class Rooms extends MY_Controller
 	{
 		if(!$rid) show_404();
 		$res = $this->rooms_model->get_room($rid);
-		if(!isset($res[0])) show_404();
+		if(empty($res)) show_404();
 		$this->data['room'] = $res[0];
+		
+		$this->data['is_owner'] = $this->tank_auth->get_user_id() == $res[0]->user_id;
 		
 		$this->load->view('rooms/show', $this->data);
 	}
@@ -191,18 +217,25 @@ class Rooms extends MY_Controller
 	 */
 	function edit($rid = null)
 	{
-		if( ! $rid || ! $this->tank_auth->is_logged_in() || ! is_owner($rid, $this->tank_auth->get_user_id()))
+		if( ! $rid || ! $this->tank_auth->is_logged_in() || ! $this->rooms_model->is_owner($rid, $this->tank_auth->get_user_id()))
 			redirect('');
 		
-		$this->data['room'] = $this->rooms_model->get_room($rid);
+		$res = $this->rooms_model->get_room($rid);
+		if(empty($res)) show_404();
+		$this->data['room'] = $res[0]; 
+		
+		// 방 활성화\비활성화 위한 키 생성
+		$this->load->library('encrypt');
+		$this->data['sig'] = $this->encrypt->sha1($this->tank_auth->get_user_id().$this->input->server('REMOTE_ADDR'));
+		
 		if($this->input->get('section') == 'photos')
 		{
 			$this->data['photos'] = $this->rooms_model->get_all_photos($rid);
-			$this->load->view('roos/edit_photos', $this->data);
+			$this->load->view('rooms/edit_photos', $this->data);
 		} 
 		else
 		{
-			$this->load->view('roos/edit_photos', $this->data);
+			$this->load->view('rooms/edit_details', $this->data);
 		}
 	}
 
@@ -252,13 +285,36 @@ class Rooms extends MY_Controller
 	
 	function ajax_lwlb_contact($rid = null)
 	{
-		
+		$this->load->view('ajax/lwlb_contact');
 	}
 	
-	function ajax_refresh_subtotal($rid = null)
+	function ajax_refresh_subtotal()
+	{
+		$rid = $this->input->get('hosting_id');
+		$checkin = $this->input->get('checkin');
+		$checkout = $this->input->get('checkout');
+		$number_of_guets = $this->input->get('number_of_guests');
+		
+		$res = array();
+		// TODO: if available
+		$res['available'] = TRUE;
+		$res['price_per_night']='$18';
+		$res['can_instant_book']=FALSE;
+		$res['service_fee']='$2';
+		$res['nights']=1;
+		// TODO: else
+		$res['available'] = FALSE;
+		$res['reason_message'] = 'Property turend off'; //TODO if turned off;
+		
+		$res['total_price'] = '$1243'; //TODO
+		
+		echo json_encode($res);
+	}
+	
+	function ajax_check_dates($rid = null)
 	{
 		
-	}
+	} 
 	
 	function ajax_increment_impressions($rid = null)
 	{
@@ -294,7 +350,7 @@ class Rooms extends MY_Controller
 		{ 
 			$res = array(
 				'result' => 'error',
-				'message' => 'something is wrong'
+				'message' => 'An error occurred'
 			);
 		}
 		else

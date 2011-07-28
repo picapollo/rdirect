@@ -53,8 +53,8 @@
 <div id="edit_profile">
 	<div id="content" style='position:relative;'>
 		<?php if( ! $user->facebook_id): ?>
-		<div class="notice good" style="margin-top:20px;height:40px;"> 
-			<fb:login-button id="fb_login2" size="large" onlogin="jQuery('#fb_login2').hide();jQuery('#login_spinner2').show();location.href='<?=site_url('users/populate_from_facebook')?>;" perms="<?=$this->config->item('facebook_scope')?>"></fb:login-button> 
+		<div class="notice good" style="margin-top:20px;height:40px;">
+			<fb:login-button id="fb_login2" size="large" onlogin="jQuery('#fb_login2').hide();jQuery('#login_spinner2').show();location.href='<?=site_url('users/populate_from_facebook')?>';" perms="<?=$this->config->item('facebook_scope')?>"></fb:login-button>  
 			<span id="login_spinner2" style="padding-top:2px;padding-left:5px;display:none;"> 
 				<img src="<?=IMG_DIR?>/spinner.gif"/> 
 			</span> 
@@ -88,7 +88,12 @@
                             <div id="edit_image_hover" style="display:none;" onclick="show_ajax_image_box();"><p>Upload a Photo</p></div>
                                 <img border="0" width="209" height="209" src="<?=$user->picture_path?>/large.png" alt="Upload a Photo of Yourself"/>
                         </div>
-
+                        
+                        <?php if($user->has_photo): ?>
+						<a href="<?=site_url('users/delete_profile_picture/'.$user->id)?>" onclick="if (confirm('확실합니까?')) { var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;f.submit(); };return false;">[x] 현재 사진 삭제</a> 
+                            <br /> 
+                            <br /> 
+                        <?php endif; ?>
 
                         <a href="javascript:void(0);" onclick="$('ajax_upload_container').toggle();" style="font-size:16px;">Upload a Profile Photo!</a>
 
@@ -598,18 +603,6 @@
 								<input id="user_phone2_country" name="user_profile_info[phone2_country]" type="hidden" value="<?=$user->phone2_country?>" />
 							</td>
                        	</tr>
-                        
-                        
-                        <tr>
-                            <td class="label">Groups:</td>
-                            <td>
-                                <span id="group_list">
-                                    <span id='group35296'>연세대학교 (Yonsei University) [<a href="#" onclick="new Ajax.Updater('group35296', 'http://www.airbnb.com/users/leave_group?group_id=35296&amp;user_id=738217', {asynchronous:true, evalScripts:true, method:'post'}); return false;">x</a>]</span>, <span id='group96571'>한국디지털미디어고등학교 [<a href="#" onclick="new Ajax.Updater('group96571', 'http://www.airbnb.com/users/leave_group?group_id=96571&amp;user_id=738217', {asynchronous:true, evalScripts:true, method:'post'}); return false;">x</a>]</span>, <span id='group144480'>한국디지털미디어고등학교 [<a href="#" onclick="new Ajax.Updater('group144480', 'http://www.airbnb.com/users/leave_group?group_id=144480&amp;user_id=738217', {asynchronous:true, evalScripts:true, method:'post'}); return false;">x</a>]</span>
-                                </span>
-                                <a href="http://www.airbnb.com/groups" onclick="window.open(this.href);return false;">See all groups</a>
-                            </td>
-                        </tr>
-
 
                     </table>
                     

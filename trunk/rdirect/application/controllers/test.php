@@ -17,19 +17,12 @@ class Test extends MY_Controller {
 
 	public function index()
 	{
-		$this->load->model('rooms_model');
+		$res = $this->rooms_model->get_rooms_lite('1');
 		
-		$rid = 1;
+		print_r($res[0]);
 		
-		$rp = $this->db->dbprefix('room_photos');
-		$query_str = "INSERT INTO rd_room_photos (`room_id`, `order`) "
-					. "SELECT $rid, IFNULL(MAX(`rp`.`order`)+1, 1) FROM $rp AS rp WHERE rp.room_id=$rid";
-		$this->db->query(mysql_escape_string($query_str));
-		echo $this->db->insert_id();
-		
-		
-		//var_dump($this->rooms_model->star_room(AND room_id=$ridAND room_id=$rid,1, 0));
-		//echo  '<br>'.$this->db->last_query();
+		echo $this->db->last_query();
+
 	}
 	
 	function db($num = 1){
