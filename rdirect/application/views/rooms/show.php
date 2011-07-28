@@ -5,7 +5,24 @@
 
 <!-- assets -->
 	
+<?php if($is_owner): ?>
 	<?php if($this->input->get('new_hosting')): ?>
+	<div id="new_hosting_actions" class="rounded_most">
+		<h2>
+		거의 다 되었어요! <?=anchor('rooms/'.$room->id.'/edit', '객실정보 입력 완료하기');?><br><span class="smaller">다음 페이지로 가시면 사진 업로드, 숙박요금 조정, 시설 표시, 객실 설명 수정 등을 하실 수 있습니다.</span>
+		</h2>
+    </div>
+    <?php elseif (false): ?>
+    <div id="new_hosting_actions" class="rounded_most">
+		<div style="overflow: hidden; display: block; width: 960px; text-align:center;">
+			<h2>거의 다 되었어요! <?=anchor('rooms/'.$room->id.'/edit?section=photos', '객실 등록하기까지 얼마 안남았습니다.');?></h2>
+			<br />
+			<div style="width: 360px; margin: 0 auto; display:block; overflow:hidden;">
+				<?=anchor('rooms/'.$room->id.'/edit?section=photos', '객실 활성화하기', array('class'=>'v3_button', 'style'=>'width:300px;'))?>
+			</div>
+		</div>
+	</div>
+    <?php else: ?>
     <div id="new_hosting_actions" class="rounded_most">
 			<h2>
 				<?=anchor('rooms/'.$room->id.'/edit', '객실정보 수정');?> <span class="smaller">사진 올리기, 가격 바꾸기, 상세정보 수정하기</span>
@@ -19,26 +36,13 @@
 			</h2>
 			<hr class="toolbar_separator" />
 			<h2 style="font-size:24px;">
+				<?php //TODO if( ! has_photo): ?>
 				<img alt="Pink_star_on" src="<?=IMG_DIR?>/icons/pink_star_on.png" /> <?=anchor('users/edit/'.$this->tank_auth->get_user_id(), '본인의 프로필 사진을 등록해 주세요')?> <span class="smaller"> 더 많은 예약을 받을 수 있을 것입니다.</span>
+				<?php //endif; ?>
 			</h2>
     </div>
-
-	<div id="new_hosting_actions" class="rounded_most">
-		<h2>
-		거의 다 되었어요! <?=anchor('rooms/'.$room->id.'/edit', '객실정보 입력 완료하기');?><br><span class="smaller">다음 페이지로 가시면 사진 업로드, 숙박요금 조정, 시설 표시, 객실 설명 수정 등을 하실 수 있습니다.</span>
-		</h2>
-    </div>
-    
-	<div id="new_hosting_actions" class="rounded_most">
-		<div style="overflow: hidden; display: block; width: 960px; text-align:center;">
-			<h2>거의 다 되었어요! <?=anchor('rooms/'.$room->id.'/edit?section=photos', '객실 등록하기까지 얼마 안남았습니다.');?></h2>
-			<br />
-			<div style="width: 360px; margin: 0 auto; display:block; overflow:hidden;">
-				<?=anchor('rooms/'.$room->id.'/edit?section=photos', '객실 활성화하기', array('class'=>'v3_button', 'style'=>'width:300px;'))?>
-			</div>
-		</div>
-	</div>
-	<?php endif; ?>
+	<?php endif;?>
+<?php endif; ?>
           
 
     <div id="rooms" class="rounded_top">
@@ -66,7 +70,7 @@
         <h1><?=$room->name?> <a href="#" id="star_<?=$room->id?>" title="Add this listing as a 'favorite'" class="star_icon_container"><div class="star_icon"></div></a>
 </h1>
         <h3>
-            <?=$room->property_type_id?>
+            <?=$room->property_type // TODO: lang($room->property_type)?>
             - <?=$room->room_type?>
             <span class="middot">&middot;</span>
             <span id="display_address" class="no_float"><?=$room->address?></span>
@@ -697,16 +701,16 @@
 
 	<div id="fb-root"></div>
 
-	<script type="text/javascript">
-
+	<script type="text/javascript"> 
+ 
 			window.fbAsyncInit = function() {
 				FB.init({
-					appId  : '<?=$this->config->item('facebook_app_id')?>',
+					appId  : '02e3aebb07b4f37b41893ae7713c8fdc',
 					status : true, // check login status
 					cookie : true, // enable cookies to allow the server to access the session
 					xfbml  : true  // parse XFBML
 				});
-
+ 
 				FB.getLoginStatus(function(response) {
 					if (response && (response.status !== "unknown")) {
 						jQuery.cookie("fbs", response.status);
@@ -714,55 +718,41 @@
 						jQuery.cookie("fbs", null);
 					}
 				});
+				
+				jQuery(document).trigger('fbInit');
 			};
-
+ 
 			(function() {
 				var e = document.createElement('script');
 				e.src = document.location.protocol + '//connect.facebook.net/ko_KR/all.js';
 				e.async = true;
 				document.getElementById('fb-root').appendChild(e);
 			}());
-
-
-		  var needs_to_message = false;
-
-  jQuery(document).ready(function(){
-    $('#new_hosting_actions a').click(function(e) {
-      ajax_log('signup_funnel', 'click_new_hosting_action');
-    });
-    // init the flag widget handler too
-    jQuery('#content_flag').hide();
-
-
-    AirbnbRooms.init({inIsrael: false, 
-                      hostingId: <?=$room->id?>,
-                      nightlyPrice: "$121",
-                      weeklyPrice: "$847",
-                      monthlyPrice: "$3388"});
-
-  });
-    var ajax_already_messaged_url = base_url+"messaging/ajax_already_messaged/863305";
-    var ajax_lwlb_contact_url = base_url+"rooms/ajax_lwlb_contact/<?=$room->id?>";
-
+ 
+ 
+		    var needs_to_message = false;
+    var ajax_already_messaged_url = "/messaging/ajax_already_messaged/755884";
+    var ajax_lwlb_contact_url = "/rooms/ajax_lwlb_contact/184100";
+ 
     function action_email() {
             lwlb_show('lwlb_email');
     }
-
+ 
     function action_twitter() {
-        popup('http://twitter.com/home/?status=Stay+at+%22123%22%20in%20Sapporo,%20Japan%20-+http://www.airbnb.com%2Frooms%2F<?=$room->id?>%20via%20@airbnb%20%23Travel', 'console', 650, 1024);
+        popup('http://twitter.com/home/?status=Stay+at+%2212%22%20in%20Malang,%20Indonesia%20-+http://www.airbnb.com%2Frooms%2F184100%20via%20@airbnb%20%23Travel', 'console', 650, 1024);
     }
-
+ 
     function redo_search(opts) {
         opts = (opts === undefined ? {} : opts);
-
+ 
         opts.useAddressAsLocation = (opts.useAddressAsLocation === undefined ? true : opts.useAddressAsLocation);
-
-        var urlParts = [base_url+"search?"];
-
+ 
+        var urlParts = ["/search?"];
+ 
         if(opts.useAddressAsLocation === true){
             //need to make this backwards compatible with cached versions
             var locationParam = '';
-
+ 
             if(jQuery('#display_address')){
                 locationParam += jQuery('#display_address').html();
             } else if(jQuery('.current_crumb .locality')){ //we can remove this else if block after Oct 12, 2010 -Chris
@@ -772,38 +762,38 @@
                     locationParam += jQuery('.current_crumb .region').html();
                 }
             }
-
+ 
             if(locationParam && locationParam != 'null' && locationParam != ''){
                 urlParts = urlParts.concat(["location=", locationParam, '&sort_by=2&']);
             }
         }
-
+ 
         var checkinValue = jQuery('#checkin').val();
         var checkoutValue = jQuery('#checkout').val();
-
+ 
         if(checkinValue !== 'mm/dd/yyyy' && checkoutValue !== 'mm/dd/yyyy'){
             urlParts = urlParts.concat(["checkin=", checkinValue, "&checkout=", checkoutValue, '&']);
         }
-
+ 
         urlParts = urlParts.concat(["number_of_guests=", jQuery('#number_of_guests').val()]);
-
+ 
         url = urlParts.join('');
-
+ 
         window.location = url;
-
+ 
         return true;
     }
-
+ 
 	function change_month2() {
         var $spin = jQuery('#calendar_loading_spinner').show();
-
+ 
         // dim out the current calendar
         var $table = jQuery('#calendar_table')
           .css('opacity', .5)
           .css('filter', 'alpha(enabled=true)');
         
         // now load the calendar content
-        jQuery('#calendar_tab_variable_content').load(base_url+"rooms/calendar_tab_inner2/<?=$room->id?>", 
+        jQuery('#calendar_tab_variable_content').load("/rooms/calendar_tab_inner2/184100", 
           {cal_month: jQuery('#cal_month').val()},
           function(response) {
             $table.css('opacity', 1.0)
@@ -811,13 +801,13 @@
             $spin.hide();
         });
 	}
-
+ 
   var initial_month_loaded = false;
 	function load_initial_month() {
 	  var $spin;
     if (initial_month_loaded === false) {
       var $spin = jQuery('#calendar_loading_spinner').show();
-      jQuery('#calendar_tab_variable_content').load(base_url+"rooms/calendar_tab_inner2/<?=$room->id?>",
+      jQuery('#calendar_tab_variable_content').load("/rooms/calendar_tab_inner2/184100",
         {cal_month: jQuery('#cal_month').val()},
         function() {
           $spin.hide();
@@ -826,41 +816,51 @@
       );
     }
   }
-
+ 
   var Translations = {
     translate_button: {
       
       show_original_description : 'Show original description',
-      translate_this_description : '이 설명을 한국어로 번역하기'
+      translate_this_description : 'Translate this description to English'
     },
-    per_month: "달 마다"
+    per_month: "per month",
+    long_term: "Long Term Policy"
   }
-
+ 
     /* after pageload */
     jQuery(document).ready(function() {
         // initialize star state
-        Airbnb.Bookmarks.starredIds = [<?php
-        if($starred){
-	        echo array_shift($starred)->room_id; 
-	        foreach($starred as $rows)
-	        	echo ','.$rows->rood_id;
-		} 
-        ?>];
+        Airbnb.Bookmarks.starredIds = [];
         Airbnb.Bookmarks.initializeStarIcons();
-
-
+ 
+ 
         page3Slideshow.enableKeypressListener();
-
+ 
         //Code for back to page2
-            var backToSearchHtml = ['<div id="back_to_search_container"><a rel="nofollow" onclick="if(redo_search({useAddressAsLocation : true})){return false;}" href="/search" id="back_to_search_link">', "\uadfc\ucc98\uc758 \ub2e4\ub978 \uac1d\uc2e4 \ubcf4\uae30", '</a></div>'].join('');
-
+            var backToSearchHtml = ['<div id="back_to_search_container"><a rel="nofollow" onclick="if(redo_search({useAddressAsLocation : true})){return false;}" href="/search" id="back_to_search_link">', "View Nearby Properties", '</a></div>'].join('');
+ 
         jQuery('#the_roof').prepend(backToSearchHtml);
-
+ 
         /* target specifically a#view_other_listings_button so no conflict with input#view_other_listings_button in cached pages */
         if(jQuery('a#view_other_listings_button')){
             jQuery('a#view_other_listings_button').attr('href', jQuery('#back_to_search_link').attr('href'));
         }
         /* end code for back to page2 */
+ 
+        $('#new_hosting_actions a').click(function(e) {
+          ajax_log('signup_funnel', 'click_new_hosting_action');
+        });
+        // init the flag widget handler too
+        jQuery('#content_flag').hide();
+ 
+        AirbnbRooms.init({inIsrael: false, 
+                          hostingId: 184100,
+                          isMonthly: false,
+                          staggeredPrice: '$409',
+                          stayOffered: 2,
+                          nightlyPrice: "$12",
+                          weeklyPrice: "$84",
+                          monthlyPrice: "$336"});
 
 
         refresh_subtotal();
@@ -900,19 +900,19 @@
           jQuery('#new_translate_button_wrapper').show();
         
         jQuery.ajax({
-            url: base_url+'rooms/<?=$room->id?>/ajax_increment_impressions',
+            url: '/rooms/<?=$room->id?>/ajax_increment_impressions',
             type: 'post',
             data: {
                 param: ''
             }
         });
 
-        jQuery.get(base_url+"rooms/sublet_available/<?=$room->id?>?checkin=&checkout=", function(data) {
-          jQuery("#right_column").prepend(data);
-        });
-        jQuery("#similar_listings").load(base_url+"rooms/similar_listings/<?=$room->id?>?checkin=&checkout=&guests=");
-		jQuery.getJSON(base_url+"rooms/social_connections/<?=$room->id?>", function(data) {
-			var INITIAL_CONNECTIONS = 5;
+        //jQuery.get("/rooms/sublet_available/<?=$room->id?>?checkin=&checkout=", function(data) {
+        //  jQuery("#right_column").prepend(data);
+        //});
+        jQuery("#similar_listings").load("/rooms/similar_listings/<?=$room->id?>?checkin=&checkout=&guests=");
+		//jQuery.getJSON("/rooms/social_connections/<?=$room->id?>", function(data) {
+		/*	var INITIAL_CONNECTIONS = 5;
 			var i, len, list, $moreConnections, $moreCount, template;
 			var relationships = data.relationships;
 
@@ -941,7 +941,7 @@
 				}
 				jQuery("#social_connections").show();
 			}
-		});
+		});*/
 
     });
 

@@ -7,7 +7,7 @@
 		<title><?=$title?></title>
 		<meta name="title" content="<?=$title?>" />
 		<link rel="image_src" href="<?=IMG_DIR?>/airbnb_logo.png" />
-		<link rel="search" type="application/opensearchdescription+xml" href="<?=BASEURL?>/opensearch.xml" title="Airbnb" />
+		<link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Airbnb" />
 		<!--[if (!IE)|(gte IE 8)]><!-->
 		<link media="screen" rel="stylesheet" type="text/css" href="<?=CSS_DIR?>/common-datauri.css" />
 		<!--<![endif]-->
@@ -16,7 +16,6 @@
 		<![endif]-->
 		<link href="<?=CSS_DIR?>/korean_fonts.css" media="screen" rel="stylesheet" type="text/css" />
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-		<script type="text/javascript">var base_url = '<?=base_url()?>'</script>
 		<script src="<?=JS_DIR?>/common.js" type="text/javascript"></script>
 		<!--[if (!IE)|(gte IE 8)]><!-->
 		<link href="<?=CSS_DIR?>/signinup-datauri.css" media="screen" rel="stylesheet" type="text/css" />

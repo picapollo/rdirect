@@ -1,5 +1,5 @@
 <?php $this->load->view('header/common', $header) ?>
-<link href="http://s3.muscache.com/1311028662/stylesheets/post_room.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="<?=CSS_DIR?>/post_room.css" media="screen" rel="stylesheet" type="text/css" />
 <?php if($header['locale'] != 'en'): ?>
 <script src="<?=JS_DIR?>/jquery.ui.datepicker/jquery.ui.datepicker-<?=$header['locale']?>.min.js" type="text/javascript"></script>
 <?php endif;?>

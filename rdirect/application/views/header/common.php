@@ -12,17 +12,17 @@
     <link rel="image_src" href="<?=IMG_DIR?>/airbnb_logo.png" /> 
     <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Airbnb" /> 
     <!--[if (!IE)|(gte IE 8)]><!--> 
-	<link href="<?=CSS_PATH?>/common-datauri.css" media="screen" rel="stylesheet" type="text/css" /> 
+	<link href="<?=CSS_DIR?>/common-datauri.css" media="screen" rel="stylesheet" type="text/css" /> 
 	<!--<![endif]--> 
 	<!--[if lte IE 7]>
-	<link href="<?=CSS_PATH?>/common.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="<?=CSS_DIR?>/common.css" media="screen" rel="stylesheet" type="text/css" />
 	<![endif]--> 
-    <link href="<?=CSS_PATH?>/dashboard.css" media="screen" rel="stylesheet" type="text/css" /> 
- 
- 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script> 
+    <link href="<?=CSS_DIR?>/dashboard.css" media="screen" rel="stylesheet" type="text/css" />
+    
+	<script src="<?=JS_DIR?>/common.js" type="text/javascript"></script> 
+  
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script> 
 	
-	<script type="text/javascript">var base_url = "<?=base_url()?>"</script>
-	<script src="<?=JS_PATH?>/common.js" type="text/javascript"></script>
+	
 	<link rel="shortcut icon" href="<?=IMG_DIR?>/airbnb_favicon.ico" />
 	

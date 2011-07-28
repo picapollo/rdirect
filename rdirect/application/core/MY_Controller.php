@@ -125,8 +125,9 @@ class MY_Controller extends CI_Controller {
 		redirect($controller.'/'.$action.'?'.http_build_query($redirect_params));
 	}
 	
-	function _history_back(){
+	function _history_back($exit = TRUE){
 		echo '<script type="text/javascript">history.back()</script>';
+		exit();
 	}
 }
 

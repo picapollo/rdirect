@@ -23,28 +23,17 @@
 <!--<![endif]--> 
 <!--[if lte IE 7]>
 <link href="<?=CSS_DIR?>/edit_listing.css" media="screen" rel="stylesheet" type="text/css" />
-<![endif]--> 
+<![endif]-->
+
  
 		<link href="<?=CSS_DIR?>/korean_fonts.css" media="screen" rel="stylesheet" type="text/css" /> 
  
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script> 
-			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script> 
- 
+		<script src="<?=JS_DIR?>/common.js" type="text/javascript"></script> 
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script> 
 		<script src="<?=JS_DIR?>/jquery.ui.datepicker/jquery.ui.datepicker-ko.min.js" type="text/javascript"></script> 
  
-		<script type="text/javascript"> 
-			jQuery.noConflict();
-		</script> 
- 
-			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js"></script> 
-			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.2/scriptaculous.js"></script> 
-		<script src="<?=JS_DIR?>/calendar_date_select/calendar_date_select.js" type="text/javascript"></script> 
-<script src="<?=JS_DIR?>/calendar_date_select/format_american.js" type="text/javascript"></script> 
-<link href="<?=CSS_DIR?>/calendar_date_select/silver.css" media="screen" rel="stylesheet" type="text/css" /> 
- 
- 
-		<script src="<?=JS_DIR?>/common.js" type="text/javascript"></script> 
-		  <script src="<?=JS_DIR?>/edit_listing.js" type="text/javascript"></script> 
+		<script src="<?=JS_DIR?>/edit_listing.js" type="text/javascript"></script> 
  
   <script type="text/x-jqote-template" id="notification-item-template"> 
   <![CDATA[
@@ -136,7 +125,7 @@
     }
     
     function fetch_progress_bar_data(hosting_id) {
-      jQuery.getJSON('/rooms/ajax_update_progress_bar', { 'hosting_id' : hosting_id }, function(data) {
+      jQuery.getJSON('rooms/ajax_update_progress_bar', { 'hosting_id' : hosting_id }, function(data) {
         AirbnbDashboard.updateProgressBar(data.progress.score, data.next_steps, data.prompt, data.available);
       });
     }
@@ -154,7 +143,7 @@
       
       var the_form = jQuery('#hosting_edit_form');
       jQuery.ajax({
-        url: "/rooms/update/181683",
+        url: "/rooms/update/<?=$room->id?>",
         type: "POST",
         data: jQuery(the_form).serialize(),
         dataType: "json",
@@ -244,4 +233,4 @@
   });
  
 			</script> 
-		<link rel="shortcut icon" href="/airbnb_favicon.ico" /> 
+		<link rel="shortcut icon" href="<?=IMG_DIR?>/airbnb_favicon.ico" /> 
