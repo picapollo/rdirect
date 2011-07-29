@@ -70,18 +70,35 @@ class Rooms_model extends CI_Model {
 		}
 		return $this->db->insert_batch('room_descriptions', $data);
 	}
-	
-	function update_description($rid, $data)
+
+	/**
+	 * Update descriptions
+	 * @param int 	room_id
+	 * @param array $data[language][name, description]
+	 */	
+	function update_descriptions($rid, $data)
 	{
-		$this->db->where('room_id', $rid);
-		return $this->db->update_batch('room_descriptions', $data);	
+		$rd = $this->db->dbprefix('room_descriptions');
+		$query_str = "REPLACE INTO $rd (room_id, language, name, description) VALUES ";
+		foreach($data as $k => $i){
+			$k = mysql_real_escape_string($k);
+			$i['name'] = mysql_real_escape_string($i['name']);
+			$i['description'] = mysql_real_escape_string($i['description']);
+			$query_str .= "($rid, '$k', '{$i['name']}', '{$i['description']}'),";
+		}
+		return $this->db->query(rtrim($query_str, ','));
 	}
 	
-	function delete_description($rid, $lang)
-	{
+	/**
+	 * Delete descriptions 
+	 * @param int	room_id
+	 * @param array languages
+	 */
+	function delete_descriptions($rid, $languages)
+	{	
 		$this->db->where('room_id', $rid);
-		$this->db->where('language', $lang);
-		$this->db->delete('room_descriptions');
+		$this->db->where_in('language', $languages);
+		return $this->db->delete('room_descriptions');
 	}
 	
 	function star_room($rid, $uid, $star = TRUE){
@@ -89,7 +106,7 @@ class Rooms_model extends CI_Model {
 		
 		if($star)
 		{
-			$query_str = "INSERT IGNORE INTO `$rs` (user_id, room_id) VALUES ($uid, $rid)";
+			$query_str = "REPLACE INTO `$rs` (user_id, room_id) VALUES ($uid, $rid)";
 		}
 		else
 		{
@@ -106,9 +123,18 @@ class Rooms_model extends CI_Model {
 		return $this->db->query($query_str);
 	}
 
-	function get_descriptions($rid)
+	function get_description($rid, $lang=CURRENT_LANGUAGE)
 	{
 		$this->db->select('name, description');
+		$this->db->where(array('room_id' => $rid, 'language' => $lang));
+		$query = $this->db->get('room_descriptions');
+		return $query->result();
+	}
+
+
+	function get_all_descriptions($rid)
+	{
+		$this->db->select('language, name, description');
 		$this->db->where('room_id', $rid);
 		$query = $this->db->get('room_descriptions');
 		return $query->result();
@@ -193,10 +219,10 @@ class Rooms_model extends CI_Model {
 	
 	function is_owner($rid, $uid)
 	{
-		$this->db->select('user_id');
-		$this->db->where('id', $rid);
-		$this->db->get('rooms');
-		return $uid == $rid;
+		$this->db->select('id');
+		$this->db->where(array('id'=>$rid, 'user_id'=>$uid));
+		$query = $this->db->get('rooms');
+		return $query->num_rows() > 0;
 	}
 	
 	function count_rooms_of_user($uid)
@@ -208,6 +234,21 @@ class Rooms_model extends CI_Model {
 	function choose_language($arr, $lang=CURRENT_LANGUAGE)
 	{
 		
+	}
+	
+	function get_property_type_list()
+	{
+		return json_decode(file_get_contents('./include/static/property_types.json'));
+	}
+	
+	function get_amenity_list()
+	{
+		return json_decode(file_get_contents('./include/static/amenities.json'));
+	}
+	
+	function get_bed_type_list()
+	{
+		return json_decode(file_get_contents('./include/static/bed_types.json'));
 	}
 }
 

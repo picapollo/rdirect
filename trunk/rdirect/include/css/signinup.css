@@ -1,5 +1,5 @@
 div.selector,div.selector span,div.checker span,div.radio span,div.uploader,div.uploader span.action,div.button,div.button span{
-background-image:url(../../imagess/signinup/sprite2.png);
+background-image:url(../../images/signinup/sprite2.png);
 background-repeat:no-repeat;
 -webkit-font-smoothing:antialiased
 }
@@ -13,8 +13,8 @@ font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
 font-weight:normal;
 padding:3px;
 color:#777;
-background:url(../../imagess/signinup/bg-input-focus.png) repeat-x 0 0;
-background:url(../../imagess/signinup/bg-input.png) repeat-x 0 0;
+background:url(../../images/signinup/bg-input-focus.png) repeat-x 0 0;
+background:url(../../images/signinup/bg-input.png) repeat-x 0 0;
 border-top:solid 1px #aaa;
 border-left:solid 1px #aaa;
 border-bottom:solid 1px #ccc;
@@ -29,7 +29,7 @@ input.text:focus,input.email:focus,input.password:focus,textarea.uniform:focus{
 -moz-box-shadow:0 0 4px rgba(0,0,0,0.3);
 box-shadow:0 0 4px rgba(0,0,0,0.3);
 border-color:#999;
-background:url(../../imagess/signinup/bg-input-focus.png) repeat-x 0 0
+background:url(../../images/signinup/bg-input-focus.png) repeat-x 0 0
 }
 div.selector{
 background-position:-483px -130px;
@@ -384,7 +384,7 @@ border:none;
 cursor:default
 }
 #signup2{
-background:url(../../imagess/signinup/bg_glow.jpg) no-repeat center center
+background:url(../../images/signinup/bg_glow.jpg) no-repeat center center
 }
 #signup2 #content{
 border-top:none;
@@ -453,7 +453,7 @@ text-align:center;
 margin:0 0 20px
 }
 #section_signup h1{
-background:url(../../imagess/signinup/h_signup.gif) no-repeat right;
+background:url(../../images/signinup/h_signup.gif) no-repeat right;
 width:450px;
 text-align:left;
 margin:0 auto 20px auto
@@ -462,7 +462,7 @@ margin:0 auto 20px auto
 width:450px;
 height:371px;
 margin:0 auto 24px auto;
-background:url(../../imagess/signinup/bg_sign_in_box.png) no-repeat
+background:url(../../images/signinup/bg_sign_in_box.png) no-repeat
 }
 #signInBox a.forgotPassword{
 margin:51px 12px 5px;
@@ -471,7 +471,7 @@ display:inline-block
 .smallBox{
 width:450px;
 height:87px;
-background:url(../../imagess/signinup/bg_small_box.gif) no-repeat;
+background:url(../../images/signinup/bg_small_box.gif) no-repeat;
 margin:0 auto
 }
 .smallBox .pad{
@@ -524,7 +524,7 @@ filter:alpha(opacity=0);
 position:absolute;
 margin:-5px 0 0 -300px;
 width:200px;
-background:url(../../imagess/signinup/bg_form_alert.png) no-repeat
+background:url(../../images/signinup/bg_form_alert.png) no-repeat
 }
 .textInput label.error{
 text-shadow:0 -1px 0 #ee9292;
@@ -537,10 +537,10 @@ vertical-align:middle;
 display:table-cell
 }
 #inputEmail{
-background:url(../../imagess/signinup/input_email.gif) no-repeat
+background:url(../../images/signinup/input_email.gif) no-repeat
 }
 #inputPassword{
-background:url(../../imagess/signinup/input_password.gif) no-repeat
+background:url(../../images/signinup/input_password.gif) no-repeat
 }
 #inputConfirmPassword{
 height:auto;
@@ -550,13 +550,13 @@ margin-top:0
 width:406px;
 height:44px;
 position:relative;
-background:url(../../imagess/signinup/input_password_confirm.gif) no-repeat;
+background:url(../../images/signinup/input_password_confirm.gif) no-repeat;
 overflow:hidden;
 height:0;
 margin-top:0
 }
 #inputLast,#inputFirst{
-background:url(../../imagess/signinup/input_name.gif) no-repeat
+background:url(../../images/signinup/input_name.gif) no-repeat
 }
 .formActions{
 padding:56px 0 0 22px
@@ -579,10 +579,10 @@ float:left
 #signUpBox{
 width:450px;
 margin:0 auto 24px auto;
-background:url(../../imagess/signinup/bg_sign_up_box.png) no-repeat
+background:url(../../images/signinup/bg_sign_up_box.png) no-repeat
 }
 #signUpBox .formActions{
-background:url(../../imagess/signinup/bg_sign_up_box_bottom.png) no-repeat bottom;
+background:url(../../images/signinup/bg_sign_up_box_bottom.png) no-repeat bottom;
 width:450px;
 height:153px;
 padding:0;
@@ -600,7 +600,7 @@ color:#adadad;
 padding:15px 5px
 }
 .or-separator{
-background:url(../../imagess/fb/fb-hr.png) center 50% no-repeat;
+background:url(../../images/fb/fb-hr.png) center 50% no-repeat;
 color:#959595;
 font-size:25px;
 text-align:center;
@@ -620,7 +620,7 @@ margin:65px 0;
 width:973px;
 border:1px solid #a0a0a0;
 position:relative;
-background:url(../../imagess/login-gradient.png) left top repeat-x;
+background:url(../../images/login-gradient.png) left top repeat-x;
 -webkit-border-radius:8px;
 -moz-border-radius:8px;
 border-radius:8px;

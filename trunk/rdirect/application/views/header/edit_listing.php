@@ -96,7 +96,6 @@
       if(parseInt(jQuery("#hosting_price_native").val()) < 10){
         jQuery("#hosting_price_native").val('9');
         jQuery('#price').html('Price must be $10 or more');
-        //alert('The minimum nightly price is $10');
       }
  
       return true;
@@ -212,7 +211,10 @@
     AirbnbDashboard.init(); 
  
         AirbnbDashboard.createNotificationItem("객실 사진을 올리지 않아 현재 비활성화 되었습니다. <a href='/rooms/181683/edit?section=photos'>지금 사진을 올리세요!</a>", "error-general");
-    
+        
+	<?php if($fragment = $this->input->get('fragment')): ?>
+    	jQuery('html, body').animate({scrollTop : jQuery('#<?=$fragment?>').offset().top}, 1000)
+    <?php endif; ?>
   });
  
   var buttonContent = {

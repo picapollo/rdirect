@@ -99,3 +99,61 @@ pets['']:19
 pets['']:20
 address['street_view']:0
 update_progress:1
+
+[POST]	// hosting/pricing?hosting_id=$rid
+hosting['native_currency']:USD
+hosting['price_native']:10
+hosting['weekly_price_native']:70
+hosting['monthly_price_native']:300
+sublet_price:
+hosting['price_for_extra_person_native']:0
+hosting['guests_included']:1
+hosting['extras_price_native']:22
+hosting['security_deposit_native']:110
+hosting['cancel_policy']:3
+hosting['house_rules']:asdasf
+hosting['min_nights']:1
+hosting['max_nights']:365
+hosting['check_in_time']:
+hosting['check_out_time']:
+update_progress:1
+
+['RETURN']
+{
+		"old_availability": false,
+		"next_steps": {
+			"has_photos": {
+				"weight": 0.25,
+				"url": "/rooms/162992/edit?section=photos",
+				"description": "Upload a photo"
+			}
+		},
+		"prompt": "Your listing is 75% of the way to being active.",
+		"progress": {
+			"score": 0.75,
+			"criteria": {
+				"has_name": true,
+				"has_room_type": true,
+				"has_bedrooms": true,
+				"description_at_least_200_chars": true,
+				"has_nightly_price": true,
+				"has_photos": false,
+				"has_person_capacity": true
+			}
+		},
+		"result": "success",
+		"old_progress": {
+			"score": 0.75,
+			"criteria": {
+				"has_name": true,
+				"has_room_type": true,
+				"has_bedrooms": true,
+				"description_at_least_200_chars": true,
+				"has_nightly_price": true,
+				"has_photos": false,
+				"has_person_capacity": true
+			}
+		},
+		"available": false,
+		"redirect_to": "http://www.airbnb.com/rooms/162992"
+	}

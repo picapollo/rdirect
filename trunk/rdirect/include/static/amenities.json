@@ -1,0 +1,78 @@
+{
+	"1": {
+		"name": "smoking_allowed"
+	},
+	"2": {
+		"name": "pets_allowed"
+	},
+	"3": {
+		"name": "tv"
+	},
+	"4": {
+		"name": "cable_tv"
+	},
+	"5": {
+		"name": "internet",
+		"tooltip": "true"
+	},
+	"6": {
+		"name": "wireless_internet",
+		"tooltip": "true"
+	},
+	"7": {
+		"name": "air_conditioning"
+	},
+	"8": {
+		"name": "heating"
+	},
+	"9": {
+		"name": "elevator"
+	},
+	"10": {
+		"name": "handicap_accesible",
+		"tooltip": "true"
+	},
+	"11": {
+		"name": "pool",
+		"tooltip": "true"
+	},
+	"12": {
+		"name": "kitchen",
+		"tooltip": "true"
+	},
+	"13": {
+		"name": "parking_included"
+	},
+	"14": {
+		"name": "washer_dryer",
+		"tooltip": "true"
+	},
+	"15": {
+		"name": "doorman"
+	},
+	"16": {
+		"name": "gym",
+		"tooltip": "true"
+	},
+	"17": {
+		"name": "hot_tub"
+	},
+	"18": {
+		"name": "indoor_fireplace"
+	},
+	"19": {
+		"name": "buzzer_wireless_intercom"
+	},
+	"20": {
+		"name": "breakfast",
+		"tooltip": "true"
+	},
+	"21": {
+		"name": "family_kid_friendly",
+		"tooltip": "true"
+	},
+	"22": {
+		"name": "suitable_for_events",
+		"tooltip": "true"
+	}
+}

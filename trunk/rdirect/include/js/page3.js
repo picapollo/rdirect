@@ -185,9 +185,7 @@ function refresh_subtotal() {
 			jQuery("#book_it_enabled").hide();
 			jQuery("#book_it_disabled").show();
 			jQuery("#show_more_subtotal_info").hide()
-		}jQuery("#book_it_status").effect("pulsate", {
-			times : 1
-		}, 600)
+		}jQuery("#book_it_status").pulsate(1, 600)
 	};
 	jQuery("#book_it_button").removeAttr("disabled");
 	jQuery("#subtotal_area").find("p").hide();
@@ -199,8 +197,8 @@ function refresh_subtotal() {
 		jQuery("#book_it_enabled").show();
 		jQuery("#subtotal_area").hide();
 		jQuery("#show_more_subtotal_info").hide()
-	} else {jQuery("#subtotal, #book_it_disabled_message").html('<img src="'+base_url+'images/spinner_999999.gif" alt="" height="16" width="16" />')
-	}jQuery.getJSON(base_url+"rooms/ajax_refresh_subtotal", jQuery("#book_it_form").serialize(), a)
+	} else {jQuery("#subtotal, #book_it_disabled_message").html('<img src="/images/spinner_999999.gif" alt="" height="16" width="16" />')
+	}jQuery.getJSON("/rooms/ajax_refresh_subtotal", jQuery("#book_it_form").serialize(), a)
 }
 
 function action_contact() {
@@ -302,34 +300,43 @@ function load_google_map() {
 			})
 		}
 	} else {
-		//document.getElementById("map").innerHTML = '<iframe width="639" height="470" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="/rooms/israel_map?id=' + AirbnbRooms.hostingId + '">'
+		document.getElementById("map").innerHTML = '<iframe width="639" height="470" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="/rooms/israel_map?id=' + AirbnbRooms.hostingId + '">'
 	}
 }
 
 var AirbnbRooms = {
-	init : function(d) {
-		if(d.inIsrael) {
-			this.inIsrael = d.inIsrael
+	init : function(e) {
+		function c() {FB.Event.subscribe("edge.create", function(i) {_gaq.push(["_trackSocial", "facebook", "like", i])
+			});
+			FB.Event.subscribe("edge.remove", function(i) {_gaq.push(["_trackSocial", "facebook", "unlike", i])
+			})
 		}
-		if(d.hostingId) {
-			this.hostingId = d.hostingId
+
+		if(window.FB) {c()
+		} else {jQuery(document).bind("fbInit", c)
 		}
-		if(d.staggered !== undefined) {
-			this.staggered = d.staggered
+		if(e.inIsrael) {
+			this.inIsrael = e.inIsrael
 		}
-		if(d.staggeredPrice !== undefined) {
-			this.staggeredPrice = d.staggeredPrice
+		if(e.hostingId) {
+			this.hostingId = e.hostingId
 		}
-		if(d.stayOffered !== undefined) {
-			this.stayOffered = d.stayOffered
+		if(e.staggered !== undefined) {
+			this.staggered = e.staggered
+		}
+		if(e.staggeredPrice !== undefined) {
+			this.staggeredPrice = e.staggeredPrice
+		}
+		if(e.stayOffered !== undefined) {
+			this.stayOffered = e.stayOffered
 		}
 		this.$cancellationVal = jQuery("#cancellation_val").find("a");
 		this.originalCancellationPolicy = this.$cancellationVal.text();
 		jQuery("#book_it_default").removeClass("monthly");
 		jQuery("#per_month").hide();
 		jQuery("#includesFees").hide();
-		if(d.isMonthly !== undefined) {
-			this.isMonthly = d.isMonthly;
+		if(e.isMonthly !== undefined) {
+			this.isMonthly = e.isMonthly;
 			if(this.isMonthly === true) {jQuery("#subtotal_area").find("p").hide();
 				jQuery("#book_it_default").addClass("monthly");
 				jQuery("#per_month").show();
@@ -343,9 +350,9 @@ var AirbnbRooms = {
 			onCheckoutClose : refresh_subtotal
 		});
 		var a = jQuery("#price_amount");
-		a.data("nightly-price", d.nightlyPrice);
-		a.data("weekly-price", d.weeklyPrice);
-		a.data("monthly-price", d.monthlyPrice);
+		a.data("nightly-price", e.nightlyPrice);
+		a.data("weekly-price", e.weeklyPrice);
+		a.data("monthly-price", e.monthlyPrice);
 		if(!this.isMonthly) {a.html(a.data("nightly-price"))
 		}jQuery("#checkin").val(b);
 		jQuery("#checkout").val(b);
@@ -353,14 +360,14 @@ var AirbnbRooms = {
 			if(jQuery("#lwlb_contact").length !== 0) {setup_lwlb_contact();
 				return
 			}
-			var h = jQuery(this).after("<span class='spinner'></span>");
-			h.attr("disabled", "disabled");
+			var i = jQuery(this).after("<span class='spinner'></span>");
+			i.attr("disabled", "disabled");
 			jQuery("#question").attr("disabled", "disabled");
 			jQuery("#question_holder").css("opacity", "0.5");
 			jQuery("#lwlb_contact_container").load(ajax_lwlb_contact_url, null, function() {jQuery("#message_checkin").val(b);
 				jQuery("#message_checkout").val(b);
-				h.removeAttr("disabled");
-				h.next().remove();
+				i.removeAttr("disabled");
+				i.next().remove();
 				setup_lwlb_contact();
 				jQuery("#message_form").airbnbInputDateSpan({
 					onCheckinClose : check_availability_of_dates,
@@ -373,39 +380,39 @@ var AirbnbRooms = {
 		if(jQuery("#photos_div").is(":visible")) {initPhotoGallery()
 		}jQuery("#show_more_user_info, #user_big_pic, #user_small_pic").click(AirbnbRooms.user_info_toggle);
 		jQuery("#payment_period").change(function() {
-			var l, k, i;
-			var j = jQuery("#price_amount"), h = jQuery("#subtotal_area"), m = jQuery("#show_more_subtotal_info");
+			var m, l, j;
+			var k = jQuery("#price_amount"), i = jQuery("#subtotal_area"), n = jQuery("#show_more_subtotal_info");
 			switch(this.value) {
 				case"per_night":
-					j.html(j.data("nightly-price"));
+					k.html(k.data("nightly-price"));
 					break;
 				case"per_week":
-					k = j.data("weekly-price");
-					i = parseInt(k.match(/\d+/), 10);
-					j.html(k.replace(/(\d+)/, i));
+					l = k.data("weekly-price");
+					j = parseInt(l.match(/\d+/), 10);
+					k.html(l.replace(/(\d+)/, j));
 					break;
 				case"per_month":
 					if(AirbnbRooms.stayOffered === 1 || AirbnbRooms.stayOffered === 2) {
-						k = "" + AirbnbRooms.staggeredPrice
+						l = "" + AirbnbRooms.staggeredPrice
 					} else {
-						k = j.data("monthly-price")
+						l = k.data("monthly-price")
 					}
-					i = parseInt(k.match(/\d+/), 10);
-					j.html(k.replace(/(\d+)/, i));
+					j = parseInt(l.match(/\d+/), 10);
+					k.html(l.replace(/(\d+)/, j));
 					break;
 				default:
 					break
 			}
 		});
-		var f = jQuery("#videos_div embed");
-		f.before('<param name="wmode" value="opaque" />');
-		f.attr("wmode", "opaque");
+		var g = jQuery("#videos_div embed");
+		g.before('<param name="wmode" value="opaque" />');
+		g.attr("wmode", "opaque");
 		jQuery("#reputation .pagination a").live("click", function() {
-			var h = jQuery(this);
-			h.parent().append('<img src="'+base_url+'"/images/spinner.gif" class="spinner" height="16" width="16" alt="" />');
+			var i = jQuery(this);
+			i.parent().append('<img src="/images/spinner.gif" class="spinner" height="16" width="16" alt="" />');
 			jQuery.ajax({
-				url : h.attr("href"),
-				success : function(i) {h.closest(".rep_content").html(i);
+				url : i.attr("href"),
+				success : function(j) {i.closest(".rep_content").html(j);
 					jQuery("html, body").animate({
 						scrollTop : jQuery("#reputation").offset().top
 					}, "slow")
@@ -413,16 +420,16 @@ var AirbnbRooms = {
 			});
 			return false
 		});
-		var e = jQuery("#reputation");
-		var c = e.data("review-type");
-		var g = e.data("hosting-id");
-		switch(c) {
+		var f = jQuery("#reputation");
+		var d = f.data("review-type");
+		var h = f.data("hosting-id");
+		switch(d) {
 			case"listing_has_reviews":
 				select_tab("rep", "this_hosting_reviews", jQuery("#this_hosting_reviews_link"));
 				jQuery.ajax({
-					url : base_url+"rooms/this_hosting_reviews_first/" + g,
-					success : function(j, h, i) {
-						if(jQuery.trim(j) !== "") {jQuery("#this_hosting_reviews").html(j)
+					url : "/rooms/this_hosting_reviews_first/" + h,
+					success : function(k, i, j) {
+						if(jQuery.trim(k) !== "") {jQuery("#this_hosting_reviews").html(k)
 						}
 					}
 				});
@@ -430,9 +437,9 @@ var AirbnbRooms = {
 			case"host_has_reviews":
 				select_tab("rep", "other_hosting_reviews", jQuery("#other_hosting_reviews_link"));
 				jQuery.ajax({
-					url : base_url+"rooms/other_hosting_reviews_first/" + g,
-					success : function(h) {
-						if(jQuery.trim(h) !== "") {jQuery("#other_hosting_reviews").html(h)
+					url : "/rooms/other_hosting_reviews_first/" + h,
+					success : function(i) {
+						if(jQuery.trim(i) !== "") {jQuery("#other_hosting_reviews").html(i)
 						}
 					}
 				});
@@ -445,6 +452,10 @@ var AirbnbRooms = {
 				select_tab("rep", "this_hosting_reviews", jQuery("#this_hosting_reviews_link"));
 				break
 		}
+		if(e.otherHostingPrices) {jQuery("#my_other_listings").show();
+			jQuery.each(e.otherHostingPrices, function(j, i) {jQuery("#hosting_"+j+"_nightly_price").html(i)
+			})
+		}
 	},
 	Helper : {},
 	user_info_toggle : function() {
@@ -456,7 +467,7 @@ var AirbnbRooms = {
 		jQuery("#user_info_small, #user_info_big").toggle()
 	},
 	video_profile_init : function(g) {
-		/*var b = jQuery("#play_button_small"), d = jQuery("#user_small_pic"), f = jQuery("#play_button_big"), c = jQuery("#user_big_pic"), e = jQuery("#video_wrapper"), a = jQuery("<iframe title='AirbnbTV Video Player' src='http://tv.airbnb.com/player/" + g + "/autoplay' width='225' height='225' frameborder='0'></iframe>");
+		var b = jQuery("#play_button_small"), d = jQuery("#user_small_pic"), f = jQuery("#play_button_big"), c = jQuery("#user_big_pic"), e = jQuery("#video_wrapper"), a = jQuery("<iframe title='AirbnbTV Video Player' src='http://tv.airbnb.com/player/" + g + "/autoplay' width='225' height='225' frameborder='0'></iframe>");
 		Helper = {
 			play_video : function() {f.hide();
 				c.hide();
@@ -485,7 +496,7 @@ var AirbnbRooms = {
 			AirbnbRooms.user_info_toggle()
 		});
 		f.click(function() {Helper.play_video()
-		})*/
+		})
 	},
 	staggered : false,
 	hostingLengthType : 0,
@@ -2361,7 +2372,7 @@ var AirbnbRooms = {
 	i.Picture.prototype = {
 		cache : {},
 		add : function(z) {
-			var w = 0, v = this, y = new Image(), u = function() {e(y).load(x).attr("src", base_url+"images/page3/v3/room_default_no_photos.jpg")
+			var w = 0, v = this, y = new Image(), u = function() {e(y).load(x).attr("src", "/images/page3/v3/room_default_no_photos.jpg")
 			}, x = function() {
 				newSrc = e(this).attr("src");
 				if((!this.width || !this.height) && w < 1000) {
@@ -2659,7 +2670,7 @@ var AirbnbRooms = {
 					position : this.position,
 					map : this.map,
 					zIndex : 10,
-					icon : new google.maps.MarkerImage(base_url+"images/guidebook/pin_home.png", null, null, new google.maps.Point(14, 32))
+					icon : new google.maps.MarkerImage("/images/guidebook/pin_home.png", null, null, new google.maps.Point(14, 32))
 				})
 			}
 			if(this.onMarkerClick) {google.maps.event.addListener(this.marker, "click", function() {h.onMarkerClick(h)
@@ -2702,3 +2713,20 @@ if(!window.AirbnbConstants) {
 	var AirbnbConstants = {}
 }
 AirbnbConstants.MapCircleSizes = [4096000, 2048000, 1024000, 512000, 256000, 128000, 64000, 32000, 16000, 8000, 4000, 2000, 1000, 500, 500, 500, 500, 500, 500, 500];
+this.tooltip = function() {
+	xOffset = 20;
+	yOffset = 20;
+	jQuery("a.tooltip").hover(function(a) {
+		this.t = this.title;
+		this.title = "";
+		jQuery("body").append("<p id='tooltip'>" + this.t.replace(/\n/g, "<br />") + "</p>");
+		jQuery("#tooltip").css("top",(a.pageY-xOffset)+"px").css("left",(a.pageX+yOffset)+"px").fadeIn("fast")
+	}, function() {
+		this.title = this.t;
+		jQuery("#tooltip").remove()
+	});
+	jQuery("a.tooltip").mousemove(function(a) {jQuery("#tooltip").css("top",(a.pageY-xOffset)+"px").css("left", (a.pageX + yOffset) + "px")
+	})
+};
+jQuery(document).ready(function() {tooltip()
+});
