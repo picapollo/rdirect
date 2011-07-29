@@ -249,3 +249,344 @@ ERROR - 2011-07-29 06:11:10 --> 404 Page Not Found --> images
 ERROR - 2011-07-29 06:11:30 --> 404 Page Not Found --> images
 ERROR - 2011-07-29 06:12:57 --> 404 Page Not Found --> images
 ERROR - 2011-07-29 06:13:03 --> 404 Page Not Found --> images
+ERROR - 2011-07-29 06:27:34 --> 404 Page Not Found --> images
+ERROR - 2011-07-29 06:27:37 --> 404 Page Not Found --> images
+ERROR - 2011-07-29 06:27:42 --> 404 Page Not Found --> images
+ERROR - 2011-07-29 06:27:53 --> 404 Page Not Found --> images
+ERROR - 2011-07-29 06:28:15 --> 404 Page Not Found --> images
+ERROR - 2011-07-29 06:29:21 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:29:26 --> 404 Page Not Found --> p.js
+ERROR - 2011-07-29 06:29:31 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:29:51 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:31:36 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:31:37 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:31:43 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:31:44 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:31:44 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:31:50 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:32:46 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:34:52 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:34:58 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:34:58 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:34:58 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:34:59 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:35:01 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:35:02 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:35:04 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:35:19 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:35:19 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:35:20 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:35:21 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:35:22 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:35:23 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:35:24 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:35:24 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:35:35 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:35:36 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:35:37 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:35:37 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:35:38 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:35:39 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:35:40 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:35:41 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:35:42 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:35:42 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:35:43 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:35:44 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:35:45 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:35:46 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:36:00 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:36:00 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:36:01 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:36:02 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:36:03 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:36:03 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:36:04 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:37:20 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:37:31 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:37:39 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:37:41 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:37:44 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:37:45 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:38:05 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:38:06 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:38:13 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:38:13 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:38:29 --> Severity: Notice  --> Undefined variable: query /home/guersam/www/rdirect/application/models/rooms_model.php 199
+ERROR - 2011-07-29 06:38:29 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:38:37 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:38:38 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:38:46 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:38:46 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 06:38:52 --> 404 Page Not Found --> images
+ERROR - 2011-07-29 06:38:52 --> 404 Page Not Found --> mages
+ERROR - 2011-07-29 06:38:53 --> 404 Page Not Found --> mages
+ERROR - 2011-07-29 06:39:31 --> 404 Page Not Found --> images
+ERROR - 2011-07-29 06:39:31 --> 404 Page Not Found --> mages
+ERROR - 2011-07-29 06:39:32 --> 404 Page Not Found --> mages
+ERROR - 2011-07-29 06:42:42 --> 404 Page Not Found --> mages
+ERROR - 2011-07-29 06:42:44 --> 404 Page Not Found --> mages
+ERROR - 2011-07-29 06:44:48 --> 404 Page Not Found --> mages
+ERROR - 2011-07-29 06:44:50 --> 404 Page Not Found --> mages
+ERROR - 2011-07-29 06:44:56 --> 404 Page Not Found --> imagesspinner.gif
+ERROR - 2011-07-29 06:44:57 --> 404 Page Not Found --> imagesguidebook
+ERROR - 2011-07-29 06:50:05 --> Query error: Unknown column 'square_feet' in 'field list'
+ERROR - 2011-07-29 07:08:30 --> 404 Page Not Found --> textinputassistant
+ERROR - 2011-07-29 07:08:30 --> 404 Page Not Found --> intl
+ERROR - 2011-07-29 07:08:30 --> 404 Page Not Found --> images
+ERROR - 2011-07-29 07:08:30 --> 404 Page Not Found --> extern_js
+ERROR - 2011-07-29 07:08:30 --> 404 Page Not Found --> images
+ERROR - 2011-07-29 07:08:30 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:38:43 --> Severity: Warning  --> array_merge(): Argument #1 is not an array /home/guersam/www/rdirect/application/controllers/rooms.php 138
+ERROR - 2011-07-29 07:38:43 --> Severity: Warning  --> implode(): Invalid arguments passed /home/guersam/www/rdirect/application/controllers/rooms.php 138
+ERROR - 2011-07-29 07:40:14 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:40:14 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:40:16 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:40:16 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:40:19 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:40:19 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:40:27 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:40:27 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:40:38 --> 404 Page Not Found --> images
+ERROR - 2011-07-29 07:40:44 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:40:44 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:40:57 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:40:57 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:41:00 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:41:01 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:41:07 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:41:07 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:43:16 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:43:21 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:43:21 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:43:22 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:44:01 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:45:08 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:45:21 --> 404 Page Not Found --> r
+ERROR - 2011-07-29 07:45:21 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:45:23 --> 404 Page Not Found --> images
+ERROR - 2011-07-29 07:45:26 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:45:30 --> 404 Page Not Found --> images
+ERROR - 2011-07-29 07:45:34 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:45:34 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:45:36 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:45:37 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:46:03 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:46:04 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:46:20 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:46:20 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:46:21 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:46:21 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:46:26 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:46:26 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:46:30 --> 404 Page Not Found --> images
+ERROR - 2011-07-29 07:46:33 --> 404 Page Not Found --> edit
+ERROR - 2011-07-29 07:46:33 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:46:35 --> 404 Page Not Found --> edit
+ERROR - 2011-07-29 07:46:35 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:47:15 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:47:15 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:47:17 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:47:18 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:47:19 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:47:19 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:47:20 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:47:20 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:47:21 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:47:22 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:47:24 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:47:24 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:47:26 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:47:26 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:47:29 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:47:29 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:47:32 --> 404 Page Not Found --> images
+ERROR - 2011-07-29 07:47:35 --> 404 Page Not Found --> images
+ERROR - 2011-07-29 07:47:52 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:47:52 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:48:20 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:48:20 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:48:22 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:48:23 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:49:02 --> Severity: Notice  --> Undefined offset: 0 /home/guersam/www/rdirect/application/controllers/rooms.php 233
+ERROR - 2011-07-29 07:49:02 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/header/edit_listing.php 145
+ERROR - 2011-07-29 07:49:02 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_nav.php 7
+ERROR - 2011-07-29 07:49:02 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_nav.php 10
+ERROR - 2011-07-29 07:49:02 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_nav.php 10
+ERROR - 2011-07-29 07:49:02 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_nav.php 12
+ERROR - 2011-07-29 07:49:02 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_nav.php 12
+ERROR - 2011-07-29 07:49:02 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_nav.php 12
+ERROR - 2011-07-29 07:49:02 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_nav.php 15
+ERROR - 2011-07-29 07:49:02 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_nav.php 29
+ERROR - 2011-07-29 07:49:02 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_nav.php 35
+ERROR - 2011-07-29 07:49:02 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_nav.php 55
+ERROR - 2011-07-29 07:49:02 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_nav.php 58
+ERROR - 2011-07-29 07:49:02 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_nav.php 61
+ERROR - 2011-07-29 07:49:02 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_nav.php 64
+ERROR - 2011-07-29 07:49:02 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_details.php 15
+ERROR - 2011-07-29 07:49:02 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_details.php 30
+ERROR - 2011-07-29 07:49:02 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_details.php 30
+ERROR - 2011-07-29 07:49:02 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_details.php 30
+ERROR - 2011-07-29 07:49:02 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_details.php 30
+ERROR - 2011-07-29 07:49:02 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_details.php 30
+ERROR - 2011-07-29 07:49:02 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_details.php 30
+ERROR - 2011-07-29 07:49:02 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_details.php 30
+ERROR - 2011-07-29 07:49:02 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_details.php 30
+ERROR - 2011-07-29 07:49:02 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_details.php 30
+ERROR - 2011-07-29 07:49:02 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_details.php 30
+ERROR - 2011-07-29 07:49:02 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_details.php 30
+ERROR - 2011-07-29 07:49:02 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_details.php 30
+ERROR - 2011-07-29 07:49:02 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:49:59 --> Severity: Notice  --> Undefined offset: 0 /home/guersam/www/rdirect/application/controllers/rooms.php 234
+ERROR - 2011-07-29 07:49:59 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/header/edit_listing.php 145
+ERROR - 2011-07-29 07:49:59 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_nav.php 7
+ERROR - 2011-07-29 07:49:59 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_nav.php 10
+ERROR - 2011-07-29 07:49:59 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_nav.php 10
+ERROR - 2011-07-29 07:49:59 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_nav.php 12
+ERROR - 2011-07-29 07:49:59 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_nav.php 12
+ERROR - 2011-07-29 07:49:59 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_nav.php 12
+ERROR - 2011-07-29 07:49:59 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_nav.php 15
+ERROR - 2011-07-29 07:49:59 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_nav.php 29
+ERROR - 2011-07-29 07:49:59 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_nav.php 35
+ERROR - 2011-07-29 07:49:59 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_nav.php 55
+ERROR - 2011-07-29 07:49:59 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_nav.php 58
+ERROR - 2011-07-29 07:49:59 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_nav.php 61
+ERROR - 2011-07-29 07:49:59 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_nav.php 64
+ERROR - 2011-07-29 07:49:59 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_details.php 15
+ERROR - 2011-07-29 07:49:59 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_details.php 30
+ERROR - 2011-07-29 07:49:59 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_details.php 30
+ERROR - 2011-07-29 07:49:59 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_details.php 30
+ERROR - 2011-07-29 07:49:59 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_details.php 30
+ERROR - 2011-07-29 07:49:59 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_details.php 30
+ERROR - 2011-07-29 07:49:59 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_details.php 30
+ERROR - 2011-07-29 07:49:59 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_details.php 30
+ERROR - 2011-07-29 07:49:59 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_details.php 30
+ERROR - 2011-07-29 07:49:59 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_details.php 30
+ERROR - 2011-07-29 07:49:59 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_details.php 30
+ERROR - 2011-07-29 07:49:59 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_details.php 30
+ERROR - 2011-07-29 07:49:59 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_details.php 30
+ERROR - 2011-07-29 07:49:59 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:56:22 --> Severity: Notice  --> Undefined variable: pers /home/guersam/www/rdirect/application/controllers/rooms.php 141
+ERROR - 2011-07-29 07:56:34 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:56:34 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:56:38 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:56:38 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:57:00 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:57:00 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:57:03 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:57:03 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:57:26 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:57:26 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 07:57:42 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 07:57:42 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 08:03:11 --> 404 Page Not Found --> 
+ERROR - 2011-07-29 08:03:12 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 08:03:29 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 08:03:32 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 08:03:33 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 08:17:02 --> Severity: Warning  --> file_get_contents(./include/static/property_list.json): failed to open stream: No such file or directory /home/guersam/www/rdirect/application/models/rooms_model.php 224
+ERROR - 2011-07-29 08:17:02 --> Severity: Warning  --> Invalid argument supplied for foreach() /home/guersam/www/rdirect/application/views/rooms/edit_details.php 27
+ERROR - 2011-07-29 08:17:21 --> Severity: Warning  --> Invalid argument supplied for foreach() /home/guersam/www/rdirect/application/views/rooms/edit_details.php 27
+ERROR - 2011-07-29 08:18:22 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 08:18:23 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 08:18:36 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 08:18:49 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 08:19:31 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 08:45:56 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 08:48:12 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 09:07:41 --> Severity: Notice  --> Undefined variable: amenities /home/guersam/www/rdirect/application/views/rooms/edit_details.php 309
+ERROR - 2011-07-29 09:12:22 --> 404 Page Not Found --> rooms/2
+ERROR - 2011-07-29 09:13:07 --> 404 Page Not Found --> rooms/2
+ERROR - 2011-07-29 09:15:19 --> Severity: Notice  --> Use of undefined constant tooltip - assumed 'tooltip' /home/guersam/www/rdirect/application/views/rooms/edit_details.php 319
+ERROR - 2011-07-29 09:15:19 --> Severity: Notice  --> Use of undefined constant tooltip - assumed 'tooltip' /home/guersam/www/rdirect/application/views/rooms/edit_details.php 319
+ERROR - 2011-07-29 09:15:19 --> Severity: Notice  --> Use of undefined constant tooltip - assumed 'tooltip' /home/guersam/www/rdirect/application/views/rooms/edit_details.php 319
+ERROR - 2011-07-29 09:15:19 --> Severity: Notice  --> Use of undefined constant tooltip - assumed 'tooltip' /home/guersam/www/rdirect/application/views/rooms/edit_details.php 319
+ERROR - 2011-07-29 09:15:19 --> Severity: Notice  --> Use of undefined constant tooltip - assumed 'tooltip' /home/guersam/www/rdirect/application/views/rooms/edit_details.php 319
+ERROR - 2011-07-29 09:15:19 --> Severity: Notice  --> Use of undefined constant tooltip - assumed 'tooltip' /home/guersam/www/rdirect/application/views/rooms/edit_details.php 319
+ERROR - 2011-07-29 09:15:19 --> Severity: Notice  --> Use of undefined constant tooltip - assumed 'tooltip' /home/guersam/www/rdirect/application/views/rooms/edit_details.php 319
+ERROR - 2011-07-29 09:15:19 --> Severity: Notice  --> Use of undefined constant tooltip - assumed 'tooltip' /home/guersam/www/rdirect/application/views/rooms/edit_details.php 319
+ERROR - 2011-07-29 09:15:19 --> Severity: Notice  --> Use of undefined constant tooltip - assumed 'tooltip' /home/guersam/www/rdirect/application/views/rooms/edit_details.php 319
+ERROR - 2011-07-29 09:15:19 --> Severity: Notice  --> Use of undefined constant tooltip - assumed 'tooltip' /home/guersam/www/rdirect/application/views/rooms/edit_details.php 319
+ERROR - 2011-07-29 09:35:48 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 09:36:24 --> Could not find the language line ""
+ERROR - 2011-07-29 09:36:24 --> Could not find the language line ""
+ERROR - 2011-07-29 09:36:24 --> Could not find the language line ""
+ERROR - 2011-07-29 09:36:24 --> Could not find the language line ""
+ERROR - 2011-07-29 09:36:24 --> Could not find the language line ""
+ERROR - 2011-07-29 09:36:24 --> Could not find the language line ""
+ERROR - 2011-07-29 09:36:24 --> Could not find the language line ""
+ERROR - 2011-07-29 09:36:24 --> Could not find the language line ""
+ERROR - 2011-07-29 09:36:24 --> Could not find the language line ""
+ERROR - 2011-07-29 09:36:24 --> Could not find the language line ""
+ERROR - 2011-07-29 09:36:24 --> Could not find the language line ""
+ERROR - 2011-07-29 09:36:24 --> Could not find the language line ""
+ERROR - 2011-07-29 09:36:24 --> Could not find the language line ""
+ERROR - 2011-07-29 09:36:24 --> Could not find the language line ""
+ERROR - 2011-07-29 09:36:24 --> Could not find the language line ""
+ERROR - 2011-07-29 09:36:24 --> Could not find the language line ""
+ERROR - 2011-07-29 09:36:24 --> Could not find the language line ""
+ERROR - 2011-07-29 09:36:24 --> Could not find the language line ""
+ERROR - 2011-07-29 09:36:24 --> Could not find the language line ""
+ERROR - 2011-07-29 09:36:24 --> Could not find the language line ""
+ERROR - 2011-07-29 09:36:24 --> Could not find the language line ""
+ERROR - 2011-07-29 09:36:24 --> Could not find the language line ""
+ERROR - 2011-07-29 09:36:51 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 09:44:59 --> Severity: Notice  --> Undefined variable: description /home/guersam/www/rdirect/application/controllers/rooms.php 251
+ERROR - 2011-07-29 09:46:14 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 09:46:24 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 09:46:37 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 09:46:37 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 09:46:38 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 09:46:38 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 09:46:38 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 09:46:38 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 09:46:39 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 09:46:39 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 09:46:39 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 09:46:39 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 10:11:32 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_details.php 72
+ERROR - 2011-07-29 10:11:32 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_details.php 72
+ERROR - 2011-07-29 10:11:32 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_details.php 72
+ERROR - 2011-07-29 10:11:32 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_details.php 72
+ERROR - 2011-07-29 11:07:44 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 11:08:02 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 11:08:26 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 11:11:04 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 11:11:07 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 11:11:07 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 11:11:07 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 11:11:08 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 11:11:08 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 11:11:08 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 11:11:08 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 11:11:09 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 11:11:09 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 11:18:45 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 11:18:56 --> Severity: Notice  --> Undefined variable: j /home/guersam/www/rdirect/application/views/rooms/edit_details.php 66
+ERROR - 2011-07-29 11:18:56 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_details.php 66
+ERROR - 2011-07-29 11:18:56 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_details.php 66
+ERROR - 2011-07-29 11:18:56 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_details.php 66
+ERROR - 2011-07-29 11:18:56 --> Severity: Notice  --> Trying to get property of non-object /home/guersam/www/rdirect/application/views/rooms/edit_details.php 66
+ERROR - 2011-07-29 11:19:11 --> Severity: Notice  --> Undefined variable: j /home/guersam/www/rdirect/application/views/rooms/edit_details.php 67
+ERROR - 2011-07-29 11:19:11 --> Severity: Notice  --> Undefined variable: j /home/guersam/www/rdirect/application/views/rooms/edit_details.php 85
+ERROR - 2011-07-29 11:19:11 --> Severity: Notice  --> Undefined variable: j /home/guersam/www/rdirect/application/views/rooms/edit_details.php 107
+ERROR - 2011-07-29 11:19:11 --> Severity: Notice  --> Undefined variable: j /home/guersam/www/rdirect/application/views/rooms/edit_details.php 67
+ERROR - 2011-07-29 11:19:11 --> Severity: Notice  --> Undefined variable: j /home/guersam/www/rdirect/application/views/rooms/edit_details.php 85
+ERROR - 2011-07-29 11:19:11 --> Severity: Notice  --> Undefined variable: j /home/guersam/www/rdirect/application/views/rooms/edit_details.php 107
+ERROR - 2011-07-29 11:19:11 --> Severity: Notice  --> Undefined variable: j /home/guersam/www/rdirect/application/views/rooms/edit_details.php 67
+ERROR - 2011-07-29 11:19:11 --> Severity: Notice  --> Undefined variable: j /home/guersam/www/rdirect/application/views/rooms/edit_details.php 85
+ERROR - 2011-07-29 11:19:11 --> Severity: Notice  --> Undefined variable: j /home/guersam/www/rdirect/application/views/rooms/edit_details.php 107
+ERROR - 2011-07-29 11:19:11 --> Severity: Notice  --> Undefined variable: j /home/guersam/www/rdirect/application/views/rooms/edit_details.php 67
+ERROR - 2011-07-29 11:19:11 --> Severity: Notice  --> Undefined variable: j /home/guersam/www/rdirect/application/views/rooms/edit_details.php 85
+ERROR - 2011-07-29 11:19:11 --> Severity: Notice  --> Undefined variable: j /home/guersam/www/rdirect/application/views/rooms/edit_details.php 107
+ERROR - 2011-07-29 11:23:19 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ERROR - 2011-07-29 11:25:18 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ERROR - 2011-07-29 11:30:43 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 11:30:49 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 11:32:35 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ERROR - 2011-07-29 12:19:41 --> Severity: Notice  --> Undefined property: CI_Loader::$pets /home/guersam/www/rdirect/application/views/rooms/edit_details.php 325
+ERROR - 2011-07-29 12:19:41 --> Severity: Notice  --> Undefined property: CI_Loader::$pets /home/guersam/www/rdirect/application/views/rooms/edit_details.php 337
+ERROR - 2011-07-29 12:19:41 --> Severity: Notice  --> Undefined property: CI_Loader::$pets /home/guersam/www/rdirect/application/views/rooms/edit_details.php 341
+ERROR - 2011-07-29 12:19:41 --> Severity: Notice  --> Undefined property: CI_Loader::$pets /home/guersam/www/rdirect/application/views/rooms/edit_details.php 345
+ERROR - 2011-07-29 12:45:42 --> 404 Page Not Found --> calendar/single
+ERROR - 2011-07-29 12:45:42 --> 404 Page Not Found --> favicon.ico

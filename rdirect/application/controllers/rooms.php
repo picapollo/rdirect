@@ -81,7 +81,7 @@ class Rooms extends MY_Controller
 				 * 	새로 만드는 경우
 				 */
 				$this->load->library('geocoder');
-				$query_data['address'] = $this->geocoder->geocode_by_address($this->input->post('location_search'));
+				$address['address'] = $this->geocoder->geocode_by_address($this->input->post('location_search'));
 				
 				/* 임시 데이터 생성 */
 				$this->load->library('encrypt');
@@ -134,12 +134,45 @@ class Rooms extends MY_Controller
 			
 			$hosting = $this->input->post('hosting');
 			$hosting_descriptions = $this->input->post('hosting_descriptions');
-			$amenities = $this->input->post('amenities');
+			$amenities = $this->input->post('amenities'); 
 			$pets = $this->input->post('pets');
 			
-			
+			if( ! empty($amenities)) $hosting['amenities'] = implode(',', $amenities);
+			if( ! empty($pets)) $hosting['pets'] = implode(',', $pets);
 			
 			$this->rooms_model->update_room($rid, $hosting);
+			
+			$delete_lang = array();
+			foreach($hosting_descriptions as $k => $i)
+			{
+				if($i['delete'] == 'true')
+				{
+					$delete_lang[] = $k;
+					unset($hosting_descriptions[$k]);
+				}
+				else
+				{
+					if(empty($i['name']) || strlen($i['name']) > 35 || empty($i['description']))
+					{
+						unset($hosting_descriptions[$k]);
+					}
+				}
+			}
+			
+			$this->rooms_model->update_descriptions($rid, $hosting_descriptions);
+			$this->rooms_model->delete_descriptions($rid, $delete_lang);
+						
+			// TODO: AJAX 결과값 생성 
+			$res = array();
+			$res['available'] = true;
+			$res['redirect_to'] = site_url('rooms/'.$rid);
+			$res['result'] = 'success';
+			$res['prompt'] = $this->db->last_query();
+			
+			// TODO: $res['result'] = 'error';
+			
+			
+			echo json_encode($res);
 		}
 	}
 	
@@ -220,6 +253,7 @@ class Rooms extends MY_Controller
 		if( ! $rid || ! $this->tank_auth->is_logged_in() || ! $this->rooms_model->is_owner($rid, $this->tank_auth->get_user_id()))
 			redirect('');
 		
+		// 방 정보 가져오기
 		$res = $this->rooms_model->get_room($rid);
 		if(empty($res)) show_404();
 		$this->data['room'] = $res[0]; 
@@ -235,6 +269,12 @@ class Rooms extends MY_Controller
 		} 
 		else
 		{
+			$descriptions = $this->rooms_model->get_all_descriptions($rid);
+			$this->data['descriptions'] = ( ! $descriptions) ? array() : $descriptions; 
+			$this->data['property_type_list'] = $this->rooms_model->get_property_type_list();
+			$this->data['amenity_list'] = $this->rooms_model->get_amenity_list();
+			$this->data['bed_type_list'] = $this->rooms_model->get_bed_type_list();
+			$this->load->language('hosting/amenities');
 			$this->load->view('rooms/edit_details', $this->data);
 		}
 	}

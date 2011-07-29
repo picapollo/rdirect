@@ -517,7 +517,6 @@
 				FB.login(function(g) {
 					if(g.session) {
 						f.addClass("loading");
-						c("<input/>", {name: 'fb_access_token', type:'hidden', value: g.session.access_token}).appendTo("#facebook_form");
 						c("#facebook_form").submit();
 						d.disableSubmit()
 					}

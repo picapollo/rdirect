@@ -63,7 +63,7 @@ var PostRoom = {
 		Airbnb.Utils.initHowItWorksLightbox(
 			'#how_it_works_vid_screenshot', PostRoom.localized_hiw_video_code);
 
-		$('#post_room_submit_button').click(function(e) {
+		$('a#post_room_submit_button').click(function(e) {
 			$('#new_room_form').submit();
 			e.preventDefault();
 		});
@@ -190,6 +190,24 @@ var PostRoom = {
 		if ($('#promo_code').val() === '') {
 			$('#promo_fields').hide();
 		}
+		
+		jQuery('#apply_promo').click(function(e){
+			e.preventDefault();
+
+			$('#promo_reward').hide();
+			$('#promo_error').hide();
+			
+			var serialized_params = [$("#promo_code").serialize(), $("#address_lat").serialize(), $("#address_lng").serialize()].join("&");
+			jQuery.getJSON('/rooms/ajax_check_promo', serialized_params, function(data) {
+				if (data['success'] == true) {
+					$('#promo_reward').show();
+					$('#promo_reward-description').html(data['reason_message']);
+				} else {
+					$('#promo_error').show();
+					$('#promo_error-description').html(data['reason_message']);
+				}
+			});
+		});
 	},
 
 	initSublets: function(location) {
@@ -229,7 +247,7 @@ var PostRoom = {
 			position: location,
 			map: map,
 			icon: new google.maps.MarkerImage(
-				base_url+"images/guidebook/pin_home.png",
+				"/images/guidebook/pin_home.png",
 				null,
 				null,
 				new google.maps.Point(14, 32))
@@ -424,23 +442,50 @@ var PostRoom = {
 			delay: 300,
 			source: function(request, response) {
 				var reqObj = {address: request.term};
-
 				geocoder.geocode(reqObj, function(results, status) {
-					var suggestions;
+					var first, suggestions;
 
 					if (status === google.maps.GeocoderStatus.OK) {
-						suggestions = jQuery.map(results, function(res) {
-							return {'label': res.formatted_address, 'value': res};
-						});
+						first = results.length > 0 && results[0];
+						if (first && PostRoom.matchesResultType(first.types, ["country", "locality"]) &&
+								first.address_components[0].long_name === "Israel" ||
+								(first.address_components.length > 1 && first.address_components[1].long_name === "Israel")) {
+							$.get("/geocoder/atlas_ct", reqObj, function(atlasResults, atlasStatus) {
+								if (atlasResults.status === google.maps.GeocoderStatus.OK) {
+									suggestions = jQuery.map(atlasResults.results, function(res) {
+										var loc = res.geometry.location;
+										res.geometry.location = new GeocoderLatLng(
+											loc.lat, loc.lng
+										);
+										return {'label': res.formatted_address, 'value': res};
+									});
 
-						AutocompleteCache.currentSuggestions = jQuery.map(results, function(res) {
-							return {'label': res.formatted_address, 'value': res};
-						});
-						PostRoom.useAlternateMap = false;
-						response(suggestions);
+									AutocompleteCache.currentSuggestions = jQuery.map(atlasResults.results, function(res) {
+										return {'label': res.formatted_address, 'value': res};
+									});
 
-						if (!locationSearchHasFocus) {
-							$locationSearch.autocomplete("close");
+									PostRoom.useAlternateMap = true;
+									response(suggestions);
+
+									if (!locationSearchHasFocus) {
+										$locationSearch.autocomplete("close");
+									}
+								}
+							});
+						} else {
+							suggestions = jQuery.map(results, function(res) {
+								return {'label': res.formatted_address, 'value': res};
+							});
+
+							AutocompleteCache.currentSuggestions = jQuery.map(results, function(res) {
+								return {'label': res.formatted_address, 'value': res};
+							});
+							PostRoom.useAlternateMap = false;
+							response(suggestions);
+
+							if (!locationSearchHasFocus) {
+								$locationSearch.autocomplete("close");
+							}
 						}
 					}
 				});
@@ -490,6 +535,7 @@ var PostRoom = {
 			var code = e.keyCode || e.which;
 			if (code === $.ui.keyCode.ENTER) {
 				$(this).autocomplete("close");
+				e.preventDefault();
 			}
 		});
 	},
@@ -530,7 +576,31 @@ var PostRoom = {
 	},
 
 	getPricingRecommendation: function() {
+		var formatted_address = $("#address_formatted_address_native").val();
+        
+		if (!formatted_address || formatted_address === "") {
+			return false;
+		}
 
+		$.getJSON(Urls.ajax_worth,
+			{location: formatted_address, room_type: $("#hosting_room_type").val()},
+			function(data) {
+				var new_currency = $("#hosting_native_currency").val();
+				var average = data.avg * 0.8; 
+				var price_suggestion_low = Airbnb.Currency.convert(
+					Math.max(Math.round(average - data.stddev / 4), 10), 'USD', new_currency, true);
+				var price_suggestion_high = Airbnb.Currency.convert(
+					Math.max(Math.round(average + data.stddev / 4), 10), 'USD', new_currency, true);
+
+				$("#price_suggestion_low").val(price_suggestion_low);
+				$("#price_suggestion_high").val(price_suggestion_high);
+				$("#price_suggestion_low_text").html(price_suggestion_low);
+				$("#price_suggestion_high_text").html(price_suggestion_high);
+				$(".currency_symbol").html(Airbnb.Currency.getSymbolForCurrency(new_currency));
+				$('#price_suggestion').show();
+				$('#price').hide();
+			}
+		);
 	},
 
 	validateSubmit: function() {
@@ -646,7 +716,6 @@ var Drag = {
           Drag.updateMarkerAddress();
         }
       });
-
     },
 
     updateMarkerPosition: function(latLng) {
@@ -704,7 +773,7 @@ var Drag = {
 			title: Translations.your_listing,
 			map: map,
 			icon: new google.maps.MarkerImage(
-				base_url+"images/guidebook/pin_home.png",
+				"/images/guidebook/pin_home.png",
 				new google.maps.Size(48, 36),
 				null,
 				new google.maps.Point(14, 32)),
