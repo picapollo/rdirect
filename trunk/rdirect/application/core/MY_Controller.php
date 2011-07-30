@@ -54,7 +54,6 @@ class MY_Controller extends CI_Controller {
 		$this -> data['header'] = array();
 		$this -> data['header']['title'] = 'RDirect';
 		$this -> data['header']['description'] = 'Default description';
-		$this -> data['header']['locale'] = CURRENT_LANGUAGE;
 		
 		$this->load->language('common');
 		

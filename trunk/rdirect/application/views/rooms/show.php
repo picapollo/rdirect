@@ -130,10 +130,21 @@
 
         <div id="photos_div" class="main_content">
             <div class="galleria_wrapper">
-  <div class="image-placeholder"><img alt="Room_default_no_photos" height="426" src="<?=IMG_DIR?>/page3/v3/room_default_no_photos.jpg" width="639" /></div>
-  <div id="galleria_container">
-      <img alt="" src="<?=IMG_DIR?>/page3/v3/room_default_no_photos.jpg" />
-  </div>
+  <div class="image-placeholder">
+  	<?php if(empty($room->photo_ids)): ?>
+  	<img alt="Room_default_no_photos" height="426" src="<?=IMG_DIR?>/page3/v3/room_default_no_photos.jpg" width="639" /></div>
+  	<?php else:?>
+  	<img alt="Large" height="426" src="<?=insert_room_photo($room->photo_ids[0], 'large')?>)" width="639" /></div>	
+  	<?php endif;?>
+	<div id="galleria_container">
+		<?php if(empty($room->photo_ids)): ?>
+		<img alt="" src="<?=IMG_DIR?>/page3/v3/room_default_no_photos.jpg" />
+		<?php else: foreach($room->photo_ids as $pid): ?>
+		<a href="<?=insert_room_photo($pid, 'large')?>" title="" > 
+            <img alt="" height="40" src="<?=insert_room_photo($pid, 'mini_square')?>" title="" width="40" /> 
+        </a> 		
+		<?php endforeach; endif; ?>
+	</div>
   <div class="share-button-container">
     <img src="<?=IMG_DIR?>/transparent-pixel.gif" width="639" height="426" />
     <ul id="share_buttons" style="display: none">
@@ -225,8 +236,8 @@
                   </div>
                 </div>
                 <div id="description_text_wrapper" class="trans">
-                  <p>123</p>
-                </div>
+                  <p><?=$room->description?></p>
+                </div> 
             </div>
 
             <ul id="description_details" class="rounded_less">
@@ -250,100 +261,20 @@
         </div>
 
         <div id="amenities" style="display:none" class="details_content">
-                <ul>
-                        <li>
-                            <div class="has_not"></div>
-                            <p>흡연가능 </p>
-                        </li>
-                        <li>
-                            <div class="has_not"></div>
-                            <p>애완동물 동반가능 </p>
-                        </li>
-                        <li>
-                            <div class="has_not"></div>
-                            <p>TV </p>
-                        </li>
-                        <li>
-                            <div class="has_not"></div>
-                            <p>케이블 TV </p>
-                        </li>
-                        <li>
-                            <div class="has_not"></div>
-                            <p>인터넷 <a class="tooltip" title="인터넷(유/무선)"><img alt="Questionmark_hover" src="<?=IMG_DIR?>/icons/questionmark_hover.png" style="width:12px; height:12px;" /></a></p>
-                        </li>
-                        <li>
-                            <div class="has_not"></div>
-                            <p>무선 인터넷 <a class="tooltip" title="24시간 접속가능한 무선인터넷 공유기"><img alt="Questionmark_hover" src="<?=IMG_DIR?>/icons/questionmark_hover.png" style="width:12px; height:12px;" /></a></p>
-                        </li>
-                        <li>
-                            <div class="has_not"></div>
-                            <p>에어컨 </p>
-                        </li>
-                        <li>
-                            <div class="has_not"></div>
-                            <p>난방 </p>
-                        </li>
-                </ul>
-                <ul>
-                        <li>
-                            <div class="has_not"></div>
-                            <p>엘리베이터 </p>
-                        </li>
-                        <li>
-                            <div class="has_not"></div>
-                            <p>장애인 이용 용이 <a class="tooltip" title="휠체어 접근이 용이한 객실입니다. 기타 개인적인 필요사항은 여행객과 주인장이 서로 협의해야 합니다."><img alt="Questionmark_hover" src="<?=IMG_DIR?>/icons/questionmark_hover.png" style="width:12px; height:12px;" /></a></p>
-                        </li>
-                        <li>
-                            <div class="has_not"></div>
-                            <p>수영장 <a class="tooltip" title="전용 수영장"><img alt="Questionmark_hover" src="<?=IMG_DIR?>/icons/questionmark_hover.png" style="width:12px; height:12px;" /></a></p>
-                        </li>
-                        <li>
-                            <div class="has_not"></div>
-                            <p>부엌 <a class="tooltip" title="손님 이용 가능한 부엌"><img alt="Questionmark_hover" src="<?=IMG_DIR?>/icons/questionmark_hover.png" style="width:12px; height:12px;" /></a></p>
-                        </li>
-                        <li>
-                            <div class="has_not"></div>
-                            <p>주차 포함 </p>
-                        </li>
-                        <li>
-                            <div class="has_not"></div>
-                            <p>세탁기/건조기 <a class="tooltip" title="건물 내 주차가능(유/무료)"><img alt="Questionmark_hover" src="<?=IMG_DIR?>/icons/questionmark_hover.png" style="width:12px; height:12px;" /></a></p>
-                        </li>
-                        <li>
-                            <div class="has_not"></div>
-                            <p>도어맨 </p>
-                        </li>
-                        <li>
-                            <div class="has_not"></div>
-                            <p>무료 헬스장 <a class="tooltip" title="헬스장 무료이용 가능"><img alt="Questionmark_hover" src="<?=IMG_DIR?>/icons/questionmark_hover.png" style="width:12px; height:12px;" /></a></p>
-                        </li>
-                </ul>
-                <ul>
-                        <li>
-                            <div class="has_not"></div>
-                            <p>욕조 </p>
-                        </li>
-                        <li>
-                            <div class="has_not"></div>
-                            <p>실내 벽난로 </p>
-                        </li>
-                        <li>
-                            <div class="has_not"></div>
-                            <p>초인종/인터폰 </p>
-                        </li>
-                        <li>
-                            <div class="has_not"></div>
-                            <p>아침식사 <a class="tooltip" title="아침식사 제공"><img alt="Questionmark_hover" src="<?=IMG_DIR?>/icons/questionmark_hover.png" style="width:12px; height:12px;" /></a></p>
-                        </li>
-                        <li>
-                            <div class="has_not"></div>
-                            <p>가족/어린이 숙박가능 <a class="tooltip" title="어린이를 동반한 가족이 숙박하기에 적당합니다."><img alt="Questionmark_hover" src="<?=IMG_DIR?>/icons/questionmark_hover.png" style="width:12px; height:12px;" /></a></p>
-                        </li>
-                        <li>
-                            <div class="has_not"></div>
-                            <p>이벤트행사용으로 적절 <a class="tooltip" title="25명 이상의 그룹을 수용할 수 있습니다."><img alt="Questionmark_hover" src="<?=IMG_DIR?>/icons/questionmark_hover.png" style="width:12px; height:12px;" /></a></p>
-                        </li>
-                </ul>
+        <?php  foreach($amenity_list as $k => $i)
+			{
+				$has = in_array($k, $room->amenities)?'has':'has_not';
+				if( ! (($k-1) % 8)) echo '<ul>';
+				echo "<li><div class='$has'></div><p>".lang('amenities_'.$i->name);
+				if(isset($i->tooltip)) 
+				{
+					echo ' <a class="tooltip" title="'.lang('amenities_'.$i->name.'_tooltip').'"><img alt="Questionmark_hover"'
+					.' src="'.IMG_DIR.'/icons/questionmark_hover.png" style="width:12px; height:12px;" /></a>';
+				}
+				echo"</p></li>";		
+				if( ! ($k % 8))	echo '</ul>';
+			}
+		?>
             <div class="clear"></div>
         </div>
 
@@ -893,7 +824,7 @@
             else {
               label.html(Translations.translate_button.show_original_description);
               descriptionTranslated = true;
-              translate('ko');
+              translate('<?=CURRENT_LANGUAGE?>');
             }
           });
         

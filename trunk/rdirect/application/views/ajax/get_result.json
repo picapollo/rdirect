@@ -1,0 +1,437 @@
+{
+	"properties": [
+		{
+			"hosting_thumbnail_url": "http://i2.muscache.com/pictures/993276/x_small.jpg",
+			"price": 50,
+			"user_thumbnail_url": "http://i3.muscache.com/users/509397/profile_pic/1311558487/tiny.jpg",
+			"picture_ids": [993276, 993281, 993285, 993290, 993297, 993308, 993312, 993318, 993326, 993330, 993334, 993347, 993361, 993372, 993381, 993387, 993394, 964550],
+			"lat": 37.533401,
+			"user_id": 509397,
+			"user_is_superhost": false,
+			"recommendation_count": 9,
+			"review_count": 1,
+			"address": "Seoul",
+			"lng": 126.990021,
+			"has_video": false,
+			"name": "Itaewon - One Room Private Flat",
+			"user_name": "Minsoung J",
+			"id": 143293
+		}, {
+			"hosting_thumbnail_url": "http://i1.muscache.com/pictures/494703/x_small.jpg",
+			"price": 50,
+			"user_thumbnail_url": "http://i3.muscache.com/users/362858/profile_pic/1300586715/tiny.jpg",
+			"picture_ids": [494703, 704606, 494710, 705028, 704571, 704575, 704573, 704577, 704567, 704561, 704634, 704628, 704613, 704619, 494717, 494705, 494121, 704585, 494707, 494128, 705035, 704643, 705416, 494711, 704660, 494701, 705029, 705030, 705033],
+			"lat": 37.528461,
+			"user_id": 362858,
+			"user_is_superhost": false,
+			"recommendation_count": 6,
+			"review_count": 4,
+			"address": "Yangpyeongdong-3-ga, Yeongdeungpo-gu, Seoul",
+			"lng": 126.890266,
+			"has_video": false,
+			"name": "Comforts of Home",
+			"user_name": "Sujin  K",
+			"id": 74543
+		}, {
+			"hosting_thumbnail_url": "http://i1.muscache.com/pictures/588985/x_small.jpg",
+			"price": 20,
+			"user_thumbnail_url": "http://i3.muscache.com/users/258637/profile_pic/1293891763/tiny.jpg",
+			"picture_ids": [588985, 966652, 478274, 588974, 588982, 588987, 588989, 588984, 588983, 588986, 588988, 588977, 588994, 588992, 588978, 588979, 588981, 588990, 588993, 322966, 514461, 514467, 514471, 514488, 514493],
+			"lat": 37.566399,
+			"user_id": 258637,
+			"user_is_superhost": false,
+			"recommendation_count": 5,
+			"review_count": 7,
+			"address": "Hwanghak-Dong, Seoul",
+			"lng": 127.0,
+			"has_video": false,
+			"name": "Korean Style Apt in Central Seoul",
+			"user_name": "Jo Anna And Sanghyun L",
+			"id": 54938
+		}, {
+			"hosting_thumbnail_url": "http://i1.muscache.com/pictures/924596/x_small.jpg",
+			"price": 80,
+			"user_thumbnail_url": "http://i3.muscache.com/users/559116/profile_pic/1304587292/tiny.jpg",
+			"picture_ids": [924596, 924651, 924602, 924608, 924610, 924612, 777157, 777141, 924629, 924630, 924637, 924639, 785278, 785279, 924642, 924647, 924650, 777161, 777144, 785258, 785268, 785271, 785273, 785275, 785280, 785281, 785283, 785288, 785290, 785295, 785297, 785305, 785301],
+			"lat": 37.582497,
+			"user_id": 559116,
+			"user_is_superhost": false,
+			"recommendation_count": 1,
+			"review_count": 2,
+			"address": "Seoul",
+			"lng": 126.980637,
+			"has_video": false,
+			"name": "Private room in the heart of Seoul ",
+			"user_name": "Hyunchung L",
+			"id": 119523
+		}, {
+			"hosting_thumbnail_url": "http://i3.muscache.com/pictures/680533/x_small.jpg",
+			"price": 50,
+			"user_thumbnail_url": "http://i1.muscache.com/users/384883/profile_pic/1309092643/tiny.jpg",
+			"picture_ids": [680533, 680527, 680538, 680545, 680555, 680560, 680568, 680526, 680571, 680572, 680574, 680576, 680579, 680580, 680584, 680595, 680598, 680599, 680603, 680605, 680608, 680616, 680613, 680621, 680626, 680628, 680630, 680632, 680633, 680639, 680647, 680649, 680652, 680653, 680655, 680659, 680661, 680663, 680665, 680666, 680669, 680671, 680672, 516527, 516529, 516530, 516526, 516547, 516549, 516556, 516558, 516557],
+			"lat": 37.379246,
+			"user_id": 384883,
+			"user_is_superhost": false,
+			"recommendation_count": 0,
+			"review_count": 2,
+			"address": "Seongnam-si",
+			"lng": 127.117821,
+			"has_video": false,
+			"name": "Cosy Private Room",
+			"user_name": "Sunguk L",
+			"id": 76820
+		}, {
+			"hosting_thumbnail_url": "http://i2.muscache.com/pictures/612146/x_small.jpg",
+			"price": 30,
+			"user_thumbnail_url": "http://i0.muscache.com/users/431919/profile_pic/1311790763/tiny.jpg",
+			"picture_ids": [612146, 612127, 568868, 568873, 612151, 612147, 612154, 612152, 612128, 612135, 612138, 612150, 612166, 612169, 612171, 612172, 568816, 568818, 568821, 568823, 568827, 568828, 568830, 568833, 568850, 568870, 568875],
+			"lat": 37.528812,
+			"user_id": 431919,
+			"user_is_superhost": false,
+			"recommendation_count": 0,
+			"review_count": 2,
+			"address": "Seoul",
+			"lng": 127.074913,
+			"has_video": false,
+			"name": "Private room / homemade breakfast",
+			"user_name": "Rie J",
+			"id": 83256
+		}, {
+			"hosting_thumbnail_url": "http://i0.muscache.com/pictures/656287/x_small.jpg",
+			"price": 66,
+			"user_thumbnail_url": "http://i1.muscache.com/users/426586/profile_pic/1309777760/tiny.jpg",
+			"picture_ids": [656287, 656292, 656279, 656282, 656283, 656285, 656288, 656298, 656299, 656300, 656301, 656303, 553328, 656304, 656307, 656309, 656310, 558293, 558289, 936482, 936487, 936485, 936484, 551236, 551238, 936486, 551242, 551239, 551240, 576288, 551243, 551245, 558523, 657690, 657697, 657703, 936483],
+			"lat": 37.499249,
+			"user_id": 426586,
+			"user_is_superhost": false,
+			"recommendation_count": 0,
+			"review_count": 3,
+			"address": ", Seoul",
+			"lng": 127.061935,
+			"has_video": false,
+			"name": "Great room 4 cinema lovers(Unit 1)",
+			"user_name": "Ben K",
+			"id": 80945
+		}, {
+			"hosting_thumbnail_url": "http://i3.muscache.com/pictures/727962/x_small.jpg",
+			"price": 80,
+			"user_thumbnail_url": "http://i3.muscache.com/users/559116/profile_pic/1304587292/tiny.jpg",
+			"picture_ids": [727962, 727965, 727957, 727959, 727960, 727968, 727970, 727975, 727978, 727981, 727985, 727988, 727992, 728002, 728014, 728015, 728017, 728018, 728023, 728027],
+			"lat": 37.582497,
+			"user_id": 559116,
+			"user_is_superhost": false,
+			"recommendation_count": 1,
+			"review_count": 2,
+			"address": "Seoul",
+			"lng": 126.980637,
+			"has_video": false,
+			"name": "Private room in center of Seoul ",
+			"user_name": "Hyunchung L",
+			"id": 110026
+		}, {
+			"hosting_thumbnail_url": "http://i2.muscache.com/pictures/617182/x_small.jpg",
+			"price": 60,
+			"user_thumbnail_url": "http://i0.muscache.com/users/455876/profile_pic/1300774596/tiny.jpg",
+			"picture_ids": [617182, 617183, 617184, 617186, 617193, 617218, 617221],
+			"lat": 37.564091,
+			"user_id": 455876,
+			"user_is_superhost": false,
+			"recommendation_count": 1,
+			"review_count": 1,
+			"address": "namsandong2ga, jung-gu, Seoul",
+			"lng": 126.99794,
+			"has_video": false,
+			"name": "Quality TWIN room in Myeongdong",
+			"user_name": "Ibville K",
+			"id": 89869
+		}, {
+			"hosting_thumbnail_url": "http://i3.muscache.com/pictures/1054260/x_small.jpg",
+			"price": 15,
+			"user_thumbnail_url": "http://i1.muscache.com/users/519210/profile_pic/1303286110/tiny.jpg",
+			"picture_ids": [1054260, 1054261, 1054262, 1054265],
+			"lat": 37.491528,
+			"user_id": 519210,
+			"user_is_superhost": false,
+			"recommendation_count": 0,
+			"review_count": 0,
+			"address": "Seoul",
+			"lng": 127.009415,
+			"has_video": false,
+			"name": "Mini rooms in Gangnam area Seoul",
+			"user_name": "\uc9c4\uc6b0 \uc7a5",
+			"id": 167094
+		}, {
+			"hosting_thumbnail_url": "http://i3.muscache.com/pictures/976403/x_small.jpg",
+			"price": 15,
+			"user_thumbnail_url": "http://i1.muscache.com/users/519210/profile_pic/1303286110/tiny.jpg",
+			"picture_ids": [976403, 976404, 976407, 976409, 976410],
+			"lat": 37.491528,
+			"user_id": 519210,
+			"user_is_superhost": false,
+			"recommendation_count": 0,
+			"review_count": 1,
+			"address": "Seoul",
+			"lng": 127.009415,
+			"has_video": false,
+			"name": "Mini rooms in Gangnam area, Seoul",
+			"user_name": "\uc9c4\uc6b0 \uc7a5",
+			"id": 154298
+		}, {
+			"hosting_thumbnail_url": "http://i1.muscache.com/pictures/993154/x_small.jpg",
+			"price": 80,
+			"user_thumbnail_url": "http://i2.muscache.com/users/34147/profile_pic/1282729855/tiny.jpg",
+			"picture_ids": [993154, 993166, 993145, 993160, 993175, 993192, 993203, 993215, 993225, 993236, 993238, 834627, 993142, 993134],
+			"lat": 37.506699,
+			"user_id": 34147,
+			"user_is_superhost": false,
+			"recommendation_count": 4,
+			"review_count": 0,
+			"address": "Seoul",
+			"lng": 127.04406,
+			"has_video": false,
+			"name": "Best spot for traveling Gangnam",
+			"user_name": "Kevin O",
+			"id": 99724
+		}, {
+			"hosting_thumbnail_url": "http://i0.muscache.com/pictures/1035918/x_small.jpg",
+			"price": 25,
+			"user_thumbnail_url": "http://i0.muscache.com/users/752884/profile_pic/1309945040/tiny.jpg",
+			"picture_ids": [1035918, 1053871, 1053879, 1053883],
+			"lat": 37.549648,
+			"user_id": 752884,
+			"user_is_superhost": false,
+			"recommendation_count": 2,
+			"review_count": 1,
+			"address": "Seoul",
+			"lng": 126.91803,
+			"has_video": false,
+			"name": "Private room in a nice, sunny apt.",
+			"user_name": "Mario G",
+			"id": 164230
+		}, {
+			"hosting_thumbnail_url": "http://i0.muscache.com/pictures/958349/x_small.jpg",
+			"price": 88,
+			"user_thumbnail_url": "http://i1.muscache.com/users/635166/profile_pic/1309369354/tiny.jpg",
+			"picture_ids": [958349, 958372, 958353, 958357, 958366, 958360, 958379, 958382, 958368, 958386, 958394, 958401, 958408, 958412, 958620, 958297, 958327, 958298, 958302, 958305, 958292, 958307, 958309, 958317, 958325, 958332, 958340, 958336, 958296, 979601, 979603, 958612, 959392],
+			"lat": 37.504459,
+			"user_id": 635166,
+			"user_is_superhost": false,
+			"recommendation_count": 1,
+			"review_count": 0,
+			"address": "Seoul",
+			"lng": 127.051544,
+			"has_video": false,
+			"name": "Cozy Residence in Gangnam, Seoul",
+			"user_name": "Hausnuvo C",
+			"id": 128468
+		}, {
+			"hosting_thumbnail_url": "http://i0.muscache.com/pictures/693835/x_small.jpg",
+			"price": 67,
+			"user_thumbnail_url": "http://i2.muscache.com/users/539232/profile_pic/1303927716/tiny.jpg",
+			"picture_ids": [693835, 696471, 693836, 693840, 693843, 693882, 693856, 693899, 693894, 693772, 693896, 693773, 693903, 693844, 693869, 693889, 693886, 693861, 693906, 693874, 693873, 693858, 693888, 693891, 693887, 693884, 693847, 693864, 693867, 693878, 693850, 693852, 693854, 693912],
+			"lat": 37.521778,
+			"user_id": 539232,
+			"user_is_superhost": false,
+			"recommendation_count": 0,
+			"review_count": 2,
+			"address": "Garosugil/Apkujung, Kangnam-gu",
+			"lng": 127.024605,
+			"has_video": false,
+			"name": "APT UNIT hippest street in Seoul",
+			"user_name": "Sam P",
+			"id": 104081
+		}, {
+			"hosting_thumbnail_url": "http://i3.muscache.com/pictures/724251/x_small.jpg",
+			"price": 160,
+			"user_thumbnail_url": "http://i3.muscache.com/users/559116/profile_pic/1304587292/tiny.jpg",
+			"picture_ids": [724251, 724249, 940266, 724250, 940296, 724255, 724256, 940282, 940291, 724253, 940275, 724264, 724269, 724270, 724271, 724273, 940271, 724277, 724282, 724285, 724288, 724289, 724290, 724293, 724294, 724295, 724297],
+			"lat": 37.582497,
+			"user_id": 559116,
+			"user_is_superhost": false,
+			"recommendation_count": 1,
+			"review_count": 1,
+			"address": "Seoul",
+			"lng": 126.980637,
+			"has_video": false,
+			"name": "Private room in center of Seoul -1",
+			"user_name": "Hyunchung L",
+			"id": 108008
+		}, {
+			"hosting_thumbnail_url": "http://i3.muscache.com/pictures/607835/x_small.jpg",
+			"price": 22,
+			"user_thumbnail_url": "http://i1.muscache.com/users/427831/profile_pic/1299933292/tiny.jpg",
+			"picture_ids": [607835, 549412, 607841, 607842, 549380, 549382, 549383, 549384, 549385, 549387, 549388, 549389, 549390, 549391, 549392, 549394, 549397, 549398, 549401, 549403, 549405, 549408, 549411, 549413, 549415, 549416, 607833],
+			"lat": 37.603355,
+			"user_id": 427831,
+			"user_is_superhost": false,
+			"recommendation_count": 5,
+			"review_count": 1,
+			"address": "Donga Pureun Apt., Jeongneung 2-dong, Seongbuk-gu, Seoul,...",
+			"lng": 127.006477,
+			"has_video": false,
+			"name": "(Seoul, Korea)Private room Homestay",
+			"user_name": "Junsik C",
+			"id": 80791
+		}, {
+			"hosting_thumbnail_url": "http://i2.muscache.com/pictures/991458/x_small.jpg",
+			"price": 25,
+			"user_thumbnail_url": "http://i1.muscache.com/users/519210/profile_pic/1303286110/tiny.jpg",
+			"picture_ids": [991458, 976503, 976506, 976510, 976514, 976516, 991459, 991464, 991465, 991467, 991468, 1009085, 1009087, 1009216],
+			"lat": 37.491528,
+			"user_id": 519210,
+			"user_is_superhost": false,
+			"recommendation_count": 0,
+			"review_count": 0,
+			"address": "Seoul",
+			"lng": 127.009415,
+			"has_video": false,
+			"name": "Mini rooms in Gangnam area, Seoul",
+			"user_name": "\uc9c4\uc6b0 \uc7a5",
+			"id": 154317
+		}, {
+			"hosting_thumbnail_url": "http://i3.muscache.com/pictures/633948/x_small.jpg",
+			"price": 80,
+			"user_thumbnail_url": "http://i0.muscache.com/users/455876/profile_pic/1300774596/tiny.jpg",
+			"picture_ids": [633946, 633948, 633953, 633954, 633955, 633956, 633958, 633959, 633960, 633962],
+			"lat": 37.566536,
+			"user_id": 455876,
+			"user_is_superhost": false,
+			"recommendation_count": 1,
+			"review_count": 0,
+			"address": "Seoul",
+			"lng": 126.977966,
+			"has_video": false,
+			"name": "Quality TRIPLE room in Myeongdong",
+			"user_name": "Ibville K",
+			"id": 91883
+		}, {
+			"hosting_thumbnail_url": "http://i2.muscache.com/pictures/976473/x_small.jpg",
+			"price": 22,
+			"user_thumbnail_url": "http://i1.muscache.com/users/519210/profile_pic/1303286110/tiny.jpg",
+			"picture_ids": [976473, 976474, 976476, 976477, 976478],
+			"lat": 37.491528,
+			"user_id": 519210,
+			"user_is_superhost": false,
+			"recommendation_count": 0,
+			"review_count": 0,
+			"address": "Seoul",
+			"lng": 127.009415,
+			"has_video": false,
+			"name": "Mini rooms in Gangnam area, Seoul",
+			"user_name": "\uc9c4\uc6b0 \uc7a5",
+			"id": 154306
+		}, {
+			"hosting_thumbnail_url": "http://i0.muscache.com/pictures/295473/x_small.jpg",
+			"price": 55,
+			"user_thumbnail_url": "http://i0.muscache.com/users/170285/profile_pic/1279591826/tiny.jpg",
+			"picture_ids": [295473, 295477, 295476, 295474, 295478, 295479, 295480, 295482, 295483, 295484, 295485, 295487, 295489, 295490, 295491],
+			"lat": 37.456299,
+			"user_id": 170285,
+			"user_is_superhost": false,
+			"recommendation_count": 1,
+			"review_count": 0,
+			"address": "Okryun Dong Yeon Su Gu, Incheon",
+			"lng": 126.705002,
+			"has_video": false,
+			"name": "Near airport w/homemade breakfast",
+			"user_name": "Jessica H",
+			"id": 39643
+		}
+	],
+	"center_lng": 126.9779692,
+	"geocode_precision": "city",
+	"results_count_html": "\n<b>1 &ndash; 21</b> of <b>79 listings</b>",
+	"banner_info": {},
+	"results_count_top_html": "79 results\n",
+	"view_type": 1,
+	"sort": 0,
+	"facets": {
+		"host_has_photo": [[1,[1, 75]
+			],[0,[0, 3]
+			]
+		],
+		"host_has_reviews": [[1,[1, 41]
+			],[0,[0, 37]
+			]
+		],
+		"hosting_amenity_ids": [[11,["\ud761\uc5f0\uac00\ub2a5", 9]
+			],[12,["\uc560\uc644\ub3d9\ubb3c \ub3d9\ubc18\uac00\ub2a5", 5]
+			],[1,["TV", 53]
+			],[2,["\ucf00\uc774\ube14 TV", 47]
+			],[3,["\uc778\ud130\ub137", 60]
+			],[4,["\ubb34\uc120 \uc778\ud130\ub137", 65]
+			],[5,["\uc5d0\uc5b4\ucee8", 60]
+			],[30,["\ub09c\ubc29", 63]
+			],[21,["\uc5d8\ub9ac\ubca0\uc774\ud130", 25]
+			],[6,["\uc7a5\uc560\uc778 \uc774\uc6a9 \uc6a9\uc774", 11]
+			],[7,["\uc218\uc601\uc7a5", 0]
+			],[8,["\ubd80\uc5cc", 57]
+			],[9,["\uc8fc\ucc28 \ud3ec\ud568", 22]
+			],[13,["\uc138\ud0c1\uae30/\uac74\uc870\uae30", 61]
+			],[14,["\ub3c4\uc5b4\ub9e8", 9]
+			],[15,["\ubb34\ub8cc \ud5ec\uc2a4\uc7a5", 2]
+			],[25,["\uc695\uc870", 14]
+			],[27,["\uc2e4\ub0b4 \ubcbd\ub09c\ub85c", 2]
+			],[28,["\ucd08\uc778\uc885/\uc778\ud130\ud3f0", 35]
+			],[16,["\uc544\uce68\uc2dd\uc0ac", 44]
+			],[31,["\uac00\uc871/\uc5b4\ub9b0\uc774 \uc219\ubc15\uac00\ub2a5", 27]
+			],[32,["\uc774\ubca4\ud2b8\ud589\uc0ac\uc6a9\uc73c\ub85c \uc801\uc808", 5]
+			]
+		],
+		"property_type_id": [[1,["\uc544\ud30c\ud2b8", 46]
+			],[2,["\ub2e8\ub3c5\uc8fc\ud0dd", 8]
+			],[3,["\ubbfc\ubc15(\uc870\uc2dd\ud3ec\ud568)", 20]
+			],[4,["\ud1b5\ub098\ubb34\uc9d1", 0]
+			],[11,["\ubcc4\uc7a5/\ud0c0\uc6b4\ud558\uc6b0\uc2a4", 4]
+			],[5,["\uc131", 0]
+			],[9,["\ub2e4\uc778\uc2e4", 0]
+			],[6,["\ud2b8\ub9ac\ud558\uc6b0\uc2a4", 0]
+			],[8,["\uc120\uc0c1\uac1d\uc2e4", 0]
+			],[7,["\ucea0\ud551\uce74", 0]
+			],[12,["\uc774\uae00\ub8e8", 0]
+			],[10,["\ub4f1\ub300", 0]
+			]
+		],
+		"top_amenities": [[4,["\ubb34\uc120 \uc778\ud130\ub137", 65]
+			],[1,["TV", 53]
+			],[8,["\ubd80\uc5cc", 57]
+			]
+		],
+		"has_photo": [[1,[1, 78]
+			]
+		],
+		"top_neighborhoods": [],
+		"languages": [[256,["Arabic", 0]
+			],[32768,["Bengali", 0]
+			],[4,["Deutsch", 0]
+			],[1,["English", 0]
+			],[64,["Espa\u00f1ol", 3]
+			],[2,["Fran\u00e7ais", 0]
+			],[4096,["Indonesian", 0]
+			],[16,["Italiano", 3]
+			],[8192,["Nederlands", 0]
+			],[1024,["Portugu\u00eas", 0]
+			],[524288,["Sign Language", 0]
+			],[2048,["T\u00fcrk\u00e7e", 0]
+			],[262144,["\u0395\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac", 0]
+			],[32,["\u0420\u0443\u0441\u0441\u043a\u0438\u0439", 0]
+			],[1048576,["\u05e2\u05d1\u05e8\u05d9\u05ea", 0]
+			],[512,["\u0939\u093f\u0928\u094d\u0926\u0940", 0]
+			],[131072,["\u0a2a\u0a70\u0a1c\u0a3e\u0a2c\u0a40", 0]
+			],[65536,["\u0e20\u0e32\u0e29\u0e32\u0e44\u0e17\u0e22", 0]
+			],[128,["\u4e2d\u6587(\u7b80\u4f53)", 1]
+			],[8,["\u65e5\u672c\u8a9e", 0]
+			],[16384,["\ud55c\uad6d\uc5b4", 5]
+			]
+		],
+		"room_type": [["Entire home/apt",["\uc9d1/\uc544\ud30c\ud2b8 \uc804\uccb4", 12]
+			],["Private room",["\ud504\ub77c\uc774\ube57\ub8f8", 59]
+			],["Shared room",["\uc250\uc5b4\ub4dc\ub8f8", 7]
+			]
+		],
+		"neighborhood_facet": []
+	},
+	"results_pagination_html": "<div class=\"pagination\"><span class=\"disabled prev_page\"><</span> <span class=\"current\">1</span> <a href=\"/search/v3_search?checkin=yy%2Fmm%2Fdd&amp;checkout=yy%2Fmm%2Fdd&amp;guests=1&amp;location=%EC%84%9C%EC%9A%B8%2C+%ED%95%9C%EA%B5%AD&amp;min_bathrooms=0&amp;min_bedrooms=0&amp;min_beds=0&amp;page=2&amp;per_page=21&amp;search_view=1\" rel=\"next\">2</a> <a href=\"/search/v3_search?checkin=yy%2Fmm%2Fdd&amp;checkout=yy%2Fmm%2Fdd&amp;guests=1&amp;location=%EC%84%9C%EC%9A%B8%2C+%ED%95%9C%EA%B5%AD&amp;min_bathrooms=0&amp;min_bedrooms=0&amp;min_beds=0&amp;page=3&amp;per_page=21&amp;search_view=1\">3</a> <a href=\"/search/v3_search?checkin=yy%2Fmm%2Fdd&amp;checkout=yy%2Fmm%2Fdd&amp;guests=1&amp;location=%EC%84%9C%EC%9A%B8%2C+%ED%95%9C%EA%B5%AD&amp;min_bathrooms=0&amp;min_bedrooms=0&amp;min_beds=0&amp;page=4&amp;per_page=21&amp;search_view=1\">4</a> <a href=\"/search/v3_search?checkin=yy%2Fmm%2Fdd&amp;checkout=yy%2Fmm%2Fdd&amp;guests=1&amp;location=%EC%84%9C%EC%9A%B8%2C+%ED%95%9C%EA%B5%AD&amp;min_bathrooms=0&amp;min_bedrooms=0&amp;min_beds=0&amp;page=2&amp;per_page=21&amp;search_view=1\" class=\"next_page\" rel=\"next\">></a></div>\n",
+	"present_standby_option": false,
+	"center_lat": 37.566535
+}

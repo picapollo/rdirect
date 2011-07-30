@@ -35,7 +35,7 @@
 		<li style="border-left:none;" class="last-child">
 			<div id="language_currency">
 				<div id="language_currency_display" class="rounded_top">
-					<div id="language_currency_display_language" class="flag sprite-<?=$locale?>">
+					<div id="language_currency_display_language" class="flag sprite-<?=CURRENT_LANGUAGE?>">
 						&nbsp;
 					</div>
 					<div id="language_currency_display_currency">
@@ -48,7 +48,7 @@
 							<?=lang('top_menu_choose_language')?>
 						</li>
 						<?php foreach($this->config->item('supported_languages') as $lang_code => $item):?>
-						<?php if($lang_code == $locale) continue; ?>
+						<?php if($lang_code == CURRENT_LANGUAGE) continue; ?>
 						<li class="language option" id="language_selector_<?=$lang_code?>" name="<?=$lang_code?>">
 							<div class="flag sprite-<?=$lang_code?>">
 								&nbsp;

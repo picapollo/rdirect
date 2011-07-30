@@ -20,9 +20,7 @@
     <link href="<?=CSS_DIR?>/dashboard.css" media="screen" rel="stylesheet" type="text/css" />
     
 	<script src="<?=JS_DIR?>/common.js" type="text/javascript"></script> 
-  
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script> 
-	
 	
 	<link rel="shortcut icon" href="<?=IMG_DIR?>/airbnb_favicon.ico" />
 	

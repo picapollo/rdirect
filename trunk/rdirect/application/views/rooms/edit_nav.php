@@ -4,10 +4,10 @@
     <div class="col full heading"> 
       <div class="heading_content"> 
 
-<div class="edit_listing_photo"><a href="<?=site_url('rooms/'.$room->id)?>"><img alt="<?php //TODO ?>Room_default_no_photos" height="65" src="http://s1.muscache.com/1308680853/images/page3/v3/room_default_no_photos.png" /></a></div> 
+<div class="edit_listing_photo"><a href="<?=site_url('rooms/'.$room->id)?>"><img alt="<?=($room->photo_id)?'small':'Room_default_no_photos'?>" height="65" src="<?=insert_room_photo($room->photo_id, 'small')?>" /></a></div> 
  
 <div class="listing_info"> 
-  <h3><?=anchor('rellooms/'.$room->id, $room->name, array('id'=>'listing_title_banner'))?></h3> 
+  <h3><?=anchor('rooms/'.$room->id, $room->name, array('id'=>'listing_title_banner'))?></h3> 
   <span class="actions"> 
     <div class="set-availability action_button" data-has-availability="<?php echo ($room->active=='1')?'true':'false'?>" data-available-url="<?=site_url('rooms/change_availability/'.$room->id.'?is_available=1&redirect=%2Frooms&sig='.$sig)?>" data-unavailable-url="<?=site_url('rooms/change_availability/'.$room->id.'?is_available=0&redirect=%2Frooms&sig='.$sig)?>"></div> 
  

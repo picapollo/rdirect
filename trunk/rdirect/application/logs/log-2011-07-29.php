@@ -590,3 +590,15 @@ ERROR - 2011-07-29 12:19:41 --> Severity: Notice  --> Undefined property: CI_Loa
 ERROR - 2011-07-29 12:19:41 --> Severity: Notice  --> Undefined property: CI_Loader::$pets /home/guersam/www/rdirect/application/views/rooms/edit_details.php 345
 ERROR - 2011-07-29 12:45:42 --> 404 Page Not Found --> calendar/single
 ERROR - 2011-07-29 12:45:42 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 13:38:55 --> 404 Page Not Found --> calendar/single
+ERROR - 2011-07-29 13:44:59 --> 404 Page Not Found --> include
+ERROR - 2011-07-29 13:45:02 --> 404 Page Not Found --> include
+ERROR - 2011-07-29 14:54:03 --> 404 Page Not Found --> %22http:
+ERROR - 2011-07-29 14:54:03 --> 404 Page Not Found --> %22http:
+ERROR - 2011-07-29 14:54:08 --> Query error: Table 'bdirect.rd_room_property_types' doesn't exist
+ERROR - 2011-07-29 14:54:09 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 14:54:15 --> Query error: Table 'bdirect.rd_room_property_types' doesn't exist
+ERROR - 2011-07-29 14:54:16 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-29 14:55:51 --> 404 Page Not Found --> %22http:
+ERROR - 2011-07-29 14:55:51 --> 404 Page Not Found --> %22http:
+ERROR - 2011-07-29 14:55:54 --> 404 Page Not Found --> favicon.ico

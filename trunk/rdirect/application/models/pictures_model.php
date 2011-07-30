@@ -11,6 +11,7 @@ class Pictures_model extends CI_Model {
 		$this->image_config['image_library'] = 'gd2';
 		$this->image_config['overwrite'] = TRUE;
 		$this->image_config['allowed_types'] = 'jpg|jpeg|gif|png';
+		//$this->image_config['master_dim'] = 'auto';
 		$this->load->library('image_lib');
 	}
 	
@@ -86,19 +87,76 @@ class Pictures_model extends CI_Model {
 	
 	function _resize($source_image, $new_image_name, $path,$width, $height, $maintain_ratio=FALSE)
 	{
+		if( $maintain_ratio )
+		{
+			$imageSize = $this->image_lib->get_image_properties($source_image, TRUE);
+			$ratio = (($imageSize['height']/$imageSize['width']) - ($height/$width));
+			$this->image_config['master_dim'] = ($ratio > 0) ? 'width' : 'height';			
+		}
+		
+			
 		$this->image_config['source_image'] = $source_image;
 		$this->image_config['new_image'] = $path . '/' . $new_image_name;
 		$this->image_config['width'] = $width;
 		$this->image_config['height'] = $height;
 		$this->image_config['maintain_ratio'] = $maintain_ratio;
 		$this->image_lib->initialize($this->image_config);
-		return $this->image_lib->resize();
+		$res = $this->image_lib->resize();
+		if( ! $maintain_ratio || ! $res)
+			return $res;
+
+		/*
+		 * 이미지 크기가 정해진 비율 초과시 Crop
+		 */
+		$this->image_config['maintain_ratio'] = false;
+		$this->image_config['source_image'] = $path.'/'.$new_image_name;
+		$imageSize = $this->image_lib->get_image_properties($path.'/'.$new_image_name, TRUE);
+
+		if($imageSize['width'] > $width)
+			$this->image_config['x_axis'] = ($imageSize['width']-$width)/2;
+		else if($imageSize['height'] > $height)
+			$this->image_config['y_axis'] = ($imageSize['height']-$height)/2;
+		else 	// 이미 비율이 맞으면 리턴
+			return $res;		
+
+		$this->image_lib->clear();
+		$this->image_lib->initialize($this->image_config);
+		return $this->image_lib->crop();
 	}
 	
 	function update_caption($pid, $text){
 		$this->db->set('caption', $text);
 		$this->db->where('id', $pid);
 		$this->db->update('room_photos');
+	}
+	
+	function update_room_image_order($rid, $photos){
+		if(empty($photos)) return null;
+		$data = array();
+		$order = 1;
+		foreach($photos as $pid){
+			$data[$pid] = $order++;
+		}
+		$rp = $this->db->dbprefix('room_photos');
+		$ids = implode(',', array_keys($data));
+		$sql = "UPDATE $rp SET `order` = CASE id ";
+		foreach ($data as $id => $ordinal) {
+		    $sql .= sprintf("WHEN %d THEN %d ", $id, $ordinal);
+		}
+		$sql .= "END WHERE id IN ($ids)";
+		return $this->db->query($sql);
+	}
+	
+	function delete_room_photo($rid, $pid)
+	{
+		$this->load->helper('file');
+		delete_files(UPLOADS_PATH.'/rooms/'.$pid, TRUE);
+		rmdir(UPLOADS_PATH.'/rooms/'.$pid);
+		
+		$this->db->delete('room_photos', array('id' => $pid));
+		$rp = $this->db->dbprefix('room_photos');
+		$sql = "UPDATE $rp SET `order`=1 WHERE room_id=$rid ORDER BY `order` ASC LIMIT 1";
+		return $this->db->query($sql);
 	}
 }
 
