@@ -22,11 +22,13 @@
 		<!--[if lte IE 7]>
 		<link href="<?=CSS_DIR?>/page3.css" media="screen" rel="stylesheet" type="text/css" />
 		<![endif]-->
+		<?php if(CURRENT_LANGUAGE == 'ko'): ?>
+		<link href="<?=CSS_DIR?>/korean_fonts.css" media="screen" rel="stylesheet" type="text/css" />
+		<?php endif; ?>
 		<script src="<?=JS_DIR?>/common.js" type="text/javascript"></script>
 		<script type="text/javascript" src="<?=JS_DIR?>/jquery-ui-1.8.14.custom.min.js"></script> 
 		<?php if(CURRENT_LANGUAGE != 'en'): ?>
 		<script src="<?=JS_DIR?>/jquery.ui.datepicker/jquery.ui.datepicker-<?=CURRENT_LANGUAGE?>.min.js" type="text/javascript"></script>
-		<link href="<?=CSS_DIR?>/korean_fonts.css" media="screen" rel="stylesheet" type="text/css" />
 		<?php endif;?>
 		<script src="<?=JS_DIR?>/page3.js" type="text/javascript"></script>
 		<link rel="shortcut icon" href="<?=IMG_DIR?>/airbnb_favicon.ico" />

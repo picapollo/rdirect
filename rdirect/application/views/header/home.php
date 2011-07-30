@@ -21,9 +21,7 @@
  
  
 		<script src="<?=JS_DIR?>/common.js" type="text/javascript"></script> 
-		 
 		<script src="<?=JS_DIR?>/jquery-ui-1.8.14.custom.min.js" type="text/javascript"></script>  
- 
  
 		<script type="text/javascript"> 
 			jQuery.noConflict();

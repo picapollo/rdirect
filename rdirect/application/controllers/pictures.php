@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Airbnb에서 이쪽 uri로 접근하길래 일단 컨트롤러를 만들긴 했지만 CI에서는 낭비라는 생각을 지울 수 없음(Airbnb는 Ruby on Rails로 만듦)
+ * 이왕 만들었으면 차라리 rooms와 users에서 사진 관련 기능을 전부 옮겨왔으면 하지만 시간이 없어서 나중으로 미룸 
+ */
 class Pictures extends CI_Controller{
 	function __construct(){
 		parent::__construct();
@@ -22,9 +26,7 @@ class Pictures extends CI_Controller{
 			$this->pictures_model->update_caption($pid, $picture['caption']);
 		}
 		
-		echo "jQuery('#update_caption_submit_button').attr('value', 'Saved!').animate({ color: '#65b300' }, 'fast');" .
-				"setTimeout(function(){ jQuery('#update_caption_submit_button').attr('value', 'Save')." .
-				"animate({ color: '#000000' }, 'slow'); }, 2000)";
+		$this->load->view('ajax/update_picture');
 	}
 }
 

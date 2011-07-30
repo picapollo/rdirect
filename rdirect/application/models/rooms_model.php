@@ -79,14 +79,15 @@ class Rooms_model extends CI_Model {
 	function update_descriptions($rid, $data)
 	{
 		$rd = $this->db->dbprefix('room_descriptions');
-		$query_str = "REPLACE INTO $rd (room_id, language, name, description) VALUES ";
+		$sql = "INSERT $rd (room_id, language, name, description) VALUES ";
 		foreach($data as $k => $i){
 			$k = mysql_real_escape_string($k);
 			$i['name'] = mysql_real_escape_string($i['name']);
 			$i['description'] = mysql_real_escape_string($i['description']);
-			$query_str .= "($rid, '$k', '{$i['name']}', '{$i['description']}'),";
+			$sql .= "($rid, '$k', '{$i['name']}', '{$i['description']}'),";
 		}
-		return $this->db->query(rtrim($query_str, ','));
+		$sql = rtrim($sql, ',') . " ON DUPLICATE KEY UPDATE name=VALUES(name), description=VALUES(description)"; 
+		return $this->db->query($sql);
 	}
 	
 	/**
@@ -106,21 +107,21 @@ class Rooms_model extends CI_Model {
 		
 		if($star)
 		{
-			$query_str = "REPLACE INTO `$rs` (user_id, room_id) VALUES ($uid, $rid)";
+			$sql = "INSERT INTO `$rs` (user_id, room_id) VALUES ($uid, $rid) ON DUPLICATE KEY IGNORE";
 		}
 		else
 		{
-			$query_str = "DELETE IGNORE FROM `$rs` WHERE user_id=$uid AND room_id=$rid";
+			$sql = "DELETE IGNORE FROM `$rs` WHERE user_id=$uid AND room_id=$rid";
 		}
 
-		return $this->db->query(mysql_real_escape_string($query_str));
+		return $this->db->query(mysql_real_escape_string($sql));
 	}
 	
 	function change_availability($rid, $status)
 	{
-		$query_str = $this->db->update_string('rooms', array('active'=>$status), array('id'=>$rid));
-		$query_str = str_replace('UPDATE', 'UPDATE IGNORE', $query_str);
-		return $this->db->query($query_str);
+		$sql = $this->db->update_string('rooms', array('active'=>$status), array('id'=>$rid));
+		$sql = str_replace('UPDATE', 'UPDATE IGNORE', $sql);
+		return $this->db->query($sql);
 	}
 
 	function get_description($rid, $lang=CURRENT_LANGUAGE)
@@ -150,14 +151,33 @@ class Rooms_model extends CI_Model {
 		$r = $this->db->dbprefix('rooms');
 		$ra = $this->db->dbprefix('room_addresses');
 		$rd = $this->db->dbprefix('room_descriptions');
-		$pr = $this->db->dbprefix('room_property_types');
+		$rp = $this->db->dbprefix('room_photos');
 		
-		$query_str  = "SELECT r.*, pr.name as property_type, ra.*, "
-		. "(SELECT name FROM $rd ORDER BY `language`='".CURRENT_LANGUAGE."' DESC, `language`='en' DESC LIMIT 0, 1) as name " 
-		. "FROM $r r INNER JOIN $ra ra ON r.id=ra.room_id INNER JOIN $pr pr ON r.property_type_id=pr.id WHERE r.id=$rid";
+		$sql  = "SELECT r.*, ra.*, rd.name, rd.description, rp.id as photo_id FROM $r r " 
+		. " INNER JOIN $ra ra ON r.id=ra.room_id "
+		. " INNER JOIN $rd rd ON r.id=rd.room_id "
+		. " LEFT JOIN $rp rp ON r.id=rp.room_id AND rp.`order`=1 "
+		. " WHERE r.id=$rid ORDER BY rd.language='".CURRENT_LANGUAGE."' DESC LIMIT 1 ";
 	
-		$query = $this->db->query($query_str);
+		$query = $this->db->query($sql);
 		return $query->result();
+	}
+	
+	function get_room_with_all_photos($rid)
+	{
+		$r = $this->db->dbprefix('rooms');
+		$ra = $this->db->dbprefix('room_addresses');
+		$rd = $this->db->dbprefix('room_descriptions');
+		$rp = $this->db->dbprefix('room_photos');
+		
+		$sql  = "SELECT r.*, ra.*, rd.name, rd.description, rd.language, GROUP_CONCAT(DISTINCT rp.id ORDER BY rp.`order`) as photo_ids FROM $r r " 
+		. " INNER JOIN $ra ra ON r.id=ra.room_id "
+		. " INNER JOIN $rd rd ON r.id=rd.room_id "
+		. " LEFT JOIN $rp rp ON r.id=rp.room_id "
+		. " WHERE r.id=$rid ORDER BY rd.language='".CURRENT_LANGUAGE."' DESC LIMIT 1 ";
+	
+		$query = $this->db->query($sql);
+		return $query->result();		
 	}
 	
 	function get_rooms($uid)
@@ -174,21 +194,49 @@ class Rooms_model extends CI_Model {
 		$ra = $this->db->dbprefix('room_addresses');
 		$uid = mysql_real_escape_string($uid);
 		
-		$query_str = "SELECT r.id, lat, lng, active, (SELECT rp.id FROM $rp as rp WHERE r.id = rp.room_id AND `rp`.`order`=1) as photo_id, ";
-		$query_str .= "(SELECT name FROM $rd ORDER BY `language`='".CURRENT_LANGUAGE."' DESC, `language`='en' DESC LIMIT 0, 1) as name ";
-		$query_str .= "FROM $r as r INNER JOIN $ra ra ON r.id=ra.room_id WHERE r.user_id=$uid ";
-		if($activity !== null) $query_str .= "AND r.active = $activity"; 
+		$sql = "SELECT r.id, lat, lng, active, rp.id as photo_id (SELECT rp.id FROM $rp as rp WHERE r.id = rp.room_id AND `rp`.`order`=1) as photo_id, ";
+		$sql .= "(SELECT name FROM $rd ORDER BY `language`='".CURRENT_LANGUAGE."' DESC, `language`='en' DESC LIMIT 0, 1) as name ";
+		$sql .= "FROM $r as r INNER JOIN $ra ra ON r.id=ra.room_id WHERE r.user_id=$uid ";
+		if($activity !== null) $sql .= "AND r.active = $activity"; 
 		
-		$query = $this->db->query($query_str);
+		$query = $this->db->query($sql);
 
 		return $query->result();
 	}
 	
+	/**
+	 * Do not use! 이 기능은 pictures_model->add_room_photo에서 구현함
+	 */
+	function add_photo($rid, $pid)
+	{
+		return null; 
+	}
+	
+	/**
+	 * 나중에 pictures_model로 옮겨서 사진관련 기능은 통합하는 편히 바람직해 보임
+	 */
 	function get_all_photos($rid)
 	{
 		$this->db->select('id, order');
 		$this->db->where('room_id', $rid);
+		$this->db->order_by('order', 'ASC');
 		$query = $this->db->get('room_photos');
+		return $query->result();
+	}
+	
+	function get_photo_by_id($pid)
+	{
+		$this->db->where('id', $pid);
+		$query = $this->db->get('room_photos');
+		return $query->result();
+	}
+	
+	function get_photo_by_room($rid)
+	{
+		$this->db->select('id');
+		$this->db->from('room_photos');
+		$this->db->where(array('room_id'=> $rid, 'order'=>1));
+		$query = $this->db->get();
 		return $query->result();
 	}
 	

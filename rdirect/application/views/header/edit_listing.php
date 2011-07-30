@@ -25,13 +25,15 @@
 <link href="<?=CSS_DIR?>/edit_listing.css" media="screen" rel="stylesheet" type="text/css" />
 <![endif]-->
 
- 
-		<link href="<?=CSS_DIR?>/korean_fonts.css" media="screen" rel="stylesheet" type="text/css" /> 
- 
+		<?php if(CURRENT_LANGUAGE == 'ko'): ?>
+		<link href="<?=CSS_DIR?>/korean_fonts.css" media="screen" rel="stylesheet" type="text/css" />
+		<?php endif; ?> 
 		<script src="<?=JS_DIR?>/common.js" type="text/javascript"></script> 
 
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script> 
-		<script src="<?=JS_DIR?>/jquery.ui.datepicker/jquery.ui.datepicker-ko.min.js" type="text/javascript"></script> 
+		<script type="text/javascript" src="<?=JS_DIR?>/jquery-ui-1.8.14.custom.min.js" type="text/javascript"></script>
+		<?php if(CURRENT_LANGUAGE != 'en'): ?>  
+		<script src="<?=JS_DIR?>/jquery.ui.datepicker/jquery.ui.datepicker-<?=CURRENT_LANGUAGE?>.min.js" type="text/javascript"></script>
+		<?php endif; ?> 
  
 		<script src="<?=JS_DIR?>/edit_listing.js" type="text/javascript"></script> 
  
@@ -124,7 +126,7 @@
     }
     
     function fetch_progress_bar_data(hosting_id) {
-      jQuery.getJSON('rooms/ajax_update_progress_bar', { 'hosting_id' : hosting_id }, function(data) {
+      jQuery.getJSON('/rooms/ajax_update_progress_bar', { 'hosting_id' : hosting_id }, function(data) {
         AirbnbDashboard.updateProgressBar(data.progress.score, data.next_steps, data.prompt, data.available);
       });
     }
@@ -210,7 +212,7 @@
   jQuery(document).ready(function(){
     AirbnbDashboard.init(); 
  
-        AirbnbDashboard.createNotificationItem("객실 사진을 올리지 않아 현재 비활성화 되었습니다. <a href='/rooms/181683/edit?section=photos'>지금 사진을 올리세요!</a>", "error-general");
+    //AirbnbDashboard.createNotificationItem("객실 사진을 올리지 않아 현재 비활성화 되었습니다. <a href='/rooms/181683/edit?section=photos'>지금 사진을 올리세요!</a>", "error-general");
         
 	<?php if($fragment = $this->input->get('fragment')): ?>
     	jQuery('html, body').animate({scrollTop : jQuery('#<?=$fragment?>').offset().top}, 1000)

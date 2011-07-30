@@ -168,7 +168,7 @@ class Users extends MY_Controller {
 		}
 		else
 		{
-			$config['upload_path'] = UPLOADS_ROOT.'/users/';
+			$config['upload_path'] = UPLOADS_PATH.'/users/';
 			$config['allowed_types'] = 'gif|jpg|png';
 			$config['max_size']	= '1000';
 			$config['max_width']  = '2048';

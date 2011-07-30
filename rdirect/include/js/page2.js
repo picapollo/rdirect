@@ -740,7 +740,7 @@ var AirbnbSearch= {
 	initialLoadComplete:false,
 	resultsJson:false,
 	locationHasChanged:false,
-	BLANK_USER_PHOTO_URL:"http://www.airbnb.com/images/user_pic.gif",
+	BLANK_USER_PHOTO_URL:"/images/user_pic.gif",
 	DEFAULT_BANNER_IMAGE_URL:"/images/landing_pages/backgrounds/default_landing_page_background.jpg",
 	viewedIds:[],
 	openShareLightbox: function() {

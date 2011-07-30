@@ -22,19 +22,20 @@
 <link href="<?=CSS_DIR?>/page1.css" media="screen" rel="stylesheet" type="text/css" />
 <![endif]-->
 
-		<link href="<?=CSS_DIR?>/korean_fonts.css" media="screen" rel="stylesheet" type="text/css">
-
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
-		
-		<?php if($locale != 'en'): ?>
-		<script src="<?=JS_DIR?>/jquery.ui.datepicker/jquery.ui.datepicker-<?=$locale?>.min.js" type="text/javascript"></script>
+		<?php if(CURRENT_LANGUAGE == 'ko'): ?>
+		<link href="<?=CSS_DIR?>/korean_fonts.css" media="screen" rel="stylesheet" type="text/css" />
 		<?php endif; ?>
 
 		<script src="<?=JS_DIR?>/common.js" type="text/javascript"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
+		
+		<?php if(CURRENT_LANGUAGE != 'en'): ?>
+		<script src="<?=JS_DIR?>/jquery.ui.datepicker/jquery.ui.datepicker-<?=CURRENT_LANGUAGE?>.min.js" type="text/javascript"></script>
+		<?php endif; ?>
+
 		<script src="<?=JS_DIR?>/page1.js" type="text/javascript"></script>
 
 		<link rel="shortcut icon" href="<?=IMG_DIR?>/airbnb_favicon.ico" /> 
-	<script src="<?=JS_DIR?>/jquery.autocomplete_custom.pack.js" class="lazyload" charset="utf-8"></script><script src="<?=JS_DIR?>/<?=$locale?>_autocomplete_data.js" class="lazyload" charset="utf-8"></script>
+	<script src="<?=JS_DIR?>/jquery.autocomplete_custom.pack.js" class="lazyload" charset="utf-8"></script><script src="<?=JS_DIR?>/<?=CURRENT_LANGUAGEURRENT_LANGUAGE?>_autocomplete_data.js" class="lazyload" charset="utf-8"></script>
 </head>
 <body>

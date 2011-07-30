@@ -14,8 +14,10 @@
 		<!--[if lte IE 7]>
 		<link href="<?=CSS_DIR?>/common.css" media="screen" rel="stylesheet" type="text/css" />
 		<![endif]-->
+		<?php if(CURRENT_LANGUAGE == 'ko'): ?>
 		<link href="<?=CSS_DIR?>/korean_fonts.css" media="screen" rel="stylesheet" type="text/css" />
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+		<?php endif; ?>
+		<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script> -->
 		<script src="<?=JS_DIR?>/common.js" type="text/javascript"></script>
 		<!--[if (!IE)|(gte IE 8)]><!-->
 		<link href="<?=CSS_DIR?>/signinup-datauri.css" media="screen" rel="stylesheet" type="text/css" />

@@ -17,16 +17,7 @@ class Test extends MY_Controller {
 
 	public function index()
 	{
-		$hosting_descriptions = array();
-		$hosting_descriptions['en'] = array();
-		$hosting_descriptions['ko'] = array();
-		$hosting_descriptions['en']['name']='eng';
-		$hosting_descriptions['en']['delete']=false;
-		$hosting_descriptions['en']['description']='fff';
-		$hosting_descriptions['ko']['name']='한구';
-		$hosting_descriptions['ko']['delete']=false;
-		$hosting_descriptions['ko']['description']='어';
-		$this->rooms_model->update_descriptions(1, $hosting_descriptions);
+		print_r($this->rooms_model->get_room(2));
 		
 	}
 	

@@ -56,7 +56,7 @@ define('INCLUDE_ROOT', DOC_ROOT.'/include');
 define('JS_ROOT', DOC_ROOT.'/include/js');
 define('CSS_ROOT', DOC_ROOT.'/include/css');
 define('VIEW_ROOT', DOC_ROOT.'/'.APPPATH.'/views');
-define('UPLOADS_ROOT', DOC_ROOT.'/uploads');
+define('UPLOADS_PATH', './uploads');
 
 
 /* End of file constants.php */

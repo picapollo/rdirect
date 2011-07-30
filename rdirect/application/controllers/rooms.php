@@ -233,12 +233,21 @@ class Rooms extends MY_Controller
 	function show($rid = null)
 	{
 		if(!$rid) show_404();
-		$res = $this->rooms_model->get_room($rid);
+		$res = $this->rooms_model->get_room_with_all_photos($rid);
 		if(empty($res)) show_404();
-		$this->data['room'] = $res[0];
+		$this->data['room'] = $res[0];		
+		
+		// Convert property_type_id to property string
+		$pt_list = $this->rooms_model->get_property_type_list();
+		$pt_id = $this->data['room']->property_type_id;
+		$this->data['room']->property_type = $pt_list->$pt_id;
+		$this->data['amenity_list'] = $this->rooms_model->get_amenity_list();
+		$this->data['room']->photo_ids 	= explode(',', $this->data['room']->photo_ids);
+		$this->data['room']->amenities 	= explode(',', $this->data['room']->amenities);
+		//$this->data['room']->pets		= explode(',', $this->data['room']->pets);
+		$this->load->language('hosting/amenities');
 		
 		$this->data['is_owner'] = $this->tank_auth->get_user_id() == $res[0]->user_id;
-		
 		$this->load->view('rooms/show', $this->data);
 	}
 
@@ -265,6 +274,7 @@ class Rooms extends MY_Controller
 		if($this->input->get('section') == 'photos')
 		{
 			$this->data['photos'] = $this->rooms_model->get_all_photos($rid);
+			if( ! $this->data['photos']) $this->data['photos'] = array();
 			$this->load->view('rooms/edit_photos', $this->data);
 		} 
 		else
@@ -285,7 +295,7 @@ class Rooms extends MY_Controller
 	 */
 	function delete($rid = null)
 	{
-
+		
 	}
 	
 	function sublet_available($rid = null)
@@ -361,26 +371,126 @@ class Rooms extends MY_Controller
 		
 	}
 	
+	function ajax_update_progress_bar()
+	{
+		$rid = $this->input->get('hosting_id');
+		$this->load->view('ajax/update_progress_bar');
+	}
+	
 	function ajax_hosting_image_upload()
 	{
 		$rid = $this->input->post('hosting_id');
-		$new_photo = $this->input->post('new_photo');
+		//$filename = $this->input->post('filename');
+		//print_r($this->input->post('filename'));
+		
+		if( ! $this->rooms_model->is_owner($rid, $this->tank_auth->get_user_id()) )
+			die();
+		
+		$config['upload_path'] = UPLOADS_PATH.'/rooms/';
+		$config['allowed_types'] = 'gif|jpg|png';
+		$config['max_size']	= '2048';
+		//$config['max_width']  = '2048';
+		//$config['max_height']  = '1024';
+		$config['file_name'] = 'tmp'.time();
+		
+		$this->load->library('upload', $config);
+
+		if ( ! $this->upload->do_upload())
+		{
+			$res = array(
+				'error' => $this->upload->display_errors('','')
+			);
+		}
+		else
+		{
+			$result = $this->upload->data();
+			
+			$this->load->model('pictures_model');
+			if( ! $pid = $this->pictures_model->create_room_images($rid, $result['full_path']))
+			{
+				$res = array(
+					'error' => $this->upload->display_errors('','')
+				);
+			}		
+			else
+			{
+				$res = array(
+					'rid' => $rid,
+					'pid' => $pid,
+					'picture_small' => UPLOADS_DIR.'/rooms/'.$pid.'/small.jpg',
+					'picture_mini_square' => UPLOADS_DIR.'/rooms/'.$pid.'/mini_square.jpg'
+				);
+			}	
+			
+			unlink($result['full_path']);
+		}
+		$this->load->view('ajax/hosting_image_upload', $res);
+	}
+	
+	function ajax_update_picture()
+	{
+		$rid = $this->input->post('hosting_id');
+		$pid = $this->input->post('picture_id');
+		$picture = $this->input->post('picture'); 	//picture['caption'];
+		$commit = $this->input->post('commit');
 	}
 	
 	function ajax_update_current_photo()
 	{
 		$rid = $this->input->get('hosting_id');
 		$pid = $this->input->get('picture_id');
+		
+		if( ! $rid || ! $pid )
+			die();
+		
+		$photo_res = $this->rooms_model->get_photo_by_id($pid);
+		if( ! $photo_res || $photo_res[0]->room_id != $rid)
+			die('Sorry - that picture no longer exists. Try refreshing this page.');
+		
+		$res = array(
+			'rid' => $rid,
+			'pid' => $pid,
+			'caption' => $photo_res[0]->caption
+		);
+		
+		$this->load->view('ajax/update_current_photo', $res);
 	}
 	
 	function ajax_update_image_order()
 	{
 		$rid = $this->input->get('hosting_id');
-		print_r($this->input->post('sortable_photos'));
+		$photos = $this->input->post('sortable_photos');
+		
+		if( ! $this->rooms_model->is_owner($rid, $this->tank_auth->get_user_id()) )
+			die();
+		$this->load->model('pictures_model');
+		$this->pictures_model->update_room_image_order($rid, $photos);
+		$this->load->view('ajax/update_image_order');
+		echo $this->db->last_query();
 	}
 	
-	function change_availability($rid)
+	function ajax_delete_photo()
 	{
+		$rid = mysql_real_escape_string($this->input->get('hosting_id'));
+		$pid = mysql_real_escape_string($this->input->get('picture_id'));
+		if( ! $rid || ! $pid || ! $this->rooms_model->is_owner($rid, $this->tank_auth->get_user_id()) )
+			die();
+		$this->load->model('pictures_model');
+		$this->pictures_model->delete_room_photo($rid, $pid);
+		$pid_new = $this->rooms_model->get_photo_by_room($rid);
+		
+		$data = array(
+			'rid' => $rid,
+			'pid_old' => $pid,
+			'pid_new' => empty($pid_new)?null:$pid_new[0]->id
+		);
+		
+		$this->load->view('ajax/delete_photo', $data);
+	}
+	
+	function change_availability($rid = null)
+	{
+		if( ! $rid) return;
 		$is_available = $this->input->get('is_available');
 		$redirect = ''.$this->input->get('redirect');
 		$this->load->library('encrypt');
