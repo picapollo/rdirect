@@ -64,6 +64,11 @@ class Rooms extends MY_Controller
 		$this->load->view('rooms/post_room', $this->data);
 	}
 	
+	/*
+	 * 방 새로 만들거나 있는 방 정보 변경
+	 * 함수를 따로 만드는게 나았겠으나 Airbnb에서 같이 호출하는 바람에 일단 같이 만들어둠
+	 * 분리하는건 어렵지 않지만 귀찮을 것으로 사료됨
+	 */
 	function update($rid = null)
 	{
 		if( ! $rid)
@@ -81,7 +86,8 @@ class Rooms extends MY_Controller
 				 * 	새로 만드는 경우
 				 */
 				$this->load->library('geocoder');
-				$address['address'] = $this->geocoder->geocode_by_address($this->input->post('location_search'));
+				//$address['address'] = $this->geocoder->geocode_by_address($this->input->post('location_search'));
+				$address['address'] = $this->geocoder->geocode_by_latlng($address['lat'].','.$address['lng']);
 				
 				/* 임시 데이터 생성 */
 				$this->load->library('encrypt');
@@ -242,7 +248,13 @@ class Rooms extends MY_Controller
 		$pt_id = $this->data['room']->property_type_id;
 		$this->data['room']->property_type = $pt_list->$pt_id;
 		$this->data['amenity_list'] = $this->rooms_model->get_amenity_list();
-		$this->data['room']->photo_ids 	= explode(',', $this->data['room']->photo_ids);
+		$this->data['room']->photos 	= explode(',', $this->data['room']->photos);
+		foreach($this->data['room']->photos as $k => $i){
+			$i = explode('""', $i);
+			$this->data['room']->photos[$k] = new stdClass();
+			$this->data['room']->photos[$k]->id = $i[0];
+			$this->data['room']->photos[$k]->caption = isset($i[1]) ? htmlspecialchars(stripslashes($i[1])) : ''; 
+		}
 		$this->data['room']->amenities 	= explode(',', $this->data['room']->amenities);
 		//$this->data['room']->pets		= explode(',', $this->data['room']->pets);
 		$this->load->language('hosting/amenities');
@@ -450,7 +462,7 @@ class Rooms extends MY_Controller
 		$res = array(
 			'rid' => $rid,
 			'pid' => $pid,
-			'caption' => $photo_res[0]->caption
+			'caption' => htmlspecialchars(stripslashes($photo_res[0]->caption))
 		);
 		
 		$this->load->view('ajax/update_current_photo', $res);

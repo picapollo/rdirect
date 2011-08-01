@@ -1,7 +1,6 @@
 <?php
 
-$lang['top_menu_hi'] = '안녕하세요';
-$lang['top_menu_nim'] = '님';
+$lang['top_menu_hello'] = '%1님, 안녕하세요!';
 $lang['top_menu_sign_up'] = '회원가입';
 $lang['top_menu_sign_in'] = '로그인';
 $lang['top_menu_dashboard'] = '마이 대쉬보드';

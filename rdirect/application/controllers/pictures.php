@@ -12,8 +12,11 @@ class Pictures extends CI_Controller{
 	
 	function ajax_update_picture()
 	{
-		$rid = $this->input->post('hosting_id');
-		$pid = $this->input->post('picture_id');
+		$rid = mysql_real_escape_string($this->input->post('hosting_id'));
+		$pid = mysql_real_escape_string($this->input->post('picture_id'));
+		if( $rid != $this->input->post('hosting_id') || $pid != $this->input->post('picture_id'))
+			exit();
+		
 		$picture = $this->input->post('picture');
 		
 		$this->load->model('rooms_model');
@@ -23,7 +26,7 @@ class Pictures extends CI_Controller{
 		
 		if($this->input->post('commit') == 'Save')
 		{
-			$this->pictures_model->update_caption($pid, $picture['caption']);
+			$this->pictures_model->update_caption($pid, mysql_real_escape_string($picture['caption']));
 		}
 		
 		$this->load->view('ajax/update_picture');

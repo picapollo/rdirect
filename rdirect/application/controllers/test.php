@@ -17,8 +17,12 @@ class Test extends MY_Controller {
 
 	public function index()
 	{
-		print_r($this->rooms_model->get_room(2));
-		
+		$t = array('1','2');
+		foreach($t as $k)
+		{
+			;
+		}
+		echo $k;
 	}
 	
 	function db($num = 1){

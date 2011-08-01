@@ -1,7 +1,7 @@
 <?php $this->load->view('header/common', $header) ?>
 <link href="<?=CSS_DIR?>/post_room.css" media="screen" rel="stylesheet" type="text/css" />
-<?php if($header['locale'] != 'en'): ?>
-<script src="<?=JS_DIR?>/jquery.ui.datepicker/jquery.ui.datepicker-<?=$header['locale']?>.min.js" type="text/javascript"></script>
+<?php if(CURRENT_LANGUAGE != 'en'): ?>
+<script src="<?=JS_DIR?>/jquery.ui.datepicker/jquery.ui.datepicker-<?=CURRENT_LANGUAGE?>.min.js" type="text/javascript"></script>
 <?php endif;?>
 <script src="<?=JS_DIR?>/libphonenumber.compiled.js" type="text/javascript"></script>
 <script src="<?=JS_DIR?>/jquery.validatedphone.js" type="text/javascript"></script>

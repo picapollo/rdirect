@@ -170,7 +170,8 @@ class Rooms_model extends CI_Model {
 		$rd = $this->db->dbprefix('room_descriptions');
 		$rp = $this->db->dbprefix('room_photos');
 		
-		$sql  = "SELECT r.*, ra.*, rd.name, rd.description, rd.language, GROUP_CONCAT(DISTINCT rp.id ORDER BY rp.`order`) as photo_ids FROM $r r " 
+		$sql  = "SELECT r.*, ra.*, rd.name, rd.description, rd.language, "
+		. " GROUP_CONCAT(DISTINCT rp.id, '\"\"', IFNULL(rp.caption, '') ORDER BY rp.`order`) as photos FROM $r r "
 		. " INNER JOIN $ra ra ON r.id=ra.room_id "
 		. " INNER JOIN $rd rd ON r.id=rd.room_id "
 		. " LEFT JOIN $rp rp ON r.id=rp.room_id "
@@ -194,7 +195,7 @@ class Rooms_model extends CI_Model {
 		$ra = $this->db->dbprefix('room_addresses');
 		$uid = mysql_real_escape_string($uid);
 		
-		$sql = "SELECT r.id, lat, lng, active, rp.id as photo_id (SELECT rp.id FROM $rp as rp WHERE r.id = rp.room_id AND `rp`.`order`=1) as photo_id, ";
+		$sql = "SELECT r.id, lat, lng, active, (SELECT rp.id FROM $rp as rp WHERE r.id = rp.room_id AND `rp`.`order`=1) as photo_id, ";
 		$sql .= "(SELECT name FROM $rd ORDER BY `language`='".CURRENT_LANGUAGE."' DESC, `language`='en' DESC LIMIT 0, 1) as name ";
 		$sql .= "FROM $r as r INNER JOIN $ra ra ON r.id=ra.room_id WHERE r.user_id=$uid ";
 		if($activity !== null) $sql .= "AND r.active = $activity"; 

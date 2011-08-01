@@ -3,6 +3,11 @@
 require 'geocoder/GGeocoderParserLib.v1.php';
 
 class Geocoder extends simple_ggeocoder_json_parser{
+	
+	protected $exclude = array(
+		'sublocality_level_3', 'sublocality_level_4', 'sublocality_level_5', 'street_address', 'street_number', 'postal_code'
+	);
+	
 	function __construct($language='en',$sensor ='false'){
 		parent::__construct($language, $sensor);
 	}
@@ -21,9 +26,15 @@ class Geocoder extends simple_ggeocoder_json_parser{
 		}
 		$res = array();
 		foreach($this->obj->results[0]->address_components as $k=>$i){
-			if(in_array('street_address', $i->types) || in_array('postal_code', $i->types) || in_array('zip_code', $i->types))
-				continue;	
-			$res[] = $i->long_name; 
+			foreach($this->exclude as $ex)
+			{
+				if(in_array($ex, $i->types))
+				{
+					unset($ex);
+					break;
+				}
+			}
+			if(isset($ex)) $res[] = $i->long_name; 
 		}
 		return implode(', ', $res);
 	}
@@ -38,9 +49,15 @@ class Geocoder extends simple_ggeocoder_json_parser{
 		
 		$res = array();
 		foreach($this->obj->results[0]->address_components as $k=>$i){
-			if(in_array('street_address', $i->types) || in_array('postal_code', $i->types) || in_array('zip_code', $i->types))
-				continue;	
-			$res[] = $i->long_name; 
+			foreach($this->exclude as $ex)
+			{
+				if(in_array($ex, $i->types))
+				{
+					unset($i);
+					break;
+				}
+			}
+			if(isset($i)) $res[] = $i->long_name; 
 		}
 		return implode(', ', $res);
 	}
