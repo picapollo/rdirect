@@ -2,8 +2,7 @@
 
 // JAPANESE: Translation required
 
-$lang['top_menu_hi'] = 'Hi';
-$lang['top_menu_nim'] = ' sang';
+$lang['top_menu_hello'] = 'Hi, %1 sang!';
 $lang['top_menu_sign_up'] = 'Sign Up';
 $lang['top_menu_sign_in'] = 'Sign In';
 $lang['top_menu_dashboard'] = 'Dashboard';

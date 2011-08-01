@@ -576,3 +576,16 @@ ERROR - 2011-07-31 04:38:26 --> 404 Page Not Found --> images
 ERROR - 2011-07-31 04:44:58 --> 404 Page Not Found --> favicon.ico
 ERROR - 2011-07-31 04:47:04 --> 404 Page Not Found --> include
 ERROR - 2011-07-31 04:47:37 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-31 19:41:07 --> Severity: Notice  --> Use of undefined constant CURRENT_LANGUAGEURRENT_LANGUAGE - assumed 'CURRENT_LANGUAGEURRENT_LANGUAGE' /home/guersam/www/rdirect/application/views/header/page1.php 39
+ERROR - 2011-07-31 19:41:08 --> 404 Page Not Found --> include
+ERROR - 2011-07-31 19:41:09 --> 404 Page Not Found --> images
+ERROR - 2011-07-31 19:41:13 --> 404 Page Not Found --> images
+ERROR - 2011-07-31 19:58:31 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(SELECT rp.id FROM rd_room_photos as rp WHERE r.id = rp.room_id AND `rp`.`order`' at line 1
+ERROR - 2011-07-31 19:58:31 --> 404 Page Not Found --> favicon.ico
+ERROR - 2011-07-31 20:00:28 --> 404 Page Not Found --> calendar/single
+ERROR - 2011-07-31 20:01:53 --> Severity: Notice  --> Use of undefined constant CURRENT_LANGUAGEURRENT_LANGUAGE - assumed 'CURRENT_LANGUAGEURRENT_LANGUAGE' /home/guersam/www/rdirect/application/views/header/page1.php 39
+ERROR - 2011-07-31 20:02:27 --> 404 Page Not Found --> include
+ERROR - 2011-07-31 20:02:28 --> 404 Page Not Found --> images
+ERROR - 2011-07-31 20:03:10 --> 404 Page Not Found --> images
+ERROR - 2011-07-31 20:03:15 --> 404 Page Not Found --> images
+ERROR - 2011-07-31 20:03:25 --> 404 Page Not Found --> images

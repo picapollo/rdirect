@@ -131,17 +131,17 @@
         <div id="photos_div" class="main_content">
             <div class="galleria_wrapper">
   <div class="image-placeholder">
-  	<?php if(empty($room->photo_ids)): ?>
+  	<?php if(empty($room->photos)): ?>
   	<img alt="Room_default_no_photos" height="426" src="<?=IMG_DIR?>/page3/v3/room_default_no_photos.jpg" width="639" /></div>
   	<?php else:?>
-  	<img alt="Large" height="426" src="<?=insert_room_photo($room->photo_ids[0], 'large')?>)" width="639" /></div>	
+  	<img alt="Large" height="426" src="<?=insert_room_photo($room->photos[0]->id, 'large')?>)" width="639" /></div>	
   	<?php endif;?>
 	<div id="galleria_container">
-		<?php if(empty($room->photo_ids)): ?>
+		<?php if(empty($room->photos)): ?>
 		<img alt="" src="<?=IMG_DIR?>/page3/v3/room_default_no_photos.jpg" />
-		<?php else: foreach($room->photo_ids as $pid): ?>
-		<a href="<?=insert_room_photo($pid, 'large')?>" title="" > 
-            <img alt="" height="40" src="<?=insert_room_photo($pid, 'mini_square')?>" title="" width="40" /> 
+		<?php else: foreach($room->photos as $k=>$photo): ?>
+		<a href="<?=insert_room_photo($photo->id, 'large')?>" title="" > 
+            <img alt="<?=$photo->caption?>" height="40" src="<?=insert_room_photo($photo->id, 'mini_square')?>" title="" width="40" /> 
         </a> 		
 		<?php endforeach; endif; ?>
 	</div>
@@ -296,7 +296,7 @@
         <ul id="reputation_sub_nav" class="rooms_sub_nav">
             <li onclick="select_tab('rep', 'this_hosting_reviews', jQuery(this));" class="rep_link" id="this_hosting_reviews_link"><a href="javascript:void(0);">후기 (0)</a></li>
             <li onclick="select_tab('rep', 'other_hosting_reviews', jQuery(this));" class="rep_link" id="other_hosting_reviews_link" style="display:none;"><a href="javascript:void(0);">다른 객실 후기 (0)</a></li>
-            <li onclick="select_tab('rep', 'friends', jQuery(this));" class="rep_link" id="friends_link"><a href="javascript:void(0);">친구 (0)</a></li>
+            <!--TODO: facebook friends <li onclick="select_tab('rep', 'friends', jQuery(this));" class="rep_link" id="friends_link"><a href="javascript:void(0);">친구 (0)</a></li>-->
         </ul>
 
         <div id="this_hosting_reviews" class="rep_content" style="display:none;">

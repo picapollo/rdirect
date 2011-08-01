@@ -7,7 +7,7 @@
 	<ul id="utilities">
 <?php if($this->tank_auth->is_logged_in()): ?>
 		<li class="first-child">
-			<?=lang('top_menu_hi')?>, <?php echo $this->tank_auth->get_username().lang('top_menu_nim');?>!&nbsp;&nbsp;&nbsp;&nbsp;
+			<?=lang('top_menu_hello', $this->tank_auth->get_username())?>&nbsp;&nbsp;&nbsp;&nbsp;
 			<?=anchor('home/dashboard', lang('top_menu_dashboard'));?>
 		</li>
 		<li style="border:none;">
