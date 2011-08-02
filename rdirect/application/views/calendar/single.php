@@ -1,5 +1,150 @@
+<?php $this->load->view('header/calendar', $header); ?>
+<script type="text/javascript"> 
+	function get_square(rowIndex,colIndex) {
+        return schedules[rowIndex][colIndex];
+    }
+    function gridColToDataCol(gridCol) {
+        return (gridCol);
+    }
+ 
+    function gridRowToDataRow(gridRow) {
+        return (gridRow);
+    }
+ 
+    function update_calendar_data(visible_row,hosting_id,json) {
+        //if (hosting_id!=hostings[data_row].id) alert('DEBUG1: ids do not match');
+        schedules[0] = json[0];
+        render_grid(14, 48);
+    }
+ 
+    // ---------------------------------------------------
+    function is_address_line(row) {
+        return false;
+    }
+ 
+    function lwlb_hide_special() {
+        lwlb_hide('lwlb_calendar2');
+        range_remove_all();
+    }
+ 
+    function range_add(i){
+        //alert('range_add start: i='+i+', select_start='+select_range_start+', select_stop='+select_range_stop);
+        if (select_range_stop == null) return;
+        if (i < select_range_start) return;
+ 
+        if (i < select_range_stop) range_remove(i+1);
+        //alert('range_add start2: i='+i+', select_start='+select_range_start+', select_stop='+select_range_stop);
+        //alert("i="+i+",stop="+select_range_stop);
+ 
+        for (var tmp=select_range_stop; tmp <= i; tmp++) {
+            if (!is_selectable(0,tmp)) return;
+            
+            rollover('tile_' + tmp, 'tile', 'tile_selected');
+        }
+        //alert('add');
+        select_range_stop = i;
+    }
+ 
+    function range_remove(i) {
+        //alert('range_remove start: i='+i+', select_start='+select_range_start+', select_stop='+select_range_stop);
+ 
+        if (select_range_stop == null) return;
+        if (i <= select_range_start) return;
+        //if (i <= select_range_start) {
+        //    select_range_start = i;
+        //    range_add(i);
+        //}
+        
+        if (select_range_click_count>=2) return;
+        if (i>select_range_stop) return;
+ 
+        for (; select_range_stop >= i; select_range_stop--) {
+            //if (!is_selectable(0,select_range_stop)) return;
+            
+            rollover('tile_' + select_range_stop, 'tile_selected', 'tile');
+        }
+ 
+        //if (i<select_range_stop)
+        select_range_stop = i;
+    }
+ 
+ 
+    function range_remove_all() {
+        for (var i=select_range_start; i <= select_range_stop; i++) {
+            rollover('tile_' + i, 'tile_selected', 'tile');
+        }
+ 
+        select_range_click_count = 0;
+        select_range_start = null;
+        select_range_stop = null;
+    }
+ 
+    function click_down(i) {
+        select_range_click_count++;
+ 
+        if (select_range_click_count > 2) {
+            range_remove_all();
+            return;
+        }
+ 
+        if (select_range_stop != null) return; // abort on second click
+ 
+        if (!is_selectable(0, i)) {
+            var matches = getAtomicBounds(0,i);
+            select_range_start = matches[0];
+            select_range_stop = matches[1];
+            show_calendar();
+            return;
+        }
+ 
+        select_range_start = i;
+        select_range_stop = i;
+        //alert("start="+select_range_start+",stop="+select_range_stop);
+        rollover('tile_'+i,'tile','tile_selected');
+    }
+ 
+    function click_up(i) {
+        if (select_range_click_count>=2) {
+ 
+            show_calendar();
+ 
+            //row = Math.floor(select_range_start / 7);
+            //col = select_range_start % 7;
+            //Element.setStyle($('lwlb_calendar2'), 'left:'+(130+col*106)+'px;');
+            //Element.setStyle($('lwlb_calendar2'), 'top:'+(100+row*80)+'px;');
+        }
+    }
+ 
+    function show_calendar() {
+        prepareLightbox(<?=$room->id?>,"<?=$room->name?>",0,select_range_start,select_range_stop);
+ 
+    }
+ 
+  jQuery(document).ready(function(){
+    AirbnbDashboard.init(); 
+ 
+    
+  });
+ 
+  var buttonContent = {
+    active: {
+      label: "활성",
+      instructions: "객실을 검색 결과에서 없앨려면 숨기기 기능을 이용하세요.",
+      toggle_label: "숨기기"
+    },
+    inactive: {
+      label: "숨김",
+      instructions: "객실 등록을 활성화 시켜서 검생 결과에 나오게 하세요:",
+      toggle_label: "활성화시키기"
+    }
+  };
+ 
+  jQuery(document).ready(function(){
+    jQuery('div.set-availability').availabilityWidget(buttonContent);
+  });
+ 
+</script> 
 <?php
-	$this->load->view('header/calendar', $header);
 	$this->load->view('top_menu', array('starred'=>$starred));
 	$this->load->view('rooms/edit_nav', array('selected'=>'calendar'));
 ?>
@@ -22,8 +167,8 @@
 var global_grid = null;
  
 var columnInfo = ["Sun\u003Cbr /\u003EJul 17","Mon\u003Cbr /\u003EJul 18","Tue\u003Cbr /\u003EJul 19","Wed\u003Cbr /\u003EJul 20","Thu\u003Cbr /\u003EJul 21","Fri\u003Cbr /\u003EJul 22","Sat\u003Cbr /\u003EJul 23","Sun\u003Cbr /\u003EJul 24","Mon\u003Cbr /\u003EJul 25","Tue\u003Cbr /\u003EJul 26","Wed\u003Cbr /\u003EJul 27","Thu\u003Cbr /\u003EJul 28","Fri\u003Cbr /\u003EJul 29","Sat\u003Cbr /\u003EJul 30","Sun\u003Cbr /\u003EJul 31","Mon\u003Cbr /\u003EAug 01","Tue\u003Cbr /\u003EAug 02","Wed\u003Cbr /\u003EAug 03","Thu\u003Cbr /\u003EAug 04","Fri\u003Cbr /\u003EAug 05","Sat\u003Cbr /\u003EAug 06","Sun\u003Cbr /\u003EAug 07","Mon\u003Cbr /\u003EAug 08","Tue\u003Cbr /\u003EAug 09","Wed\u003Cbr /\u003EAug 10","Thu\u003Cbr /\u003EAug 11","Fri\u003Cbr /\u003EAug 12","Sat\u003Cbr /\u003EAug 13","Sun\u003Cbr /\u003EAug 14","Mon\u003Cbr /\u003EAug 15","Tue\u003Cbr /\u003EAug 16","Wed\u003Cbr /\u003EAug 17","Thu\u003Cbr /\u003EAug 18","Fri\u003Cbr /\u003EAug 19","Sat\u003Cbr /\u003EAug 20","Sun\u003Cbr /\u003EAug 21","Mon\u003Cbr /\u003EAug 22","Tue\u003Cbr /\u003EAug 23","Wed\u003Cbr /\u003EAug 24","Thu\u003Cbr /\u003EAug 25","Fri\u003Cbr /\u003EAug 26","Sat\u003Cbr /\u003EAug 27","Sun\u003Cbr /\u003EAug 28","Mon\u003Cbr /\u003EAug 29","Tue\u003Cbr /\u003EAug 30","Wed\u003Cbr /\u003EAug 31","Thu\u003Cbr /\u003ESep 01","Fri\u003Cbr /\u003ESep 02","Sat\u003Cbr /\u003ESep 03","Sun\u003Cbr /\u003ESep 04","Mon\u003Cbr /\u003ESep 05","Tue\u003Cbr /\u003ESep 06","Wed\u003Cbr /\u003ESep 07","Thu\u003Cbr /\u003ESep 08","Fri\u003Cbr /\u003ESep 09","Sat\u003Cbr /\u003ESep 10","Sun\u003Cbr /\u003ESep 11","Mon\u003Cbr /\u003ESep 12","Tue\u003Cbr /\u003ESep 13","Wed\u003Cbr /\u003ESep 14","Thu\u003Cbr /\u003ESep 15","Fri\u003Cbr /\u003ESep 16","Sat\u003Cbr /\u003ESep 17","Sun\u003Cbr /\u003ESep 18"];
-var hostings = [{"price":345,"name":"nglish","available":0,"row":0,"id":179452,"currency_symbol":"$","currency":"USD","lc_name":"nglish"}];
-var schedules = [[{cl: "av", sty: "both", isa: 1},{cl: "av", sty: "both", isa: 1},{cl: "av", sty: "both", isa: 1},{cl: "av", sty: "both", isa: 1},{cl: "av", sty: "both", isa: 1},{cl: "av", sty: "both", isa: 1},{cl: "av", sty: "both", isa: 1},{cl: "av", sty: "both", isa: 1},{cl: "av", sty: "both", isa: 1},{cl: "av", sty: "both", isa: 1},{cl: "av", sty: "both", isa: 1},{cl: "av", sty: "both", isa: 1},{cl: "av", sty: "both", isa: 1},{cl: "av", sty: "right", isa: 1},{cl: "bs", sty: "single", isa: 0, id: 29328501, st: 2},{cl: "av", sty: "left", isa: 1, daily_price: 345, id: 29321597, st: 0},{cl: "av", sty: "right", isa: 1, daily_price: 345, id: 29321600, st: 0},{cl: "bs", sty: "single", isa: 0, id: 29363889, st: 2},{cl: "bs", sty: "left", isa: 0, id: 29363890, notes: "jkj;lkj", st: 2},{cl: "bs", sty: "both", isa: 0, id: 29363891, st: 2},{cl: "bs", sty: "both", isa: 0, id: 29363892, st: 2},{cl: "bs", sty: "both", isa: 0, id: 29363893, st: 2},{cl: "bs", sty: "both", isa: 0, id: 29363894, st: 2},{cl: "bs", sty: "right", isa: 0, id: 29363895, st: 2},{cl: "bs", sty: "single", isa: 0, id: 29363896, notes: "ftert", st: 2},{cl: "bs", sty: "left", isa: 0, id: 29353248, notes: "gffff", st: 2},{cl: "bs", sty: "both", isa: 0, id: 29353249, st: 2},{cl: "bs", sty: "right", isa: 0, id: 29363096, st: 2},{cl: "tp", sty: "left", isa: 0, id: 29362585, notes: "", st: 4, sst: "Great Rentals", gid: 45198136},{cl: "tp", sty: "right", isa: 0, id: 29362587, st: 4, sst: "Great Rentals", gid: 45198136},{cl: "tp", sty: "single", isa: 0, id: 29313789, notes: "fff", st: 4, sst: "Home Away", gid: 481458411},{cl: "av", sty: "left", isa: 1, daily_price: 33, id: 29319487, st: 0},{cl: "av", sty: "right", isa: 1, daily_price: 33, id: 29319489, st: 0},{cl: "tp", sty: "left", isa: 0, id: 29353250, st: 4, sst: "", gid: 563280709},{cl: "tp", sty: "right", isa: 0, id: 29353251, st: 4, sst: "", gid: 563280709},{cl: "av", sty: "left", isa: 1, daily_price: 33, id: 29319493, st: 0},{cl: "av", sty: "both", isa: 1, daily_price: 33, id: 29323604, st: 0},{cl: "av", sty: "right", isa: 1, daily_price: 33, id: 29323605, st: 0},{cl: "av", sty: "single", isa: 1},{cl: "bs", sty: "left", isa: 0, id: 29337493, st: 2},{cl: "bs", sty: "both", isa: 0, id: 29337494, st: 2},{cl: "bs", sty: "both", isa: 0, id: 29337495, st: 2},{cl: "bs", sty: "both", isa: 0, id: 29337496, st: 2},{cl: "bs", sty: "right", isa: 0, id: 29337497, st: 2},{cl: "tp", sty: "left", isa: 0, id: 29364046, notes: "czxcxz", st: 4, sst: "", gid: 938569934},{cl: "tp", sty: "right", isa: 0, id: 29364047, st: 4, sst: "", gid: 938569934},{cl: "bs", sty: "single", isa: 0, id: 29337500, st: 2},{cl: "av", sty: "single", isa: 1},{cl: "tp", sty: "left", isa: 0, id: 29398753, notes: "notes", st: 4, sst: "Home Away Connect", gid: 214479992},{cl: "tp", sty: "both", isa: 0, id: 29398754, st: 4, sst: "Home Away Connect", gid: 214479992},{cl: "tp", sty: "both", isa: 0, id: 29398755, st: 4, sst: "Home Away Connect", gid: 214479992},{cl: "tp", sty: "both", isa: 0, id: 29398756, st: 4, sst: "Home Away Connect", gid: 214479992},{cl: "tp", sty: "both", isa: 0, id: 29398757, st: 4, sst: "Home Away Connect", gid: 214479992},{cl: "tp", sty: "right", isa: 0, id: 29398758, st: 4, sst: "Home Away Connect", gid: 214479992},{cl: "av", sty: "left", isa: 1, daily_price: 345, id: 29398564, st: 0},{cl: "av", sty: "both", isa: 1},{cl: "av", sty: "both", isa: 1},{cl: "av", sty: "right", isa: 1},{cl: "tp", sty: "left", isa: 0, id: 29394096, notes: "231", st: 4, sst: "VRBO", gid: 848361292, reservation_value: 123},{cl: "tp", sty: "right", isa: 0, id: 29394098, st: 4, sst: "VRBO", gid: 848361292, reservation_value: 123},{cl: "av", sty: "left", isa: 1},{cl: "av", sty: "both", isa: 1},{cl: "av", sty: "both", isa: 1}]];
+var hostings = [{"price":345,"name":"nglish","available":0,"row":0,"id":<?=$room->id?>,"currency_symbol":"$","currency":"USD","lc_name":"nglish"}];
+var schedules = [<?=json_encode($tiles)?>];
  
 var reservationHash = new Hash({});
  
@@ -215,11 +360,11 @@ function prepareLightbox(hosting_id,hosting_name,gridRow,gridMinCol,gridMaxCol) 
     $('lwlb_data_start_date').value = date_print_usa_date(g_start_date);
     $('lwlb_confirmation').value = firstSquare.confirmation ? firstSquare.confirmation : '';
  
-    if (firstSquare.notes) {
+    /*if (firstSquare.notes) {
         if (firstSquare.notes) $('lwlb_notes').value = firstSquare.notes;
     } else {
         $('lwlb_notes').value = "Notes...";
-    }
+    }*/
  
     $('lwlb_reservation_section').hide();
     $('lwlb_normal_section').hide();
@@ -299,7 +444,7 @@ function prepareLightbox(hosting_id,hosting_name,gridRow,gridMinCol,gridMaxCol) 
         } else {
             $('lwlb_daily_price').value = '';
         }
-        if (firstSquare.st==4) {
+        /*if (firstSquare.st==4) {
             $('lwlb_booking_service').value = firstSquare.sst;
             if (firstSquare.sst=="Other") {
                 $('lwlb_booking_service_other').value = firstSquare.square_subtype_other ? firstSquare.square_subtype_other : '';
@@ -314,13 +459,13 @@ function prepareLightbox(hosting_id,hosting_name,gridRow,gridMinCol,gridMaxCol) 
             $('lwlb_booking_service').value = "";
             $('lwlb_booking_service_other').value = '';
             $('lwlb_booking_service_other').hide();
-        }
+        }*/
         
-        if (firstSquare.reservation_value) {
+        /*if (firstSquare.reservation_value) {
             $('lwlb_value').value = firstSquare.reservation_value;
         } else {
             $('lwlb_value').value = "";
-        }
+        }*/
     }
  
     lwlb_show('lwlb_calendar2',{no_scroll: true});
@@ -416,22 +561,22 @@ function date_print_simplified(dt) {
         switch ($('lwlb_availability').value) {
         case 'Available':
             $('lwlb_row_per_night').show();
-            $('lwlb_row_service').hide();
+           // $('lwlb_row_service').hide();
             $('lwlb_row_value').hide();
-            $('lwlb_notes').hide();
+            //$('lwlb_notes').hide();
             break;
         case 'Not Available':
             $('lwlb_row_per_night').hide();
-            $('lwlb_row_service').hide();
-            $('lwlb_row_value').hide();
-            $('lwlb_notes').show();
+            //$('lwlb_row_service').hide();
+           //$('lwlb_row_value').hide();
+            //$('lwlb_notes').show();
             break;
-        case 'Booked':
+        /*case 'Booked':
             $('lwlb_row_per_night').hide();
             $('lwlb_row_service').show();
             $('lwlb_row_value').show();
             $('lwlb_notes').show();
-            break;
+            break;*/
         }
     }
  
@@ -465,7 +610,7 @@ function date_print_simplified(dt) {
  
 <div id="lwlb_calendar2" class="lwlb_lightbox_calendar"><div class="container"><div class="inner"> 
  
-<form action="/calendar/modify_calendar?month=8" method="post" onsubmit="before_submit();; new Ajax.Request('/calendar/modify_calendar?month=8', {asynchronous:true, evalScripts:true, parameters:Form.serialize(this)}); return false;"> 
+<form action="/calendar/modify_calendar?month=8" method="post" onsubmit="before_submit();; new Ajax.Request('/calendar/modify_calendar?month=<?=$month?>', {asynchronous:true, evalScripts:true, parameters:Form.serialize(this)}); return false;"> 
         <input type="hidden" name="data_start_date" id="lwlb_data_start_date" value="" /> 
         <input type="hidden" name="confirmation" id="lwlb_confirmation" value="" /> 
  
@@ -545,29 +690,11 @@ function date_print_simplified(dt) {
                     <tr> 
                         <td style="width:80px;">이용 가능성</td> 
                         <td><select id="lwlb_availability" name="availability" value="" onchange="lwlb_availability_changed();" ><option value="Available">Available</option> 
-<option value="Booked">Booked</option> 
 <option value="Not Available">Not Available</option></select></td> 
                     </tr> 
                     <tr id="lwlb_row_per_night"> 
                         <td style="width:80px;">Per night</td> 
                         <td><span class="currency_symbol">xxx</span><input type="text" style="width:35px;" id="lwlb_daily_price" name="daily_price_native" value="" onfocus="" onclick="" /></td> 
-                    </tr> 
-                    <tr id="lwlb_row_service"> 
-                        <td style="width:80px;">Booked Using</td> 
-                        <td> 
-                            <select id="lwlb_booking_service" name="booking_service" value="" onchange="lwlb_booking_service_changed();" ><option value=""></option> 
-<option value="A1 Vacations">A1 Vacations</option> 
-<option value="Craigslist">Craigslist</option> 
-<option value="Cyber Rentals">Cyber Rentals</option> 
-<option value="Great Rentals">Great Rentals</option> 
-<option value="Home Away">Home Away</option> 
-<option value="Home Away Connect">Home Away Connect</option> 
-<option value="Homepage (direct)">Homepage (direct)</option> 
-<option value="Offline Source">Offline Source</option> 
-<option value="VRBO">VRBO</option> 
-<option value="Other">Other</option></select> 
-                            <input type="text" style="width:65px;display:none;" id="lwlb_booking_service_other" name="booking_service_other" value="" onfocus="" onclick="" /> 
-                        </td> 
                     </tr> 
                     <tr id="lwlb_row_value"> 
                         <td style="width:80px;">Value</td> 
@@ -576,8 +703,6 @@ function date_print_simplified(dt) {
                 </table> 
             </div> 
         </div> 
- 
-        <textarea id="lwlb_notes" name="notes" style="width:100%;height:30px;" onclick="if (this.value=='Notes...') { this.value=''; };">참고...</textarea> 
  
         <div style="margin-top:5px;text-align:right;"> 
             <input id="lightbox_submit" name="commit" type="submit" value="Submit" /> 
@@ -625,373 +750,21 @@ function date_print_simplified(dt) {
 					<div class="day_header">토</div> 
 					<div class="clear"></div> 
 				</div> 
- 				<?php //TODO: foreach($tiles as $tile): ?>
-					<div> 
-                                <div class="tile" id="tile_14" onmousedown="click_down(14);" onmouseup="click_up(14);" onmouseover="range_add(14);" onmouseout="range_remove(14);"> 
+ 				<?php 
+ 					for($i=$start_idx, $c_idx=0; $i<=$stop_idx; $i++, $c_idx++):	
+ 						if( ! ($i%7)) echo '<div>';
+ 				?>
+                                <div class="tile <?=$calendar[$c_idx]->disabled ? 'disabled':''?>" id="tile_<?=$i?>" <?php if( ! $calendar[$c_idx]->disabled):?> onmousedown="click_down(<?=$i?>);" onmouseup="click_up(<?=$i?>);" onmouseover="range_add(<?=$i?>);" onmouseout="range_remove(<?=$i?>);" <?php endif; ?>> 
                                   <div class="tile_container"> 
-                                    <div class="day">31</div> 
-                                    <div class="line_reg" style="z-index:48;" id="square_14"> 
+                                    <div class="day"><?=$calendar[$c_idx]->d?></div> 
+                                    <div class="line_reg <?=$tiles[$i]->cl.' '.$tiles[$i]->sty?>" style="z-index:<?=$stop_idx - $i?>;" id="square_<?=$i?>"> 
                                       <span class="startcap"></span> 
                                       <span class="content"></span> 
                                       <span class="endcap"></span> 
                                     </div> 
                                   </div> 
                                 </div> 
-                                <div class="tile" id="tile_15" onmousedown="click_down(15);" onmouseup="click_up(15);" onmouseover="range_add(15);" onmouseout="range_remove(15);"> 
-                                  <div class="tile_container"> 
-                                    <div class="day">1</div> 
-                                    <div class="line_reg" style="z-index:47;" id="square_15"> 
-                                      <span class="startcap"></span> 
-                                      <span class="content"></span> 
-                                      <span class="endcap"></span> 
-                                    </div> 
-                                  </div> 
-                                </div> 
-                                <div class="tile" id="tile_16" onmousedown="click_down(16);" onmouseup="click_up(16);" onmouseover="range_add(16);" onmouseout="range_remove(16);"> 
-                                  <div class="tile_container"> 
-                                    <div class="day">2</div> 
-                                    <div class="line_reg" style="z-index:46;" id="square_16"> 
-                                      <span class="startcap"></span> 
-                                      <span class="content"></span> 
-                                      <span class="endcap"></span> 
-                                    </div> 
-                                  </div> 
-                                </div> 
-                                <div class="tile" id="tile_17" onmousedown="click_down(17);" onmouseup="click_up(17);" onmouseover="range_add(17);" onmouseout="range_remove(17);"> 
-                                  <div class="tile_container"> 
-                                    <div class="day">3</div> 
-                                    <div class="line_reg" style="z-index:45;" id="square_17"> 
-                                      <span class="startcap"></span> 
-                                      <span class="content"></span> 
-                                      <span class="endcap"></span> 
-                                    </div> 
-                                  </div> 
-                                </div> 
-                                <div class="tile" id="tile_18" onmousedown="click_down(18);" onmouseup="click_up(18);" onmouseover="range_add(18);" onmouseout="range_remove(18);"> 
-                                  <div class="tile_container"> 
-                                    <div class="day">4</div> 
-                                    <div class="line_reg" style="z-index:44;" id="square_18"> 
-                                      <span class="startcap"></span> 
-                                      <span class="content"></span> 
-                                      <span class="endcap"></span> 
-                                    </div> 
-                                  </div> 
-                                </div> 
-                                <div class="tile" id="tile_19" onmousedown="click_down(19);" onmouseup="click_up(19);" onmouseover="range_add(19);" onmouseout="range_remove(19);"> 
-                                  <div class="tile_container"> 
-                                    <div class="day">5</div> 
-                                    <div class="line_reg" style="z-index:43;" id="square_19"> 
-                                      <span class="startcap"></span> 
-                                      <span class="content"></span> 
-                                      <span class="endcap"></span> 
-                                    </div> 
-                                  </div> 
-                                </div> 
-                                <div class="tile" id="tile_20" onmousedown="click_down(20);" onmouseup="click_up(20);" onmouseover="range_add(20);" onmouseout="range_remove(20);"> 
-                                  <div class="tile_container"> 
-                                    <div class="day">6</div> 
-                                    <div class="line_eow" style="z-index:42;" id="square_20"> 
-                                      <span class="startcap"></span> 
-                                      <span class="content"></span> 
-                                      <span class="endcap"></span> 
-                                    </div> 
-                                  </div> 
-                                </div> 
-						<div class="clear"></div> 
-					</div> 
-					<div> 
-                                <div class="tile" id="tile_21" onmousedown="click_down(21);" onmouseup="click_up(21);" onmouseover="range_add(21);" onmouseout="range_remove(21);"> 
-                                  <div class="tile_container"> 
-                                    <div class="day">7</div> 
-                                    <div class="line_reg" style="z-index:41;" id="square_21"> 
-                                      <span class="startcap"></span> 
-                                      <span class="content"></span> 
-                                      <span class="endcap"></span> 
-                                    </div> 
-                                  </div> 
-                                </div> 
-                                <div class="tile" id="tile_22" onmousedown="click_down(22);" onmouseup="click_up(22);" onmouseover="range_add(22);" onmouseout="range_remove(22);"> 
-                                  <div class="tile_container"> 
-                                    <div class="day">8</div> 
-                                    <div class="line_reg" style="z-index:40;" id="square_22"> 
-                                      <span class="startcap"></span> 
-                                      <span class="content"></span> 
-                                      <span class="endcap"></span> 
-                                    </div> 
-                                  </div> 
-                                </div> 
-                                <div class="tile" id="tile_23" onmousedown="click_down(23);" onmouseup="click_up(23);" onmouseover="range_add(23);" onmouseout="range_remove(23);"> 
-                                  <div class="tile_container"> 
-                                    <div class="day">9</div> 
-                                    <div class="line_reg" style="z-index:39;" id="square_23"> 
-                                      <span class="startcap"></span> 
-                                      <span class="content"></span> 
-                                      <span class="endcap"></span> 
-                                    </div> 
-                                  </div> 
-                                </div> 
-                                <div class="tile" id="tile_24" onmousedown="click_down(24);" onmouseup="click_up(24);" onmouseover="range_add(24);" onmouseout="range_remove(24);"> 
-                                  <div class="tile_container"> 
-                                    <div class="day">10</div> 
-                                    <div class="line_reg" style="z-index:38;" id="square_24"> 
-                                      <span class="startcap"></span> 
-                                      <span class="content"></span> 
-                                      <span class="endcap"></span> 
-                                    </div> 
-                                  </div> 
-                                </div> 
-                                <div class="tile" id="tile_25" onmousedown="click_down(25);" onmouseup="click_up(25);" onmouseover="range_add(25);" onmouseout="range_remove(25);"> 
-                                  <div class="tile_container"> 
-                                    <div class="day">11</div> 
-                                    <div class="line_reg" style="z-index:37;" id="square_25"> 
-                                      <span class="startcap"></span> 
-                                      <span class="content"></span> 
-                                      <span class="endcap"></span> 
-                                    </div> 
-                                  </div> 
-                                </div> 
-                                <div class="tile" id="tile_26" onmousedown="click_down(26);" onmouseup="click_up(26);" onmouseover="range_add(26);" onmouseout="range_remove(26);"> 
-                                  <div class="tile_container"> 
-                                    <div class="day">12</div> 
-                                    <div class="line_reg" style="z-index:36;" id="square_26"> 
-                                      <span class="startcap"></span> 
-                                      <span class="content"></span> 
-                                      <span class="endcap"></span> 
-                                    </div> 
-                                  </div> 
-                                </div> 
-                                <div class="tile" id="tile_27" onmousedown="click_down(27);" onmouseup="click_up(27);" onmouseover="range_add(27);" onmouseout="range_remove(27);"> 
-                                  <div class="tile_container"> 
-                                    <div class="day">13</div> 
-                                    <div class="line_eow" style="z-index:35;" id="square_27"> 
-                                      <span class="startcap"></span> 
-                                      <span class="content"></span> 
-                                      <span class="endcap"></span> 
-                                    </div> 
-                                  </div> 
-                                </div> 
-						<div class="clear"></div> 
-					</div> 
-					<div> 
-                                <div class="tile" id="tile_28" onmousedown="click_down(28);" onmouseup="click_up(28);" onmouseover="range_add(28);" onmouseout="range_remove(28);"> 
-                                  <div class="tile_container"> 
-                                    <div class="day">14</div> 
-                                    <div class="line_reg" style="z-index:34;" id="square_28"> 
-                                      <span class="startcap"></span> 
-                                      <span class="content"></span> 
-                                      <span class="endcap"></span> 
-                                    </div> 
-                                  </div> 
-                                </div> 
-                                <div class="tile" id="tile_29" onmousedown="click_down(29);" onmouseup="click_up(29);" onmouseover="range_add(29);" onmouseout="range_remove(29);"> 
-                                  <div class="tile_container"> 
-                                    <div class="day">15</div> 
-                                    <div class="line_reg" style="z-index:33;" id="square_29"> 
-                                      <span class="startcap"></span> 
-                                      <span class="content"></span> 
-                                      <span class="endcap"></span> 
-                                    </div> 
-                                  </div> 
-                                </div> 
-                                <div class="tile" id="tile_30" onmousedown="click_down(30);" onmouseup="click_up(30);" onmouseover="range_add(30);" onmouseout="range_remove(30);"> 
-                                  <div class="tile_container"> 
-                                    <div class="day">16</div> 
-                                    <div class="line_reg" style="z-index:32;" id="square_30"> 
-                                      <span class="startcap"></span> 
-                                      <span class="content"></span> 
-                                      <span class="endcap"></span> 
-                                    </div> 
-                                  </div> 
-                                </div> 
-                                <div class="tile" id="tile_31" onmousedown="click_down(31);" onmouseup="click_up(31);" onmouseover="range_add(31);" onmouseout="range_remove(31);"> 
-                                  <div class="tile_container"> 
-                                    <div class="day">17</div> 
-                                    <div class="line_reg" style="z-index:31;" id="square_31"> 
-                                      <span class="startcap"></span> 
-                                      <span class="content"></span> 
-                                      <span class="endcap"></span> 
-                                    </div> 
-                                  </div> 
-                                </div> 
-                                <div class="tile" id="tile_32" onmousedown="click_down(32);" onmouseup="click_up(32);" onmouseover="range_add(32);" onmouseout="range_remove(32);"> 
-                                  <div class="tile_container"> 
-                                    <div class="day">18</div> 
-                                    <div class="line_reg" style="z-index:30;" id="square_32"> 
-                                      <span class="startcap"></span> 
-                                      <span class="content"></span> 
-                                      <span class="endcap"></span> 
-                                    </div> 
-                                  </div> 
-                                </div> 
-                                <div class="tile" id="tile_33" onmousedown="click_down(33);" onmouseup="click_up(33);" onmouseover="range_add(33);" onmouseout="range_remove(33);"> 
-                                  <div class="tile_container"> 
-                                    <div class="day">19</div> 
-                                    <div class="line_reg" style="z-index:29;" id="square_33"> 
-                                      <span class="startcap"></span> 
-                                      <span class="content"></span> 
-                                      <span class="endcap"></span> 
-                                    </div> 
-                                  </div> 
-                                </div> 
-                                <div class="tile" id="tile_34" onmousedown="click_down(34);" onmouseup="click_up(34);" onmouseover="range_add(34);" onmouseout="range_remove(34);"> 
-                                  <div class="tile_container"> 
-                                    <div class="day">20</div> 
-                                    <div class="line_eow" style="z-index:28;" id="square_34"> 
-                                      <span class="startcap"></span> 
-                                      <span class="content"></span> 
-                                      <span class="endcap"></span> 
-                                    </div> 
-                                  </div> 
-                                </div> 
-						<div class="clear"></div> 
-					</div> 
-					<div> 
-                                <div class="tile" id="tile_35" onmousedown="click_down(35);" onmouseup="click_up(35);" onmouseover="range_add(35);" onmouseout="range_remove(35);"> 
-                                  <div class="tile_container"> 
-                                    <div class="day">21</div> 
-                                    <div class="line_reg" style="z-index:27;" id="square_35"> 
-                                      <span class="startcap"></span> 
-                                      <span class="content"></span> 
-                                      <span class="endcap"></span> 
-                                    </div> 
-                                  </div> 
-                                </div> 
-                                <div class="tile" id="tile_36" onmousedown="click_down(36);" onmouseup="click_up(36);" onmouseover="range_add(36);" onmouseout="range_remove(36);"> 
-                                  <div class="tile_container"> 
-                                    <div class="day">22</div> 
-                                    <div class="line_reg" style="z-index:26;" id="square_36"> 
-                                      <span class="startcap"></span> 
-                                      <span class="content"></span> 
-                                      <span class="endcap"></span> 
-                                    </div> 
-                                  </div> 
-                                </div> 
-                                <div class="tile" id="tile_37" onmousedown="click_down(37);" onmouseup="click_up(37);" onmouseover="range_add(37);" onmouseout="range_remove(37);"> 
-                                  <div class="tile_container"> 
-                                    <div class="day">23</div> 
-                                    <div class="line_reg" style="z-index:25;" id="square_37"> 
-                                      <span class="startcap"></span> 
-                                      <span class="content"></span> 
-                                      <span class="endcap"></span> 
-                                    </div> 
-                                  </div> 
-                                </div> 
-                                <div class="tile" id="tile_38" onmousedown="click_down(38);" onmouseup="click_up(38);" onmouseover="range_add(38);" onmouseout="range_remove(38);"> 
-                                  <div class="tile_container"> 
-                                    <div class="day">24</div> 
-                                    <div class="line_reg" style="z-index:24;" id="square_38"> 
-                                      <span class="startcap"></span> 
-                                      <span class="content"></span> 
-                                      <span class="endcap"></span> 
-                                    </div> 
-                                  </div> 
-                                </div> 
-                                <div class="tile" id="tile_39" onmousedown="click_down(39);" onmouseup="click_up(39);" onmouseover="range_add(39);" onmouseout="range_remove(39);"> 
-                                  <div class="tile_container"> 
-                                    <div class="day">25</div> 
-                                    <div class="line_reg" style="z-index:23;" id="square_39"> 
-                                      <span class="startcap"></span> 
-                                      <span class="content"></span> 
-                                      <span class="endcap"></span> 
-                                    </div> 
-                                  </div> 
-                                </div> 
-                                <div class="tile" id="tile_40" onmousedown="click_down(40);" onmouseup="click_up(40);" onmouseover="range_add(40);" onmouseout="range_remove(40);"> 
-                                  <div class="tile_container"> 
-                                    <div class="day">26</div> 
-                                    <div class="line_reg" style="z-index:22;" id="square_40"> 
-                                      <span class="startcap"></span> 
-                                      <span class="content"></span> 
-                                      <span class="endcap"></span> 
-                                    </div> 
-                                  </div> 
-                                </div> 
-                                <div class="tile" id="tile_41" onmousedown="click_down(41);" onmouseup="click_up(41);" onmouseover="range_add(41);" onmouseout="range_remove(41);"> 
-                                  <div class="tile_container"> 
-                                    <div class="day">27</div> 
-                                    <div class="line_eow" style="z-index:21;" id="square_41"> 
-                                      <span class="startcap"></span> 
-                                      <span class="content"></span> 
-                                      <span class="endcap"></span> 
-                                    </div> 
-                                  </div> 
-                                </div> 
-						<div class="clear"></div> 
-					</div> 
-					<div> 
-                                <div class="tile" id="tile_42" onmousedown="click_down(42);" onmouseup="click_up(42);" onmouseover="range_add(42);" onmouseout="range_remove(42);"> 
-                                  <div class="tile_container"> 
-                                    <div class="day">28</div> 
-                                    <div class="line_reg" style="z-index:20;" id="square_42"> 
-                                      <span class="startcap"></span> 
-                                      <span class="content"></span> 
-                                      <span class="endcap"></span> 
-                                    </div> 
-                                  </div> 
-                                </div> 
-                                <div class="tile" id="tile_43" onmousedown="click_down(43);" onmouseup="click_up(43);" onmouseover="range_add(43);" onmouseout="range_remove(43);"> 
-                                  <div class="tile_container"> 
-                                    <div class="day">29</div> 
-                                    <div class="line_reg" style="z-index:19;" id="square_43"> 
-                                      <span class="startcap"></span> 
-                                      <span class="content"></span> 
-                                      <span class="endcap"></span> 
-                                    </div> 
-                                  </div> 
-                                </div> 
-                                <div class="tile" id="tile_44" onmousedown="click_down(44);" onmouseup="click_up(44);" onmouseover="range_add(44);" onmouseout="range_remove(44);"> 
-                                  <div class="tile_container"> 
-                                    <div class="day">30</div> 
-                                    <div class="line_reg" style="z-index:18;" id="square_44"> 
-                                      <span class="startcap"></span> 
-                                      <span class="content"></span> 
-                                      <span class="endcap"></span> 
-                                    </div> 
-                                  </div> 
-                                </div> 
-                                <div class="tile" id="tile_45" onmousedown="click_down(45);" onmouseup="click_up(45);" onmouseover="range_add(45);" onmouseout="range_remove(45);"> 
-                                  <div class="tile_container"> 
-                                    <div class="day">31</div> 
-                                    <div class="line_reg" style="z-index:17;" id="square_45"> 
-                                      <span class="startcap"></span> 
-                                      <span class="content"></span> 
-                                      <span class="endcap"></span> 
-                                    </div> 
-                                  </div> 
-                                </div> 
-                                <div class="tile" id="tile_46" onmousedown="click_down(46);" onmouseup="click_up(46);" onmouseover="range_add(46);" onmouseout="range_remove(46);"> 
-                                  <div class="tile_container"> 
-                                    <div class="day">1</div> 
-                                    <div class="line_reg" style="z-index:16;" id="square_46"> 
-                                      <span class="startcap"></span> 
-                                      <span class="content"></span> 
-                                      <span class="endcap"></span> 
-                                    </div> 
-                                  </div> 
-                                </div> 
-                                <div class="tile" id="tile_47" onmousedown="click_down(47);" onmouseup="click_up(47);" onmouseover="range_add(47);" onmouseout="range_remove(47);"> 
-                                  <div class="tile_container"> 
-                                    <div class="day">2</div> 
-                                    <div class="line_reg" style="z-index:15;" id="square_47"> 
-                                      <span class="startcap"></span> 
-                                      <span class="content"></span> 
-                                      <span class="endcap"></span> 
-                                    </div> 
-                                  </div> 
-                                </div> 
-                                <div class="tile" id="tile_48" onmousedown="click_down(48);" onmouseup="click_up(48);" onmouseover="range_add(48);" onmouseout="range_remove(48);"> 
-                                  <div class="tile_container"> 
-                                    <div class="day">3</div> 
-                                    <div class="line_eow" style="z-index:14;" id="square_48"> 
-                                      <span class="startcap"></span> 
-                                      <span class="content"></span> 
-                                      <span class="endcap"></span> 
-                                    </div> 
-                                  </div> 
-                                </div> 
-						<div class="clear"></div> 
-					</div>
-					<?php //endforeach; ?> 
+				<?php if( ! (($i+1) % 7)) echo '<div class="clear"></div> </div>'; endfor; ?>
 			</div> 
 		</div> 
 	</div> 
@@ -1052,6 +825,7 @@ render_grid(<?=$start_idx.','.$stop_idx?>);
   </div> 
   <div class="clear"></div> 
 </div><!-- edit_room --> 
+
 
 <?php $this->load->view('footer', array('no_closing', true)); ?> 
  

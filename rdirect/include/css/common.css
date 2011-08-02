@@ -3900,7 +3900,7 @@ div.right_side .box .answer {
 }
 #header #language_currency_display {
 	height:20px;
-	width:68px;
+	width:75px;
 	margin-left:-4px;
 	margin-top:-5px;
 	padding-top:4px;
@@ -3922,7 +3922,7 @@ div.right_side .box .answer {
 #header #language_currency_display_currency {
 	display:inline;
 	margin-left:28px;
-	width:40px;
+	width:45px;
 	position:absolute
 }
 #header #language_currency_display_language {
@@ -3934,7 +3934,7 @@ div.right_side .box .answer {
 }
 #header #language_currency_selector_container {
 	z-index:9998;
-	width:120px;
+	width:127px;
 	list-style:none;
 	position:absolute;
 	margin-top:19px;

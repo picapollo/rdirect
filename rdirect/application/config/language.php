@@ -13,10 +13,17 @@
 |
 */
 $config['supported_languages'] = array(
-    'en'=> array('name' => 'English', 'folder' => 'english'),
-    'ko'=> array('name' => '한국어', 'folder' => 'korean'),
-    'ja'=> array('name' => '日本語', 'folder' => 'japanese'),
-    'zh'=> array('name' => '中文(简体)', 'folder' => 'chinese')
+    'en'=> array('name' => 'English', 'folder' => 'english', 'currency'=>'USD', 'lang_code'=>'en_US'),
+    'ko'=> array('name' => '한국어', 'folder' => 'korean', 'currency'=>'KRW', 'lang_code'=>'ko_KR'),
+    'ja'=> array('name' => '日本語', 'folder' => 'japanese', 'currency'=>'JPY', 'lang_code'=>'ja_JP'),
+    'zh'=> array('name' => '中文(简体)', 'folder' => 'chinese', 'currency'=>'CNY', 'lang_code'=>'zh_CN')
+);
+
+$config['supported_currency'] = array(
+	'USD'=> array('name'=>'United Status Dollars', 'symbol'=>'$'),
+	'KRW'=> array('name'=>'원', 'symbol'=>"₩"),
+	'JPY'=> array('name'=>'円', 'symbol'=>'¥'),
+	'CNY'=> array('name'=>'元', 'symbol'=>'¥')
 );
 
 /*

@@ -12,9 +12,9 @@ class MY_Controller extends CI_Controller {
 		$this->load->config('language');
 		
 		$supported_langs = $this->config->item('supported_languages');
-
+		
 		// Still no Lang. Lets try some browser detection then
-		if( ! $lang && ! $this->input->server('HTTP_ACCEPT_LANGUAGE'))
+		if( ! $lang && $this->input->server('HTTP_ACCEPT_LANGUAGE'))
 		{
 			// explode languages into array
 			$accept_langs = explode(',', $this->input->server('HTTP_ACCEPT_LANGUAGE'));
@@ -41,14 +41,24 @@ class MY_Controller extends CI_Controller {
 			$lang = $this->config->item('default_language');
 		}
 
-		// Whatever we decided the lang was, save it for next time to avoid working it out again
-		$this->session->set_userdata('locale', $lang);
-
 		// Set the language config. Selects the folder name from its key of 'en'
 		$this->config->set_item('language', $supported_langs[$lang]['folder']);
 
 		// Sets a constant to use throughout ALL of CI.
 		define('CURRENT_LANGUAGE', $lang);
+		define('CURRENT_LANGUAGE_CODE', $supported_langs[CURRENT_LANGUAGE]['lang_code']);
+		
+		$supported_cur = $this->config->item('supported_currency');
+		$currency = $this->session->userdata('currency');
+		if( ! $currency)
+			$currency = $supported_langs[CURRENT_LANGUAGE]['currency'];
+		
+		define('CURRENT_CURRENCY', $currency);
+		define('CURRENT_CURRENCY_SYMBOL', $supported_cur[CURRENT_CURRENCY]['symbol']);
+		
+				// Whatever we decided the lang was, save it for next time to avoid working it out again
+		$this->session->set_userdata('locale', $lang);
+		$this->session->set_userdata('currency', $currency);
 		
 		$this -> data = array();
 		$this -> data['header'] = array();
@@ -127,6 +137,24 @@ class MY_Controller extends CI_Controller {
 	function _history_back($exit = TRUE){
 		echo '<script type="text/javascript">history.back()</script>';
 		exit();
+	}
+	
+	/*
+	 *	구글에서 환율정보 받아와서 테이블 생성
+	 *  TODO: 매번 동적으로 생성하지 말고 하루에 한번 Cron으로 받아와서 JSON 등으로 저장  
+	 */
+	function _generate_currency_table($from='USD'){
+		$res = array();
+		$this->load->library('currency');
+		foreach($this->config->item('supported_currency') as $k => $a)
+		{
+			$res[$k] = array(
+				'name' => $a['name'],
+				'symbol' => $a['symbol'],
+				'rate' => $this->currency->convert(1, $from, $k) 
+			);
+		}
+		return $res;
 	}
 }
 

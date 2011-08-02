@@ -55,11 +55,16 @@ class Users_model extends CI_Model
 		$this->db->update('users', array('users.locale' => $lang));
 	}
 	
-	function get_user_locale($user_id){
-		$this->db->select('locale');
+	function set_user_currency($user_id, $cur){
+		$this->db->where('users.id', $user_id);
+		$this->db->update('users', array('users.currency' => $cur));
+	}
+	
+	function get_user_locale_and_currency($user_id){
+		$this->db->select('locale, currency');
 		$this->db->from('users AS u');
 		$this->db->where('id', $user_id);
-		$query = $this->db->get()->result();
+		$res = $this->db->get()->result();
 		if(empty($res)) return null;
 		return $res[0];
 	}
