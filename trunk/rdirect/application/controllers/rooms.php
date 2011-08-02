@@ -95,9 +95,9 @@ class Rooms extends MY_Controller
 				$data_tmp = array();
 				$data_tmp['sig'] = $sig;
 				$data_tmp['email'] = isset($hosting['email'])?$hosting['email']:'';
-				if(isset($hosting['phone'])){
+				if( ! empty($hosting['phone'])){
 					$data_tmp['phone'] = $hosting['phone'];
-					$data_tmp['phone_country'] = CURRENT_LANGUAGE;
+					$data_tmp['phone_country'] = ! empty($hosting['phone_country']) ? $hosting['phone_country'] : CURRENT_LANGUAGE;
 				}
 			
 				$description = array();
@@ -148,32 +148,36 @@ class Rooms extends MY_Controller
 			
 			$this->rooms_model->update_room($rid, $hosting);
 			
-			$delete_lang = array();
-			foreach($hosting_descriptions as $k => $i)
+			// 언어별 설명 생성, 변경, 삭제
+			if( ! empty($hosting_descriptions))
 			{
-				if($i['delete'] == 'true')
+				$delete_lang = array();
+				foreach($hosting_descriptions as $k => $i)
 				{
-					$delete_lang[] = $k;
-					unset($hosting_descriptions[$k]);
-				}
-				else
-				{
-					if(empty($i['name']) || strlen($i['name']) > 35 || empty($i['description']))
+					if($i['delete'] == 'true')
 					{
+						$delete_lang[] = $k;
 						unset($hosting_descriptions[$k]);
 					}
+					else
+					{
+						if(empty($i['name']) || strlen($i['name']) > 35 || empty($i['description']))
+						{
+							unset($hosting_descriptions[$k]);
+						}
+					}
 				}
+				
+				$this->rooms_model->update_descriptions($rid, $hosting_descriptions);
+				$this->rooms_model->delete_descriptions($rid, $delete_lang);
 			}
 			
-			$this->rooms_model->update_descriptions($rid, $hosting_descriptions);
-			$this->rooms_model->delete_descriptions($rid, $delete_lang);
-						
-			// TODO: AJAX 결과값 생성 
+			// TODO: AJAX 결과값 생성 (에러 발생시 result = error, prompt에 에러메세지)
 			$res = array();
 			$res['available'] = true;
 			$res['redirect_to'] = site_url('rooms/'.$rid);
 			$res['result'] = 'success';
-			$res['prompt'] = $this->db->last_query();
+			//$res['prompt'] = $this->db->last_query();
 			
 			// TODO: $res['result'] = 'error';
 			
@@ -213,6 +217,7 @@ class Rooms extends MY_Controller
 				$this->_add_notice('user assign failure');
 				redirect('');
 			}
+			$this->room_model->delete_temp_info($rid);
 			redirect('rooms/show/'.$rid);
 		}
 		else

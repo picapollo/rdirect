@@ -79,16 +79,26 @@ class Users extends MY_Controller {
 	}
 	
 	function change_locale(){
-		$this->load->config('language');
-		//var_dump($_POST);
+		//$this->load->config('language');	// autoload
 		$lang = $this->input->post('new_locale');
-		echo $lang;
+		//echo $lang;
 		if(in_array($lang, array_keys($this->config->item('supported_languages'))))
 		{
 			if($this->tank_auth->is_logged_in()){
 				$this->users_model->set_user_locale($this->tank_auth->get_user_id(), $lang);
 			}
 			$this->session->set_userdata('locale', $lang);
+		}
+	}
+	
+	function change_currency(){
+		$cur = $this->input->post('new_currency');
+		if(in_array($cur, array_keys($this->config->item('supported_currency'))))
+		{
+			if($this->tank_auth->is_logged_in()){
+				$this->users_model->set_user_currency($this->tank_auth->get_user_id(), $cur);
+			}
+			$this->session->set_userdata('currency', $cur);
 		}
 	}
 	

@@ -1580,7 +1580,7 @@ render_grid(14, 56);
  
 			(function() {
 				var e = document.createElement('script');
-				e.src = document.location.protocol + '//connect.facebook.net/ko_KR/all.js';
+				e.src = document.location.protocol + '//connect.facebook.net/<?=CURRENT_LANGUAGE_CODE?>/all.js';
 				e.async = true;
 				document.getElementById('fb-root').appendChild(e);
 			}());

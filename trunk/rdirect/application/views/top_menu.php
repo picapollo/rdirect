@@ -39,7 +39,7 @@
 						&nbsp;
 					</div>
 					<div id="language_currency_display_currency">
-						$ USD
+						<?=CURRENT_CURRENCY_SYMBOL.' '.CURRENT_CURRENCY?>
 					</div>
 				</div>
 				<div id="language_currency_selector_container" class="rounded" style="display:none;">
@@ -48,7 +48,6 @@
 							<?=lang('top_menu_choose_language')?>
 						</li>
 						<?php foreach($this->config->item('supported_languages') as $lang_code => $item):?>
-						<?php if($lang_code == CURRENT_LANGUAGE) continue; ?>
 						<li class="language option" id="language_selector_<?=$lang_code?>" name="<?=$lang_code?>">
 							<div class="flag sprite-<?=$lang_code?>">
 								&nbsp;
@@ -64,54 +63,11 @@
 						<li class="instruction">
 							<?=lang('top_menu_choose_currency')?>
 						</li>
-						<li class="currency option" id="currency_selector_AUD" name="AUD">
-							$ AUD
+						<?php foreach($this->config->item('supported_currency') as $k => $i): ?>
+						<li class="currency option" id="currency_selector_<?=$k?>" name="<?=$k?>">
+							<?=$i['symbol'].' '.$k?>
 						</li>
-						<li class="currency option" id="currency_selector_BRL" name="BRL">
-							R$ BRL
-						</li>
-						<li class="currency option" id="currency_selector_CAD" name="CAD">
-							$ CAD
-						</li>
-						<li class="currency option" id="currency_selector_CHF" name="CHF">
-							CHF CHF
-						</li>
-						<li class="currency option" id="currency_selector_CZK" name="CZK">
-							Kč CZK
-						</li>
-						<li class="currency option" id="currency_selector_DKK" name="DKK">
-							kr DKK
-						</li>
-						<li class="currency option" id="currency_selector_EUR" name="EUR">
-							€ EUR
-						</li>
-						<li class="currency option" id="currency_selector_GBP" name="GBP">
-							£ GBP
-						</li>
-						<li class="currency option" id="currency_selector_HKD" name="HKD">
-							$ HKD
-						</li>
-						<li class="currency option" id="currency_selector_HUF" name="HUF">
-							Ft HUF
-						</li>
-						<li class="currency option" id="currency_selector_ILS" name="ILS">
-							₪ ILS
-						</li>
-						<li class="currency option" id="currency_selector_JPY" name="JPY">
-							¥ JPY
-						</li>
-						<li class="currency option" id="currency_selector_NOK" name="NOK">
-							kr NOK
-						</li>
-						<li class="currency option" id="currency_selector_RUB" name="RUB">
-							руб RUB
-						</li>
-						<li class="currency option" id="currency_selector_SEK" name="SEK">
-							kr SEK
-						</li>
-						<li class="currency option" id="currency_selector_ZAR" name="ZAR">
-							R ZAR
-						</li>
+						<?php endforeach; ?>
 					</ul><!-- LANGUAGE_CURRENCY_SELECTOR -->
 				</div><!-- LANGUAGE_CURRENCY_SELECTOR_CONTAINER -->
 			</div><!-- LANGUAGE_CURRENCY -->

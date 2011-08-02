@@ -12,22 +12,28 @@ class Test extends MY_Controller {
 		$this->load->model('rooms_model');
 		$this->load->model('users_model');
 		$this->load->model('pictures_model');
+		$this->load->model('calendar_model');
+		$this->load->library('currency');
 		echo '<pre>';
 	}
 
 	public function index()
 	{
-		$t = array('1','2');
-		foreach($t as $k)
-		{
-			;
-		}
-		echo $k;
+		$amount_from = 100;
+		$curr_from = 'EUR';
+		$curr_to = 'IDR';
+		
+		print_r($this->_generate_currency_table());
+		
 	}
 	
-	function db($num = 1){
+	function view(){
+		$this->load->view('v_test');
 		
-		
+	}
+	
+	function lastquery(){
+		echo $this->db->last_query();
 	}
 	
 	/*

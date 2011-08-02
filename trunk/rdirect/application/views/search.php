@@ -470,7 +470,7 @@
  
 			(function() {
 				var e = document.createElement('script');
-				e.src = document.location.protocol + '//connect.facebook.net/ko_KR/all.js';
+				e.src = document.location.protocol + '//connect.facebook.net/<?=CURRENT_LANGUAGE_CODE?>/all.js';
 				e.async = true;
 				document.getElementById('fb-root').appendChild(e);
 			}());
@@ -516,12 +516,12 @@ if ((navigator.userAgent.indexOf('iPhone') == -1) && (navigator.userAgent.indexO
           }) 
         });
  
-            SearchFilters.amenities.a_11 = ["Smoking Allowed", false];
+            SearchFilters.amenities.a_11 = ["Smoking Allowed", true];
             SearchFilters.amenities.a_12 = ["Pets Allowed", false];
             SearchFilters.amenities.a_1 = ["TV", false];
             SearchFilters.amenities.a_2 = ["Cable TV", false];
             SearchFilters.amenities.a_3 = ["Internet", false];
-            SearchFilters.amenities.a_4 = ["Wireless Internet", false];
+            SearchFilters.amenities.a_4 = ["Wireless Internet", true];
             SearchFilters.amenities.a_5 = ["Air Conditioning", false];
             SearchFilters.amenities.a_30 = ["Heating", false];
             SearchFilters.amenities.a_21 = ["Elevator in Building", false];

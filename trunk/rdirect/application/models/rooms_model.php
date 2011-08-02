@@ -247,6 +247,11 @@ class Rooms_model extends CI_Model {
 		return $query->result();
 	}
 	
+	function delete_temp_info($rid)
+	{
+		return $this->db->delete('room_temp', array('room_id', $rid));
+	}
+	
 	function search_nearby_rooms($rid, $dist_limit = 3956, $rows_limit = 10)
 	{
 		$this->db->select("destination.*, $dist_limit * 2 * ASIN(
