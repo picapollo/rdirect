@@ -4,6 +4,8 @@
 1777205
 
 [Request]
+
+// HOST
 {
 	'inquiry_post_id': '6039604',
 	'template': '',
@@ -16,7 +18,6 @@
 }
 
 {
-	'inquiry_post_id': '6039604',
 	'template': '2',
 	'message': '13241324',
 	'hosting_id': '157375',
@@ -26,5 +27,8 @@
 	'price_native': '891'
 }
 
-[Return]
-302 found, redirect
+// GUEST
+{
+	'template':'';
+	'message':'싫어용-_-'
+}

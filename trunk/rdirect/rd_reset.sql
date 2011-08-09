@@ -28,7 +28,7 @@ CREATE  TABLE IF NOT EXISTS `bdirect`.`rd_login_attempts` (
   PRIMARY KEY (`id`) )
 ENGINE = MyISAM
 DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_bin;
+COLLATE = utf8_general_ci;
 
 
 -- -----------------------------------------------------
@@ -41,6 +41,7 @@ CREATE  TABLE IF NOT EXISTS `bdirect`.`rd_users` (
   `email` VARCHAR(100) CHARACTER SET 'utf8' COLLATE 'utf8_bin' NOT NULL ,
   `has_photo` VARCHAR(45) NOT NULL DEFAULT 0 ,
   `locale` CHAR(2) NOT NULL DEFAULT 'en' ,
+  `currency` CHAR(3) NOT NULL DEFAULT 'USD' ,
   `activated` TINYINT(1) NOT NULL DEFAULT '1' ,
   `banned` TINYINT(1) NOT NULL DEFAULT '0' ,
   `ban_reason` VARCHAR(255) CHARACTER SET 'utf8' COLLATE 'utf8_bin' NULL DEFAULT NULL ,
@@ -56,7 +57,7 @@ CREATE  TABLE IF NOT EXISTS `bdirect`.`rd_users` (
   UNIQUE INDEX `email_UNIQUE` (`email` ASC) )
 ENGINE = MyISAM
 DEFAULT CHARACTER SET = utf8
-COLLATE = utf8_bin;
+COLLATE = utf8_general_ci;
 
 
 -- -----------------------------------------------------
@@ -108,29 +109,34 @@ CREATE  TABLE IF NOT EXISTS `bdirect`.`rd_rooms` (
   `room_type` ENUM('Private room','Shared room','Entire home/apt') NOT NULL DEFAULT 'Private room' ,
   `bedrooms` TINYINT NOT NULL DEFAULT 1 ,
   `beds` TINYINT NOT NULL DEFAULT 1 ,
-  `bed_type` TINYINT NOT NULL DEFAULT 0 ,
+  `bed_type_id` TINYINT NOT NULL DEFAULT 0 ,
   `bathrooms` TINYINT NOT NULL DEFAULT 0 ,
   `square_meter` VARCHAR(45) NOT NULL DEFAULT '' ,
   `amenities` SET('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32') NOT NULL DEFAULT '' ,
-  `native_currency` VARCHAR(5) NOT NULL DEFAULT 'USD' ,
+  `pets` SET('1','2','3','4') NOT NULL DEFAULT '' ,
+  `native_currency` CHAR(3) NOT NULL DEFAULT 'USD' ,
   `price_native` INT NOT NULL DEFAULT 10 ,
-  `weekly_price_native` INT NULL DEFAULT NULL ,
-  `monthly_price_native` INT NULL DEFAULT NULL ,
+  `weekly_price_native` INT NOT NULL DEFAULT 0 ,
+  `monthly_price_native` INT NOT NULL DEFAULT 0 ,
   `price_for_extra_person_native` INT NOT NULL DEFAULT 0 ,
   `guests_included` TINYINT NOT NULL DEFAULT 1 ,
   `extras_price_native` INT NOT NULL DEFAULT 0 ,
   `security_deposit_native` INT NOT NULL DEFAULT 0 ,
   `cancel_policy` TINYINT NOT NULL DEFAULT 3 ,
-  `min_nights` SMALLINT NOT NULL DEFAULT 1 ,
+  `min_nights` TINYINT NOT NULL DEFAULT 1 ,
   `max_nights` SMALLINT NOT NULL DEFAULT 365 ,
-  `check_in_time` TINYINT NULL DEFAULT NULL ,
-  `check_out_time` TINYINT NULL DEFAULT NULL ,
+  `check_in_time` TINYINT NOT NULL DEFAULT -1 ,
+  `check_out_time` TINYINT NOT NULL DEFAULT -1 ,
   `house_manual` TEXT NOT NULL DEFAULT '' ,
   `house_rules` TEXT NOT NULL DEFAULT '' ,
+  `directions` TEXT NULL ,
   `modified` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP ,
   `created` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00' ,
-  PRIMARY KEY (`id`) )
-ENGINE = MyISAM;
+  PRIMARY KEY (`id`) ,
+  INDEX `user_id` (`user_id` ASC) )
+ENGINE = MyISAM
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
 
 
 -- -----------------------------------------------------
@@ -140,20 +146,11 @@ CREATE  TABLE IF NOT EXISTS `bdirect`.`rd_room_photos` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `room_id` INT(11) NOT NULL ,
   `order` INT NOT NULL ,
-  `caption` TEXT NOT NULL DEFAULT '' ,
-  PRIMARY KEY (`id`) )
+  `caption` TEXT NULL DEFAULT NULL ,
+  PRIMARY KEY (`id`) ,
+  INDEX `room_id` (`room_id` ASC) )
 ENGINE = MyISAM
 DEFAULT CHARACTER SET = utf8;
-
-
--- -----------------------------------------------------
--- Table `bdirect`.`rd_groups_has_users`
--- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `bdirect`.`rd_groups_has_users` (
-  `group_id` INT NOT NULL ,
-  `user_id` INT(11) NOT NULL ,
-  INDEX `fk_rd_groups_has_rd_users_rd_groups1` (`group_id` ASC) )
-ENGINE = MyISAM;
 
 
 -- -----------------------------------------------------
@@ -161,16 +158,19 @@ ENGINE = MyISAM;
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `bdirect`.`rd_messages` (
   `id` INT NOT NULL AUTO_INCREMENT ,
+  `to_user_id` INT(11) NOT NULL ,
+  `from_user_id` INT(11) NOT NULL ,
   `status` VARCHAR(45) NULL DEFAULT NULL ,
   `message` TEXT NULL DEFAULT NULL ,
-  `from_user_id` INT(11) NOT NULL ,
-  `to_user_id` INT(11) NOT NULL ,
   `date_start` VARCHAR(45) NULL DEFAULT NULL ,
   `date_end` VARCHAR(45) NULL DEFAULT NULL ,
   `guests` VARCHAR(45) NULL DEFAULT NULL ,
   `time_sent` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP ,
-  PRIMARY KEY (`id`) )
-ENGINE = MyISAM;
+  PRIMARY KEY (`id`) ,
+  INDEX `to_user_id` (`to_user_id` ASC) )
+ENGINE = MyISAM
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
 
 
 -- -----------------------------------------------------
@@ -194,7 +194,8 @@ CREATE  TABLE IF NOT EXISTS `bdirect`.`rd_payout_methods` (
   `user_id` INT(11) NOT NULL ,
   PRIMARY KEY (`id`, `user_id`) )
 ENGINE = MyISAM
-DEFAULT CHARACTER SET = utf8;
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
 
 
 -- -----------------------------------------------------
@@ -204,9 +205,13 @@ CREATE  TABLE IF NOT EXISTS `bdirect`.`rd_room_descriptions` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `room_id` INT NOT NULL ,
   `language` CHAR(2) NOT NULL DEFAULT 'en' ,
-  `text` TEXT NULL DEFAULT NULL ,
-  PRIMARY KEY (`id`) )
-ENGINE = MyISAM;
+  `name` VARCHAR(35) NOT NULL DEFAULT '' ,
+  `description` TEXT NULL DEFAULT NULL ,
+  PRIMARY KEY (`id`) ,
+  INDEX `room_id` (`room_id` ASC) )
+ENGINE = MyISAM
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
 
 
 -- -----------------------------------------------------
@@ -217,7 +222,9 @@ CREATE  TABLE IF NOT EXISTS `bdirect`.`rd_room_directions` (
   `text` TEXT NOT NULL DEFAULT '' ,
   PRIMARY KEY (`room_id`) ,
   INDEX `fk_table1_rd_rooms2` (`room_id` ASC) )
-ENGINE = MyISAM;
+ENGINE = MyISAM
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
 
 
 -- -----------------------------------------------------
@@ -231,7 +238,9 @@ CREATE  TABLE IF NOT EXISTS `bdirect`.`rd_room_temp` (
   `sig` VARCHAR(45) NOT NULL ,
   `created` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00' ,
   PRIMARY KEY (`room_id`) )
-ENGINE = MyISAM;
+ENGINE = MyISAM
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_bin;
 
 
 -- -----------------------------------------------------
@@ -239,14 +248,32 @@ ENGINE = MyISAM;
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `bdirect`.`rd_room_addresses` (
   `room_id` INT NOT NULL ,
-  `name` VARCHAR(60) NOT NULL ,
-  `address_native` VARCHAR(100) NOT NULL DEFAULT '' ,
-  `address_apt` VARCHAR(100) NOT NULL DEFAULT '' ,
-  `address` VARCHAR(100) NOT NULL DEFAULT '' ,
   `lat` FLOAT NOT NULL ,
   `lng` FLOAT NOT NULL ,
+  `name` VARCHAR(60) NOT NULL ,
+  `formatted_address_native` VARCHAR(100) NOT NULL DEFAULT '' ,
+  `apt` VARCHAR(100) NOT NULL DEFAULT '' ,
+  `address` VARCHAR(100) NOT NULL DEFAULT '' ,
   `lat_fuzzy` FLOAT NULL DEFAULT NULL ,
   `lng_fuzzy` FLOAT NULL DEFAULT NULL ,
-  PRIMARY KEY (`room_id`) )
-ENGINE = MyISAM;
+  PRIMARY KEY (`room_id`) ,
+  INDEX `latlng` (`lng` ASC, `lat` ASC) )
+ENGINE = MyISAM
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
 
+
+-- -----------------------------------------------------
+-- Table `bdirect`.`rd_calendar_daily`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `bdirect`.`rd_calendar_daily` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `rooms_id` INT NOT NULL ,
+  `date` DATE NOT NULL ,
+  `available` TINYINT(1) NOT NULL DEFAULT 1 ,
+  `price` INT NOT NULL DEFAULT 0 ,
+  PRIMARY KEY (`id`) ,
+  INDEX `room_date` (`rooms_id` ASC, `date` ASC) )
+ENGINE = MyISAM
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;

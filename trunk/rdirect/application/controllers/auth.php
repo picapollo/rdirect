@@ -17,7 +17,7 @@ class Auth extends MY_Controller
 		if ($message = $this->session->flashdata('message')) {
 			$this->load->view('auth/general_message', array('message' => $message));
 		} else {
-			redirect('/login/');
+			redirect('login');
 		}
 	}
 
@@ -70,7 +70,7 @@ class Auth extends MY_Controller
 	function logout()
 	{
 		$this->tank_auth->logout();
-		redirect('/');
+		redirect('');
 	}
 
 	/**

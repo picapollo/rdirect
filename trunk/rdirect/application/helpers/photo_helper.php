@@ -1,13 +1,19 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-/*if ( ! function_exists('insert_user_photo'))
+if ( ! function_exists('insert_user_photo'))
 {
-    function insert_user_photo($path, $size)
+    function insert_user_photo($uid, $size, $default=0)
     {
-    	if($path)
-        return $var;
+		if($default) // No photo
+		{
+			return IMG_DIR.'/default_profile/'.$size.'.png';
+		}
+		else
+		{
+			return UPLOADS_DIR.'/users/'.$uid.'/'.$size.'.png';
+		}
     }   
-}*/
+}
 
 if( ! function_exists('insert_room_photo'))
 {

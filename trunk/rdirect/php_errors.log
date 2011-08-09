@@ -1,261 +1,61 @@
-[22-Jul-2011 13:43:58] PHP Fatal error:  Cannot redeclare class Facebook in /home/guersam/www/rdirect/application/libraries/facebook/facebook.php on line 25
-[22-Jul-2011 14:03:05] OAuthException: Error validating access token: Session has expired at unix time 1311310800. The current unix time is 1311310985.
-[22-Jul-2011 14:42:11] PHP Fatal error:  Call to undefined function length() in /home/guersam/www/rdirect/application/views/top_menu.php on line 169
-[22-Jul-2011 14:43:13] PHP Parse error:  syntax error, unexpected '}' in /home/guersam/www/rdirect/application/views/top_menu.php on line 177
-[22-Jul-2011 14:58:19] PHP Fatal error:  Class 'MY_Controller' not found in /home/guersam/www/rdirect/application/controllers/auth.php on line 4
-[22-Jul-2011 16:39:10] PHP Fatal error:  Class 'Set_language' not found in /home/guersam/www/rdirect/system/core/Hooks.php on line 211
-[22-Jul-2011 16:39:45] PHP Fatal error:  Class 'Set_language' not found in /home/guersam/www/rdirect/system/core/Hooks.php on line 211
-[22-Jul-2011 16:41:35] PHP Fatal error:  Call to undefined method Set_language::set_language() in /home/guersam/www/rdirect/system/core/Hooks.php on line 212
-[22-Jul-2011 16:49:35] PHP Fatal error:  require_once(): Failed opening required '../config/language.php' (include_path='.:/usr/share/pear') in /home/guersam/www/rdirect/application/hooks/set_language.php on line 4
-[22-Jul-2011 17:11:56] PHP Parse error:  syntax error, unexpected $end in /home/guersam/www/rdirect/application/language/korean/common_lang.php on line 1
-[22-Jul-2011 17:13:27] PHP Parse error:  syntax error, unexpected $end in /home/guersam/www/rdirect/application/language/korean/common_lang.php on line 1
-[22-Jul-2011 17:13:28] PHP Parse error:  syntax error, unexpected $end in /home/guersam/www/rdirect/application/language/korean/common_lang.php on line 1
-[22-Jul-2011 18:07:13] PHP Fatal error:  Uncaught CurlException: 28: connect() timed out!
-  thrown in /home/guersam/www/rdirect/application/libraries/facebook/base_facebook.php on line 774
-[22-Jul-2011 18:07:48] PHP Fatal error:  Uncaught CurlException: 28: connect() timed out!
-  thrown in /home/guersam/www/rdirect/application/libraries/facebook/base_facebook.php on line 774
-[22-Jul-2011 18:12:34] PHP Fatal error:  Uncaught CurlException: 28: SSL connection timeout
-  thrown in /home/guersam/www/rdirect/application/libraries/facebook/base_facebook.php on line 774
-[22-Jul-2011 18:19:35] PHP Fatal error:  Call to undefined method facebook::get_facebook_cookie() in /home/guersam/www/rdirect/application/controllers/test.php on line 18
-[22-Jul-2011 18:24:53] PHP Fatal error:  Call to a member function create_user_images_from_fb() on a non-object in /home/guersam/www/rdirect/application/controllers/test.php on line 22
-[22-Jul-2011 18:33:15] PHP Parse error:  syntax error, unexpected '}' in /home/guersam/www/rdirect/application/controllers/test.php on line 13
-[22-Jul-2011 18:50:58] <p>You must specify a source image in your preferences.</p>
-[22-Jul-2011 18:50:58] <p>You must specify a source image in your preferences.</p>
-[22-Jul-2011 18:50:58] <p>You must specify a source image in your preferences.</p>
-[22-Jul-2011 18:51:38] PHP Fatal error:  Call to undefined method CI_Image_lib::display_error() in /home/guersam/www/rdirect/application/models/pictures_model.php on line 75
-[22-Jul-2011 18:51:48] <p>You must specify a source image in your preferences.</p>
-[22-Jul-2011 18:51:48] <p>You must specify a source image in your preferences.</p>
-[22-Jul-2011 18:51:48] <p>You must specify a source image in your preferences.</p>
-[22-Jul-2011 19:01:00] PHP Fatal error:  Uncaught OAuthException: Error validating access token: Session has expired at unix time 1311328800. The current unix time is 1311328859.
-  thrown in /home/guersam/www/rdirect/application/libraries/facebook/base_facebook.php on line 988
-[22-Jul-2011 21:07:07] PHP Fatal error:  Call to undefined function form_open() in /home/guersam/www/rdirect/application/views/auth/signup2.php on line 9
-[22-Jul-2011 21:07:57] PHP Fatal error:  Call to undefined function form_open() in /home/guersam/www/rdirect/application/views/auth/signup2.php on line 9
-[22-Jul-2011 21:07:59] PHP Fatal error:  Call to undefined function form_open() in /home/guersam/www/rdirect/application/views/auth/signup2.php on line 9
-[22-Jul-2011 21:08:17] PHP Fatal error:  Call to undefined function form_open() in /home/guersam/www/rdirect/application/views/auth/signup2.php on line 9
-[22-Jul-2011 21:08:57] PHP Fatal error:  Call to undefined function form_open() in /home/guersam/www/rdirect/application/views/auth/signup2.php on line 9
-[22-Jul-2011 21:10:24] PHP Fatal error:  Call to undefined function form_open() in /home/guersam/www/rdirect/application/views/auth/signup2.php on line 9
-[22-Jul-2011 21:10:30] PHP Fatal error:  Call to undefined function form_open() in /home/guersam/www/rdirect/application/views/auth/signup2.php on line 9
-[22-Jul-2011 21:10:36] PHP Fatal error:  Call to undefined function form_open() in /home/guersam/www/rdirect/application/views/auth/signup2.php on line 9
-[22-Jul-2011 21:15:13] PHP Fatal error:  Uncaught CurlException: 28: connect() timed out!
-  thrown in /home/guersam/www/rdirect/application/libraries/facebook/base_facebook.php on line 774
-[22-Jul-2011 21:52:27] PHP Fatal error:  Call to undefined method Tank_auth::is_loggin_in() in /home/guersam/www/rdirect/application/controllers/users.php on line 106
-[22-Jul-2011 21:52:30] PHP Fatal error:  Call to undefined method Tank_auth::is_loggin_in() in /home/guersam/www/rdirect/application/controllers/users.php on line 106
-[22-Jul-2011 21:53:44] PHP Fatal error:  Call to undefined method Tank_auth::is_loggin_in() in /home/guersam/www/rdirect/application/controllers/users.php on line 106
-[22-Jul-2011 21:54:33] PHP Fatal error:  Call to undefined method Tank_auth::is_loggin_in() in /home/guersam/www/rdirect/application/controllers/users.php on line 106
-[22-Jul-2011 21:54:54] PHP Fatal error:  Call to undefined method Tank_auth::is_loggin_in() in /home/guersam/www/rdirect/application/controllers/users.php on line 106
-[22-Jul-2011 21:56:07] PHP Fatal error:  Call to undefined method Tank_auth::is_loggin_in() in /home/guersam/www/rdirect/application/controllers/users.php on line 106
-[22-Jul-2011 21:56:21] PHP Fatal error:  Call to undefined method Tank_auth::is_loggin_in() in /home/guersam/www/rdirect/application/controllers/users.php on line 106
-[22-Jul-2011 21:56:27] PHP Fatal error:  Call to undefined method Tank_auth::is_loggin_in() in /home/guersam/www/rdirect/application/controllers/users.php on line 106
-[22-Jul-2011 21:57:20] PHP Fatal error:  Call to undefined method Tank_auth::is_loggin_in() in /home/guersam/www/rdirect/application/controllers/users.php on line 107
-[22-Jul-2011 21:57:23] PHP Fatal error:  Call to undefined method Tank_auth::is_loggin_in() in /home/guersam/www/rdirect/application/controllers/users.php on line 107
-[22-Jul-2011 21:58:14] PHP Fatal error:  Call to undefined method Tank_auth::is_loggin_in() in /home/guersam/www/rdirect/application/controllers/users.php on line 107
-[22-Jul-2011 22:00:38] PHP Fatal error:  Call to undefined method Tank_auth::is_loggin_in() in /home/guersam/www/rdirect/application/controllers/users.php on line 107
-[22-Jul-2011 22:00:42] PHP Fatal error:  Call to undefined method Tank_auth::is_loggin_in() in /home/guersam/www/rdirect/application/controllers/users.php on line 107
-[22-Jul-2011 22:01:52] PHP Fatal error:  Call to undefined method Users_model::set_user_locale() in /home/guersam/www/rdirect/application/controllers/users.php on line 109
-[22-Jul-2011 22:01:56] PHP Fatal error:  Call to undefined method Users_model::set_user_locale() in /home/guersam/www/rdirect/application/controllers/users.php on line 109
-[22-Jul-2011 22:02:37] PHP Fatal error:  Call to undefined method Users_model::set_user_locale() in /home/guersam/www/rdirect/application/controllers/users.php on line 109
-[22-Jul-2011 22:02:45] PHP Fatal error:  Call to undefined method Users_model::set_user_locale() in /home/guersam/www/rdirect/application/controllers/users.php on line 109
-[22-Jul-2011 22:02:53] PHP Fatal error:  Call to undefined method Users_model::set_user_locale() in /home/guersam/www/rdirect/application/controllers/users.php on line 109
-[22-Jul-2011 23:21:09] PHP Notice:  Constant BASEPATH already defined in /home/guersam/www/rdirect/application/config/constants.php on line 52
-[22-Jul-2011 23:21:09] PHP Notice:  Use of undefined constant BASE_PATH - assumed 'BASE_PATH' in /home/guersam/www/rdirect/application/config/constants.php on line 53
-[22-Jul-2011 23:21:10] PHP Notice:  Constant BASEPATH already defined in /home/guersam/www/rdirect/application/config/constants.php on line 52
-[22-Jul-2011 23:21:10] PHP Notice:  Use of undefined constant BASE_PATH - assumed 'BASE_PATH' in /home/guersam/www/rdirect/application/config/constants.php on line 53
-[22-Jul-2011 23:21:10] PHP Notice:  Constant BASEPATH already defined in /home/guersam/www/rdirect/application/config/constants.php on line 52
-[22-Jul-2011 23:21:10] PHP Notice:  Use of undefined constant BASE_PATH - assumed 'BASE_PATH' in /home/guersam/www/rdirect/application/config/constants.php on line 53
-[22-Jul-2011 23:21:10] PHP Notice:  Constant BASEPATH already defined in /home/guersam/www/rdirect/application/config/constants.php on line 52
-[22-Jul-2011 23:21:10] PHP Notice:  Use of undefined constant BASE_PATH - assumed 'BASE_PATH' in /home/guersam/www/rdirect/application/config/constants.php on line 53
-[22-Jul-2011 23:21:10] PHP Notice:  Constant BASEPATH already defined in /home/guersam/www/rdirect/application/config/constants.php on line 52
-[22-Jul-2011 23:21:10] PHP Notice:  Use of undefined constant BASE_PATH - assumed 'BASE_PATH' in /home/guersam/www/rdirect/application/config/constants.php on line 53
-[22-Jul-2011 23:21:10] PHP Notice:  Constant BASEPATH already defined in /home/guersam/www/rdirect/application/config/constants.php on line 52
-[22-Jul-2011 23:21:10] PHP Notice:  Use of undefined constant BASE_PATH - assumed 'BASE_PATH' in /home/guersam/www/rdirect/application/config/constants.php on line 53
-[22-Jul-2011 23:21:10] PHP Notice:  Constant BASEPATH already defined in /home/guersam/www/rdirect/application/config/constants.php on line 52
-[22-Jul-2011 23:21:10] PHP Notice:  Use of undefined constant BASE_PATH - assumed 'BASE_PATH' in /home/guersam/www/rdirect/application/config/constants.php on line 53
-[22-Jul-2011 23:21:10] PHP Notice:  Constant BASEPATH already defined in /home/guersam/www/rdirect/application/config/constants.php on line 52
-[22-Jul-2011 23:21:10] PHP Notice:  Use of undefined constant BASE_PATH - assumed 'BASE_PATH' in /home/guersam/www/rdirect/application/config/constants.php on line 53
-[22-Jul-2011 23:21:59] PHP Notice:  Constant BASEPATH already defined in /home/guersam/www/rdirect/application/config/constants.php on line 52
-[22-Jul-2011 23:22:00] PHP Notice:  Constant BASEPATH already defined in /home/guersam/www/rdirect/application/config/constants.php on line 52
-[22-Jul-2011 23:39:19] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/guersam/www/rdirect/application/controllers/home.php on line 42
-[22-Jul-2011 23:49:37] PHP Fatal error:  Can't use method return value in write context in /home/guersam/www/rdirect/application/core/MY_Controller.php on line 15
-[22-Jul-2011 23:52:02] PHP Fatal error:  Call to a member function userdata() on a non-object in /home/guersam/www/rdirect/application/core/MY_Controller.php on line 11
-[22-Jul-2011 23:53:06] PHP Fatal error:  Call to a member function userdata() on a non-object in /home/guersam/www/rdirect/application/core/MY_Controller.php on line 13
-[22-Jul-2011 23:53:51] PHP Fatal error:  Call to a member function userdata() on a non-object in /home/guersam/www/rdirect/application/core/MY_Controller.php on line 11
-[22-Jul-2011 23:54:20] PHP Fatal error:  Call to a member function userdata() on a non-object in /home/guersam/www/rdirect/application/core/MY_Controller.php on line 11
-[22-Jul-2011 23:55:15] PHP Fatal error:  Call to a member function userdata() on a non-object in /home/guersam/www/rdirect/application/core/MY_Controller.php on line 11
-[23-Jul-2011 00:01:28] PHP Fatal error:  Call to a member function userdata() on a non-object in /home/guersam/www/rdirect/application/core/MY_Controller.php on line 13
-[23-Jul-2011 00:01:49] PHP Fatal error:  Call to a member function userdata() on a non-object in /home/guersam/www/rdirect/application/core/MY_Controller.php on line 13
-[23-Jul-2011 00:01:50] PHP Fatal error:  Call to a member function userdata() on a non-object in /home/guersam/www/rdirect/application/core/MY_Controller.php on line 13
-[23-Jul-2011 00:01:50] PHP Fatal error:  Call to a member function userdata() on a non-object in /home/guersam/www/rdirect/application/core/MY_Controller.php on line 13
-[23-Jul-2011 00:05:21] PHP Fatal error:  Call to a member function item() on a non-object in /home/guersam/www/rdirect/application/core/MY_Controller.php on line 12
-[23-Jul-2011 00:43:03] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/guersam/www/rdirect/application/language/korean/common_lang.php on line 14
-[23-Jul-2011 00:43:03] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/guersam/www/rdirect/application/language/korean/common_lang.php on line 14
-[23-Jul-2011 01:00:20] PHP Parse error:  syntax error, unexpected '}', expecting T_STRING or T_VARIABLE or '{' or '$' in /home/guersam/www/rdirect/application/controllers/users.php on line 56
-[23-Jul-2011 01:07:06] PHP Fatal error:  Unsupported operand types in /home/guersam/www/rdirect/application/controllers/test.php on line 19
-[23-Jul-2011 01:24:33] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
-[23-Jul-2011 01:24:37] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
-[23-Jul-2011 01:24:39] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
-[23-Jul-2011 01:31:09] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
-[23-Jul-2011 01:31:11] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
-[23-Jul-2011 01:31:12] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
-[23-Jul-2011 01:31:13] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
-[23-Jul-2011 01:31:13] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
-[23-Jul-2011 01:31:14] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
-[23-Jul-2011 01:31:14] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
-[23-Jul-2011 01:31:15] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
-[23-Jul-2011 01:31:15] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
-[23-Jul-2011 01:31:16] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
-[23-Jul-2011 01:31:17] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
-[23-Jul-2011 01:31:17] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
-[23-Jul-2011 01:31:18] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
-[23-Jul-2011 01:31:49] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
-[23-Jul-2011 01:31:50] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
-[23-Jul-2011 01:31:50] PHP Fatal error:  Call to a member function result() on a non-object in /home/guersam/www/rdirect/application/models/users_model.php on line 50
-[23-Jul-2011 01:32:21] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/controllers/home.php on line 37
-[23-Jul-2011 01:32:23] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/controllers/home.php on line 37
-[23-Jul-2011 01:32:25] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/controllers/home.php on line 37
-[24-Jul-2011 02:10:05] PHP Parse error:  syntax error, unexpected ')' in /home/guersam/www/rdirect/application/controllers/auth_other.php on line 22
-[24-Jul-2011 02:10:22] PHP Fatal error:  Call to protected method BaseFacebook::getUserFromAccessToken() from context 'auth_other' in /home/guersam/www/rdirect/application/controllers/auth_other.php on line 22
-[24-Jul-2011 02:11:28] PHP Fatal error:  Uncaught OAuthException: Invalid OAuth access token.
-  thrown in /home/guersam/www/rdirect/application/libraries/facebook/base_facebook.php on line 988
-[24-Jul-2011 13:53:27] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/views/users/edit_profile.php on line 70
-[24-Jul-2011 13:53:55] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/views/users/edit_profile.php on line 70
-[24-Jul-2011 13:55:16] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/views/users/edit_profile.php on line 158
-[24-Jul-2011 13:55:27] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/views/users/edit_profile.php on line 70
-[24-Jul-2011 13:57:45] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/views/users/edit_profile.php on line 70
-[24-Jul-2011 13:58:38] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/views/users/edit_profile.php on line 70
-[24-Jul-2011 14:01:37] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/views/users/edit_profile.php on line 70
-[24-Jul-2011 14:03:43] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/views/users/edit_profile.php on line 69
-[24-Jul-2011 14:04:02] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/views/users/edit_profile.php on line 69
-[24-Jul-2011 14:04:18] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/views/users/edit_profile.php on line 77
-[24-Jul-2011 14:04:31] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/views/users/edit_profile.php on line 77
-[24-Jul-2011 14:04:33] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/views/users/edit_profile.php on line 77
-[24-Jul-2011 14:04:39] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/views/users/edit_profile.php on line 77
-[24-Jul-2011 14:04:52] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/views/users/edit_profile.php on line 69
-[24-Jul-2011 14:05:12] PHP Fatal error:  Cannot use object of type stdClass as array in /home/guersam/www/rdirect/application/views/users/edit_profile.php on line 68
-[24-Jul-2011 16:41:54] PHP Fatal error:  Uncaught OAuthException: An active access token must be used to query information about the current user.
-  thrown in /home/guersam/www/rdirect/application/libraries/facebook/base_facebook.php on line 988
-[24-Jul-2011 16:43:04] PHP Fatal error:  Uncaught OAuthException: An active access token must be used to query information about the current user.
-  thrown in /home/guersam/www/rdirect/application/libraries/facebook/base_facebook.php on line 988
-[24-Jul-2011 16:45:46] PHP Fatal error:  Uncaught OAuthException: Invalid OAuth access token.
-  thrown in /home/guersam/www/rdirect/application/libraries/facebook/base_facebook.php on line 988
-[24-Jul-2011 16:46:47] PHP Fatal error:  Uncaught OAuthException: Invalid OAuth access token.
-  thrown in /home/guersam/www/rdirect/application/libraries/facebook/base_facebook.php on line 988
-[24-Jul-2011 16:47:09] PHP Fatal error:  Uncaught OAuthException: Invalid OAuth access token.
-  thrown in /home/guersam/www/rdirect/application/libraries/facebook/base_facebook.php on line 988
-[24-Jul-2011 16:54:29] PHP Fatal error:  Call to a member function get_user() on a non-object in /home/guersam/www/rdirect/application/controllers/users.php on line 54
-[24-Jul-2011 17:31:31] PHP Parse error:  syntax error, unexpected '<' in /home/guersam/www/rdirect/application/views/users/show.php on line 36
-[24-Jul-2011 18:03:08] PHP Parse error:  syntax error, unexpected '}' in /home/guersam/www/rdirect/application/controllers/auth.php on line 119
-[24-Jul-2011 23:44:40] PHP Parse error:  syntax error, unexpected '}' in /home/guersam/www/rdirect/application/controllers/test.php on line 18
-[26-Jul-2011 02:43:25] PHP Fatal error:  Cannot redeclare Rooms_model::update_room() in /home/guersam/www/rdirect/application/models/rooms_model.php on line 43
-[26-Jul-2011 14:53:37] PHP Fatal error:  Function name must be a string in /home/guersam/www/rdirect/application/controllers/rooms.php on line 56
-[26-Jul-2011 15:20:21] PHP Fatal error:  Cannot access private property Geocoder::$language in /home/guersam/www/rdirect/application/libraries/geocoder/GGeocoderParserLib.v1.php on line 70
-[26-Jul-2011 16:50:26] PHP Fatal error:  Call to undefined method Rooms_model::add_room_description() in /home/guersam/www/rdirect/application/controllers/rooms.php on line 80
-[26-Jul-2011 19:13:25] PHP Fatal error:  Can't use method return value in write context in /home/guersam/www/rdirect/application/models/rooms_model.php on line 70
-[26-Jul-2011 19:13:41] PHP Fatal error:  Can't use method return value in write context in /home/guersam/www/rdirect/application/models/rooms_model.php on line 70
-[26-Jul-2011 19:31:51] PHP Fatal error:  Call to undefined method Rooms_model::get_room_temp() in /home/guersam/www/rdirect/application/controllers/rooms.php on line 93
-[26-Jul-2011 20:16:33] PHP Fatal error:  Call to a member function get_user_locale() on a non-object in /home/guersam/www/rdirect/application/controllers/auth.php on line 50
-[26-Jul-2011 21:17:24] PHP Fatal error:  Call to a member function get_room_tmp() on a non-object in /home/guersam/www/rdirect/application/controllers/test.php on line 18
-[26-Jul-2011 23:34:11] PHP Parse error:  syntax error, unexpected T_ECHO in /home/guersam/www/rdirect/application/views/rooms/show.php on line 80
-[27-Jul-2011 02:58:20] PHP Fatal error:  Call to undefined method Home::get_starred_rooms() in /home/guersam/www/rdirect/application/core/MY_Controller.php on line 62
-[27-Jul-2011 03:00:07] PHP Fatal error:  Call to undefined method Home::get_starred_rooms() in /home/guersam/www/rdirect/application/core/MY_Controller.php on line 61
-[27-Jul-2011 13:32:32] PHP Fatal error:  Call to a member function get_rooms_by_user_lite() on a non-object in /home/guersam/www/rdirect/application/controllers/test.php on line 17
-[27-Jul-2011 13:32:37] PHP Fatal error:  Call to undefined method Users_model::get_rooms_by_user_lite() in /home/guersam/www/rdirect/application/controllers/test.php on line 17
-[27-Jul-2011 13:54:05] PHP Parse error:  syntax error, unexpected ',' in /home/guersam/www/rdirect/application/models/rooms_model.php on line 129
-[27-Jul-2011 17:31:13] PHP Fatal error:  Call to a member function encode() on a non-object in /home/guersam/www/rdirect/application/controllers/rooms.php on line 263
-[27-Jul-2011 17:31:31] PHP Fatal error:  Call to a member function encode() on a non-object in /home/guersam/www/rdirect/application/controllers/rooms.php on line 263
-[27-Jul-2011 17:47:39] PHP Parse error:  syntax error, unexpected ';' in /home/guersam/www/rdirect/application/controllers/rooms.php on line 264
-[27-Jul-2011 17:54:59] PHP Fatal error:  Call to a member function encode() on a non-object in /home/guersam/www/rdirect/application/controllers/rooms.php on line 264
-[27-Jul-2011 18:02:39] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/guersam/www/rdirect/application/controllers/rooms.php on line 26
-[27-Jul-2011 19:44:42] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/guersam/www/rdirect/application/controllers/test.php on line 28
-[27-Jul-2011 19:44:42] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/guersam/www/rdirect/application/controllers/test.php on line 28
-[27-Jul-2011 19:44:43] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/guersam/www/rdirect/application/controllers/test.php on line 28
-[27-Jul-2011 19:44:43] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/guersam/www/rdirect/application/controllers/test.php on line 28
-[27-Jul-2011 19:44:43] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/guersam/www/rdirect/application/controllers/test.php on line 28
-[27-Jul-2011 19:44:43] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/guersam/www/rdirect/application/controllers/test.php on line 28
-[27-Jul-2011 19:44:43] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/guersam/www/rdirect/application/controllers/test.php on line 28
-[27-Jul-2011 19:44:44] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/guersam/www/rdirect/application/controllers/test.php on line 28
-[27-Jul-2011 19:44:44] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/guersam/www/rdirect/application/controllers/test.php on line 28
-[27-Jul-2011 19:44:44] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/guersam/www/rdirect/application/controllers/test.php on line 28
-[27-Jul-2011 19:44:45] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/guersam/www/rdirect/application/controllers/test.php on line 28
-[27-Jul-2011 23:49:02] PHP Fatal error:  Call to undefined function is_owner() in /home/guersam/www/rdirect/application/controllers/rooms.php on line 194
-[28-Jul-2011 15:48:07] PHP Fatal error:  Uncaught OAuthException: An active access token must be used to query information about the current user.
-  thrown in /home/guersam/www/rdirect/application/libraries/facebook/base_facebook.php on line 988
-[28-Jul-2011 15:48:45] PHP Fatal error:  Uncaught OAuthException: An active access token must be used to query information about the current user.
-  thrown in /home/guersam/www/rdirect/application/libraries/facebook/base_facebook.php on line 988
-[28-Jul-2011 15:49:08] PHP Fatal error:  Uncaught OAuthException: An active access token must be used to query information about the current user.
-  thrown in /home/guersam/www/rdirect/application/libraries/facebook/base_facebook.php on line 988
-[28-Jul-2011 15:49:21] PHP Fatal error:  Uncaught OAuthException: An active access token must be used to query information about the current user.
-  thrown in /home/guersam/www/rdirect/application/libraries/facebook/base_facebook.php on line 988
-[28-Jul-2011 15:49:25] PHP Fatal error:  Uncaught OAuthException: An active access token must be used to query information about the current user.
-  thrown in /home/guersam/www/rdirect/application/libraries/facebook/base_facebook.php on line 988
-[28-Jul-2011 15:49:27] PHP Fatal error:  Uncaught OAuthException: An active access token must be used to query information about the current user.
-  thrown in /home/guersam/www/rdirect/application/libraries/facebook/base_facebook.php on line 988
-[28-Jul-2011 15:49:35] PHP Fatal error:  Uncaught OAuthException: An active access token must be used to query information about the current user.
-  thrown in /home/guersam/www/rdirect/application/libraries/facebook/base_facebook.php on line 988
-[28-Jul-2011 15:49:43] PHP Fatal error:  Uncaught OAuthException: An active access token must be used to query information about the current user.
-  thrown in /home/guersam/www/rdirect/application/libraries/facebook/base_facebook.php on line 988
-[28-Jul-2011 15:49:53] PHP Fatal error:  Uncaught OAuthException: An active access token must be used to query information about the current user.
-  thrown in /home/guersam/www/rdirect/application/libraries/facebook/base_facebook.php on line 988
-[28-Jul-2011 15:50:15] PHP Fatal error:  Uncaught OAuthException: An active access token must be used to query information about the current user.
-  thrown in /home/guersam/www/rdirect/application/libraries/facebook/base_facebook.php on line 988
-[28-Jul-2011 15:50:52] PHP Parse error:  syntax error, unexpected ';' in /home/guersam/www/rdirect/application/controllers/users.php on line 99
-[28-Jul-2011 16:29:58] PHP Fatal error:  Call to a member function set_user_has_photo() on a non-object in /home/guersam/www/rdirect/application/controllers/users.php on line 140
-[28-Jul-2011 16:50:53] PHP Fatal error:  Call to undefined method Users_model::set_user_has_picture() in /home/guersam/www/rdirect/application/controllers/users.php on line 153
-[29-Jul-2011 01:37:07] PHP Fatal error:  Call to undefined method Rooms_model::from() in /home/guersam/www/rdirect/application/models/rooms_model.php on line 138
-[29-Jul-2011 02:11:43] PHP Parse error:  syntax error, unexpected ',' in /home/guersam/www/rdirect/application/models/rooms_model.php on line 142
-[29-Jul-2011 03:29:25] PHP Fatal error:  Call to undefined method Rooms_model::get_room_all_language() in /home/guersam/www/rdirect/application/controllers/test.php on line 20
-[29-Jul-2011 06:31:35] PHP Fatal error:  Call to undefined function pint_r() in /home/guersam/www/rdirect/application/controllers/test.php on line 21
-[29-Jul-2011 06:31:37] PHP Fatal error:  Call to undefined function pint_r() in /home/guersam/www/rdirect/application/controllers/test.php on line 21
-[29-Jul-2011 06:38:29] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/guersam/www/rdirect/application/models/rooms_model.php on line 199
-[29-Jul-2011 06:56:13] PHP Fatal error:  Call to undefined method CI_Input::posts() in /home/guersam/www/rdirect/application/controllers/rooms.php on line 138
-[29-Jul-2011 06:56:58] PHP Fatal error:  Call to undefined method CI_Input::posts() in /home/guersam/www/rdirect/application/controllers/rooms.php on line 138
-[29-Jul-2011 07:29:10] PHP Fatal error:  Call to undefined function set_select() in /home/guersam/www/rdirect/application/views/rooms/edit_details.php on line 43
-[29-Jul-2011 07:31:47] PHP Fatal error:  Call to undefined function set_select() in /home/guersam/www/rdirect/application/views/rooms/edit_details.php on line 43
-[29-Jul-2011 07:31:58] PHP Fatal error:  Call to undefined function set_select() in /home/guersam/www/rdirect/application/views/rooms/edit_details.php on line 43
-[29-Jul-2011 07:33:26] PHP Fatal error:  Call to undefined function set_select() in /home/guersam/www/rdirect/application/views/rooms/edit_details.php on line 43
-[29-Jul-2011 07:34:03] PHP Fatal error:  Call to undefined function set_select() in /home/guersam/www/rdirect/application/views/rooms/edit_details.php on line 43
-[29-Jul-2011 07:34:40] PHP Fatal error:  Call to undefined function set_select() in /home/guersam/www/rdirect/application/views/rooms/edit_details.php on line 43
-[29-Jul-2011 07:34:42] PHP Fatal error:  Call to undefined function set_select() in /home/guersam/www/rdirect/application/views/rooms/edit_details.php on line 43
-[29-Jul-2011 07:34:46] PHP Fatal error:  Call to undefined function set_select() in /home/guersam/www/rdirect/application/views/rooms/edit_details.php on line 43
-[29-Jul-2011 07:34:49] PHP Fatal error:  Call to undefined function set_select() in /home/guersam/www/rdirect/application/views/rooms/edit_details.php on line 43
-[29-Jul-2011 07:34:54] PHP Fatal error:  Call to undefined function set_select() in /home/guersam/www/rdirect/application/views/rooms/edit_details.php on line 43
-[29-Jul-2011 07:34:56] PHP Fatal error:  Call to undefined function set_select() in /home/guersam/www/rdirect/application/views/rooms/edit_details.php on line 43
-[29-Jul-2011 07:34:58] PHP Fatal error:  Call to undefined function set_select() in /home/guersam/www/rdirect/application/views/rooms/edit_details.php on line 43
-[29-Jul-2011 07:37:55] PHP Fatal error:  Unsupported operand types in /home/guersam/www/rdirect/application/controllers/rooms.php on line 138
-[29-Jul-2011 07:49:02] PHP Fatal error:  Call to undefined function set_select() in /home/guersam/www/rdirect/application/views/rooms/edit_details.php on line 43
-[29-Jul-2011 07:49:59] PHP Fatal error:  Call to undefined function set_select() in /home/guersam/www/rdirect/application/views/rooms/edit_details.php on line 43
-[29-Jul-2011 07:54:32] PHP Fatal error:  Call to undefined function set_select() in /home/guersam/www/rdirect/application/views/rooms/edit_details.php on line 43
-[29-Jul-2011 07:55:05] PHP Fatal error:  Unsupported operand types in /home/guersam/www/rdirect/application/controllers/rooms.php on line 138
-[29-Jul-2011 08:03:29] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING, expecting '}' in /home/guersam/www/rdirect/application/views/rooms/edit_details.php on line 31
-[29-Jul-2011 08:03:32] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING, expecting '}' in /home/guersam/www/rdirect/application/views/rooms/edit_details.php on line 31
-[29-Jul-2011 08:03:33] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING, expecting '}' in /home/guersam/www/rdirect/application/views/rooms/edit_details.php on line 31
-[29-Jul-2011 08:45:56] PHP Fatal error:  Call to undefined method Rooms_model::get_amenity_list() in /home/guersam/www/rdirect/application/controllers/rooms.php on line 252
-[29-Jul-2011 09:36:51] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home/guersam/www/rdirect/application/views/rooms/edit_details.php on line 319
-[29-Jul-2011 09:46:14] PHP Parse error:  syntax error, unexpected ';' in /home/guersam/www/rdirect/application/controllers/test.php on line 20
-[29-Jul-2011 11:07:44] PHP Fatal error:  Call to undefined method CI_DB_mysql_driver::delete_string() in /home/guersam/www/rdirect/application/controllers/test.php on line 23
-[29-Jul-2011 11:18:45] PHP Parse error:  syntax error, unexpected T_ENDFOREACH in /home/guersam/www/rdirect/application/views/rooms/edit_details.php on line 160
-[29-Jul-2011 11:30:43] PHP Fatal error:  Call to undefined method Rooms_model::update_description() in /home/guersam/www/rdirect/application/controllers/test.php on line 29
-[30-Jul-2011 19:47:25] PHP Fatal error:  Call to a member function get_property_type_list() on a non-object in /home/guersam/www/rdirect/application/controllers/rooms.php on line 240
-[30-Jul-2011 21:18:32] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home/guersam/www/rdirect/application/models/rooms_model.php on line 123
-[30-Jul-2011 21:18:54] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home/guersam/www/rdirect/application/models/rooms_model.php on line 123
-[30-Jul-2011 21:18:54] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home/guersam/www/rdirect/application/models/rooms_model.php on line 123
-[30-Jul-2011 21:20:20] PHP Fatal error:  Call to a member function is_owner() on a non-object in /home/guersam/www/rdirect/application/controllers/rooms.php on line 379
-[30-Jul-2011 21:49:46] PHP Fatal error:  Call to undefined method CI_Upload::get_errors() in /home/guersam/www/rdirect/application/controllers/rooms.php on line 392
-[30-Jul-2011 21:49:57] PHP Fatal error:  Call to undefined method CI_Upload::get_error_messages() in /home/guersam/www/rdirect/application/controllers/rooms.php on line 392
-[30-Jul-2011 22:07:40] PHP Fatal error:  Call to undefined method Users_model::add_photo() in /home/guersam/www/rdirect/application/controllers/rooms.php on line 414
-[30-Jul-2011 23:18:41] PHP Parse error:  syntax error, unexpected T_RETURN in /home/guersam/www/rdirect/application/models/pictures_model.php on line 115
-[30-Jul-2011 23:47:50] PHP Fatal error:  Call to undefined function delete_files() in /home/guersam/www/rdirect/application/models/pictures_model.php on line 123
-[30-Jul-2011 23:49:19] PHP Fatal error:  Call to a member function get_photo_by_rid() on a non-object in /home/guersam/www/rdirect/application/controllers/rooms.php on line 473
-[30-Jul-2011 23:49:41] PHP Fatal error:  Call to undefined method Rooms_model::get_photo_by_rid() in /home/guersam/www/rdirect/application/controllers/rooms.php on line 473
-[31-Jul-2011 00:25:30] PHP Fatal error:  Call to undefined function insert_room_image() in /home/guersam/www/rdirect/application/views/rooms/edit_nav.php on line 7
-[31-Jul-2011 00:27:55] PHP Fatal error:  Call to undefined function insert_room_image() in /home/guersam/www/rdirect/application/views/rooms/edit_nav.php on line 7
-[31-Jul-2011 00:31:28] PHP Fatal error:  Call to undefined function insert_room_image() in /home/guersam/www/rdirect/application/views/rooms/edit_nav.php on line 7
-[31-Jul-2011 00:31:52] PHP Fatal error:  Call to undefined function insert_room_image() in /home/guersam/www/rdirect/application/views/rooms/edit_nav.php on line 7
-[31-Jul-2011 00:33:34] PHP Fatal error:  Call to undefined function insert_room_image() in /home/guersam/www/rdirect/application/views/rooms/edit_nav.php on line 7
-[31-Jul-2011 00:35:28] PHP Fatal error:  Call to undefined function insert_room_image() in /home/guersam/www/rdirect/application/views/rooms/edit_nav.php on line 7
-[31-Jul-2011 00:36:13] PHP Fatal error:  Call to undefined function insert_room_image() in /home/guersam/www/rdirect/application/views/rooms/edit_nav.php on line 7
-[31-Jul-2011 02:21:46] PHP Fatal error:  Call to undefined method CI_Image_lib::data() in /home/guersam/www/rdirect/application/models/pictures_model.php on line 99
-[31-Jul-2011 03:20:09] PHP Fatal error:  Cannot access empty property in /home/guersam/www/rdirect/application/controllers/rooms.php on line 243
-[31-Jul-2011 03:21:21] PHP Fatal error:  Cannot access empty property in /home/guersam/www/rdirect/application/controllers/rooms.php on line 243
-[31-Jul-2011 03:22:13] PHP Fatal error:  Cannot access empty property in /home/guersam/www/rdirect/application/controllers/rooms.php on line 243
-[31-Jul-2011 04:44:58] PHP Fatal error:  Cannot access empty property in /home/guersam/www/rdirect/application/controllers/rooms.php on line 243
-[31-Jul-2011 04:47:37] PHP Fatal error:  Cannot access empty property in /home/guersam/www/rdirect/application/controllers/rooms.php on line 243
+[04-Aug-2011 00:57:26] lastQuery: SELECT id
+FROM (rd_room_addresses)
+WHERE `lat` = '37.5706994'
+AND `lng` = '126.92714790000002'
+[04-Aug-2011 01:00:28] lastQuery: SELECT id
+FROM (rd_room_addresses)
+WHERE `lat` = 37.5707
+AND `lng` = 126.9271
+[04-Aug-2011 01:04:46] lastQuery: INSERT IGNORE INTO rd_room_addresses (`apt`, `formatted_address_native`, `lat`, `lng`, `address`, `lat_fuzzy`, `lng_fuzzy`) VALUES ('', '대한민국 서울특별시 서대문구 연희동 112-3', 37.5707, 126.9271, 'Yeonhui-dong, Seodaemun-gu, Seoul, South Korea', 37.570965665117, 126.92492532715)
+[04-Aug-2011 01:08:16] insert_id: 0
+[04-Aug-2011 01:13:35] PHP Fatal error:  Call to a member function delete_temp_info() on a non-object in /home/guersam/www/rdirect/application/controllers/rooms.php on line 230
+[04-Aug-2011 01:43:44] haha
+[04-Aug-2011 01:47:12] haha
+[04-Aug-2011 01:47:12] name : 
+[04-Aug-2011 01:47:12] sig : 
+[04-Aug-2011 01:47:12] action : 
+[04-Aug-2011 01:47:12] new_hosting : 
+[04-Aug-2011 01:47:12] id : 
+[04-Aug-2011 01:47:12] prompt : 
+[04-Aug-2011 01:47:12] controller : 
+[04-Aug-2011 01:47:56] haha
+[04-Aug-2011 01:47:56] auth_other -> name : 
+[04-Aug-2011 01:47:56] auth_other -> sig : 
+[04-Aug-2011 01:47:56] auth_other -> action : 
+[04-Aug-2011 01:47:56] auth_other -> new_hosting : 
+[04-Aug-2011 01:47:56] auth_other -> id : 
+[04-Aug-2011 01:47:56] auth_other -> prompt : 
+[04-Aug-2011 01:47:56] auth_other -> controller : 
+[04-Aug-2011 01:49:38] haha
+[04-Aug-2011 01:49:38] auth_other -> name : 11
+[04-Aug-2011 01:49:38] auth_other -> sig : 499b95eea599df1950b335b8b4e3ea8b
+[04-Aug-2011 01:49:38] auth_other -> action : set_user
+[04-Aug-2011 01:49:38] auth_other -> new_hosting : 1
+[04-Aug-2011 01:49:38] auth_other -> id : 5
+[04-Aug-2011 01:49:38] auth_other -> prompt : new_listing
+[04-Aug-2011 01:49:38] auth_other -> controller : rooms
+[04-Aug-2011 01:50:56] Redirect: called by_handle_redirect : rooms/set_user/6?sig=499b95eea599df1950b335b8b4e3ea8b&new_hosting=1
+[04-Aug-2011 01:51:39] haha
+[04-Aug-2011 01:51:39] auth_other -> name : a
+[04-Aug-2011 01:51:39] auth_other -> sig : 499b95eea599df1950b335b8b4e3ea8b
+[04-Aug-2011 01:51:39] auth_other -> action : set_user
+[04-Aug-2011 01:51:39] auth_other -> new_hosting : 1
+[04-Aug-2011 01:51:39] auth_other -> id : 6
+[04-Aug-2011 01:51:39] auth_other -> prompt : new_listing
+[04-Aug-2011 01:51:39] auth_other -> controller : rooms
+[04-Aug-2011 01:55:22] Redirect: called by / : rooms/set_user/8?sig=499b95eea599df1950b335b8b4e3ea8b&new_hosting=1
+[04-Aug-2011 01:55:24] haha
+[04-Aug-2011 01:55:24] auth_other -> name : asdf
+[04-Aug-2011 01:55:24] auth_other -> sig : 499b95eea599df1950b335b8b4e3ea8b
+[04-Aug-2011 01:55:24] auth_other -> action : set_user
+[04-Aug-2011 01:55:24] auth_other -> new_hosting : 1
+[04-Aug-2011 01:55:24] auth_other -> id : 8
+[04-Aug-2011 01:55:24] auth_other -> prompt : new_listing
+[04-Aug-2011 01:55:24] auth_other -> controller : rooms
+[04-Aug-2011 01:55:28] Redirect: called by / : rooms/set_user/8?name=asdf&sig=499b95eea599df1950b335b8b4e3ea8b&new_hosting=1&prompt=new_listing
+[04-Aug-2011 02:00:23] PHP Fatal error:  Call to undefined function radians() in /home/guersam/www/rdirect/application/controllers/search.php on line 25
+[04-Aug-2011 19:33:24] PHP Fatal error:  Call to undefined function radians() in /home/guersam/www/rdirect/application/controllers/search.php on line 32
+[04-Aug-2011 19:35:24] PHP Fatal error:  Call to undefined function radians() in /home/guersam/www/rdirect/application/controllers/search.php on line 34
+[04-Aug-2011 20:12:15] PHP Fatal error:  Call to undefined function radians() in /home/guersam/www/rdirect/application/controllers/search.php on line 44
+[04-Aug-2011 20:31:41] PHP Fatal error:  Call to undefined function radians() in /home/guersam/www/rdirect/application/controllers/search.php on line 44
+[04-Aug-2011 20:31:54] PHP Fatal error:  Call to undefined function radians() in /home/guersam/www/rdirect/application/controllers/search.php on line 44

@@ -1871,7 +1871,7 @@ I hope you will love them as much as I do! I welcome all and am gay-friendly.
           .css('filter', 'alpha(enabled=true)');
         
         // now load the calendar content
-        jQuery('#calendar_tab_variable_content').load("/rooms/calendar_tab_inner2/10980", 
+        jQuery('#calendar_tab_variable_content').load("/calendar/calendar_tab_inner/10980", 
           {cal_month: jQuery('#cal_month').val()},
           function(response) {
             $table.css('opacity', 1.0)
@@ -1885,7 +1885,7 @@ I hope you will love them as much as I do! I welcome all and am gay-friendly.
 	  var $spin;
     if (initial_month_loaded === false) {
       var $spin = jQuery('#calendar_loading_spinner').show();
-      jQuery('#calendar_tab_variable_content').load("/rooms/calendar_tab_inner2/10980",
+      jQuery('#calendar_tab_variable_content').load("/calendar/calendar_tab_inner/10980",
         {cal_month: jQuery('#cal_month').val()},
         function() {
           $spin.hide();

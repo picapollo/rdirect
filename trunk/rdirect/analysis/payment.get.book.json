@@ -1,13 +1,7 @@
-#location: payment/book
-
-date:2011-07-12
-hosting_id:157375
-nights:1
-sig:LS0tIAotICFiaW5hcnkgfAogIFFGWGVUYTk4MUNlbDVyYXRGRkxySnBtZzdrTT0KCi0gfAogIC0tLSAKICAtICIyMDExLTA3LTEyIgogIC0gIjEiCiAgLSAiMTk5MzEyIgoKLSBNb24gSnVsIDExIDA0OjU1OjE1ICswMDAwIDIwMTEK
-special_offer_id:199312
-
-date:2011-07-11
-hosting_id:157375
-nights:12
-sig:LS0tIAotICFiaW5hcnkgfAogIDF2QzV2dzZSVG1TSmlQZUd6MExlRG1XOThFTT0KCi0gfAogIC0tLSAKICAtICIyMDExLTA3LTExIgogIC0gIjEyIgogIC0gIjIwNDQ5MiIKCi0gTW9uIEp1bCAxMSAwODoxODoxOSArMDAwMCAyMDExCg==
-special_offer_id:204492
+{
+	'date':'08/11/2011',
+	'hosting_id':'193448',
+	'nights':'2',
+	'sig':'LS0tIAotICFiaW5hcnkgfAogIGppdXkvcndScXNxSUppZjdQakE4NUdwakJUVT0KCi0gfAogIC0tLSAKICAtIDA4LzExLzIwMTEKICAtICIyIgogIC0gIjI2ODM1MyIKCi0gTW9uIEF1ZyAwOCAwOTo1NjozMyArMDAwMCAyMDExCg==',
+	'special_offer_id':'268353'
+}

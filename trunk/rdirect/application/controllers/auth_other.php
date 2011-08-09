@@ -32,7 +32,8 @@ class auth_other extends MY_Controller {
 				if(sizeof($user) == 0)
 				{
 					$this->session->set_flashdata('fb_access_token', $fb_cookie['access_token']);
-					redirect('auth_other/fill_user_info', 'refresh');
+					//redirect('auth_other/fill_user_info', 'refresh');
+					$this->fill_user_info();
 				}
 				else	// Email로 가입했지만 Facebook connect하지 않은 경우
 				{
@@ -66,7 +67,7 @@ class auth_other extends MY_Controller {
 		// load validation library and rules
 		$this->load->config('tank_auth', TRUE);
 		
-		$fb_token = $this->session->flashdata('fb_access_token');
+		/*$fb_token = $this->session->flashdata('fb_access_token');
 		
 		if(!$fb_token)
 		{
@@ -74,7 +75,7 @@ class auth_other extends MY_Controller {
 			$this->_history_back();
 		}
 		
-		$this->facebook->setAccessToken($fb_token);
+		$this->facebook->setAccessToken($fb_token);*/
 		$fb_user = $this->facebook->api('/me');
 	
 		// Run the validation
@@ -114,7 +115,7 @@ class auth_other extends MY_Controller {
 			}
 			// let the user login via tank auth
 			$this -> tank_auth -> login($email, $password, false, false, true);
-			redirect('auth', 'refresh');
+			$this->_handle_redirect('auth');
 		}
 	}
 

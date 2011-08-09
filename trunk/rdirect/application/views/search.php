@@ -24,27 +24,21 @@
  
             <div class="guests_section"> 
                 <div class="heading">숙박인원</div> 
-                <select id="number_of_guests" name="number_of_guests"><option value="1">1</option> 
-<option value="2">2</option> 
-<option value="3">3</option> 
-<option value="4">4</option> 
-<option value="5">5</option> 
-<option value="6">6</option> 
-<option value="7">7</option> 
-<option value="8">8</option> 
-<option value="9">9</option> 
-<option value="10">10</option> 
-<option value="11">11</option> 
-<option value="12">12</option> 
-<option value="13">13</option> 
-<option value="14">14</option> 
-<option value="15">15</option> 
-<option value="16">16+</option></select> 
+                <select id="number_of_guests" name="number_of_guests">
+                	<?php
+                		for($i=1; $i<=16; $i++)
+						{
+							$plus = ($i==16) ? '+':'';
+							$selected = (isset($guests) && $guests == $i) ? 'selected="selected"':'';
+							echo "<option value=\"$i\" $selected>$i$plus</option>\n";
+						} 
+                	?>
+				</select> 
             </div> 
         </div> 
-        <input class="v3_button v3_fixed_width search_v3_submit_location" type="submit" id="submit_location" name="submit_location" value="검색"/> 
+        <input class="v3_button v3_fixed_width search_v3_submit_location" type="submit" id="submit_location" name="submit_location" value="검색" /> 
         <div id="search_magnifying_glass"></div> 
-        <input type="hidden" name="page" id="page" value="1" /> 
+        <input type="hidden" name="page" id="page" value="1" />
         </form> 
         <div id="search_type_toggle"> 
             <div class="search_type_option rounded_left search_type_option_active" id="search_type_list">객실리스트</div> 
@@ -53,21 +47,17 @@
         </div> 
     </div> 
  
-    <div id="standby_action_area" style="display:none;"> 
-        <div> 
-            <b><a id="standby_link" href="/messaging/standby" target="_blank">급하게 객실을 찾고 계신가요? 스탠바이 리스트에 등록하세요! <i>pronto</i>? 스탠바이 리스트에 등록하기 !</a></b> 
-        </div> 
-    </div> 
- 
     <div id="search_body"> 
         <div id="results_header"> 
             <div id="results_sort"> 
                 <label for="sort" style="font-weight:bold;">로 분류하기:</label> 
-                <select id="sort" name="sort"><option value="0">추천</option> 
-<option value="2">거리</option> 
-<option value="4">낮은가격 - 높은가격</option> 
-<option value="5">높은가격 - 낮은가격</option> 
-<option value="7">최신의</option></select> 
+                <select id="sort" name="sort">
+		<option value="0">추천</option> 
+		<option value="2">거리</option> 
+		<option value="4">낮은가격 - 높은가격</option> 
+		<option value="5">높은가격 - 낮은가격</option> 
+		<option value="7">최신의</option>
+				</select> 
                 <span id="results_count_top"></span> 
             </div> 
             <div id="results_save"><a id="share_results_link">결과 공유하기</a></div> 
@@ -136,22 +126,7 @@
             <div id="slider-range"></div> 
         </div> 
     </li> 
- 
-	<li class="search_filter" id="social_connections_container"> 
-		<a class="filter_toggle"></a> 
-		<a class="filter_header" href="javascript:void(0);"> 
-			커넥션
-		</a> 
-		<ul class="search_filter_content"></ul> 
-	</li> 
- 
-    <li class="search_filter" id="neighborhood_container"> 
-        <a class="filter_toggle"></a> 
-        <a class="filter_header" href="javascript:void(0);">주변지역</a> 
-        <ul class="search_filter_content"></ul> 
-    </li> 
- 
-    
+
     <li class="search_filter closed" id="amenities_container"> 
         <a class="filter_toggle"></a> 
         <a class="filter_header" href="javascript:void(0);">편의시설</a> 
@@ -391,27 +366,6 @@
               <ul class="search_filter_content"></ul> 
           </li> 
  
-          <li class="lightbox_filter_container" id="lightbox_container_host" style="display:none;"> 
-              <div class="lightbox_filters_left_column"> 
-                  <!--
-                  <h3>프로필 작성완료</h3>
-                  <ul id="lightbox_filter_content_profile_completion" class="search_filter_content"></ul>
-                  --> 
- 
-                  <h3>의사소통 가능한 언어</h3> 
-                  <ul id="lightbox_filter_content_languages" class="search_filter_content"></ul> 
-              </div> 
-              <div class="lightbox_filters_right_column"> 
-                  <!--
-                  <h3>나의 그룹</h3>
-                  <ul id="lightbox_filter_content_group_ids" class="search_filter_content"></ul>
-                  --> 
-              </div> 
- 
-              <ul class="search_filter_content"></ul> 
-          </li> 
- 
- 
       </ul><!-- lightbox_filters --> 
  
       <div id="lightbox_filter_action_area" class="rounded_bottom"> 
@@ -421,11 +375,6 @@
       </div> 
   </div><!-- filters_lightbox --> 
 </div> 
- 
- 
- 
- 
- 
 <!--[if lt IE 8]> 
 <style type="text/css">
     .badge{width:36px;}
@@ -438,15 +387,10 @@
 </style>
 <![endif]--> 
  
- 
 <?php $this->load->view('footer', array('no_closing', true));?>
  
- 
 	<div id="fb-root"></div> 
-
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.5&sensor=false"></script> 
- 
- 
 	<script type="text/javascript"> 
  
 			window.fbAsyncInit = function() {
@@ -474,35 +418,15 @@
 				e.async = true;
 				document.getElementById('fb-root').appendChild(e);
 			}());
- 
- 
 		
-if ((navigator.userAgent.indexOf('iPhone') == -1) && (navigator.userAgent.indexOf('iPod') == -1) && (navigator.userAgent.indexOf('iPad') == -1)) {
-    jQuery(window).load(function() {
-        LazyLoad.js([
-			"<?=JS_DIR?>/jquery.autocomplete_custom.pack.js",
-			"<?=JS_DIR?>/ko_autocomplete_data.js"],
-			function() {
-            	jQuery("#location").autocomplete(autocomplete_terms, {
-	                minChars: 1, width: 322, max:20, matchContains: false, autoFill: true,
-	                formatItem: function(row, i, max) {
-	                    //to show counts, uncomment
-	                    //return row.k + " <span class='autocomplete_extra_info'>(" + row.c + ")</span>";
-	                    return Airbnb.Utils.decode(row.k);
-	                },
-	                formatMatch: function(row, i, max) {
-	                    return Airbnb.Utils.decode(row.k);
-	                },
-	                formatResult: function(row) {
-	                    return Airbnb.Utils.decode(row.k);
-	                }
-	            });
-	        }
-		);
-    });
-}
+	/*if ((navigator.userAgent.indexOf('iPhone') == -1) && (navigator.userAgent.indexOf('iPod') == -1) && (navigator.userAgent.indexOf('iPad') == -1)) {
+	    jQuery(window).load(function() {
+	        기존 자동완성	
+	    });
+	}*/
+	
     jQuery(document).ready(function(){
-        Airbnb.Bookmarks.starredIds = [157375,16457];
+        Airbnb.Bookmarks.starredIds = [<?=$starred->room_ids?>];
  
         AirbnbSearch.$.bind('finishedrendering', function(){ 
           Airbnb.Bookmarks.initializeStarIcons(function(e, isStarred){ 
@@ -516,108 +440,78 @@ if ((navigator.userAgent.indexOf('iPhone') == -1) && (navigator.userAgent.indexO
           }) 
         });
  
-            SearchFilters.amenities.a_11 = ["Smoking Allowed", true];
-            SearchFilters.amenities.a_12 = ["Pets Allowed", false];
-            SearchFilters.amenities.a_1 = ["TV", false];
-            SearchFilters.amenities.a_2 = ["Cable TV", false];
-            SearchFilters.amenities.a_3 = ["Internet", false];
-            SearchFilters.amenities.a_4 = ["Wireless Internet", true];
-            SearchFilters.amenities.a_5 = ["Air Conditioning", false];
-            SearchFilters.amenities.a_30 = ["Heating", false];
-            SearchFilters.amenities.a_21 = ["Elevator in Building", false];
-            SearchFilters.amenities.a_6 = ["Handicap Accessible", false];
-            SearchFilters.amenities.a_7 = ["Pool", false];
-            SearchFilters.amenities.a_8 = ["Kitchen", false];
-            SearchFilters.amenities.a_9 = ["Parking Included", false];
-            SearchFilters.amenities.a_13 = ["Washer / Dryer", false];
-            SearchFilters.amenities.a_14 = ["Doorman", false];
-            SearchFilters.amenities.a_15 = ["Gym", false];
-            SearchFilters.amenities.a_25 = ["Hot Tub", false];
-            SearchFilters.amenities.a_27 = ["Indoor Fireplace", false];
-            SearchFilters.amenities.a_28 = ["Buzzer/Wireless Intercom", false];
-            SearchFilters.amenities.a_16 = ["Breakfast", false];
-            SearchFilters.amenities.a_31 = ["Family/Kid Friendly", false];
-            SearchFilters.amenities.a_32 = ["Suitable for Events", false];
+<?php
+	foreach($amenity_list as $k => $i)
+	{
+		echo "SearchFilters.amenities.a_$k = [\"". lang('amenities_'.$i->name)."\", false];\n";
+	}
+?>
  
-        AirbnbSearch.currencySymbolLeft = '$';
-        AirbnbSearch.currencySymbolRight = "";
-        SearchFilters.minPrice = 10;
-        SearchFilters.maxPrice = 300;
-        SearchFilters.minPriceMonthly = 150;
-        SearchFilters.maxPriceMonthly = 5000;
+	AirbnbSearch.currencySymbolLeft = '<?=CURRENT_CURRENCY_SYMBOL?>';
+	AirbnbSearch.currencySymbolRight = "";
+	SearchFilters.minPrice = 10;
+	SearchFilters.maxPrice = 300;
+	SearchFilters.minPriceMonthly = 150;
+	SearchFilters.maxPriceMonthly = 5000;
  
-        var options = {};
+	var options = {};
  
-        //Some More Testing needs to be done with this logic - there are still edge cases
-        //here, we add ability to hit the back button when the user goes from (page2 saved search)->page3->(browser back button)
-        if (AirbnbSearch.searchHasBeenModified()){
-            options = {"location":"\uc11c\uc6b8, \ud55c\uad6d","number_of_guests":"1","action":"index","checkin":"yy/mm/dd","guests":"1","checkout":"yy/mm/dd","submit_location":"\uac80\uc0c9","controller":"search"};
-        } else {
-            options = {"location":"\uc11c\uc6b8, \ud55c\uad6d","number_of_guests":"1","action":"index","checkin":"yy/mm/dd","guests":"1","checkout":"yy/mm/dd","submit_location":"\uac80\uc0c9","controller":"search"};
-        }
+	//Some More Testing needs to be done with this logic - there are still edge cases
+	//here, we add ability to hit the back button when the user goes from (page2 saved search)->page3->(browser back button)
+	if (AirbnbSearch.searchHasBeenModified()){
+		options = <?=json_encode($opt_if_modified)?>;
+	} else {
+		options = <?=json_encode($opt)?>;
+		//"location":"\uc11c\uc6b8, \ud55c\uad6d","number_of_guests":"1","action":"index","checkin":"yy/mm/dd","guests":"1","checkout":"yy/mm/dd","submit_location":"\uac80\uc0c9","controller":"search"
+	}
  
- 
- 
-          AirbnbSearch.isViewingStarred = false;
+        AirbnbSearch.isViewingStarred = false;
        
  
         if(options.search_view) {
             AirbnbSearch.forcedViewType = options.search_view;
         }
  
- 
- 
- 
- 
- 
         //keep translations first
-        Translations.clear_dates = "\ub0a0\uc9dc \uc120\ud0dd \uc9c0\uc6b0\uae30";
-        Translations.entire_place = "\uc9d1 \uc804\uccb4";
-        Translations.friend = "\uce5c\uad6c";
-        Translations.friends = "\uce5c\uad6c";
-        Translations.loading = "\ub85c\ub529\uc911";
-        Translations.neighborhoods = "\ub3d9\ub124";
-        Translations.private_room = "\ud504\ub77c\uc774\ube57\ub8f8";
-        Translations.review = "\ud6c4\uae30";
-        Translations.reviews = "\ud6c4\uae30";
-        Translations.superhost = "\uc288\ud37c\uc8fc\uc778\uc7a5";
-        Translations.shared_room = "\uc250\uc5b4\ub4dc\ub8f8";
-        Translations.today = "\uc624\ub298";
-        Translations.you_are_here = "\ud604\uc7ac \uc704\uce58";
-        Translations.a_friend = "\uce5c\uad6c";
-        Translations.distance_away = "\ub5a8\uc5b4\uc9d0";
-        Translations.instant_book = "\uc989\uc2dc \uc608\uc57d";
-        Translations.show_more = "\ub354 \ubcf4\uae30...";
-        Translations.learn_more = "\ub354 \uc54c\uc544\ubcf4\uae30";
-        Translations.social_connections = "\uc18c\uc15c\ucee4\ub125\uc158";
+        Translations.clear_dates = "날짜 선택 지우기";
+		Translations.entire_place = "집 전체";
+		Translations.friend = "친구";
+		Translations.friends = "친구";
+		Translations.loading = "로딩중";
+		Translations.neighborhoods = "동네";
+		Translations.private_room = "프라이빗룸";
+		Translations.review = "후기";
+		Translations.reviews = "후기";
+		Translations.superhost = "슈퍼주인장";
+		Translations.shared_room = "쉐어드룸";
+		Translations.today = "오늘";
+		Translations.you_are_here = "현재 위치";
+		Translations.a_friend = "친구";
+		Translations.distance_away = "떨어짐";
+		Translations.instant_book = "즉시 예약";
+		Translations.show_more = "더 보기...";
+		Translations.learn_more = "더 알아보기";
+		Translations.social_connections = "소셜커넥션";
  
         //these are generally for applied filter labels
-        Translations.amenities = "\ud3b8\uc758\uc2dc\uc124";
-        Translations.room_type = "\uac1d\uc2e4 \uc885\ub958";
-        Translations.price = "\uac00\uaca9";
-        Translations.keywords = "\ud0a4\uc6cc\ub4dc\ub85c \uac80\uc0c9";
-        Translations.property_type = "\uac1d\uc2e4 \uc885\ub958";
-        Translations.bedrooms = "\uce68\uc2e4 \uc218";
-        Translations.bathrooms = "\ud654\uc7a5\uc2e4";
-        Translations.beds = "\uce68\ub300";
-        Translations.languages = "\uc5b8\uc5b4";
-        Translations.collection = "\ud14c\ub9c8\ubcc4 \ubaa8\uc74c";
+        Translations.amenities = "편의시설";
+		Translations.room_type = "객실 종류";
+		Translations.price = "가격";
+		Translations.keywords = "키워드로 검색";
+		Translations.property_type = "객실 종류";
+		Translations.bedrooms = "침실 수";
+		Translations.bathrooms = "화장실";
+		Translations.beds = "침대";
+		Translations.languages = "언어";
+		Translations.collection = "테마별 모음";
  
-        //zoom in to see more properties message in map view
-        Translations.redo_search_in_map_tip = "\"\uc9c0\ub3c4 \uc774\ub3d9\uc2dc \uc7ac\uac80\uc0c9\ud558\uae30\" \ubc15\uc2a4\ub97c \uccb4\ud06c\ud558\uc154\uc57c \uc9c0\ub3c4 \uc774\ub3d9 \uc2dc \uac80\uc0c9\uacb0\uacfc\uac00 \uc5c5\ub370\uc774\ud2b8\ub429\ub2c8\ub2e4.";
-        Translations.zoom_in_to_see_more_properties = "\ub354 \ub9ce\uc740 \uac1d\uc2e4\uc744 \ubcf4\ub824\uba74 \uc9c0\ub3c4\ub97c \ud655\ub300\ud558\uc138\uc694.";
+        // zoom in to see more properties message in map view
+        Translations.redo_search_in_map_tip = "\"지도 이동시 재검색하기\" 박스를 체크하셔야 지도 이동 시 검색결과가 업데이트됩니다.";
+		Translations.zoom_in_to_see_more_properties = "더 많은 객실을 보려면 지도를 확대하세요.";
  
         //when map is zoomed in too far
-        Translations.your_search_was_too_specific = "\uac80\uc0c9\uc870\uac74\uc5d0 \ub9de\ub294 \uacb0\uacfc\ub97c \ucc3e\uc744 \uc218 \uc5c6\uc2b5\ub2c8\ub2e4.";
-        Translations.we_suggest_unchecking_a_couple_filters = "\uac80\uc0c9\uc870\uac74 \ud55c\ub450\uac1c \uc0ad\uc81c, \uc9c0\ub3c4\ub97c \ud655\ub300, \ub2e4\ub978 \ub3c4\uc2dc\ub97c \uac80\uc0c9\uc744 \uc2dc\ub3c4\ud574 \ubcf4\uc2dc\uae30 \ubc14\ub78d\ub2c8\ub2e4.";
- 
-        //Tracking Pixel
-        //run after localization
-        TrackingPixel.params.uuid = "5knh7fchub";
-        TrackingPixel.params.user = 738217;
-        TrackingPixel.params.af = "";
-        TrackingPixel.params.c = "";
-        TrackingPixel.params.pg = '2';
+        Translations.your_search_was_too_specific = "검색조건에 맞는 결과를 찾을 수 없습니다.";
+		Translations.we_suggest_unchecking_a_couple_filters = "검색조건 한두개 삭제, 지도를 확대, 다른 도시를 검색을 시도해 보시기 바랍니다.";
  
         AirbnbSearch.init(options);
  

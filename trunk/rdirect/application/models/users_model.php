@@ -71,9 +71,10 @@ class Users_model extends CI_Model
 	
 	function get_starred_rooms($user_id){
 		if(!$user_id) return null;
-		$this->db->select('room_id');
+		$this->db->select('GROUP_CONCAT(room_id) as room_ids, COUNT(room_id) as count', false);
 		$this->db->where('user_id', $user_id);
 		$this->db->from('rooms_starred');
+		//$this->db->group_by('room_id');
 		$query = $this->db->get();
 		return $query->result();
 	}

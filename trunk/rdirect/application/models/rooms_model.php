@@ -205,6 +205,24 @@ class Rooms_model extends CI_Model {
 		return $query->result();
 	}
 	
+	function get_daily_price($rid)
+	{
+		$this->db->select('price_native, native_currency');
+		$this->db->from('rooms');
+		$this->db->where('id', $rid);
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	function get_currency($rid)
+	{
+		$this->db->select('native_currency');
+		$this->db->from('rooms');
+		$this->db->where('id', $rid);
+		$query = $this->db->get();
+		return $query->result();
+	}
+	
 	/**
 	 * Do not use! 이 기능은 pictures_model->add_room_photo에서 구현함
 	 */
@@ -218,9 +236,9 @@ class Rooms_model extends CI_Model {
 	 */
 	function get_all_photos($rid)
 	{
-		$this->db->select('id, order');
+		$this->db->select('`id`, `order`', false);
 		$this->db->where('room_id', $rid);
-		$this->db->order_by('order', 'ASC');
+		$this->db->order_by('`order`', 'ASC', false);
 		$query = $this->db->get('room_photos');
 		return $query->result();
 	}
@@ -236,7 +254,7 @@ class Rooms_model extends CI_Model {
 	{
 		$this->db->select('id');
 		$this->db->from('room_photos');
-		$this->db->where(array('room_id'=> $rid, 'order'=>1));
+		$this->db->where(array('room_id'=> $rid, '`order`'=>1));
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -249,7 +267,7 @@ class Rooms_model extends CI_Model {
 	
 	function delete_temp_info($rid)
 	{
-		return $this->db->delete('room_temp', array('room_id', $rid));
+		return $this->db->delete('room_temp', array('room_id' => $rid));
 	}
 	
 	function search_nearby_rooms($rid, $dist_limit = 3956, $rows_limit = 10)
@@ -290,19 +308,19 @@ class Rooms_model extends CI_Model {
 		
 	}
 	
-	function get_property_type_list()
+	function get_property_type_list($by_array = false)
 	{
-		return json_decode(file_get_contents('./include/static/property_types.json'));
+		return json_decode(file_get_contents('./include/static/property_types.json'), $by_array);
 	}
 	
-	function get_amenity_list()
+	function get_amenity_list($by_array = false)
 	{
-		return json_decode(file_get_contents('./include/static/amenities.json'));
+		return json_decode(file_get_contents('./include/static/amenities.json'), $by_array);
 	}
 	
-	function get_bed_type_list()
+	function get_bed_type_list($by_array = false)
 	{
-		return json_decode(file_get_contents('./include/static/bed_types.json'));
+		return json_decode(file_get_contents('./include/static/bed_types.json'), $by_array);
 	}
 }
 

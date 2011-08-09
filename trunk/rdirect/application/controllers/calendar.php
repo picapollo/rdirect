@@ -15,25 +15,7 @@ class Calendar extends MY_Controller{
 		$this->load->model('calendar_model');
 	}	
 	
-	/*
-	 *	선택한 월 2주 전후 날짜, 캘린더 시작/종료 인덱스 계산
-	 */
-	function _get_date_boundary($month, $year)
-	{
-		$next_month = $month==12 ? 1 : $month+1;
-		$next_month_year = $month==12? $year+1 : $year;
-		
-		$starting_day = date('w', mktime(0, 0, 0, $month, 1, $year));
-		$prev_days = $starting_day + 14;
-		$after_days = 20 - date('w', mktime(0, 0, 0, $next_month, 1, $next_month_year));
-		
-		$res->start_date = date("Y-m-d", strtotime("$year-$month-01 - $prev_days day"));
-		$res->stop_date = date("Y-m-d", strtotime("$next_month_year-$next_month-01 + $after_days day"));
-		$res->start_idx = 14;
-		$res->stop_idx = (days_in_month($month, $year)+$starting_day)<=28 ? 42 : 48;
-		
-		return $res;
-	}
+
 	
 	/*
 	 * 캘린더 수정 화면 표시
@@ -85,20 +67,57 @@ class Calendar extends MY_Controller{
 		$month = $this->input->get('month') ? $this->input->get('month') : date('m');
 		$year = $this->input->get('year') ? $this->input->get('year') : date('Y');
 		
-		$post = $this->input->post();
+		$starting_date = $this->input->post('starting_date');
+		$stopping_date = $this->input->post('stopping_date');
+		$availability = $this->input->post('availability')=='Available'? 1 : 0;
+		$daily_price_native = $this->input->post('daily_price_native');
 		
 		$dates = array();
-		for($i = strtotime($post['starting_date']); $i <= strtotime($post['stopping_date']); $i = strtotime(' +1 day', $i))
+		for($i = strtotime($starting_date); $i <= strtotime($stopping_date); $i = strtotime(' +1 day', $i))
 			$dates[] = date('Y-m-d', $i);
 		
-		$this->calendar_model->update_dates($rid, $dates, $post['availability']=='Available'?1:0, $post['daily_price_native']);
-		$this->db->last_query();
-		
+		if($availability && ! $daily_price_native)	// 가격 지정 않은 경우 일정 삭제
+			$this->calendar_model->delete_daily($rid, date('Y-m-d', strtotime($starting_date)), date('Y-m-d', strtotime($stopping_date)));
+		else 										// 그외엔 업데이트
+			$this->calendar_model->update_daily($rid, $dates, $availability, $daily_price_native);
 		
 		$tiles = $this->_generate_tiles_full($rid, $this->_get_date_boundary($month, $year));
 		header('Content-type: text/javascript');
 		echo 'update_calendar_data(0, '.$rid.', eval([' . json_encode($tiles) . ']));';
 		echo "\n".'after_submit();';
+	}
+	
+	/*
+	 * 방 정보 보기에 삽입되는 캘린더
+	 */ 
+	function tab_inner($rid = null){
+		if( ! $rid || ! $room = $this->rooms_model->get_daily_price($rid))
+			return;
+		
+		$month = $this->input->post('cal_month');
+		$year = $month < date('m') ? date('Y') + 1 : date('Y');
+		
+		$cal = $this->_generate_calendar($month, $year);
+		
+		$hosting = $this->calendar_model->get_tiles_full($rid, $cal[0]->date, $cal[count($cal)-1]->date);
+		if( ! $hosting) $hosting = array();
+		
+		$cnt = 0;
+		foreach($cal as $k => $d)
+		{
+			if( ! empty($hosting[$cnt]) && $hosting[$cnt]->date == $d->date)
+			{
+				$cal[$k]->isa = $hosting[$cnt]->isa;
+				$cal[$k]->price = $hosting[$cnt]->daily_price;
+				$cnt++;
+			}
+			else
+			{
+				$cal[$k]->price = $room[0]->price_native;
+				$cal[$k]->isa = 1;
+			}
+		}
+		$this->load->view('calendar/tab_inner', array('cal'=>$cal));
 	}
 	
 	/*
@@ -163,6 +182,29 @@ class Calendar extends MY_Controller{
 		return $tiles;
 	}
 
+	/*
+	 *	선택한 월 2주 전후 날짜, 캘린더 시작/종료 인덱스 계산
+	 */
+	function _get_date_boundary($month, $year)
+	{
+		$next_month = $month==12 ? 1 : $month+1;
+		$next_month_year = $month==12? $year+1 : $year;
+		
+		$starting_day = date('w', mktime(0, 0, 0, $month, 1, $year));
+		$prev_days = $starting_day + 14;
+		$after_days = 20 - date('w', mktime(0, 0, 0, $next_month, 1, $next_month_year));
+		
+		$res->start_date = date("Y-m-d", strtotime("$year-$month-01 - $prev_days day"));
+		$res->stop_date = date("Y-m-d", strtotime("$next_month_year-$next_month-01 + $after_days day"));
+		$res->start_idx = 14;
+		$res->stop_idx = (days_in_month($month, $year)+$starting_day)<=28 ? 42 : 48;
+		
+		return $res;
+	}
+
+	/*
+	 *	캘린더에 들어갈 날짜 계산, 지난 날짜 비활성화
+	 */
 	function _generate_calendar($month, $year)
 	{
 		$prev_month = ($month==1) ? 12 : $month-1;
@@ -183,6 +225,7 @@ class Calendar extends MY_Controller{
 		{
 			$d = new stdClass;
 			$d->d = $i;
+			$d->date = date('Y-m-d', mktime(0,0,0, $prev_month, $i, $prev_month_year));
 			$d->disabled = mktime(0, 0, 0, $prev_month, $i, $prev_month_year) < $today;
 			$calendar[] = $d;
 		}
@@ -192,6 +235,7 @@ class Calendar extends MY_Controller{
 		{
 			$d = new stdClass;
 			$d->d = $i;
+			$d->date = date('Y-m-d', mktime(0,0,0, $month, $i, $year));
 			$d->disabled = mktime(0, 0, 0, $month, $i, $year) < $today;
 			$calendar[] = $d;
 		}
@@ -200,6 +244,7 @@ class Calendar extends MY_Controller{
 		for($i = 1 ; $i < 7 - $last_day; $i++){
 			$d = new stdClass;
 			$d->d = $i;
+			$d->date = date('Y-m-d', mktime(0,0,0, $next_month, $i, $next_month_year));
 			$d->disabled = mktime(0, 0, 0, $next_month, $i, $next_month_year) < $today;
 			$calendar[] = $d;
 		} 
@@ -207,7 +252,8 @@ class Calendar extends MY_Controller{
 		return $calendar;
 	}
 
-	function index(){
+	// 테스트용! TODO: 삭제
+	function index(){	
 		echo '<pre>';
 		print_r($this->_generate_calendar(8, 2011));
 	}
