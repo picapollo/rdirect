@@ -15,7 +15,7 @@ class Calendar_model extends CI_Model{
 		return $query->result();
 	}
 	
-	function update_dates($rid, $dates, $available=1, $price=0)
+	function update_daily($rid, $dates, $available=1, $price=0)
 	{
 		if( ! $price) $price = 0;
 		$cd = $this->db->dbprefix('calendar_daily');
@@ -24,6 +24,13 @@ class Calendar_model extends CI_Model{
 			$sql .= "($rid, '$date', $available, $price),";
 		$sql = substr($sql, 0, -1);
 		return $this->db->query($sql);
+	}
+	
+	function delete_daily($rid, $start, $end)
+	{
+		$this->db->where('room_id', $rid);
+		$this->db->where("`date` BETWEEN \"$start\" AND \"$end\"", null, false);
+		return $this->db->delete('calendar_daily');
 	}
 }
 

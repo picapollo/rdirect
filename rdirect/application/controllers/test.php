@@ -14,16 +14,13 @@ class Test extends MY_Controller {
 		$this->load->model('pictures_model');
 		$this->load->model('calendar_model');
 		$this->load->library('currency');
+		header('Content-Type: text/html; charset=UTF-8');
 		echo '<pre>';
 	}
 
 	public function index()
 	{
-		$amount_from = 100;
-		$curr_from = 'EUR';
-		$curr_to = 'IDR';
-		
-		print_r($this->_generate_currency_table());
+		print_r($this->rooms_model->get_amenity_list());
 		
 	}
 	

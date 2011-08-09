@@ -1,0 +1,59 @@
+{
+	'code':"5ETBAF"
+}
+
+{
+	'GET':{
+		'code':'5ETBAF'
+	}
+	'POST':{
+		'user_message_textarea':'안녕하세요 안녕하세요', 
+		'page5_action':'send_message'
+	}
+	'Contents':null
+}
+
+{
+	'GET':{
+		'code':'5ETBAF',
+		'previous_step':'send_message'
+	}
+}
+
+{
+	'GET':{
+		'code':'5ETBAF'
+	}
+	'POST':{
+		'user_profile_info[university]':'',
+		'user_profile_info[current_city]':'코스타리카',
+		'user_profile_info[about]':'해치지않아요',
+		'page5_action':'update_user_profile'
+	}
+}
+
+{
+	'GET':{
+		'code':'5ETBAF',
+		'previous_step':'update_user_profile'
+	}
+}
+
+{
+	'POST':{
+		'code':'5ETBAF',
+		'page5_action':'additional_guests',
+		'friend_email[]':'xxxyel@gmail.com',
+		'friend_email[]':'xxxyel@naver.com'
+	}
+}
+
+{
+	'GET':{
+		'code':'5ETBAF'
+	}
+	'POST':{
+		'hosting_property_type_id':'0',
+		'page5_action':'post_a_room'
+	}
+}

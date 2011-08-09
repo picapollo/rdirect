@@ -134,7 +134,7 @@
   	<?php if(empty($room->photos)): ?>
   	<img alt="Room_default_no_photos" height="426" src="<?=IMG_DIR?>/page3/v3/room_default_no_photos.jpg" width="639" /></div>
   	<?php else:?>
-  	<img alt="Large" height="426" src="<?=insert_room_photo($room->photos[0]->id, 'large')?>)" width="639" /></div>	
+  	<img alt="Large" height="426" src="<?=insert_room_photo($room->photos[0]->id, 'large')?>" width="639" /></div>	
   	<?php endif;?>
 	<div id="galleria_container">
 		<?php if(empty($room->photos)): ?>
@@ -662,14 +662,15 @@
  
  
 		    var needs_to_message = false;
-    var ajax_already_messaged_url = "/messaging/ajax_already_messaged/755884";
-    var ajax_lwlb_contact_url = "/rooms/ajax_lwlb_contact/184100";
+    var ajax_already_messaged_url = "<?=site_url('messaging/ajax_already_messaged'.$room->user_id)?>";
+    var ajax_lwlb_contact_url = "<?=site_url('rooms/ajax_lwlb_contact/'.$room->id)?>";
  
     function action_email() {
             lwlb_show('lwlb_email');
     }
  
     function action_twitter() {
+    	// TODO: 트위터 메시지 변경
         popup('http://twitter.com/home/?status=Stay+at+%2212%22%20in%20Malang,%20Indonesia%20-+http://www.airbnb.com%2Frooms%2F184100%20via%20@airbnb%20%23Travel', 'console', 650, 1024);
     }
  
@@ -724,7 +725,7 @@
           .css('filter', 'alpha(enabled=true)');
         
         // now load the calendar content
-        jQuery('#calendar_tab_variable_content').load("/rooms/calendar_tab_inner2/184100", 
+        jQuery('#calendar_tab_variable_content').load("<?=site_url('calendar/tab_inner/'.$room->id)?>", 
           {cal_month: jQuery('#cal_month').val()},
           function(response) {
             $table.css('opacity', 1.0)
@@ -738,7 +739,7 @@
 	  var $spin;
     if (initial_month_loaded === false) {
       var $spin = jQuery('#calendar_loading_spinner').show();
-      jQuery('#calendar_tab_variable_content').load("/rooms/calendar_tab_inner2/184100",
+      jQuery('#calendar_tab_variable_content').load("<?=site_url('calendar/tab_inner/'.$room->id)?>",
         {cal_month: jQuery('#cal_month').val()},
         function() {
           $spin.hide();
@@ -785,7 +786,7 @@
         jQuery('#content_flag').hide();
  
         AirbnbRooms.init({inIsrael: false, 
-                          hostingId: 184100,
+                          hostingId: <?=$room->id?>,
                           isMonthly: false,
                           staggeredPrice: '$409',
                           stayOffered: 2,
@@ -877,7 +878,7 @@
     });
 
 		jQuery(document).ready(function() {
-			Airbnb.init({userLoggedIn: <?=$this->tank_auth->is_logged_in()?>});
+			Airbnb.init({userLoggedIn: <?=$this->tank_auth->is_logged_in() ? 'true':'false'?>});
 		});
 
 		Airbnb.FACEBOOK_PERMS = "<?=$this->config->item('facebook_scope')?>";

@@ -12,8 +12,8 @@
 		</li>
 		<li style="border:none;">
 			<ul class="notification_bar">
-				<li id="star-indicator" <?php if(!$starred) echo 'style="display: none;"'?>>
-					<a href="<?=site_url('search?starred=true')?>" class="notification_icon starred" title="<?=lang('top_menu_starred_items')?>"> <span style="width: 1px; margin-right: -5px;">&nbsp;</span> <span id="star_count" class="alert_count"><?=count($starred)?></span> </a>
+				<li id="star-indicator" <?php if(!$starred->count) echo 'style="display: none;"'?>>
+					<a href="<?=site_url('search?starred=true')?>" class="notification_icon starred" title="<?=lang('top_menu_starred_items')?>"> <span style="width: 1px; margin-right: -5px;">&nbsp;</span> <span id="star_count" class="alert_count"><?=$starred->count?></span> </a>
 				</li>
 			</ul>
 		</li>	

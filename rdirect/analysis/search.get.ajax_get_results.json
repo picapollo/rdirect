@@ -1,512 +1,465 @@
-[GET]
-search_view:1
-min_bedrooms:0
-min_bathrooms:0
-min_beds:0
-page:1
-location:paris
-checkin:yy/mm/dd
-checkout:yy/mm/dd
-guests:1
-per_page:21
-
-[Contents]
 {
-	"present_standby_option": false,
-	"center_lat": 48.856614,
-	"center_lng": 2.3522219,
-	"geocode_precision": "city",
-	"banner_info": {
-		"url": "http://d268xbavvbc3jk.cloudfront.net/viable_places/703/search/original.jpg?1285651419",
-		"attribution_text": null,
-		"attribution_url": null,
-		"height": 150,
-		"airtv_url": "http://www.youtube.com/v/WGHdme_jHqM?fs=1&hl=en_US&rel=0&hd=1&autoplay=1",
-		"airtv_headline": "Cozy Loft In Paris",
-		"airtv_description": null
-	},
-	"results_count_html": "\n<b>1 &ndash; 21</b> of <b>2334 listings</b>",
-	"sort": 0,
-	"results_count_top_html": "2334 results\n",
+	"results_count_top_html": "31 results\n",
 	"properties": [
 		{
-			"address": "Rue De Moscou, Paris (\u00c9lys\u00e9e)",
-			"recommendation_count": 0,
-			"usd_price": 72,
-			"review_count": 19,
-			"hosting_thumbnail_url": "http://i0.muscache.com/pictures/652283/x_small.jpg",
-			"lat": 48.880207,
-			"price": 72,
-			"user_thumbnail_url": "http://i2.muscache.com/users/142505/profile_pic/1285956868/tiny.jpg",
-			"lng": 2.325976,
-			"user_name": "Etienne M",
-			"picture_ids": [652283, 652292, 652299, 652307, 652316, 652326, 652331, 652351, 652359, 652361, 652367, 652375],
-			"name": "Charming room in the 8th ",
-			"id": 32883,
-			"user_is_superhost": false
+			"user_is_superhost": false,
+			"recommendation_count": 1,
+			"has_video": false,
+			"lat": 37.582497,
+			"user_id": 559116,
+			"lng": 126.980637,
+			"address": "Seoul",
+			"price": 6277,
+			"hosting_thumbnail_url": "http://i1.muscache.com/pictures/924596/x_small.jpg",
+			"name": "Private room in the heart of Seoul ",
+			"review_count": 3,
+			"picture_ids": [924596, 924651, 924602, 924608, 924610, 924612, 777157, 777141, 924629, 924630, 924637, 924639, 785278, 785279, 924642, 924647, 924650, 777161, 777144, 785258, 785268, 785271, 785273, 785275, 785280, 785281, 785283, 785288, 785290, 785295, 785297, 785305, 785301],
+			"id": 119523,
+			"relationships": [],
+			"user_thumbnail_url": "http://i3.muscache.com/users/559116/profile_pic/1304587292/tiny.jpg",
+			"user_name": "Hyunchung L"
 		}, {
-			"address": "Boulevard Morland, Paris (H\u00f4tel-de-Ville)",
+			"user_is_superhost": false,
+			"recommendation_count": 1,
+			"has_video": false,
+			"lat": 37.564091,
+			"user_id": 455876,
+			"lng": 126.99794,
+			"address": "namsandong2ga, jung-gu, Seoul",
+			"price": 4708,
+			"hosting_thumbnail_url": "http://i2.muscache.com/pictures/617182/x_small.jpg",
+			"name": "Quality TWIN room in Myeongdong",
+			"review_count": 1,
+			"picture_ids": [617182, 617183, 617184, 617186, 617193, 617218, 617221],
+			"id": 89869,
+			"relationships": [],
+			"user_thumbnail_url": "http://i0.muscache.com/users/455876/profile_pic/1300774596/tiny.jpg",
+			"user_name": "Ibville K"
+		}, {
+			"user_is_superhost": false,
+			"recommendation_count": 0,
+			"has_video": false,
+			"lat": 37.521778,
+			"user_id": 539232,
+			"lng": 127.024605,
+			"address": "Garosugil/Apkujung, Kangnam-gu",
+			"price": 5257,
+			"hosting_thumbnail_url": "http://i0.muscache.com/pictures/693835/x_small.jpg",
+			"name": "APT UNIT hippest street in Seoul",
+			"review_count": 2,
+			"picture_ids": [693835, 696471, 693836, 693840, 693843, 693882, 693856, 693899, 693894, 693772, 693896, 693773, 693903, 693844, 693869, 693889, 693886, 693861, 693906, 693874, 693873, 693858, 693888, 693891, 693887, 693884, 693847, 693864, 693867, 693878, 693850, 693852, 693854, 693912],
+			"id": 104081,
+			"relationships": [],
+			"user_thumbnail_url": "http://i2.muscache.com/users/539232/profile_pic/1303927716/tiny.jpg",
+			"user_name": "Sam P"
+		}, {
+			"user_is_superhost": false,
+			"recommendation_count": 1,
+			"has_video": false,
+			"lat": 37.504459,
+			"user_id": 635166,
+			"lng": 127.051544,
+			"address": "Seoul",
+			"price": 6904,
+			"hosting_thumbnail_url": "http://i0.muscache.com/pictures/958349/x_small.jpg",
+			"name": "Cozy Residence in Gangnam, Seoul",
+			"review_count": 0,
+			"picture_ids": [958349, 958372, 958353, 958357, 958366, 958360, 958379, 958382, 958368, 958386, 958394, 958401, 958408, 958412, 958620, 958297, 958327, 958298, 958302, 958305, 958292, 958307, 958309, 958317, 958325, 958332, 958340, 958336, 958296, 979601, 979603, 958612, 959392],
+			"id": 128468,
+			"relationships": [],
+			"user_thumbnail_url": "http://i1.muscache.com/users/635166/profile_pic/1309369354/tiny.jpg",
+			"user_name": "Hausnuvo C"
+		}, {
+			"user_is_superhost": false,
+			"recommendation_count": 7,
+			"has_video": false,
+			"lat": 37.549648,
+			"user_id": 752884,
+			"lng": 126.91803,
+			"address": "Seoul",
+			"price": 1961,
+			"hosting_thumbnail_url": "http://i0.muscache.com/pictures/1035918/x_small.jpg",
+			"name": "Private room in a nice, sunny apt.",
+			"review_count": 1,
+			"picture_ids": [1035918, 1053871, 1053879, 1053883],
+			"id": 164230,
+			"relationships": [],
+			"user_thumbnail_url": "http://i0.muscache.com/users/752884/profile_pic/1309945040/tiny.jpg",
+			"user_name": "Mario G"
+		}, {
+			"user_is_superhost": false,
+			"recommendation_count": 4,
+			"has_video": false,
+			"lat": 37.506699,
+			"user_id": 34147,
+			"lng": 127.04406,
+			"address": "Seoul",
+			"price": 6277,
+			"hosting_thumbnail_url": "http://i1.muscache.com/pictures/993154/x_small.jpg",
+			"name": "Best spot for traveling Gangnam",
+			"review_count": 0,
+			"picture_ids": [993154, 993166, 993145, 993160, 993175, 993192, 993203, 993215, 993225, 993236, 993238, 834627, 993142, 993134],
+			"id": 99724,
+			"relationships": [],
+			"user_thumbnail_url": "http://i2.muscache.com/users/34147/profile_pic/1282729855/tiny.jpg",
+			"user_name": "Kevin O"
+		}, {
+			"user_is_superhost": false,
+			"recommendation_count": 1,
+			"has_video": false,
+			"lat": 37.582497,
+			"user_id": 559116,
+			"lng": 126.980637,
+			"address": "Seoul",
+			"price": 7846,
+			"hosting_thumbnail_url": "http://i1.muscache.com/pictures/762183/x_small.jpg",
+			"name": "High-class B&amp;B in center of Seoul ",
+			"review_count": 0,
+			"picture_ids": [762183, 762176, 762190, 762194, 762198, 762201, 762203, 762205, 762206, 762208, 762210, 762211, 762213, 762215, 762216, 762217, 762218, 762220, 762221, 762222, 762227],
+			"id": 117239,
+			"relationships": [],
+			"user_thumbnail_url": "http://i3.muscache.com/users/559116/profile_pic/1304587292/tiny.jpg",
+			"user_name": "Hyunchung L"
+		}, {
+			"user_is_superhost": false,
+			"recommendation_count": 1,
+			"has_video": false,
+			"lat": 37.582497,
+			"user_id": 559116,
+			"lng": 126.980637,
+			"address": "Seoul",
+			"price": 9415,
+			"hosting_thumbnail_url": "http://i3.muscache.com/pictures/724251/x_small.jpg",
+			"name": "High-class B&amp;B in heart of Seoul",
+			"review_count": 1,
+			"picture_ids": [724251, 724249, 940266, 724250, 940296, 724255, 724256, 940282, 940291, 724253, 940275, 724264, 724269, 724270, 724271, 724273, 940271, 724277, 724282, 724285, 724288, 724289, 724290, 724293, 724294, 724295, 724297],
+			"id": 108008,
+			"relationships": [],
+			"user_thumbnail_url": "http://i3.muscache.com/users/559116/profile_pic/1304587292/tiny.jpg",
+			"user_name": "Hyunchung L"
+		}, {
+			"user_is_superhost": false,
 			"recommendation_count": 2,
-			"usd_price": 141,
-			"review_count": 17,
-			"hosting_thumbnail_url": "http://i2.muscache.com/pictures/604859/x_small.jpg",
-			"lat": 48.847954,
-			"price": 141,
-			"user_thumbnail_url": "http://i3.muscache.com/users/469453/profile_pic/1301362188/tiny.jpg",
-			"lng": 2.364946,
-			"user_name": "Ivonne J",
-			"picture_ids": [604859, 605428, 622990, 622904, 622965, 623071, 622932, 622887, 622892, 588373, 622897, 622901, 588405, 622995, 622969, 622979, 622977, 594304, 622987, 588371, 588460, 595281, 605070, 643138, 675132],
-			"name": "Enchanting view &amp; interior deco!",
-			"id": 85656,
-			"user_is_superhost": false
+			"has_video": false,
+			"lat": 37.555866,
+			"user_id": 589056,
+			"lng": 126.927711,
+			"address": "Seoul",
+			"price": 1726,
+			"hosting_thumbnail_url": "http://i3.muscache.com/pictures/834787/x_small.jpg",
+			"name": "City guesthouse 2",
+			"review_count": 0,
+			"picture_ids": [834787, 834788, 834789, 834790, 834791, 834792],
+			"id": 131186,
+			"relationships": [],
+			"user_thumbnail_url": "http://i3.muscache.com/users/589056/profile_pic/1306829343/tiny.jpg",
+			"user_name": "Korea G"
 		}, {
-			"address": "Rue Des Lombards, Paris (Louvre)",
+			"user_is_superhost": false,
 			"recommendation_count": 0,
-			"usd_price": 98,
-			"review_count": 58,
-			"hosting_thumbnail_url": "http://i2.muscache.com/pictures/561273/x_small.jpg",
-			"lat": 48.859764,
-			"price": 98,
-			"user_thumbnail_url": "http://i1.muscache.com/users/59987/profile_pic/1289938105/tiny.jpg",
-			"lng": 2.34788,
-			"user_name": "Le Parisien A",
-			"picture_ids": [561273, 561270, 561269, 561266, 561268, 561271, 561272, 561264, 561265, 561262, 561263],
-			"name": "Central Paris on a budget!",
-			"id": 24436,
-			"user_is_superhost": false
+			"has_video": false,
+			"lat": 37.556023,
+			"user_id": 892162,
+			"lng": 126.931671,
+			"is_new_hosting": true,
+			"address": "Seoul",
+			"price": 1883,
+			"hosting_thumbnail_url": "http://i0.muscache.com/pictures/1187864/x_small.jpg",
+			"name": "Sleeping Strawberry",
+			"review_count": 0,
+			"picture_ids": [1187864, 1187870, 1187872, 1187875, 1187878, 1187880, 1187881, 1187867],
+			"id": 185782,
+			"relationships": [],
+			"user_thumbnail_url": "http://i0.muscache.com/users/892162/profile_pic/1312274859/tiny.jpg",
+			"user_name": "Sleepingstrawberry U"
 		}, {
-			"address": "Rue Saint-Martin, Paris (H\u00f4tel-de-Ville)",
+			"user_is_superhost": false,
 			"recommendation_count": 1,
-			"usd_price": 122,
-			"review_count": 21,
-			"hosting_thumbnail_url": "http://i2.muscache.com/pictures/654517/x_small.jpg",
-			"lat": 48.859287,
-			"price": 122,
-			"user_thumbnail_url": "http://i2.muscache.com/users/154249/profile_pic/1277845710/tiny.jpg",
-			"lng": 2.350447,
-			"user_name": "David &amp; Maria R",
-			"picture_ids": [654517, 654518, 654519, 654610, 654614, 654615, 654618, 654621, 654623, 654626, 654640, 654646, 654651, 654653, 654655, 654662, 654670, 654680, 654696, 654706, 654717, 654724, 654730, 654734, 654739, 654742, 654747, 654752, 591993, 591985, 591986, 591987, 591979, 591978, 591980, 591981, 591982, 591983],
-			"name": "Gorgeous modern flat in Paris heart",
-			"id": 86030,
-			"user_is_superhost": false
+			"has_video": false,
+			"lat": 37.486767,
+			"user_id": 843511,
+			"lng": 127.021744,
+			"is_new_hosting": true,
+			"address": "Seoul",
+			"price": 7061,
+			"hosting_thumbnail_url": "http://i3.muscache.com/pictures/1206579/x_small.jpg",
+			"name": "Seocho Apt Cozy Room",
+			"review_count": 0,
+			"picture_ids": [1206579, 1206581],
+			"id": 188402,
+			"relationships": [],
+			"user_thumbnail_url": "http://i0.muscache.com/users/843511/profile_pic/1311164420/tiny.jpg",
+			"user_name": "Young Sun J"
 		}, {
-			"address": "Place d'Aligre, Paris",
+			"user_is_superhost": false,
 			"recommendation_count": 1,
-			"usd_price": 136,
-			"review_count": 13,
-			"hosting_thumbnail_url": "http://i2.muscache.com/pictures/622594/x_small.jpg",
-			"lat": 48.849167,
-			"price": 136,
-			"user_thumbnail_url": "http://i3.muscache.com/users/467998/profile_pic/1301320115/tiny.jpg",
-			"lng": 2.378261,
-			"user_name": "Elodie B",
-			"picture_ids": [622594, 622689, 622665, 622603, 622608, 622609, 622617, 622619, 622620, 622653, 622626, 622621, 622633, 622639, 622644, 622648, 622659, 619546, 619558, 622672, 586366, 586370, 586372, 586373, 586375],
-			"name": "Authentic Paris-Bastille-Aligre",
-			"id": 85437,
-			"user_is_superhost": false
+			"has_video": false,
+			"lat": 37.577431,
+			"user_id": 444785,
+			"lng": 126.991379,
+			"address": "kwonnong-Dong Jongno-Gu, Seoul",
+			"price": 1334,
+			"hosting_thumbnail_url": "http://i1.muscache.com/pictures/558364/x_small.jpg",
+			"name": "Dormitory room in GuestHouse Korea",
+			"review_count": 0,
+			"picture_ids": [558364, 558365, 558366, 558367, 558368],
+			"id": 81855,
+			"relationships": [],
+			"user_thumbnail_url": "http://i0.muscache.com/users/444785/profile_pic/1300257599/tiny.jpg",
+			"user_name": "Guesthouse Korea J"
 		}, {
-			"address": "Rue Lac\u00e9p\u00e8de, Paris",
-			"recommendation_count": 0,
-			"usd_price": 69,
-			"review_count": 21,
-			"hosting_thumbnail_url": "http://i3.muscache.com/pictures/470222/x_small.jpg",
-			"lat": 48.843784,
-			"price": 69,
-			"user_thumbnail_url": "http://i1.muscache.com/users/373992/profile_pic/1296653450/tiny.jpg",
-			"lng": 2.35232,
-			"user_name": "Raphaele G",
-			"picture_ids": [470222, 470223, 470227, 470259, 470264, 472215, 478654],
-			"name": "Small flat Paris Latin Quarter",
-			"id": 72239,
-			"user_is_superhost": false
-		}, {
-			"address": "Rue Daval, Paris (Popincourt)",
-			"recommendation_count": 0,
-			"usd_price": 201,
-			"review_count": 7,
-			"hosting_thumbnail_url": "http://i0.muscache.com/pictures/688619/x_small.jpg",
-			"lat": 48.854408,
-			"price": 201,
-			"user_thumbnail_url": "http://i2.muscache.com/users/523267/profile_pic/1303319581/tiny.jpg",
-			"lng": 2.371204,
-			"user_name": "Marine M",
-			"picture_ids": [688619, 688629, 688626, 688609, 667900, 688586, 688590, 688591, 688593, 688595, 667906, 688605, 688596, 688597, 688630, 688599, 688606, 688604, 688608, 688607, 667902, 688625],
-			"name": "Charming duplex Bastille / Marais",
-			"id": 99367,
-			"user_is_superhost": false
-		}, {
-			"address": "Rue Archereau, Paris (Buttes-Chaumont)",
-			"recommendation_count": 1,
-			"usd_price": 86,
-			"review_count": 16,
-			"hosting_thumbnail_url": "http://i2.muscache.com/pictures/635532/x_small.jpg",
-			"lat": 48.890102,
-			"price": 86,
-			"user_thumbnail_url": "http://i3.muscache.com/users/182015/profile_pic/1280231204/tiny.jpg",
-			"lng": 2.372538,
-			"user_name": "Luce N",
-			"picture_ids": [635532, 635487, 635526, 635508, 635490, 635515, 796017, 635518, 635520, 635514, 635479, 635469, 635534, 635468, 635501, 635589, 635540, 635593, 234311, 234312, 234314, 234315, 234316, 234317, 234318, 633294],
-			"name": "view over Paris",
-			"id": 41671,
-			"user_is_superhost": false
-		}, {
-			"address": "Passage Alexandre, Paris (Vaugirard)",
-			"recommendation_count": 0,
-			"usd_price": 129,
-			"review_count": 13,
-			"hosting_thumbnail_url": "http://i2.muscache.com/pictures/717544/x_small.jpg",
-			"lat": 48.840233,
-			"price": 129,
-			"user_thumbnail_url": "http://i3.muscache.com/users/517329/profile_pic/1303243580/tiny.jpg",
-			"lng": 2.31559,
-			"user_name": "Stephane G",
-			"picture_ids": [717544, 659960, 665468, 665470, 659961, 717708, 659965, 659968, 717615],
-			"name": "In the center of Paris !",
-			"id": 97833,
-			"user_is_superhost": false
-		}, {
-			"address": "Rue Charles Nodier, Paris (Buttes-Montmartre)",
-			"recommendation_count": 0,
-			"usd_price": 108,
-			"review_count": 13,
-			"hosting_thumbnail_url": "http://i3.muscache.com/pictures/493386/x_small.jpg",
-			"lat": 48.885792,
-			"price": 108,
-			"user_thumbnail_url": "http://i0.muscache.com/users/391924/profile_pic/1298113611/tiny.jpg",
-			"lng": 2.345109,
-			"user_name": "Djamila &amp; Th\u00e9o G",
-			"picture_ids": [493386, 502687, 502676, 502689, 502677, 502678, 963153, 549509, 963159, 502680, 549515, 502681, 502682, 502684, 549501, 502686, 549498],
-			"name": "CHARMING-PARIS'VIEW@MONTMARTRE",
-			"id": 74474,
-			"user_is_superhost": false
-		}, {
-			"address": "Rue De Babylone, Paris (Palais-Bourbon)",
-			"recommendation_count": 5,
-			"usd_price": 142,
-			"review_count": 49,
-			"hosting_thumbnail_url": "http://i0.muscache.com/pictures/199250/x_small.jpg",
-			"lat": 48.851788,
-			"price": 142,
-			"user_thumbnail_url": "http://i0.muscache.com/users/150876/profile_pic/1277466197/tiny.jpg",
-			"lng": 2.32595,
-			"user_name": "Benoit D",
-			"picture_ids": [199250, 199238, 199239, 199240, 199241, 199242, 199243, 199244, 199254, 199259, 199266, 199272, 199273, 199275],
-			"name": "Lovely Loft Saint-Germain des Pres",
-			"id": 35065,
-			"user_is_superhost": false
-		}, {
-			"address": "rue ordener, Paris (Buttes-Montmartre)",
-			"recommendation_count": 1,
-			"usd_price": 127,
-			"review_count": 16,
-			"hosting_thumbnail_url": "http://i2.muscache.com/pictures/678694/x_small.jpg",
-			"lat": 48.891491,
-			"price": 127,
-			"user_thumbnail_url": "http://i3.muscache.com/users/520737/profile_pic/1308028194/tiny.jpg",
-			"lng": 2.350367,
-			"user_name": "Tao Q",
-			"picture_ids": [678694, 678696, 678680, 678664, 678682, 678662, 678708, 678707, 678672, 678678, 678679, 678684, 678686, 678689, 678691, 678698, 678701, 678702, 678713, 674575, 897180, 910847, 910857, 910861, 910864, 910879, 910915, 910921, 910927, 910932, 910936, 910948, 988308, 988316, 988343, 988348, 988372, 988378, 1027066, 1027083, 1027150],
-			"name": "Paris-Montmartre &amp; flea market",
-			"id": 98774,
-			"user_is_superhost": false
-		}, {
-			"address": "Rue Feutrier, Paris (Buttes-Montmartre)",
-			"recommendation_count": 2,
-			"usd_price": 114,
-			"review_count": 47,
-			"hosting_thumbnail_url": "http://i3.muscache.com/pictures/406793/x_small.jpg",
-			"lat": 48.885845,
-			"price": 114,
-			"user_thumbnail_url": "http://i2.muscache.com/users/111157/profile_pic/1271761499/tiny.jpg",
-			"lng": 2.346431,
-			"user_name": "Jeff R",
-			"instant_book": true,
-			"picture_ids": [406793, 144796, 144794, 144795, 144799, 144800, 144801, 144802, 144803, 144804, 144805, 144806, 406795, 406802, 406803],
-			"name": "Montmartre Apart",
-			"id": 26278,
-			"user_is_superhost": false
-		}, {
-			"address": "Rue de l'Evangile, Paris",
-			"recommendation_count": 0,
-			"usd_price": 72,
-			"review_count": 10,
-			"hosting_thumbnail_url": "http://i1.muscache.com/pictures/632569/x_small.jpg",
-			"lat": 48.894318,
-			"price": 72,
-			"user_thumbnail_url": "http://i3.muscache.com/users/491811/profile_pic/1306593584/tiny.jpg",
-			"lng": 2.365957,
-			"user_name": "Carlos L",
-			"picture_ids": [632569, 638838, 638842, 638831, 638826, 717554, 638805, 717543, 818594, 717546, 717557, 717548, 717559, 717552, 717551, 717541, 717542, 638821, 638823, 632579],
-			"name": "Functional studio, 18th arr. Paris",
-			"id": 92779,
-			"user_is_superhost": false
-		}, {
-			"address": "Rue Rambuteau, Paris",
-			"recommendation_count": 5,
-			"usd_price": 100,
-			"review_count": 18,
-			"hosting_thumbnail_url": "http://i1.muscache.com/pictures/540842/x_small.jpg",
-			"lat": 48.862682,
-			"price": 100,
-			"user_thumbnail_url": "http://i3.muscache.com/users/177091/profile_pic/1299795410/tiny.jpg",
-			"lng": 2.347037,
-			"user_name": "Pierre &amp; Valentine M",
-			"picture_ids": [540842, 540855, 540844, 540887, 540846, 540849, 540851, 540856, 540857, 540859, 540860, 540862, 540864, 540865, 540867, 540868, 540878, 540881, 540883, 540884, 540886, 551503],
-			"name": "Charming studio in heart of Paris",
-			"id": 79820,
-			"user_is_superhost": false
-		}, {
-			"address": "Rue Yvonne Le Tac, Paris (Buttes-Montmartre)",
-			"recommendation_count": 8,
-			"usd_price": 119,
-			"review_count": 31,
-			"hosting_thumbnail_url": "http://i3.muscache.com/pictures/225075/x_small.jpg",
-			"lat": 48.884113,
-			"price": 119,
-			"user_thumbnail_url": "http://i0.muscache.com/users/174186/profile_pic/1279631401/tiny.jpg",
-			"lng": 2.339922,
-			"user_name": "Marthe S",
-			"picture_ids": [225075, 225073, 225074, 225077, 878325, 225078, 306936, 225079, 878326, 878327, 952692, 225080, 225083, 225085, 225086, 225087, 225088, 225089, 225090, 225091, 225092, 225093],
-			"name": "FANCY STUDIO IN MONTMARTRE",
-			"id": 40468,
-			"user_is_superhost": false
-		}, {
-			"address": "Rue Du Faubourg Saint Martin, Paris (Entrep\u00f4t)",
-			"recommendation_count": 9,
-			"usd_price": 108,
-			"review_count": 59,
-			"hosting_thumbnail_url": "http://i2.muscache.com/pictures/676988/x_small.jpg",
-			"lat": 48.870121,
-			"price": 108,
-			"user_thumbnail_url": "http://i0.muscache.com/users/67118/profile_pic/1303202225/tiny.jpg",
-			"lng": 2.356297,
-			"user_name": "Jul&amp;Jen S",
-			"picture_ids": [676988, 677053, 676998, 676992, 676986, 676989, 676955, 677052, 676977, 676969, 676959, 676964, 677045, 677054, 676943, 676950, 678156, 676946, 220773, 134294, 134306, 468403, 463615, 134301, 463620, 86860, 225608, 134290, 134307, 91306, 134297, 86858, 134300, 134291, 134295],
-			"name": "* Good deal right in the center *.",
-			"id": 17303,
-			"user_is_superhost": false
-		}, {
-			"address": "Rue Simart, Paris (Buttes-Montmartre)",
+			"user_is_superhost": false,
 			"recommendation_count": 3,
-			"usd_price": 70,
-			"review_count": 13,
-			"hosting_thumbnail_url": "http://i3.muscache.com/pictures/405242/x_small.jpg",
-			"lat": 48.890926,
-			"price": 70,
-			"user_thumbnail_url": "http://i3.muscache.com/users/145119/profile_pic/1279350893/tiny.jpg",
-			"lng": 2.34768,
-			"user_name": "Margot B",
-			"instant_book": true,
-			"picture_ids": [405242, 405243, 405241, 405240, 405237, 405236, 405239, 405238, 405235, 405244, 405232, 405233, 405234, 1045948, 1046004],
-			"name": "Room overlooking garden courtyard",
-			"id": 33545,
-			"user_is_superhost": false
+			"has_video": false,
+			"lat": 37.533508,
+			"user_id": 502025,
+			"lng": 126.992386,
+			"address": "Seoul",
+			"price": 1569,
+			"hosting_thumbnail_url": "http://i0.muscache.com/pictures/724328/x_small.jpg",
+			"name": "Private room in an apartment ",
+			"review_count": 0,
+			"picture_ids": [724328, 724334, 724337, 724338, 724339, 724342, 724343, 724344, 724347, 724349, 724350, 724352, 724353, 724354, 667242, 667267],
+			"id": 99228,
+			"relationships": [],
+			"user_thumbnail_url": "http://i3.muscache.com/users/502025/profile_pic/1303301779/tiny.jpg",
+			"user_name": "A B"
 		}, {
-			"address": "Rue De L'Abb\u00e9 Groult, Paris (Vaugirard)",
+			"user_is_superhost": false,
 			"recommendation_count": 0,
-			"usd_price": 122,
-			"review_count": 13,
-			"hosting_thumbnail_url": "http://i0.muscache.com/pictures/693301/x_small.jpg",
-			"lat": 48.839962,
-			"price": 122,
-			"user_thumbnail_url": "http://i2.muscache.com/users/144457/profile_pic/1276564722/tiny.jpg",
-			"lng": 2.296381,
-			"user_name": "Stephane A",
-			"picture_ids": [693301, 693344, 693288, 693298, 693348, 691414, 691419, 691425, 693195, 693198, 693240, 693244, 693234, 691364, 691363, 691360, 693395, 693351],
-			"name": "Home near the Eiffel Tower",
-			"id": 33341,
-			"user_is_superhost": false
+			"has_video": false,
+			"lat": 37.485931,
+			"user_id": 865111,
+			"lng": 127.023895,
+			"is_new_hosting": true,
+			"address": "Seoul",
+			"price": 11769,
+			"hosting_thumbnail_url": "http://i1.muscache.com/pictures/1156892/x_small.jpg",
+			"name": "Seoul City Center 1 Room",
+			"review_count": 0,
+			"picture_ids": [1156892, 1156894],
+			"id": 180589,
+			"relationships": [],
+			"user_thumbnail_url": "http://i1.muscache.com/users/865111/profile_pic/1311601838/tiny.jpg",
+			"user_name": "Youchang Y"
 		}, {
-			"address": "Rue De Charenton, Paris (Reuilly)",
-			"recommendation_count": 1,
-			"usd_price": 147,
-			"review_count": 25,
-			"hosting_thumbnail_url": "http://i0.muscache.com/pictures/759131/x_small.jpg",
-			"lat": 48.850693,
-			"price": 147,
-			"user_thumbnail_url": "http://i0.muscache.com/users/138401/profile_pic/1275770515/tiny.jpg",
-			"lng": 2.373112,
-			"user_name": "Michel Q",
-			"instant_book": true,
-			"picture_ids": [759131, 759121, 759145, 759153, 759150, 759140, 759159, 759155, 180698, 759157, 759094, 759083, 759117, 759103, 759114, 759068, 759074, 759071, 759076, 180707, 180706, 180699, 180697, 180702, 759166, 759190, 180703],
-			"name": "NICE APARTMENT PARIS OPERA BASTILLE",
-			"id": 32082,
-			"user_is_superhost": false
-		}, {
-			"address": "Rue des Haudriettes, Paris",
+			"user_is_superhost": false,
 			"recommendation_count": 0,
-			"usd_price": 98,
-			"review_count": 47,
-			"hosting_thumbnail_url": "http://i1.muscache.com/pictures/621024/x_small.jpg",
-			"lat": 48.86348,
-			"price": 98,
-			"user_thumbnail_url": "http://i1.muscache.com/users/127098/profile_pic/1274169058/tiny.jpg",
-			"lng": 2.359114,
-			"user_name": "Sarah D",
-			"picture_ids": [621024, 621136, 621035, 621042, 621057, 621063, 621030, 621071, 621066, 621023, 621018, 621021, 621022, 294273, 621016, 621144, 621070, 166181, 621065, 164959, 164960, 164944, 164940, 294314, 294288, 180488, 294285, 294276, 164906, 164912, 164910, 164911, 164913, 536899],
-			"name": "MARAIS: Unique studio with GARDEN",
-			"id": 29520,
-			"user_is_superhost": false
+			"has_video": false,
+			"lat": 37.560379,
+			"user_id": 871614,
+			"lng": 126.98719,
+			"is_new_hosting": true,
+			"address": "Seoul",
+			"price": 6277,
+			"hosting_thumbnail_url": "http://i3.muscache.com/pictures/1200906/x_small.jpg",
+			"name": "Myungdong Small Room",
+			"review_count": 0,
+			"picture_ids": [1200906, 1200911],
+			"id": 187627,
+			"relationships": [],
+			"user_thumbnail_url": "http://i1.muscache.com/users/871614/profile_pic/1311685846/tiny.jpg",
+			"user_name": "Youchang Y"
+		}, {
+			"user_is_superhost": false,
+			"recommendation_count": 9,
+			"has_video": false,
+			"lat": 37.5005,
+			"user_id": 455999,
+			"lng": 127.003799,
+			"address": "Banpo4-dong, Seocho-gu, Seoul, Seoul",
+			"price": 3923,
+			"hosting_thumbnail_url": "http://i3.muscache.com/pictures/571417/x_small.jpg",
+			"name": "Ock\u2019s Homestay House",
+			"review_count": 0,
+			"picture_ids": [571417, 571418, 571419, 571420, 571422, 571423, 571424],
+			"id": 83600,
+			"relationships": [],
+			"user_thumbnail_url": "http://i2.muscache.com/users/455999/profile_pic/1300862419/tiny.jpg",
+			"user_name": "\ud648\uc2a4\ud14c\uc774 \ucf54"
+		}, {
+			"user_is_superhost": false,
+			"recommendation_count": 0,
+			"has_video": false,
+			"lat": 37.566399,
+			"user_id": 271159,
+			"lng": 127.0,
+			"address": "myeong-dong 1ga jung-gu, seoul, Seoul",
+			"price": 4315,
+			"hosting_thumbnail_url": "http://i1.muscache.com/pictures/340480/x_small.jpg",
+			"name": "nice hostel in myeongdong",
+			"review_count": 2,
+			"picture_ids": [340480, 340481, 340483, 343197, 343198, 343201, 343203, 343204, 343205, 343206, 343207, 343209, 343210, 343211, 343212, 343213, 343229, 343232],
+			"id": 57032,
+			"relationships": [],
+			"user_thumbnail_url": "/images/user_pic-36x36.png",
+			"user_name": "Kwon H"
+		}, {
+			"user_is_superhost": false,
+			"recommendation_count": 9,
+			"has_video": false,
+			"lat": 37.574322,
+			"user_id": 455999,
+			"lng": 126.954193,
+			"address": "Hyeonjeo-dong, Seodaemun-gu, Seoul",
+			"price": 3923,
+			"hosting_thumbnail_url": "http://i0.muscache.com/pictures/571399/x_small.jpg",
+			"name": "Jung\u2019s Homestay House",
+			"review_count": 0,
+			"picture_ids": [571399, 571400, 571404],
+			"id": 83595,
+			"relationships": [],
+			"user_thumbnail_url": "http://i2.muscache.com/users/455999/profile_pic/1300862419/tiny.jpg",
+			"user_name": "\ud648\uc2a4\ud14c\uc774 \ucf54"
+		}, {
+			"user_is_superhost": false,
+			"recommendation_count": 0,
+			"has_video": false,
+			"lat": 37.580647,
+			"user_id": 539232,
+			"lng": 126.972244,
+			"address": "Jongro-gu, Seoul",
+			"price": 9964,
+			"hosting_thumbnail_url": "http://i0.muscache.com/pictures/696489/x_small.jpg",
+			"name": "DUPLEX+ROOFTOP GyungBokGung",
+			"review_count": 0,
+			"picture_ids": [696489, 696491, 696494, 696504, 696568, 696585, 696579, 696507, 696510, 696513, 696515, 696516, 696500, 696518, 696523, 696528, 696543, 696547, 696581, 696606, 696499, 696501, 696503, 696578, 696590],
+			"id": 104504,
+			"relationships": [],
+			"user_thumbnail_url": "http://i2.muscache.com/users/539232/profile_pic/1303927716/tiny.jpg",
+			"user_name": "Sam P"
+		}, {
+			"user_is_superhost": false,
+			"recommendation_count": 0,
+			"has_video": false,
+			"lat": 37.560211,
+			"user_id": 516436,
+			"lng": 126.925133,
+			"address": "Seoul",
+			"price": 1412,
+			"hosting_thumbnail_url": "http://i0.muscache.com/pictures/659011/x_small.jpg",
+			"name": "Pencil Guesthouse &amp; Hostel",
+			"review_count": 1,
+			"picture_ids": [659011, 1022698, 659004, 659005, 659006, 659008, 659013, 659014],
+			"id": 97640,
+			"relationships": [],
+			"user_thumbnail_url": "http://i1.muscache.com/users/516436/profile_pic/1303098786/tiny.jpg",
+			"user_name": "Lynn P"
+		}, {
+			"user_is_superhost": false,
+			"recommendation_count": 0,
+			"has_video": false,
+			"lat": 37.557858,
+			"user_id": 882999,
+			"lng": 126.9851,
+			"is_new_hosting": true,
+			"address": "Seoul",
+			"price": 7846,
+			"hosting_thumbnail_url": "http://i2.muscache.com/pictures/1200976/x_small.jpg",
+			"name": "White House Near Namsan",
+			"review_count": 0,
+			"picture_ids": [1200976, 1200980, 1200984],
+			"id": 187644,
+			"relationships": [],
+			"user_thumbnail_url": "http://i3.muscache.com/users/882999/profile_pic/1311856042/tiny.jpg",
+			"user_name": "Youchang Y"
 		}
 	],
+	"view_type": 1,
+	"results_pagination_html": "<div class=\"pagination\"><span class=\"disabled prev_page\"><</span> <span class=\"current\">1</span> <a href=\"/search/v3_search?checkin=2011%2F08%2F16&amp;checkout=2011%2F08%2F17&amp;guests=1&amp;location=%EC%97%B0%ED%9D%AC%EB%8F%99+&amp;min_bathrooms=0&amp;min_bedrooms=0&amp;min_beds=0&amp;ne_lat=37.61816502001271&amp;ne_lng=127.17996984570311&amp;new_search=true&amp;page=2&amp;per_page=21&amp;search_by_map=true&amp;search_view=1&amp;sort=0&amp;sw_lat=37.37956016281008&amp;sw_lng=126.85861974804686\" rel=\"next\">2</a> <a href=\"/search/v3_search?checkin=2011%2F08%2F16&amp;checkout=2011%2F08%2F17&amp;guests=1&amp;location=%EC%97%B0%ED%9D%AC%EB%8F%99+&amp;min_bathrooms=0&amp;min_bedrooms=0&amp;min_beds=0&amp;ne_lat=37.61816502001271&amp;ne_lng=127.17996984570311&amp;new_search=true&amp;page=2&amp;per_page=21&amp;search_by_map=true&amp;search_view=1&amp;sort=0&amp;sw_lat=37.37956016281008&amp;sw_lng=126.85861974804686\" class=\"next_page\" rel=\"next\">></a></div>\n",
+	"present_standby_option": false,
+	"center_lat": 37.5723437,
+	"center_lng": 126.9325051,
 	"facets": {
-		"host_has_photo": [[1,[1, 1779]
-			],[0,[0, 534]
+		"host_has_photo": [[1,[1, 28]
+			],[0,[0, 3]
 			]
 		],
-		"host_has_reviews": [[1,[1, 1345]
-			],[0,[0, 968]
+		"host_has_reviews": [[0,[0, 19]
+			],[1,[1, 12]
 			]
 		],
-		"hosting_amenity_ids": [[11,["\ud761\uc5f0\uac00\ub2a5", 571]
-			],[12,["\uc560\uc644\ub3d9\ubb3c \ub3d9\ubc18\uac00\ub2a5", 250]
-			],[1,["TV", 1422]
-			],[2,["\ucf00\uc774\ube14 TV", 1220]
-			],[3,["\uc778\ud130\ub137", 1616]
-			],[4,["\ubb34\uc120 \uc778\ud130\ub137", 1872]
-			],[5,["\uc5d0\uc5b4\ucee8", 90]
-			],[30,["\ub09c\ubc29", 1647]
-			],[21,["\uc5d8\ub9ac\ubca0\uc774\ud130", 736]
-			],[6,["\uc7a5\uc560\uc778 \uc774\uc6a9 \uc6a9\uc774", 142]
-			],[7,["\uc218\uc601\uc7a5", 8]
-			],[8,["\ubd80\uc5cc", 1896]
-			],[9,["\uc8fc\ucc28 \ud3ec\ud568", 85]
-			],[13,["\uc138\ud0c1\uae30/\uac74\uc870\uae30", 1470]
-			],[14,["\ub3c4\uc5b4\ub9e8", 146]
-			],[15,["\ubb34\ub8cc \ud5ec\uc2a4\uc7a5", 10]
-			],[25,["\uc695\uc870", 100]
-			],[27,["\uc2e4\ub0b4 \ubcbd\ub09c\ub85c", 206]
-			],[28,["\ucd08\uc778\uc885/\uc778\ud130\ud3f0", 619]
-			],[16,["\uc544\uce68\uc2dd\uc0ac", 140]
-			],[31,["\uac00\uc871/\uc5b4\ub9b0\uc774 \uc219\ubc15\uac00\ub2a5", 715]
-			],[32,["\uc774\ubca4\ud2b8\ud589\uc0ac\uc6a9\uc73c\ub85c \uc801\uc808", 69]
+		"hosting_amenity_ids": [[11,["\ud761\uc5f0\uac00\ub2a5", 1]
+			],[12,["\uc560\uc644\ub3d9\ubb3c \ub3d9\ubc18\uac00\ub2a5", 2]
+			],[1,["TV", 17]
+			],[2,["\ucf00\uc774\ube14 TV", 11]
+			],[3,["\uc778\ud130\ub137", 19]
+			],[4,["\ubb34\uc120 \uc778\ud130\ub137", 22]
+			],[5,["\uc5d0\uc5b4\ucee8", 23]
+			],[30,["\ub09c\ubc29", 25]
+			],[21,["\uc5d8\ub9ac\ubca0\uc774\ud130", 6]
+			],[6,["\uc7a5\uc560\uc778 \uc774\uc6a9 \uc6a9\uc774", 1]
+			],[7,["\uc218\uc601\uc7a5", 0]
+			],[8,["\ubd80\uc5cc", 19]
+			],[9,["\uc8fc\ucc28 \ud3ec\ud568", 3]
+			],[13,["\uc138\ud0c1\uae30/\uac74\uc870\uae30", 17]
+			],[14,["\ub3c4\uc5b4\ub9e8", 1]
+			],[15,["\ubb34\ub8cc \ud5ec\uc2a4\uc7a5", 0]
+			],[25,["\uc695\uc870", 7]
+			],[27,["\uc2e4\ub0b4 \ubcbd\ub09c\ub85c", 1]
+			],[28,["\ucd08\uc778\uc885/\uc778\ud130\ud3f0", 10]
+			],[16,["\uc544\uce68\uc2dd\uc0ac", 14]
+			],[31,["\uac00\uc871/\uc5b4\ub9b0\uc774 \uc219\ubc15\uac00\ub2a5", 9]
+			],[32,["\uc774\ubca4\ud2b8\ud589\uc0ac\uc6a9\uc73c\ub85c \uc801\uc808", 2]
 			]
 		],
-		"property_type_id": [[1,["\uc544\ud30c\ud2b8", 2140]
-			],[2,["\ub2e8\ub3c5\uc8fc\ud0dd", 58]
-			],[3,["\ubbfc\ubc15(\uc870\uc2dd\ud3ec\ud568)", 45]
-			],[4,["\ud1b5\ub098\ubb34\uc9d1", 2]
-			],[11,["\ubcc4\uc7a5/\ud0c0\uc6b4\ud558\uc6b0\uc2a4", 4]
+		"property_type_id": [[1,["\uc544\ud30c\ud2b8", 17]
+			],[2,["\ub2e8\ub3c5\uc8fc\ud0dd", 2]
+			],[3,["\ubbfc\ubc15(\uc870\uc2dd\ud3ec\ud568)", 9]
+			],[4,["\ud1b5\ub098\ubb34\uc9d1", 0]
+			],[11,["\ubcc4\uc7a5/\ud0c0\uc6b4\ud558\uc6b0\uc2a4", 2]
 			],[5,["\uc131", 0]
-			],[9,["\ub2e4\uc778\uc2e4", 3]
+			],[9,["\ub2e4\uc778\uc2e4", 1]
 			],[6,["\ud2b8\ub9ac\ud558\uc6b0\uc2a4", 0]
-			],[8,["\uc120\uc0c1\uac1d\uc2e4", 6]
+			],[8,["\uc120\uc0c1\uac1d\uc2e4", 0]
 			],[7,["\ucea0\ud551\uce74", 0]
 			],[12,["\uc774\uae00\ub8e8", 0]
 			],[10,["\ub4f1\ub300", 0]
 			]
 		],
-		"top_amenities": [[4,["\ubb34\uc120 \uc778\ud130\ub137", 1872]
-			],[1,["TV", 1422]
-			],[8,["\ubd80\uc5cc", 1896]
+		"connected": [[1, 0]
+		],
+		"top_amenities": [[4,["\ubb34\uc120 \uc778\ud130\ub137", 22]
+			],[1,["TV", 17]
+			],[8,["\ubd80\uc5cc", 19]
 			]
 		],
-		"has_photo": [[1,[1, 2310]
-			],[0,[0, 3]
+		"has_photo": [[1,[1, 31]
 			]
 		],
-		"top_neighborhoods": [["Buttes-Montmartre",["Buttes-Montmartre", 248]
-			],["Popincourt",["Popincourt", 208]
-			],["Entrep\u00f4t",["Entrep\u00f4t", 163]
-			],["Temple",["Temple", 127]
-			]
-		],
-		"languages": [[256,["Arabic", 21]
-			],[32768,["Bengali", 24]
-			],[4,["Deutsch", 181]
+		"top_neighborhoods": [],
+		"languages": [[256,["Arabic", 0]
+			],[32768,["Bengali", 0]
+			],[4,["Deutsch", 0]
 			],[1,["English", 0]
-			],[64,["Espa\u00f1ol", 403]
-			],[2,["Fran\u00e7ais", 992]
-			],[4096,["Indonesian", 24]
-			],[16,["Italiano", 223]
-			],[8192,["Nederlands", 37]
-			],[1024,["Portugu\u00eas", 98]
+			],[64,["Espa\u00f1ol", 0]
+			],[2,["Fran\u00e7ais", 0]
+			],[4096,["Indonesian", 0]
+			],[16,["Italiano", 0]
+			],[8192,["Nederlands", 0]
+			],[1024,["Portugu\u00eas", 0]
 			],[524288,["Sign Language", 0]
-			],[2048,["T\u00fcrk\u00e7e", 26]
-			],[262144,["\u0395\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac", 29]
-			],[32,["\u0420\u0443\u0441\u0441\u043a\u0438\u0439", 67]
+			],[2048,["T\u00fcrk\u00e7e", 0]
+			],[262144,["\u0395\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac", 0]
+			],[32,["\u0420\u0443\u0441\u0441\u043a\u0438\u0439", 0]
 			],[1048576,["\u05e2\u05d1\u05e8\u05d9\u05ea", 0]
-			],[512,["\u0939\u093f\u0928\u094d\u0926\u0940", 4]
-			],[131072,["\u0a2a\u0a70\u0a1c\u0a3e\u0a2c\u0a40", 24]
-			],[65536,["\u0e20\u0e32\u0e29\u0e32\u0e44\u0e17\u0e22", 27]
-			],[128,["\u4e2d\u6587(\u7b80\u4f53)", 49]
-			],[8,["\u65e5\u672c\u8a9e", 54]
-			],[16384,["\ud55c\uad6d\uc5b4", 46]
+			],[512,["\u0939\u093f\u0928\u094d\u0926\u0940", 0]
+			],[131072,["\u0a2a\u0a70\u0a1c\u0a3e\u0a2c\u0a40", 0]
+			],[65536,["\u0e20\u0e32\u0e29\u0e32\u0e44\u0e17\u0e22", 0]
+			],[128,["\u4e2d\u6587(\u7b80\u4f53)", 0]
+			],[8,["\u65e5\u672c\u8a9e", 0]
+			],[16384,["\ud55c\uad6d\uc5b4", 1]
 			]
 		],
-		"room_type": [["Entire home/apt",["\uc9d1/\uc544\ud30c\ud2b8 \uc804\uccb4", 1818]
-			],["Private room",["\ud504\ub77c\uc774\ube57\ub8f8", 474]
-			],["Shared room",["\uc250\uc5b4\ub4dc\ub8f8", 21]
+		"room_type": [["Entire home/apt",["\uc9d1/\uc544\ud30c\ud2b8 \uc804\uccb4", 5]
+			],["Private room",["\ud504\ub77c\uc774\ube57\ub8f8", 21]
+			],["Shared room",["\uc250\uc5b4\ub4dc\ub8f8", 5]
 			]
 		],
-		"neighborhood_facet": [["Arcueil",["Arcueil", 1]
-			],["Bagnolet",["Bagnolet", 3]
-			],["Batignolles-Monceau",["Batignolles-Monceau", 91]
-			],["Boulogne-Billancourt",["Boulogne-Billancourt", 12]
-			],["Bourse",["Bourse", 64]
-			],["Buttes-Chaumont",["Buttes-Chaumont", 106]
-			],["Buttes-Montmartre",["Buttes-Montmartre", 248]
-			],["Cachan",["Cachan", 2]
-			],["Charenton-le-Pont",["Charenton-le-Pont", 2]
-			],["Ch\u00e2tenay-Malabry",["Ch\u00e2tenay-Malabry", 1]
-			],["Clichy",["Clichy", 11]
-			],["Colombes",["Colombes", 3]
-			],["Courbevoie",["Courbevoie", 2]
-			],["Entrep\u00f4t",["Entrep\u00f4t", 163]
-			],["Fontenay-sous-Bois",["Fontenay-sous-Bois", 2]
-			],["Fresnes",["Fresnes", 1]
-			],["Gennevilliers",["Gennevilliers", 1]
-			],["Gentilly",["Gentilly", 1]
-			],["Gobelins",["Gobelins", 43]
-			],["H\u00f4tel-de-Ville",["H\u00f4tel-de-Ville", 105]
-			],["Issy-les-Moulineaux",["Issy-les-Moulineaux", 4]
-			],["Ivry-sur-Seine",["Ivry-sur-Seine", 3]
-			],["L'Ha\u00ff-les-Roses",["L'Ha\u00ff-les-Roses", 1]
-			],["La Garenne-Colombes",["La Garenne-Colombes", 1]
-			],["Le Kremlin-Bic\u00eatre",["Le Kremlin-Bic\u00eatre", 2]
-			],["Le-Perreux-sur-Marne",["Le-Perreux-sur-Marne", 1]
-			],["Les Lilas",["Les Lilas", 4]
-			],["Levallois-Perret",["Levallois-Perret", 3]
-			],["Louvre",["Louvre", 60]
-			],["Luxembourg",["Luxembourg", 61]
-			],["Malakoff",["Malakoff", 2]
-			],["Meudon",["Meudon", 5]
-			],["Montreuil",["Montreuil", 6]
-			],["Montrouge",["Montrouge", 4]
-			],["M\u00e9nilmontant",["M\u00e9nilmontant", 89]
-			],["Nanterre",["Nanterre", 2]
-			],["Neuilly-sur-Seine",["Neuilly-sur-Seine", 13]
-			],["Nogent-sur-Marne",["Nogent-sur-Marne", 1]
-			],["Noisy-le-Grand",["Noisy-le-Grand", 1]
-			],["Observatoire",["Observatoire", 45]
-			],["Op\u00e9ra",["Op\u00e9ra", 61]
-			],["Palais-Bourbon",["Palais-Bourbon", 36]
-			],["Panth\u00e9on",["Panth\u00e9on", 69]
-			],["Pantin",["Pantin", 5]
-			],["Passy",["Passy", 45]
-			],["Popincourt",["Popincourt", 208]
-			],["Puteaux",["Puteaux", 5]
-			],["Reuilly",["Reuilly", 54]
-			],["Rueil-Malmaison",["Rueil-Malmaison", 3]
-			],["Saint Germain Des Pr\u00e9s",["Saint Germain Des Pr\u00e9s", 1]
-			],["Saint-Denis",["Saint-Denis", 2]
-			],["Saint-Mand\u00e9",["Saint-Mand\u00e9", 4]
-			],["Saint-Maur-des-Foss\u00e9s",["Saint-Maur-des-Foss\u00e9s", 1]
-			],["Saint-Ouen",["Saint-Ouen", 5]
-			],["Sceaux",["Sceaux", 1]
-			],["Suresnes",["Suresnes", 4]
-			],["S\u00e8vres",["S\u00e8vres", 1]
-			],["Temple",["Temple", 127]
-			],["Vanves",["Vanves", 4]
-			],["Vaugirard",["Vaugirard", 93]
-			],["Villejuif",["Villejuif", 1]
-			],["Vincennes",["Vincennes", 11]
-			],["Vitry-sur-Seine",["Vitry-sur-Seine", 1]
-			],["\u00c9lys\u00e9e",["\u00c9lys\u00e9e", 33]
-			]
-		]
+		"neighborhood_facet": []
 	},
-	"view_type": 1,
-	"results_pagination_html": "<div class=\"pagination\"><span class=\"disabled prev_page\"><</span> <span class=\"current\">1</span> <a href=\"/search/v3_search?checkin=yy%2Fmm%2Fdd&amp;checkout=yy%2Fmm%2Fdd&amp;guests=1&amp;location=paris&amp;min_bathrooms=0&amp;min_bedrooms=0&amp;min_beds=0&amp;page=2&amp;per_page=21&amp;search_view=1\" rel=\"next\">2</a> <a href=\"/search/v3_search?checkin=yy%2Fmm%2Fdd&amp;checkout=yy%2Fmm%2Fdd&amp;guests=1&amp;location=paris&amp;min_bathrooms=0&amp;min_bedrooms=0&amp;min_beds=0&amp;page=3&amp;per_page=21&amp;search_view=1\">3</a> <a href=\"/search/v3_search?checkin=yy%2Fmm%2Fdd&amp;checkout=yy%2Fmm%2Fdd&amp;guests=1&amp;location=paris&amp;min_bathrooms=0&amp;min_bedrooms=0&amp;min_beds=0&amp;page=4&amp;per_page=21&amp;search_view=1\">4</a> <a href=\"/search/v3_search?checkin=yy%2Fmm%2Fdd&amp;checkout=yy%2Fmm%2Fdd&amp;guests=1&amp;location=paris&amp;min_bathrooms=0&amp;min_bedrooms=0&amp;min_beds=0&amp;page=5&amp;per_page=21&amp;search_view=1\">5</a> <a href=\"/search/v3_search?checkin=yy%2Fmm%2Fdd&amp;checkout=yy%2Fmm%2Fdd&amp;guests=1&amp;location=paris&amp;min_bathrooms=0&amp;min_bedrooms=0&amp;min_beds=0&amp;page=6&amp;per_page=21&amp;search_view=1\">6</a> <a href=\"/search/v3_search?checkin=yy%2Fmm%2Fdd&amp;checkout=yy%2Fmm%2Fdd&amp;guests=1&amp;location=paris&amp;min_bathrooms=0&amp;min_bedrooms=0&amp;min_beds=0&amp;page=7&amp;per_page=21&amp;search_view=1\">7</a> <span class=\"gap\">&hellip;</span> <a href=\"/search/v3_search?checkin=yy%2Fmm%2Fdd&amp;checkout=yy%2Fmm%2Fdd&amp;guests=1&amp;location=paris&amp;min_bathrooms=0&amp;min_bedrooms=0&amp;min_beds=0&amp;page=48&amp;per_page=21&amp;search_view=1\">48</a> <a href=\"/search/v3_search?checkin=yy%2Fmm%2Fdd&amp;checkout=yy%2Fmm%2Fdd&amp;guests=1&amp;location=paris&amp;min_bathrooms=0&amp;min_bedrooms=0&amp;min_beds=0&amp;page=2&amp;per_page=21&amp;search_view=1\" class=\"next_page\" rel=\"next\">></a></div>\n",
-	"show_airtv_in_search_results": "false"
+	"sort": 0,
+	"geocode_precision": "zip",
+	"banner_info": {},
+	"results_count_html": "\n<b>1 &ndash; 21</b> of <b>31 listings</b>"
 }

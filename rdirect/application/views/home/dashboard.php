@@ -4,6 +4,11 @@
 	$this->load->view('top_menu', array('starred'=>$this->data['starred']));
 ?>
 
+<?php if(true): // TODO: if countdown?>
+<link rel="stylesheet" type="text/css" href="<?=CSS_DIR?>/jquery.countdown.css" /> 
+<script type="text/javascript" src="<?=JS_DIR?>/jquery.countdown.js"></script>
+<?php endif; ?> 
+
 <script type="text/javascript"> 
     function wait_for_upload() {
         jQuery('#upload_image_submit_button').attr('disabled', 'disabled');
@@ -143,6 +148,16 @@
                     <h2>Alerts</h2> 
                     
                     <ul> 
+                    	      <li class="reservation_request"> 
+                                        <a href="/z/a/5ETBAF">축하합니다! $19 예약 요청 
+                                            <img src="/images/command_center/alert_right_arrow.png" width="12" height="11" alt="" /> 
+                                        </a> 
+                                        <p id="countdown_3798752" class="countdown"></p> 
+ 
+                                        <script type="text/javascript"> 
+                                            jQuery('#countdown_3798752').countdown({until: jQuery.countdown.UTCDate(0, 2011, 7, 9, 8, 54, 30), format:'HMS', compact:true});
+                                        </script> 
+                              </li> 
                     	<li class="default">
                             <a href="/users/payout_preferences">돈은 어떻게 드릴까요. 
                                 <img src="<?=IMG_DIR?>/command_center/alert_right_arrow.png">
@@ -168,47 +183,106 @@
             <div id="messages" class="box"> 
  
                 <div class="top">&nbsp;</div> 
-                <div class="middle"> 
-                    <h2>Messages (0 new)</h2> 
-					<?php //TODO if(messages exist): ?>
-					<ul>
-                        <li id="thread_1777205">
-                            <div class="user">
-                                <a href="/users/show/755884" onclick="window.open(this.href);return false;"><img alt="Choimyun K" height="50" src="http://i3.muscache.com/users/755884/profile_pic/1311186351/small.jpg" title="Choimyun K" width="50" /></a>
-                                <p>
-                                    <a href="/users/show/755884" class="name" onclick="window.open(this.href);return false;">Choimyun</a>
-                                    <br />
-                                    13 days
-                                </p>
-                            </div>
-                            <div class="message_details">
-                                <p>
-                                    <a href="/z/q/1777205">Choimyun has offered 11 for 12 nights 6 guests star...</a>
-                                    <br />
-                                    <span class=locality>Seoul</span>
-                                        (Jul 11 - 12, 2011)
-                                </p>
-                            </div>
-                            <div class="status">
-                                <div class="offer">
-                                    <p>
-                                        
-                                            <span class="reservation_inquiry rounded_less">Not Possible</span>
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+
+<div class="middle">
+	                    <h2>Messages (0 new)</h2>
+					<?php if(true): ?>
+	                    <ul>
+	                        <li class="unread" id="thread_2052807"> 
+	                            <div class="user"> 
+	                                <a href="/users/show/778613" onclick="window.open(this.href);return false;"><img alt="Hojoon L" height="50" src="http://s0.muscache.com/1308680854/images/user_pic-50x50.png" title="Hojoon L" width="50" /></a> 
+	                                <p> 
+	                                    <a href="/users/show/778613" class="name" onclick="window.open(this.href);return false;">Hojoon</a> 
+	                                    <br /> 
+	                                    33분
+	                                </p> 
+	                            </div> 
+	                            <div class="message_details"> 
+	                                <p> 
+	                                    <a href="/z/q/2052807">안녕하세요 안녕하세요 </a> 
+	                                    <br /> 
+	                                    <span class=locality>Seoul</span> 
+	                                        (Aug 9 - 11, 2011)
+	                                </p> 
+	                            </div> 
+	                            <div class="status"> 
+	                                <div class="offer"> 
+	                                    <p> 
+	                                        
+	                                            <span class="reservation_pending rounded_less">진행 중</span> 
+	                                            <br /> 
+	                                            <span class="value">$19</span> 
+	                                    </p> 
+	                                </div> 
+	                            </div> 
+	                        </li> 	                    	
+	                        <li id="thread_2052807">
+	                            <div class="user">
+	                                <a href="/users/show/738217" onclick="window.open(this.href);return false;"><img alt="Choimyun 김" height="50" src="http://i0.muscache.com/users/738217/profile_pic/1311484343/small.jpg" title="Choimyun 김" width="50"></a>
+	                                <p>
+	                                    <a href="/users/show/738217" class="name" onclick="window.open(this.href);return false;">Choimyun</a>
+	                                    <br>
+	                                    29 minutes
+	                                </p>
+	                            </div>
+	                            <div class="message_details">
+	                                <p>
+	                                    <a href="/z/q/2052807">안녕하세요 안녕하세요 </a>
+	                                    <br>
+	                                    <span class="locality">Seoul</span>
+	                                        (Aug 9 - 11, 2011)
+	                                </p>
+	                            </div>
+	                            <div class="status">
+	                                <div class="offer">
+	                                    <p>
+	                                        
+	                                            <span class="reservation_pending rounded_less">Pending</span>
+	                                            <br>
+	                                            <span class="value">$22</span>
+	                                    </p>
+	                                </div>
+	                            </div>
+	                        </li>
+	                        <li id="thread_1750596">
+	                            <div class="user">
+	                                <a href="/users/show/755884" onclick="window.open(this.href);return false;"><img alt="Choimyun K" height="50" src="http://i3.muscache.com/users/755884/profile_pic/1311186351/small.jpg" title="Choimyun K" width="50"></a>
+	                                <p>
+	                                    <a href="/users/show/755884" class="name" onclick="window.open(this.href);return false;">Choimyun</a>
+	                                    <br>
+	                                    about 1 month
+	                                </p>
+	                            </div>
+	                            <div class="message_details">
+	                                <p>
+	                                    <a href="/z/q/1750596">test after being expired</a>
+	                                    <br>
+	                                    <span class="locality">Seoul</span>
+	                                        (Jul 5 - 6, 2011)
+	                                </p>
+	                            </div>
+	                            <div class="status">
+	                                <div class="offer">
+	                                    <p>
+	                                        
+	                                            <span class="reservation_bad rounded_less">Expired</span>
+	                                            <br>
+	                                            <span class="value">$11</span>
+	                                    </p>
+	                                </div>
+	                            </div>
+	                        </li>
+	                    </ul>
 					<div id="more_messages">
 						<a href="<?=site_url('inbox')?>" class="button-glossy">Go to all messages</a>
 					</div>
-					<div class="clear"></div>	
-					<?php //TODO else: ?>
-                    <p class="notice inbox_empty">Nothing to show you.</p>
-                    <?php //TODO endif; ?> 
-                </div><!-- /middle --> 
-                <div class="bottom">&nbsp;</div> 
-            </div><!-- /messages --> 
+					<div class="clear"></div>
+				<?php else: ?>
+				<p class="notice inbox_empty">Nothing to show you.</p>
+				<?php endif; ?> 
+			</div><!-- /middle --> 
+			<div class="bottom">&nbsp;</div> 
+		</div><!-- /messages --> 
  
         </div><!-- /main --> 
             <div class="clear"></div> 

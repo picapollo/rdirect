@@ -1,5 +1,4 @@
-<?php 	if(!defined('BASEPATH'))
-	exit('No direct script access allowed');
+<?php 	if(!defined('BASEPATH'))	exit('No direct script access allowed');
 /**
  *
  */
@@ -22,7 +21,21 @@ class Users extends MY_Controller {
 		
 		$this->data['fb'] = FALSE;
 		$this->data['signup_flag'] = FALSE;
-		$this->data['redirect_params'] = $this->input->get('redirect_params');		
+		
+		$rp = $this->input->get('redirect_params');
+		if(is_array($rp))
+		{
+			$this->session->set_userdata('rp_keys', implode(';', array_keys($rp)));
+			foreach($rp as $k => $i)
+			{
+				$this->session->set_userdata($k, $i);
+			}
+			
+		}
+		$this->data['redirect_params'] = $rp;
+		
+		
+		
 		$this->load->view('signup_login', $this->data);
 	}
 
@@ -30,8 +43,18 @@ class Users extends MY_Controller {
 		if($this->tank_auth->is_logged_in())
 			redirect('home/dashboard');
 		
-		$this->data['redirect_params'] = $this->input->get('redirect_params');
-		
+		$rp = $this->input->get('redirect_params');
+		if(is_array($rp))
+		{
+			$this->session->set_userdata('rp_keys', implode(';', array_keys($rp)));
+			foreach($rp as $k => $i)
+			{
+				$this->session->set_userdata($k, $i);
+			}
+			
+		}
+		$this->data['redirect_params'] = $rp;
+
 		// Facebook connect 대신 이메일 주소로 가입		
 		if($this->input->get('hf') || !empty($this->data['redirect_params']) )
 		{

@@ -506,13 +506,7 @@
         var my = {};
         
         my.USD = 1;
-        my.EUR = 0.696;
-        my.DKK = 5.188;
-        my.CAD = 0.9491;
         my.JPY = 78.44;
-        my.GBP = 0.6132;
-        my.AUD = 0.9208;
-        my.ZAR = 6.768;
         
         return my;
     }());

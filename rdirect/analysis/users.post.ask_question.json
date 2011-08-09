@@ -1,7 +1,7 @@
 // Path: users/ask_question/157375?number_of_guests=2
 
 [Request]
-(get) number_of_guests:2
+(get) nights: 1, number_of_guests:2
 
 (post) {
 	'intended_action': 'message',

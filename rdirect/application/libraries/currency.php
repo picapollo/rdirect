@@ -20,7 +20,7 @@ class Currency
 		$data = explode('"', $response);
 		$data = explode(' ', $data[3]);
 		$var = preg_replace("/[^0-9^.]/", "", $data['0']);
-		return round($var, 2);
+		return $var;
 	}
 }
 

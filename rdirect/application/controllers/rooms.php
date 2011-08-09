@@ -71,6 +71,7 @@ class Rooms extends MY_Controller
 	 */
 	function update($rid = null)
 	{
+		error_log('-1');
 		if( ! $rid)
 		{
 			$redirect_params = $this->input->post('redirect_params');
@@ -80,8 +81,11 @@ class Rooms extends MY_Controller
 			
 			$query_data = array();
 			
-			if(isset($redirect_params['new_hosting']) && $redirect_params['new_hosting'] == 1)
+			var_dump($_POST);
+			
+			if( isset($redirect_params['new_hosting']) && $redirect_params['new_hosting'] == 1)
 			{
+				error_log('1');
 				/**
 				 * 	새로 만드는 경우
 				 */
@@ -130,11 +134,13 @@ class Rooms extends MY_Controller
 			}
 			else
 			{
-				redirect('');
+				error_log('2');
+				//redirect('');
 			}
 		}
-		else // From /rooms/$rid/edit/
+		else // From /rooms/$rid/edit/	기존정보 수정
 		{
+			error_log('4');
 			if( ! $this->tank_auth->is_logged_in() || ! $this->rooms_model->is_owner($rid, $this->tank_auth->get_user_id()))
 				redirect('');
 			
@@ -145,6 +151,16 @@ class Rooms extends MY_Controller
 			
 			if( ! empty($amenities)) $hosting['amenities'] = implode(',', $amenities);
 			if( ! empty($pets)) $hosting['pets'] = implode(',', $pets);
+			
+			if( ! empty($hosting['currency_native']))
+			{
+				$currency_old = $this->rooms_model->get_currency($rid);
+				$currency_old = $currency_old[0]->native_currency;
+				if($hosting['currency_native'] != $currency_old)
+				{
+					;	//TODO: convert all prices in calendar
+				}
+			}
 			
 			$this->rooms_model->update_room($rid, $hosting);
 			
@@ -217,7 +233,7 @@ class Rooms extends MY_Controller
 				$this->_add_notice('user assign failure');
 				redirect('');
 			}
-			$this->room_model->delete_temp_info($rid);
+			$this->rooms_model->delete_temp_info($rid);
 			redirect('rooms/show/'.$rid);
 		}
 		else
@@ -232,6 +248,7 @@ class Rooms extends MY_Controller
 				'redirect_params[prompt]' => 'new_listing',
 				'redirect_params[controller]' => 'rooms'
 			);
+
 			redirect('users/signup_login?'.http_build_query($get_params));
 		}
 	}

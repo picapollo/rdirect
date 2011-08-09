@@ -19,8 +19,6 @@ class MY_Controller extends CI_Controller {
 			// explode languages into array
 			$accept_langs = explode(',', $this->input->server('HTTP_ACCEPT_LANGUAGE'));
 
-			log_message('debug', 'Checking browser languages: ' . implode(', ', $accept_langs));
-
 			// Check them all, until we find a match
 			foreach($accept_langs as $lang)
 			{
@@ -67,7 +65,20 @@ class MY_Controller extends CI_Controller {
 		
 		$this->load->language('common');
 		
-		$this->data['starred'] = $this->users_model->get_starred_rooms($this->tank_auth->get_user_id());
+		if($this->tank_auth->is_logged_in())
+		{
+			$starred = $this->users_model->get_starred_rooms($this->tank_auth->get_user_id());
+		}
+		
+		if(empty($starred))
+		{
+			$starred = array();
+			$starred[0] = new stdClass;
+			$starred[0]->count = 0;
+			$starred[0]->room_ids = array();	
+		}
+		$this->data['starred'] = $starred[0];
+		
 	}
 
 	function _add_notice($message)
@@ -107,7 +118,25 @@ class MY_Controller extends CI_Controller {
 
 	function _handle_redirect($redirect_default='', $new_params = array())
 	{
-		$redirect_params = $this->input->post('redirect_params');
+		$redirect_params = $this->input->post('redirect_params');	
+		if( ! $redirect_params)
+		{
+			// 세션에서 redirect_params 가져오기
+			$rp_keys = $this->session->userdata('rp_keys');
+			$this->session->unset_userdata('rp_keys');
+			if($rp_keys)
+			{
+				$rp_keys = explode(';', $rp_keys);
+				$redirect_params = array();
+				foreach($rp_keys as $k)
+				{
+					$redirect_params[$k] = $this->session->userdata($k);
+					error_log(get_class($this). ' -> ' . $k .' : ' . $this->session->userdata($k));
+					$this->session->unset_userdata($k);
+				}
+			} 
+		}
+		
 		if( ! $redirect_params || ! isset($redirect_params['action']) || empty($redirect_params['action']))
 			redirect($redirect_default);
 		
@@ -128,9 +157,9 @@ class MY_Controller extends CI_Controller {
 		unset($redirect_params['action']);
 		
 		$trace=debug_backtrace();
-		$caller=array_shift($trace);
+		$caller=array_shift(array_shift($trace));
 		
-		log_message('debug', 'Redirect: called by'.$caller["function"].' : '.$controller.'/'.$action.'?'.http_build_query($redirect_params));
+		error_log('Redirect: called by '.$caller["function"].' : '.$controller.'/'.$action.'?'.http_build_query($redirect_params));
 		redirect($controller.'/'.$action.'?'.http_build_query($redirect_params));
 	}
 	
@@ -146,15 +175,31 @@ class MY_Controller extends CI_Controller {
 	function _generate_currency_table($from='USD'){
 		$res = array();
 		$this->load->library('currency');
-		foreach($this->config->item('supported_currency') as $k => $a)
+		
+		// 매번 긁어오면 느려서 일단 테스트용 임시 환율
+		$res = json_decode('{"USD":{"USD":{"name":"United Status Dollars","symbol":"$","rate":"1"},"KRW":{"name":"\uc6d0","symbol":"\u20a9","rate":"1067.23586"},"JPY":{"name":"\u5186","symbol":"\u00a5","rate":"78.0822987"},"CNY":{"name":"\u5143","symbol":"\u00a5","rate":"6.44010381"}},"KRW":{"USD":{"name":"United Status Dollars","symbol":"$","rate":"0.000937"},"KRW":{"name":"\uc6d0","symbol":"\u20a9","rate":"1"},"JPY":{"name":"\u5186","symbol":"\u00a5","rate":"0.0730069493"},"CNY":{"name":"\u5143","symbol":"\u00a5","rate":"0.00600907467"}},"JPY":{"USD":{"name":"United Status Dollars","symbol":"$","rate":"0.012807"},"KRW":{"name":"\uc6d0","symbol":"\u20a9","rate":"13.6318036"},"JPY":{"name":"\u5186","symbol":"\u00a5","rate":"1"},"CNY":{"name":"\u5143","symbol":"\u00a5","rate":"0.0823082559"}},"CNY":{"USD":{"name":"United Status Dollars","symbol":"$","rate":"0.155277"},"KRW":{"name":"\uc6d0","symbol":"\u20a9","rate":"165.717182"},"JPY":{"name":"\u5186","symbol":"\u00a5","rate":"12.1566586"},"CNY":{"name":"\u5143","symbol":"\u00a5","rate":"1"}}}', true);
+		
+		/*foreach($this->config->item('supported_currency') as $k => $a)
 		{
 			$res[$k] = array(
 				'name' => $a['name'],
 				'symbol' => $a['symbol'],
 				'rate' => $this->currency->convert(1, $from, $k) 
 			);
-		}
-		return $res;
+		}*/
+		return $res[$from];
+	}
+	
+	function _convert_price_to_current_currency($price, $native_currency)
+	{
+		$this->load->library('currency');
+		return $this->currency->convert($price, $native_currency, CURRENT_CURRENCY);
+	}
+	
+	function _get_currency_rate($native_currency)
+	{
+		$this->load->libary('currency');
+		return $this->currency->convert(1, $native_currency, CURRENCT_CURRENCY);
 	}
 }
 
