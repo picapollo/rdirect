@@ -60,6 +60,18 @@ class Rooms_model extends CI_Model {
 		return $this->db->insert('room_directions');
 	}
 	
+	function update_amenities($rid, $data)
+	{
+		$ramen = $this->db->dbprefix('room_amenities');
+		
+		$sql = "INSERT $ramen (room_id, amenity_id) VALUES ";
+		foreach($data as $k => $i){
+			$sql .= "($rid, $i),";
+		}
+		$sql = rtrim($sql, ',') . " ON DUPLICATE KEY UPDATE amenity_id=VALUES(amenity_id)"; 
+		return $this->db->query($sql);
+	}
+	
 	/*
 	 * 	여러 description 한번에 입력
 	 */
@@ -69,6 +81,7 @@ class Rooms_model extends CI_Model {
 			$data[$k]['room_id'] = $rid;
 		}
 		return $this->db->insert_batch('room_descriptions', $data);
+		$sql = rtrim($sql, ',') . " ON DUPLICATE KEY UPDATE name=VALUES(name), description=VALUES(description)"; 
 	}
 
 	/**
@@ -149,12 +162,12 @@ class Rooms_model extends CI_Model {
 	function get_room($rid)
 	{
 		$r = $this->db->dbprefix('rooms');
-		$ra = $this->db->dbprefix('room_addresses');
+		$raddr = $this->db->dbprefix('room_addresses');
 		$rd = $this->db->dbprefix('room_descriptions');
 		$rp = $this->db->dbprefix('room_photos');
 		
 		$sql  = "SELECT r.*, ra.*, rd.name, rd.description, rp.id as photo_id FROM $r r " 
-		. " INNER JOIN $ra ra ON r.id=ra.room_id "
+		. " INNER JOIN $raddr ra ON r.id=ra.room_id "
 		. " INNER JOIN $rd rd ON r.id=rd.room_id "
 		. " LEFT JOIN $rp rp ON r.id=rp.room_id AND rp.`order`=1 "
 		. " WHERE r.id=$rid ORDER BY rd.language='".CURRENT_LANGUAGE."' DESC LIMIT 1 ";
@@ -163,17 +176,20 @@ class Rooms_model extends CI_Model {
 		return $query->result();
 	}
 	
-	function get_room_with_all_photos($rid)
+	function get_room_full($rid)
 	{
 		$r = $this->db->dbprefix('rooms');
-		$ra = $this->db->dbprefix('room_addresses');
+		$raddr = $this->db->dbprefix('room_addresses');
 		$rd = $this->db->dbprefix('room_descriptions');
 		$rp = $this->db->dbprefix('room_photos');
+		$ramen = $this->db->dbprefix('room_amenities');
 		
-		$sql  = "SELECT r.*, ra.*, rd.name, rd.description, rd.language, "
-		. " GROUP_CONCAT(DISTINCT rp.id, '\"\"', IFNULL(rp.caption, '') ORDER BY rp.`order`) as photos FROM $r r "
-		. " INNER JOIN $ra ra ON r.id=ra.room_id "
+		$sql  = "SELECT r.*, raddr.*, rd.name, rd.description, rd.language, "
+		. " GROUP_CONCAT(DISTINCT rp.id, '\"\"', IFNULL(rp.caption, '') ORDER BY rp.`order`) as photos, "
+		. " GROUP_CONCAT(DISTINCT amenity_id) as amenities FROM $r r "
+		. " INNER JOIN $raddr raddr ON r.id=raddr.room_id "
 		. " INNER JOIN $rd rd ON r.id=rd.room_id "
+		. " LEFT JOIN $ramen ramen ON r.id = ramen.room_id "
 		. " LEFT JOIN $rp rp ON r.id=rp.room_id "
 		. " WHERE r.id=$rid ORDER BY rd.language='".CURRENT_LANGUAGE."' DESC LIMIT 1 ";
 	
@@ -192,12 +208,12 @@ class Rooms_model extends CI_Model {
 		$r = $this->db->dbprefix('rooms');
 		$rp = $this->db->dbprefix('room_photos');
 		$rd = $this->db->dbprefix('room_descriptions');
-		$ra = $this->db->dbprefix('room_addresses');
+		$raddr = $this->db->dbprefix('room_addresses');
 		$uid = mysql_real_escape_string($uid);
 		
 		$sql = "SELECT r.id, lat, lng, active, (SELECT rp.id FROM $rp as rp WHERE r.id = rp.room_id AND `rp`.`order`=1) as photo_id, ";
 		$sql .= "(SELECT name FROM $rd ORDER BY `language`='".CURRENT_LANGUAGE."' DESC, `language`='en' DESC LIMIT 0, 1) as name ";
-		$sql .= "FROM $r as r INNER JOIN $ra ra ON r.id=ra.room_id WHERE r.user_id=$uid ";
+		$sql .= "FROM $r as r INNER JOIN $raddr ra ON r.id=ra.room_id WHERE r.user_id=$uid ";
 		if($activity !== null) $sql .= "AND r.active = $activity"; 
 		
 		$query = $this->db->query($sql);
@@ -255,8 +271,8 @@ class Rooms_model extends CI_Model {
 		$this->db->select('id');
 		$this->db->from('room_photos');
 		$this->db->where(array('room_id'=> $rid, '`order`'=>1));
-		$query = $this->db->get();
-		return $query->result();
+		$res = $this->db->get()->result();
+		return empty($res) ? null : $res[0]->id;
 	}
 	
 	function get_room_tmp($rid)

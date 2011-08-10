@@ -265,10 +265,10 @@
 			{
 				$has = in_array($k, $room->amenities)?'has':'has_not';
 				if( ! (($k-1) % 8)) echo '<ul>';
-				echo "<li><div class='$has'></div><p>".lang('amenities_'.$i->name);
+				echo "<li><div class='$has'></div><p>".lang('amenity_'.$i->name);
 				if(isset($i->tooltip)) 
 				{
-					echo ' <a class="tooltip" title="'.lang('amenities_'.$i->name.'_tooltip').'"><img alt="Questionmark_hover"'
+					echo ' <a class="tooltip" title="'.lang('amenity_'.$i->name.'_tooltip').'"><img alt="Questionmark_hover"'
 					.' src="'.IMG_DIR.'/icons/questionmark_hover.png" style="width:12px; height:12px;" /></a>';
 				}
 				echo"</p></li>";		

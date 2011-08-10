@@ -36,7 +36,7 @@
 				</select> 
             </div> 
         </div> 
-        <input class="v3_button v3_fixed_width search_v3_submit_location" type="submit" id="submit_location" name="submit_location" value="검색" /> 
+        <input class="v3_button v3_fixed_width search_v3_submit_location" type="submit" id="submit_location" name="submit_location" value="검색" disabled="disabled"/> 
         <div id="search_magnifying_glass"></div> 
         <input type="hidden" name="page" id="page" value="1" />
         </form> 
@@ -289,9 +289,9 @@
   <div id="filters_lightbox"> 
       <ul id="filters_lightbox_nav"> 
           <li class="filters_lightbox_nav_element" id="lightbox_nav_room_type"><a href="javascript:void(0);">객실</a></li> 
-          <li class="filters_lightbox_nav_element" id="lightbox_nav_neighborhood"><a href="javascript:void(0);">주변지역</a></li> 
+      <!--<li class="filters_lightbox_nav_element" id="lightbox_nav_neighborhood"><a href="javascript:void(0);">주변지역</a></li>--> 
           <li class="filters_lightbox_nav_element" id="lightbox_nav_amenities"><a href="javascript:void(0);">편의시설</a></li> 
-          <li class="filters_lightbox_nav_element" id="lightbox_nav_host"><a href="javascript:void(0);">주인장</a></li> 
+      <!--<li class="filters_lightbox_nav_element" id="lightbox_nav_host"><a href="javascript:void(0);">주인장</a></li>-->
       </ul> 
  
       <ul id="lightbox_filters"> 
@@ -357,15 +357,19 @@
                   <ul id="lightbox_filter_content_property_type_id" class="search_filter_content"></ul> 
               </div> 
           </li> 
- 
+ 	<!--
           <li class="lightbox_filter_container" id="lightbox_container_neighborhood" style="display:none;"> 
               <ul class="search_filter_content"></ul> 
           </li> 
- 
+ 	//-->
           <li class="lightbox_filter_container" id="lightbox_container_amenities" style="display:none;"> 
               <ul class="search_filter_content"></ul> 
-          </li> 
- 
+          </li>
+	<!--   
+          <li class="lightbox_filter_container" id="lightbox_container_host" style="display:none;"> 
+              <ul class="search_filter_content"></ul> 
+          </li>  
+	//-->
       </ul><!-- lightbox_filters --> 
  
       <div id="lightbox_filter_action_area" class="rounded_bottom"> 
@@ -443,7 +447,7 @@
 <?php
 	foreach($amenity_list as $k => $i)
 	{
-		echo "SearchFilters.amenities.a_$k = [\"". lang('amenities_'.$i->name)."\", false];\n";
+		echo "SearchFilters.amenities.a_$k = [\"". lang('amenity_'.$i->name)."\", false];\n";
 	}
 ?>
  
