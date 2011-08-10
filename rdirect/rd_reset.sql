@@ -277,3 +277,15 @@ CREATE  TABLE IF NOT EXISTS `bdirect`.`rd_calendar_daily` (
 ENGINE = MyISAM
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_general_ci;
+
+
+-- -----------------------------------------------------
+-- Table `bdirect`.`rd_room_amenities`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `bdirect`.`rd_room_amenities` (
+  `room_id` INT NOT NULL ,
+  `amenity_id` VARCHAR(45) NOT NULL ,
+  PRIMARY KEY (`room_id`, `amenity_id`) )
+ENGINE = MyISAM;
+
+
