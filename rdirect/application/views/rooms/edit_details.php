@@ -210,17 +210,15 @@ foreach($this->config->item('supported_languages') as $lang => $i):
     <div class="middle"> 
         <input id="include_amenities" name="include_amenities" type="hidden" />
         <?php 
-        	$amenities = explode(',', $room->amenities);
-			//print_r($amenity_list);
         	foreach($amenity_list as $k => $i)
 			{
-				$checked = in_array($k, $amenities)?'checked':'';
+				$checked = in_array($k, $room->amenities)?'checked':'';
 				if( ! (($k-1) % 8)) echo '<ul class="amenity_column">';
 				echo "<li><input value='$k' id='amenity_$k' name='amenities[]' type='checkbox' $checked/>";
-				echo "<label for='amenity_$k'> ".lang('amenities_'.$i->name);
+				echo "<label for='amenity_$k'> ".lang('amenity_'.$i->name);
 				if(isset($i->tooltip)) 
 				{
-					echo ' <a class="tooltip" title="'.lang('amenities_'.$i->name.'_tooltip').'"><img alt="Questionmark_hover"'
+					echo ' <a class="tooltip" title="'.lang('amenity_'.$i->name.'_tooltip').'"><img alt="Questionmark_hover"'
 					.' src="'.IMG_DIR.'/icons/questionmark_hover.png" style="width:16px; height:16px;" /></a>';
 				}
 				echo"</label></li>";		

@@ -811,7 +811,10 @@ var AirbnbSearch = {
 	enableAutocomplete : function() {
 		var closedBySelect = false;
 		var $locationSearch = $('#location');
+		var $submitButton = $('#submit_location');
 		var locationSearchHasFocus = false;
+		
+		AirbnbSearch.tempLocation = '';
 
 		$('.ui-autocomplete li.ui-menu-item').live('click', function() {
 			AirbnbSearch.selectMenuItem(this);
@@ -826,6 +829,7 @@ var AirbnbSearch = {
 			minLength : 4,
 			delay : 300,
 			source : function(request, response) {
+				
 				var reqObj = {
 					address : request.term
 				};
@@ -864,10 +868,38 @@ var AirbnbSearch = {
 				});
 			},
 			focus : function(event, ui) {
-				// Don't do anything on focus
+				AirbnbSearch.tempLocation = $locationSearch.val().replace(/^\s*|\s*$/g, '');
 				return false;
 			}
 		});
+		
+		$locationSearch.bind("keydown", function(){
+			t = $locationSearch.val().replace(/^\s*|\s*$/g, '');
+			cache = AutocompleteCache.currentSuggestions
+			for(var i in cache)
+			{
+				if(cache)
+				{
+					if(cache[0].label == t)
+					{
+						viewport = cache[0].viewport;
+						var t = {
+							sw_lat : viewport.getSouthWest().lat(),
+							sw_lng : viewport.getSouthWest().lng(),
+							ne_lat : viewport.getNorthEast().lat(),
+							ne_lng : viewport.getNorthEast().lng()
+						}
+						AirbnbSearch.geocodedBounds = t;
+						$submitButton.removeAttr('disabled');
+						return;
+					}
+				}
+			}
+			if(t != AirbnbSearch.tempLocation) 
+			{
+				$submitButton.attr('disabled', 'disabled');
+			}
+		})
 
 		$locationSearch.bind("autocompleteclose", function(event, ui) {
 			var address, cache, i, li;
@@ -903,7 +935,8 @@ var AirbnbSearch = {
 				ne_lng : viewport.getNorthEast().lng()
 			}
 			AirbnbSearch.geocodedBounds = t;
-			AirbnbSearch.params.location = ui.item.location;
+			//AirbnbSearch.params.location = ui.item.location;
+			$submitButton.removeAttr('disabled');
 			
 			return false;
 		});
@@ -1340,9 +1373,7 @@ var AirbnbSearch = {
 	setParamsFromDom : function() {
 		var k;
 		var e = AirbnbSearch.params;
-		AirbnbSearch.params = {
-
-		};
+		AirbnbSearch.params = {};
 		if(AirbnbSearch.initialLoadComplete === false && AirbnbSearch.code && (AirbnbSearch.searchHasBeenModified() === false)) {
 			AirbnbSearch.params.code = AirbnbSearch.code
 		}
@@ -1495,7 +1526,7 @@ var AirbnbSearch = {
 			}
 		}
 		
-		if( AirbnbSearch.geocodedBounds && ( ! AirbnbSearch.params.sw_lat || ! AirbnbSearch.params.sw_lng || ! AirbnbSearch.params.ne_lat || ! AirbnbSearch.params.ne_lng ))
+		if( AirbnbSearch.locationHasChanged && AirbnbSearch.geocodedBounds && ( ! AirbnbSearch.params.sw_lat ))
 		{
 			AirbnbSearch.params.sw_lat = AirbnbSearch.geocodedBounds.sw_lat;
 			AirbnbSearch.params.sw_lng = AirbnbSearch.geocodedBounds.sw_lng;
@@ -1503,11 +1534,19 @@ var AirbnbSearch = {
 			AirbnbSearch.params.ne_lng = AirbnbSearch.geocodedBounds.ne_lng;
 		}
 		
+		if( (! AirbnbSearch.params.sw_lat ) && e && e.sw_lat )
+		{
+			AirbnbSearch.params.sw_lat = e.sw_lat;
+			AirbnbSearch.params.sw_lng = e.sw_lng;
+			AirbnbSearch.params.ne_lat = e.ne_lat;
+			AirbnbSearch.params.ne_lng = e.ne_lng;
+		}
+		
 		if(AirbnbSearch.currentViewType === "photo") {
 			AirbnbSearch.params.per_page = 21
 		} else {
 			if(AirbnbSearch.currentViewType === "list") {
-				AirbnbSearch.params.per_page = 21
+				AirbnbSearch.params.per_page = 21	// TODO 21로 돌려놓기
 			} else {
 				if(AirbnbSearch.currentViewType === "map") {
 					AirbnbSearch.params.per_page = 40
@@ -1718,7 +1757,7 @@ var AMM = {
 				$("#map_wrapper").show();
 				AMM.defaultMapOptions = {
 					zoom : 6,
-					center : new google.maps.LatLng(40.7442, -73.9861),
+					center : new google.maps.LatLng(37.3056, 126.5427),
 					mapTypeId : google.maps.MapTypeId.ROADMAP,
 					disableDefaultUI : true,
 					navigationControl : true,
@@ -1945,7 +1984,23 @@ var AMM = {
 	},
 	fitBounds : function(a) {
 		if(AMM.mapLoaded) {
-			AMM.map.fitBounds(a)
+			sw_lat = a.getSouthWest().lat();
+			sw_lng = a.getSouthWest().lng();
+			ne_lat = a.getNorthEast().lat();
+			ne_lng = a.getNorthEast().lng();
+			if(ne_lat - sw_lat < 0.001)
+			{
+				ne_lat += 0.005;
+				sw_lat -= 0.005;
+			}
+			if(ne_lng > sw_lng && ne_lng - sw_lng < 0.001)
+			{
+				ne_lng += 0.005;
+				sw_lng -= 0.005;
+			}
+			sw = new google.maps.LatLng(sw_lat, sw_lng);
+			ne = new google.maps.LatLng(ne_lat, ne_lng);
+			AMM.map.fitBounds(new google.maps.LatLngBounds(sw, ne));
 		}
 
 	},

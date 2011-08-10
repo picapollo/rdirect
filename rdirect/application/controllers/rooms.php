@@ -149,7 +149,6 @@ class Rooms extends MY_Controller
 			$amenities = $this->input->post('amenities'); 
 			$pets = $this->input->post('pets');
 			
-			if( ! empty($amenities)) $hosting['amenities'] = implode(',', $amenities);
 			if( ! empty($pets)) $hosting['pets'] = implode(',', $pets);
 			
 			if( ! empty($hosting['currency_native']))
@@ -160,6 +159,12 @@ class Rooms extends MY_Controller
 				{
 					;	//TODO: convert all prices in calendar
 				}
+			}
+			
+			if( ! empty($amenities))
+			{
+				$hosting['amenities'] = implode(',', $amenities);
+				$this->rooms_model->update_amenities($rid, $amenities);
 			}
 			
 			$this->rooms_model->update_room($rid, $hosting);
@@ -196,7 +201,6 @@ class Rooms extends MY_Controller
 			//$res['prompt'] = $this->db->last_query();
 			
 			// TODO: $res['result'] = 'error';
-			
 			
 			echo json_encode($res);
 		}
@@ -261,7 +265,7 @@ class Rooms extends MY_Controller
 	function show($rid = null)
 	{
 		if(!$rid) show_404();
-		$res = $this->rooms_model->get_room_with_all_photos($rid);
+		$res = $this->rooms_model->get_room_full($rid);
 		if(empty($res)) show_404();
 		$this->data['room'] = $res[0];		
 		
@@ -297,9 +301,10 @@ class Rooms extends MY_Controller
 			redirect('');
 		
 		// 방 정보 가져오기
-		$res = $this->rooms_model->get_room($rid);
+		$res = $this->rooms_model->get_room_full($rid);
 		if(empty($res)) show_404();
 		$this->data['room'] = $res[0]; 
+		$this->data['room']->photo_id = $this->rooms_model->get_photo_by_room($rid);
 		
 		// 방 활성화\비활성화 위한 키 생성
 		$this->load->library('encrypt');
@@ -317,6 +322,7 @@ class Rooms extends MY_Controller
 			$this->data['descriptions'] = ( ! $descriptions) ? array() : $descriptions; 
 			$this->data['property_type_list'] = $this->rooms_model->get_property_type_list();
 			$this->data['amenity_list'] = $this->rooms_model->get_amenity_list();
+			$this->data['room']->amenities 	= explode(',', $this->data['room']->amenities);
 			$this->data['bed_type_list'] = $this->rooms_model->get_bed_type_list();
 			$this->load->language('hosting/amenities');
 			$this->load->view('rooms/edit_details', $this->data);
@@ -516,7 +522,7 @@ class Rooms extends MY_Controller
 		$data = array(
 			'rid' => $rid,
 			'pid_old' => $pid,
-			'pid_new' => empty($pid_new)?null:$pid_new[0]->id
+			'pid_new' => $pid_new
 		);
 		
 		$this->load->view('ajax/delete_photo', $data);

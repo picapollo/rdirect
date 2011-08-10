@@ -20,8 +20,7 @@ class Test extends MY_Controller {
 
 	public function index()
 	{
-		print_r($this->rooms_model->get_amenity_list());
-		
+		;
 	}
 	
 	function view(){
