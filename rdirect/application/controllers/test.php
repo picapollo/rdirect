@@ -20,7 +20,16 @@ class Test extends MY_Controller {
 
 	public function index()
 	{
-		;
+		$this->db->select('SQL_CALC_FOUND_ROWS id', false);
+		$this->db->select('amenities, id as ID, room_type');
+		$this->db->from('rooms');
+		print_r($this->db->get());
+		echo $this->db->last_query();
+	}
+	
+	function temp(){
+		$this->db->from('rooms');
+		return $this->db->get();
 	}
 	
 	function view(){
