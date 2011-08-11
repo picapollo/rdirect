@@ -75,9 +75,10 @@ class Search extends MY_Controller{
 			$opt['sw_lng'] -= 0.05;
 		}
 
-		$opt['limit_start'] = ($opt['page'] - 1) * $opt['per_page']; 
+		$opt['limit_offset'] = ($opt['page'] - 1) * $opt['per_page']; 
 		
-		$properties = $this->search_model->search($opt);
+		$this->search_model->generate_options($opt);
+		$properties = $this->search_model->search();
 		
 		$res->query = $this->db->last_query();
 		
@@ -140,7 +141,7 @@ class Search extends MY_Controller{
 		}
 			
 		
-		$page_start = $opt['limit_start'] + 1;
+		$page_start = $opt['limit_offset'] + 1;
 		$count_page = $page_start + count($properties) - 1;
 		
 		$page_total = ceil($count_all / $opt['per_page']);
