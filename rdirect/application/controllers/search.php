@@ -35,6 +35,35 @@ class Search extends MY_Controller{
 		
 		$this->data['amenity_list'] = $this->rooms_model->get_amenity_list();
 		
+		switch(CURRENT_CURRENCY)
+		{
+			case 'KRW':
+				$this->data['min_price'] = 10000;
+				$this->data['max_price'] = 250000;
+				$this->data['min_price_monthly'] = 150000;
+				$this->data['max_price_monthly'] = 4000000;
+				break;
+			case 'CNY':
+				$this->data['min_price'] = 100;
+				$this->data['max_price'] = 3000;
+				$this->data['min_price_monthly'] = 1500;
+				$this->data['max_price_monthly'] = 50000;
+				break;
+			case 'JPY':
+				$this->data['min_price'] = 1000;
+				$this->data['max_price'] = 25000;
+				$this->data['min_price_monthly'] = 15000;
+				$this->data['max_price_monthly'] = 400000;
+				break;
+			case 'USD':
+			default:
+				$this->data['min_price'] = 10;
+				$this->data['max_price'] = 300;
+				$this->data['min_price_monthly'] = 150;
+				$this->data['max_price_monthly'] = 5000;
+				break;
+		}
+		
 		$this->load->view('search', $this->data);
 	}
 	
@@ -42,7 +71,7 @@ class Search extends MY_Controller{
 		$opt = $this->input->get(null, true);
 		
 		$res = new stdClass;
-		
+		$res->debug = new stdClass;
 		
 		// for debug
 		if( (empty($opt['lat']) || empty($opt['lng']))  && (empty($opt['sw_lat']) || empty($opt['sw_lng']) || empty($opt['ne_lat']) || empty($opt['ne_lng']) ))
@@ -75,19 +104,39 @@ class Search extends MY_Controller{
 			$opt['sw_lng'] -= 0.05;
 		}
 
-		$opt['limit_offset'] = ($opt['page'] - 1) * $opt['per_page']; 
+		$opt['limit_offset'] = ($opt['page'] - 1) * $opt['per_page'];
+		
+		switch(CURRENT_LANGUAGE){
+			case 'en':
+				$date_pattern = '/\d{1,2}\/\d{1,2}\/\d{4,4}/';
+				break;
+			case 'ko':
+			case 'ja':
+				$date_pattern = '/\d{4,4}\/\d{1,2}\/\d{1,2}/';
+				break;
+			case 'zh':
+				$date_pattern =  '/\d{4,4}-\d{1,2}-\d{1,2}/';
+				break;
+			default:
+		} 
+		
+		$res->debug->pattern = $date_pattern;
+		$res->debug->lang = CURRENT_LANGUAGE;
+
+		$res->debug->opt_orig = $opt;
+		if( isset($opt['checkin']) && ! preg_match($date_pattern, $opt['checkin'])) 	unset($opt['checkin']);
+		if( isset($opt['checkout']) && ! preg_match($date_pattern, $opt['checkout']))	unset($opt['checkout']);
+		
+		$res->debug->opt = $opt;
 		
 		$this->search_model->generate_options($opt);
 		$properties = $this->search_model->search();
 		
 		$res->query = $this->db->last_query();
 		
-		
 		$count_all = $this->search_model->count_all();
 		$count_all = $count_all[0]->count_all;
 		
-		
-
 		$currency_rate = $this->_generate_currency_table(CURRENT_CURRENCY);
 		
 		foreach($properties as $k => $i)
@@ -99,7 +148,8 @@ class Search extends MY_Controller{
 		}
 		
 		$facets = array();
-
+		
+		// count amenities in entire search result
 		$amenity_list = $this->rooms_model->get_amenity_list();
 		$amenities_count_raw = $this->search_model->count_amenities();
 		$amenities_count = array();
@@ -113,6 +163,7 @@ class Search extends MY_Controller{
 			$tmp = array($k, array(lang('amenity_'.$i->name), $amenities_count[$k]));
 			$facets['hosting_amenity_ids'][] = $tmp;
 			
+			// Caculate top three amenities
 			if( $amenities_count[$k] > $facets['top_amenities'][2][1][1])
 			{
 				for($j=2; $j>0 && $amenities_count[$k] > $facets['top_amenities'][$j-1][1][1]; $j--)
@@ -123,6 +174,7 @@ class Search extends MY_Controller{
 			}
 		}
 		
+		// count property types in entire search result
 		$property_type_list = $this->rooms_model->get_property_type_list();
 		$property_type_count_raw = $this->search_model->count_property_types();
 		$property_type_count = array();
@@ -133,6 +185,7 @@ class Search extends MY_Controller{
 		foreach($property_type_list as $k => $i)
 			$facets['property_type_id'][] = array($k, array(lang('property_type_'.$i), (empty($property_type_count[$k])?0:$property_type_count[$k])));
 		
+		// count room types in entire search result
 		$facets['room_type'] = array();
 		$room_type_count = $this->search_model->count_room_types();
 		foreach($room_type_count as $i)
@@ -156,23 +209,10 @@ class Search extends MY_Controller{
 		$res->view_type = empty($opt['search_view'])? 0 : $opt['search_view'];
 		$res->facets = $facets;
 
-		// for debug 
-		$res->hosting_amenity_ids = $amenities_count_raw;
-		$res->property_type_id = $property_type_count_raw;
-		$res->room_type = $room_type_count;
-		$res->count_all = $count_all;
-		$res->current_page = $opt['page'];
-		$res->page_total = $page_total;
-		
-		
-		
-
-		echo json_encode(($res));
-		
-		//$this->load->view('ajax/search_results', $this->data);
+		echo json_encode($res);
 	}
 
-	function _build_query_by_page($opt, $page)
+	function _build_http_query_by_page($opt, $page)
 	{
 		$opt['page'] = $page;
 		return http_build_query($opt);
@@ -196,13 +236,13 @@ class Search extends MY_Controller{
 		
 		if($current_page > 1)
 		{
-			$res .= '<a href="/search?'.$this->_build_query_by_page($opt, $current_page-1).'" class="prev_page" rel="prev'.($current_page==2?' start':'').'"><</a>';
+			$res .= '<a href="/search?'.$this->_build_http_query_by_page($opt, $current_page-1).'" class="prev_page" rel="prev'.($current_page==2?' start':'').'"><</a>';
 		} 
 		
 		if($current_page == 1)
 			$res .= '<span class="current">1</span>';
 		else
-			$res .= '<a href="/search?'.$this->_build_query_by_page($opt, 1).'" rel="'.($current_page==2?'prev ':'').'start">1</a>';
+			$res .= '<a href="/search?'.$this->_build_http_query_by_page($opt, 1).'" rel="'.($current_page==2?'prev ':'').'start">1</a>';
 			
 		
 		if($start_page != 2)
@@ -218,7 +258,7 @@ class Search extends MY_Controller{
 			}
 	 		else
 	 		{ 
-				$res .= '<a href="/search?'.$this->_build_query_by_page($opt, $i).'" ';
+				$res .= '<a href="/search?'.$this->_build_http_query_by_page($opt, $i).'" ';
 				$res .= ($i == $current_page+1 ? 'rel="next"' : ($i == $current_page-1 ?'rel="prev"':'')) . ">{$i}</a>";
 			}			
 		}
@@ -231,12 +271,12 @@ class Search extends MY_Controller{
 		if($current_page == $page_total)
 			$res .= '<span class="current">'.$page_total.'</span>';
 		else
-			$res .= '<a href="/search?'.$this->_build_query_by_page($opt, $page_total).'">'.$page_total.'</a>';
+			$res .= '<a href="/search?'.$this->_build_http_query_by_page($opt, $page_total).'">'.$page_total.'</a>';
 		
 
 	 	if($current_page < $page_total)
 		{
-			$res .= '<a href="/search?'.$this->_build_query_by_page($opt, $current_page+1).'" class="next_page" rel="next">></a>';
+			$res .= '<a href="/search?'.$this->_build_http_query_by_page($opt, $current_page+1).'" class="next_page" rel="next">></a>';
 		} 
 		
 		return $res.'</div>';

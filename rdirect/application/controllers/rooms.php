@@ -383,21 +383,137 @@ class Rooms extends MY_Controller
 		$rid = $this->input->get('hosting_id');
 		$checkin = $this->input->get('checkin');
 		$checkout = $this->input->get('checkout');
-		$number_of_guets = $this->input->get('number_of_guests');
-		
+		$guests = $this->input->get('number_of_guests');
 		$res = array();
-		// TODO: if available
+		
+		$checkin_ts = strtotime($checkin);
+		$checkout_ts = strtotime($checkout);
+		$first_day_weekly = strtotime('-'.date('w', $checkin_ts).' day', $checkin_ts);
+		$first_day_monthly = mktime(0,0,0, date('m', $checkin_ts), 1, date('Y', $checkin_ts));
+		$nights = ($checkout_ts - $checkin_ts) / 86400;
+		
+		$room = $this->rooms_model->get_room_prices($rid);
+		
+		// TODO Translate
+		if( ! $room)
+			$res['reason_message'] = 'Property not exists';
+		
+		$room = $room[0];
+		
+		if( ! $room->active)
+			$res['reason_message'] = 'Property turend off';
+		else if ($nights < $room->min_nights)
+			$res['reason_message'] = 'Min nights is '.$room->min_nights;
+		else if ($nights > $room->max_nights)
+			$res['reason_message'] = 'Max nights is '.$room->max_nights;
+		else if ($guests > $room->person_capacity)
+			$res['reason_message'] = 'Max guests is '.$room->person_capacity;
+		
+		if( ! empty($res['reason_message']))
+		{
+			$res['available'] = FALSE;
+			echo json_encode($res);
+			return;			
+		}
+
+		$this->load->model('calendar_model');
+		$this->load->helper('date');
+		
+		$daily_list = $this->calendar_model->get_daily($rid, $checkin, $checkout);
+		
+		if( ! empty($daily_list))
+		{
+			foreach($daily_list as $i)
+			{
+				if( ! $i->available)
+				{
+					$res['available'] = FALSE;
+					$res['reason_message'] = 'Those dates are not available';	 // TODO translate
+					$res['daily_list'] = $daily_list;
+					echo json_encode($res);
+					return;
+				}
+			}
+		}
+		
+		$d = $m = $w = 0;
+		
+		
+		$monthly_price_default = ($room->monthly_price_native > 0) ? $room->monthly_price_native : $room->price_native;
+		$weekly_price_default = ($room->weekly_price_native > 0) ? $room->weekly_price_native : $room->price_native; 
+		
+		if($nights >= 28)
+		{
+			$monthly_list = $this->calendar_model->get_monthly($rid, $first_day_monthly, $checkout);
+			$res['monthly_list'] = $monthly_list;	// for debug
+			$days_in_month = days_in_month(date('m', $checkin_ts), date('Y', $checkin_ts));
+			if( ! empty($monthly_list[0]) && strtotime($monthly_list[0]->date) < $checkin_ts )
+				$monthly_price = round(($monthly_list[$m++]->price / $days_in_month), 2);		// TODO: exchange
+			else
+				$monthly_price = round($room->monthly_price_native / $days_in_month, 2);	// TODO: exchange
+		}
+
+		if($nights >= 7)
+		{
+			$weekly_list = $this->calendar_model->get_weekly($rid, $first_day_weekly, $checkout);
+			$res['weekly_list'] = $weekly_list;		// for debug
+			if( ! empty($weekly_list[0]) && strtotime($weekly_list[0]->date) < $checkin_ts )
+				$weekly_price = round(($weekly_list[$w++]->price / 7), 2);		// TODO: exchange
+			else
+				$weekly_price = round($room->weekly_price_native / 7, 2);	// TODO: exchange
+		}
+		
+		$total_price = 0;
+		
+		for($i=$checkin_ts, $d; $i <= $checkout_ts; $i += 86400)
+		{
+			// 가격기준 정하기 (월/주/일)
+			if(isset($montly_price) && date('m', $i) == 1)
+			{
+				unset($monthly_price);
+				$days_in_month = days_in_month(time('m', $i), time('Y', $i));
+				if( ! empty($monthly_list[$m]) && strtotime($monthly_list[$m]) == $i )
+					$monthly_price = round(($monthly_list[$m++]->price / $days_in_month), 2);		// TODO: exchange
+				else
+					$monthly_price = round($room->monthly_price_native / $days_in_month, 2);		// TODO: exchange
+			}
+			else if(isset($weekly_price) && date('w', $i) == 0)
+			{
+				unset($weekly_price);
+				if( ! empty($weekly_list[$w]) && strtotime($weekly_list[$w]->date) == $i )
+					$weekly_price = round(($weekly_list[$w++]->price / 7), 2);		// TODO: exchange
+				else
+					$weekly_price = round($room->weekly_price_native / 7, 2);	// TODO: exchange				
+			}
+			
+			if(isset($monthly_price))
+				$total_price += $monthly_price;
+			else if(isset($weekly_price))
+				$total_price += $weekly_price;
+			else if( ! empty($daily_list[$d]) && strtotime($daily_list[$d]->date == $i))
+				$total_price += $daily_list[$d++]->price;			// TODO: exchange
+			else
+				$total_price += $room->price_native;			// TODO: exchange
+		}
+
+		$res['nights'] = $nights;	
 		$res['available'] = TRUE;
-		$res['price_per_night']='$18';
-		$res['can_instant_book']=FALSE;
-		$res['service_fee']='$2';
-		$res['nights']=1;
-		// TODO: else
-		$res['available'] = FALSE;
-		$res['reason_message'] = 'Property turend off'; //TODO if turned off;
+		$res['price_per_night']= CURRENT_CURRENCY_SYMBOL.round($total_price/$nights, 0);
 		
-		$res['total_price'] = '$1243'; //TODO
 		
+		if($guests > $room->guests_included)
+		{
+			$total_price += ($guests - $room->guests_included) * $nights * $room->price_for_extra_person_native;	// TODO exchange
+		}
+
+		if($room->extras_price_native > 0)
+		{
+			$total_price += $room->extras_price_native;	// TODO exchange
+		}
+		
+		$res['service_fee']= CURRENT_CURRENCY_SYMBOL.round($total_price/10);	// TODO determine service fee policy
+		$res['total_price'] = CURRENT_CURRENCY_SYMBOL.$total_price;
+
 		echo json_encode($res);
 	}
 	

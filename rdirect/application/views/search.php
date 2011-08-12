@@ -127,13 +127,13 @@
         </div> 
     </li> 
 
-    <li class="search_filter closed" id="amenities_container"> 
+    <li class="search_filter" id="amenities_container"> 
         <a class="filter_toggle"></a> 
         <a class="filter_header" href="javascript:void(0);">편의시설</a> 
         <ul class="search_filter_content"></ul> 
     </li> 
     
-    <li class="search_filter closed" id="keywords_container"> 
+    <li class="search_filter" id="keywords_container"> 
         <a class="filter_toggle"></a> 
         <a class="filter_header" href="javascript:void(0);">키워드로 검색</a> 
         <ul class="search_filter_content"> 
@@ -453,10 +453,10 @@
  
 	AirbnbSearch.currencySymbolLeft = '<?=CURRENT_CURRENCY_SYMBOL?>';
 	AirbnbSearch.currencySymbolRight = "";
-	SearchFilters.minPrice = 10;
-	SearchFilters.maxPrice = 300;
-	SearchFilters.minPriceMonthly = 150;
-	SearchFilters.maxPriceMonthly = 5000;
+	SearchFilters.minPrice = <?=$min_price?>;
+	SearchFilters.maxPrice = <?=$max_price?>;
+	SearchFilters.minPriceMonthly = <?=$min_price_monthly?>;
+	SearchFilters.maxPriceMonthly = <?=$max_price_monthly?>;
  
 	var options = {};
  

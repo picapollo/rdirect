@@ -176,6 +176,16 @@ class Rooms_model extends CI_Model {
 		return $query->result();
 	}
 	
+	function get_room_prices($rid)
+	{
+		$this->db->select('
+			active, person_capacity, native_currency, price_native, weekly_price_native, monthly_price_native,
+			price_for_extra_person_native, guests_included, extras_price_native, min_nights, max_nights
+		');
+		$query = $this->db->get_where('rooms', array('id' => $rid));
+		return $query->result();
+	}
+	
 	function get_room_full($rid)
 	{
 		$r = $this->db->dbprefix('rooms');
@@ -337,6 +347,14 @@ class Rooms_model extends CI_Model {
 	function get_bed_type_list($by_array = false)
 	{
 		return json_decode(file_get_contents('./include/static/bed_types.json'), $by_array);
+	}
+
+	function is_active($rid)
+	{
+		$res = $this->db->select('active')->get_where('rooms', array('id', $rid))->result();
+		if( ! $res || ! $res[0]->active)
+			return false;
+		return true;
 	}
 }
 
