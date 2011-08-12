@@ -37,7 +37,7 @@
 
 
 		
-		<link rel="shortcut icon" href="/airbnb_favicon.ico" />
+		<link rel="shortcut icon" href="/favicon.ico" />
 	</head>
 
   <body class=" " >

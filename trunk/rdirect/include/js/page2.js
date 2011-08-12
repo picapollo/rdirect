@@ -1244,7 +1244,8 @@ var AirbnbSearch = {
 				defaultsCheckin : q,
 				defaultsCheckout : e,
 				onSuccess : function() {
-					AirbnbSearch.loadNewResults()
+					if( ! jQuery("#submit_location").attr('disabled'))
+						AirbnbSearch.loadNewResults()
 				}
 			});
 			jQuery("ul.collapsable_filters li input:checkbox, ul#lightbox_filters input:checkbox").live("click", function() {
@@ -1427,10 +1428,10 @@ var AirbnbSearch = {
 		}
 		var f = $("#checkin").val();
 		var i = $("#checkout").val();
-		if(f != "mm/dd/yyyy") {
+		if(f != "mm/dd/yyyy" && f != "yyyy/mm/dd" && f != "yyyy-mm-dd") {
 			AirbnbSearch.params.checkin = jQuery("#checkin").val() || ""
 		}
-		if(i != "mm/dd/yyyy") {
+		if(i != "mm/dd/yyyy" && i != "yyyy/mm/dd" && i != "yyyy-mm-dd") {
 			AirbnbSearch.params.checkout = jQuery("#checkout").val() || ""
 		}
 		AirbnbSearch.params.guests = jQuery("#number_of_guests").val() || "1";

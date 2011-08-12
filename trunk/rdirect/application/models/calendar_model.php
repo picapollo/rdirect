@@ -29,8 +29,38 @@ class Calendar_model extends CI_Model{
 	function delete_daily($rid, $start, $end)
 	{
 		$this->db->where('room_id', $rid);
-		$this->db->where("`date` BETWEEN \"$start\" AND \"$end\"", null, false);
+		$this->db->where("`date` BETWEEN '$start' AND '$end'", null, false);
 		return $this->db->delete('calendar_daily');
+	}
+	
+	function get_daily($rid, $start, $end)
+	{
+		$this->db->select('date, available, price');
+		$this->db->where('room_id', $rid);
+		$this->db->where("date BETWEEN '$start' AND '$end'");
+		$this->db->group_by('date');
+		$query = $this->db->get('calendar_daily');
+		return $query->result();		
+	}
+	
+	function get_weekly($rid, $start, $end)
+	{
+		$this->db->select('date, price');
+		$this->db->where('room_id', $rid);
+		$this->db->where("date BETWEEN '$start' AND '$end'");
+		$this->db->group_by('date');
+		$query = $this->db->get('calendar_weekly');
+		return $query->result();
+	}
+	
+	function get_monthly($rid, $start, $end)
+	{
+		$this->db->select('date, price');
+		$this->db->where('room_id', $rid);
+		$this->db->where("date BETWEEN '$start' AND '$end'");
+		$this->db->group_by('date');
+		$query = $this->db->get('calendar_monthly');
+		return $query->result();
 	}
 }
 

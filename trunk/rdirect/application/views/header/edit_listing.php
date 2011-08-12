@@ -237,4 +237,4 @@
   });
  
 			</script> 
-		<link rel="shortcut icon" href="<?=IMG_DIR?>/airbnb_favicon.ico" /> 
+		<link rel="shortcut icon" href="/favicon.ico" /> 

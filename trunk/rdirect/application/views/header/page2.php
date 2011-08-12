@@ -29,4 +29,4 @@
 		<script src="<?=JS_DIR?>/jquery.ui.datepicker/jquery.ui.datepicker-<?=CURRENT_LANGUAGE?>.min.js" type="text/javascript"></script>
 		<?php endif;?>
 		<script src="<?=JS_DIR?>/page2.js" type="text/javascript"></script>
-		<link rel="shortcut icon" href="<?=IMG_DIR?>/airbnb_favicon.ico" />
+		<link rel="shortcut icon" href="/favicon.ico" />

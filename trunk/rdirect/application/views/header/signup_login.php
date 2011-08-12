@@ -30,5 +30,5 @@
 		<![endif]-->
 		<script src="<?=JS_DIR?>/jquery.validate.min.js" type="text/javascript"></script>
 		<script src="<?=JS_DIR?>/signinup.js" type="text/javascript"></script>
-		<link rel="shortcut icon" href="<?=IMG_DIR?>/airbnb_favicon.ico" />
+		<link rel="shortcut icon" href="/favicon.ico" />
 	</head>

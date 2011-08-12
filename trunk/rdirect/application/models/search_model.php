@@ -1,6 +1,4 @@
-<?php
-if(!defined('BASEPATH'))
-	exit('No direct script access allowed');
+<?php if(!defined('BASEPATH')) exit('No direct script access allowed');
 
 class Search_model extends CI_Model {
 	
@@ -22,6 +20,7 @@ class Search_model extends CI_Model {
 		$raddr = $this->db->dbprefix('room_addresses');
 		$rp = $this->db->dbprefix('room_photos');
 		$rd = $this->db->dbprefix('room_descriptions');
+		$cd = $this->db->dbprefix('calendar_daily');
 		
 		$room_photo_only = false; 
 		
@@ -43,7 +42,7 @@ class Search_model extends CI_Model {
 		
 		if( ! empty($opt['min_bedrooms'])) $this->db->where('bedrooms >=', $opt['min_bedrooms']);
 		if( ! empty($opt['min_beds'])) $this->db->where('beds >=', $opt['min_beds']);
-		if( ! empty($opt['guests'])) $this->db->where('guests_included >=', $opt['guests']);
+		if( ! empty($opt['guests'])) $this->db->where('person_capacity >=', $opt['guests']);
 		if( ! empty($opt['room_types'])) $this->db->where_in('room_type', $opt['room_types']);
 		if( ! empty($opt['hosting_amenities']))
 		{
@@ -55,17 +54,17 @@ class Search_model extends CI_Model {
 			$this->db->where("amenities & $amenities >= $amenities");
 		}
 		
-		// TODO
 		if( ! empty($opt['checkin']) && ! empty($opt['checkout']))
 		{
-			
+			$stay_days = (strtotime($opt['checkout'])-strtotime($opt['checkin'])) / (3600 * 24);
+			$this->db->where('min_nights <=', $stay_days);
+			$this->db->where('max_nights >=', $stay_days); 
+			$this->db->where("(SELECT COUNT(`id`) FROM `$cd` AS cd WHERE cd.`available`=0 AND cd.`room_id` = `$r`.`id` AND cd.`date` >= '{$opt['checkin']}' AND cd.`date` <= '{$opt['checkout']}') = 0", null, false);
 		}
 		
 		$this->db->limit($opt['per_page'], $opt['limit_offset']);
 		
-		
 		$this->db->stop_cache();
-		
 		$this->opt_generated = true;
 	}
 
@@ -98,8 +97,9 @@ class Search_model extends CI_Model {
 			`native_currency` 
 		";
 		
-		$this->db->join('users', 'users.id = rooms.user_id', 'inner');
 		$this->db->select($select_sql, false);
+		$this->db->join('users', 'users.id = rooms.user_id', 'inner');
+		$this->db->group_by('rooms.id');
 		
 		$query = $this->db->get();
 		return $query->result();

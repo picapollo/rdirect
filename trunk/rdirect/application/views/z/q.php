@@ -44,7 +44,7 @@
 <![endif]-->
   <script src="http://s2.muscache.com/1312794588/assets/messaging_constrained.js" type="text/javascript"></script>
 
-		<link rel="shortcut icon" href="/airbnb_favicon.ico" />
+		<link rel="shortcut icon" href="/favicon.ico" />
 	</head>
 
   <body class=" " >
